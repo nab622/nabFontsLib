@@ -661,12 +661,10 @@ function changeSampleText(inputText, updateHash = true) {
 function renderFontSelectionList(fontList) {
 	clearElement(fontSelection)
 
-	let prev = ''
 	let test = ''
 	let temp = currentFont.toLowerCase()
 	for(let i = 0; i < fontList.length; i++) {
 		test = fontList[i].name.toLowerCase()
-		if(test == prev) continue
 
 		let newOption = { elementType: 'option', id: 'font ' + fontList[i].name, value: fontList[i].name, className: 'fontSelectionItem', onclick: ()=>{ changeAllSampleFonts(fontList[i].name) }, title : fontList[i].name, children: [
 			{ elementType: 'span', style: { fontFamily: 'nabFonts monospace' }, text: fontList[i].name },
@@ -676,7 +674,6 @@ function renderFontSelectionList(fontList) {
 			newOption.selected = true
 		}
 		fontSelection.appendChild(createElement(newOption))
-		prev = test
 	}
 }
 

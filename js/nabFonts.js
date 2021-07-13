@@ -778,37 +778,16 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Modern" ]
-		},
-		{
-			name		:	"Orbitron",
-			authors		:	[ "Matt McInerney" ],
-			variants	:	[
 				{
 					path		:	"Orbitron - by Matt McInerney/Orbitron Medium.ttf",
 					style		:	"normal",
 					weight		:	"550",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Modern" ]
-		},
-		{
-			name		:	"Orbitron",
-			authors		:	[ "Matt McInerney" ],
-			variants	:	[
 				{
 					path		:	"Orbitron - by Matt McInerney/Orbitron Bold.ttf",
 					style		:	"normal",
 					weight		:	"bold",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Modern", "Thick" ]
-		},
-		{
-			name		:	"Orbitron",
-			authors		:	[ "Matt McInerney" ],
-			variants	:	[
 				{
 					path		:	"Orbitron - by Matt McInerney/Orbitron Black.ttf",
 					style		:	"normal",
@@ -982,37 +961,16 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
-		},
-		{
-			name		:	"Segment 16C",
-			authors		:	[ "Daniel Wikholm" ],
-			variants	:	[
 				{
 					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Italic.ttf",
 					style		:	"italic",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
-		},
-		{
-			name		:	"Segment 16C",
-			authors		:	[ "Daniel Wikholm" ],
-			variants	:	[
 				{
 					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold.ttf",
 					style		:	"normal",
 					weight		:	"bold",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
-		},
-		{
-			name		:	"Segment 16C",
-			authors		:	[ "Daniel Wikholm" ],
-			variants	:	[
 				{
 					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold Italic.ttf",
 					style		:	"italic",
@@ -1342,13 +1300,6 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
-		},
-		{
-			name		:	"Where Is The Rest Italic",
-			authors		:	[ "Dieter Schumacher" ],
-			variants	:	[
 				{
 					path		:	"Where Is The Rest - by Dieter Schumacher/Where Is The Rest Italic.ttf",
 					style		:	"italic",
@@ -1630,37 +1581,16 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
-		},
-		{
-			name		:	"OpenDyslexic",
-			authors		:	[ "Abbie Gonzalez" ],
-			variants	:	[
 				{
 					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Italic.otf",
 					style		:	"italic",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
-		},
-		{
-			name		:	"OpenDyslexic",
-			authors		:	[ "Abbie Gonzalez" ],
-			variants	:	[
 				{
 					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold.otf",
 					style		:	"normal",
 					weight		:	"bold",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
-		},
-		{
-			name		:	"OpenDyslexic",
-			authors		:	[ "Abbie Gonzalez" ],
-			variants	:	[
 				{
 					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold-Italic.otf",
 					style		:	"italic",
@@ -1714,13 +1644,6 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Playful" ]
-		},
-		{
-			name		:	"Birdland Aeroplane",
-			authors		:	[ "Typodermic Fonts" ],
-			variants	:	[
 				{
 					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane Bold.otf",
 					style		:	"normal",
@@ -1810,13 +1733,6 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Serif", "Basic" ]
-		},
-		{
-			name		:	"Colourbars",
-			authors		:	[ "Typodermic Fonts" ],
-			variants	:	[
 				{
 					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Colourbars Bd.otf",
 					style		:	"normal",
@@ -3094,37 +3010,16 @@ function getCustomFonts() {
 					style		:	"normal",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Curvy" ]
-		},
-		{
-			name		:	"Tork",
-			authors		:	[ "Typodermic Fonts" ],
-			variants	:	[
 				{
 					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold.otf",
 					style		:	"normal",
 					weight		:	"bold",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Curvy", "Thick" ]
-		},
-		{
-			name		:	"Tork",
-			authors		:	[ "Typodermic Fonts" ],
-			variants	:	[
 				{
 					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Italic.otf",
 					style		:	"italic",
 					weight		:	"normal",
 				},
-			],
-			tags		:	[ "Sans-Serif", "Curvy" ]
-		},
-		{
-			name		:	"Tork",
-			authors		:	[ "Typodermic Fonts" ],
-			variants	:	[
 				{
 					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold Italic.otf",
 					style		:	"italic",
