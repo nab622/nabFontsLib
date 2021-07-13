@@ -58,8 +58,6 @@ SOFTWARE.
 				errors : []			// This array contains an entry for every font that fails to parse
 			}
 
-	 WHEN PROCESSING THIS ARRAY, BE AWARE THAT FONTS WITH DIFFERENT BOLD/ITALIC FILES WILL HAVE DUPLICATE ENTRIES!
-
 
 	TO CHANGE THE FONT IN AN HTML ELEMENT, USE:
 		changeFont(destinationElement, font1, font2, font3, ... )
@@ -123,2561 +121,3820 @@ function getCustomFonts() {
 		{
 			name		:	"A Dripping Marker",
 			authors		:	[ "Wick van den Belt" ],
-			path		:	"A Dripping Marker - by Wick van den Belt/A Dripping Marker.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"A Dripping Marker - by Wick van den Belt/A Dripping Marker.ttf",
+					style		:	"normal",
+					weight		:	"normal"
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Dripping", "Handwriting", "Marker" ]
 		},
 		{
 			name		:	"Acknowledge",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Acknowledge - by Aenigma Fonts/Acknowledge.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Acknowledge - by Aenigma Fonts/Acknowledge.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Pixelated", "Retro" ]
 		},
 		{
 			name		:	"Airborne GP",
 			authors		:	[ "Gustavo Paz L" ],
-			path		:	"Airborne GP - by Gustavo Paz L/Airborne GP.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Airborne GP - by Gustavo Paz L/Airborne GP.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Calligraphy", "Modern", "Thick", "Angular" ]
 		},
 		{
 			name		:	"Audiowide",
 			authors		:	[ "Astigmatic One Eye Typographic Institute" ],
-			path		:	"Audiowide - by Astigmatic One Eye Typographic Institute/Audiowide.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Audiowide - by Astigmatic One Eye Typographic Institute/Audiowide.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Automatica",
 			authors		:	[ "Astigmatic One Eye Typographic Institute" ],
-			path		:	"Automatica - by Aenigma Fonts/Automatica.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Automatica - by Aenigma Fonts/Automatica.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Babelfish Dancing",
 			authors		:	[ "Manfred Klein" ],
-			path		:	"Babelfish - by Manfred Klein/Babelfish Dancing.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Babelfish - by Manfred Klein/Babelfish Dancing.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
 			name		:	"Babelfish Contour",
 			authors		:	[ "Manfred Klein" ],
-			path		:	"Babelfish - by Manfred Klein/Babelfish Contour.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Babelfish - by Manfred Klein/Babelfish Contour.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Outline", "Thick" ]
 		},
 		{
 			name		:	"Babelfish Zebral",
 			authors		:	[ "Manfred Klein" ],
-			path		:	"Babelfish - by Manfred Klein/Babelfish Zebral.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Babelfish - by Manfred Klein/Babelfish Zebral.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Outline", "Striped" ]
 		},
 		{
 			name		:	"Basic Handwriting",
 			authors		:	[ "Osterfeld" ],
-			path		:	"Basic Handwriting - by Osterfeld/Basic Handwriting.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Basic Handwriting - by Osterfeld/Basic Handwriting.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Marker", "Handwriting" ]
 		},
 		{
 			name		:	"Blockbusta",
 			authors		:	[ "Fenotype" ],
-			path		:	"Blockbusta - by Fenotype/Blockbusta.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Blockbusta - by Fenotype/Blockbusta.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Offset", "Angular", "Logo" ]
 		},
 		{
 			name		:	"Blockstepped",
 			authors		:	[ "Gem Fonts" ],
-			path		:	"Blockstepped - by Gem Fonts/Blockstepped.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Blockstepped - by Gem Fonts/Blockstepped.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Retro", "Shadow", "Offset", "Pixelated", "Formal" ]
 		},
 		{
 			name		:	"Blockstepped 3D",
 			authors		:	[ "Gem Fonts" ],
-			path		:	"Blockstepped - by Gem Fonts/Blockstepped 3D.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Blockstepped - by Gem Fonts/Blockstepped 3D.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Negative Space", "Retro", "Shadow", "Offset", "Pixelated", "Formal", "3D" ]
 		},
 		{
 			name		:	"Blox",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Blox - by Aenigma Fonts/Blox.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Blox - by Aenigma Fonts/Blox.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Blocks", "3D"  ]
 		},
 		{
 			name		:	"Candy Stripe",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Candystripe - by Aenigma Fonts/Candy Stripe.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Candystripe - by Aenigma Fonts/Candy Stripe.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Holiday", "Striped" ]
 		},
 		{
 			name		:	"Circulate",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Circulate - by Aenigma Fonts/Circulate.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Circulate - by Aenigma Fonts/Circulate.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Playful" ]
 		},
 		{
 			name		:	"Classic Trash 1",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Classic Trash - by Aenigma Fonts/Classic Trash 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Classic Trash - by Aenigma Fonts/Classic Trash 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
 			name		:	"Classic Trash 2",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Classic Trash - by Aenigma Fonts/Classic Trash 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Classic Trash - by Aenigma Fonts/Classic Trash 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
 			name		:	"Crackdown Rounded 1",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Crackdown - by Aenigma Fonts/Crackdown Rounded 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Crackdown - by Aenigma Fonts/Crackdown Rounded 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Crackdown Rounded 2",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Crackdown - by Aenigma Fonts/Crackdown Rounded 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Crackdown - by Aenigma Fonts/Crackdown Rounded 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Crackdown Outline 1",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Crackdown - by Aenigma Fonts/Crackdown Outline 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Crackdown - by Aenigma Fonts/Crackdown Outline 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern", "Negative Space" ]
 		},
 		{
 			name		:	"Crackdown Outline 2",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Crackdown - by Aenigma Fonts/Crackdown Outline 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Crackdown - by Aenigma Fonts/Crackdown Outline 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern", "Negative Space" ]
 		},
 		{
 			name		:	"Cubic Core Mono",
 			authors		:	[ "marCOmics" ],
-			path		:	"Cubic Core Mono - by marCOmics/Cubic Core Mono.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Cubic Core Mono - by marCOmics/Cubic Core Mono.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Modern" ]
 		},
 		{
 			name		:	"Cutive Mono",
 			authors		:	[ "Vernon Adams" ],
-			path		:	"Cutive Mono - by Vernon Adams/Cutive Mono.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Cutive Mono - by Vernon Adams/Cutive Mono.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Monospace", "Basic" ]
 		},
 		{
 			name		:	"Dynamic",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Dynamic - by Aenigma Fonts/Dynamic.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Dynamic - by Aenigma Fonts/Dynamic.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Edit Undo",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Edit Undo - by Aenigma Fonts/Edit Undo.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Edit Undo - by Aenigma Fonts/Edit Undo.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick" ]
 		},
 		{
 			name		:	"Edit Undo Line",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Edit Undo - by Aenigma Fonts/Edit Undo Line.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Edit Undo - by Aenigma Fonts/Edit Undo Line.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick" ]
 		},
 		{
 			name		:	"Edit Undo Dot",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Edit Undo - by Aenigma Fonts/Edit Undo Dot.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Edit Undo - by Aenigma Fonts/Edit Undo Dot.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick", "Dotted" ]
 		},
 		{
 			name		:	"G-Type",
 			authors		:	[ "Goma Shin" ],
-			path		:	"G-Type - by Goma Shin/G-Type.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"G-Type - by Goma Shin/G-Type.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Game", "Negative Space", "Retro", "Angular" ]
 		},
 		{
 			name		:	"Graze",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Graze - by Aenigma Fonts/Graze.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Graze - by Aenigma Fonts/Graze.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Angular", "Monospace", "Blocks", "Elaborate" ]
 		},
 		{
 			name		:	"Grudge",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Grudge - by Aenigma Fonts/Grudge 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Grudge - by Aenigma Fonts/Grudge 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Monospace", "Elaborate" ]
 		},
 		{
 			name		:	"Hammerhead",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead.ttf",
-			style		:	"normal",
-			weight		:	"normal",
-			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
-		},
-		{
-			name		:	"Hammerhead",
-			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Italic.ttf",
-			style		:	"italic",
-			weight		:	"normal",
-			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
-		},
-		{
-			name		:	"Hammerhead Thin",
-			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Thin.ttf",
-			style		:	"normal",
-			weight		:	"200",
+			variants	:	[
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
 		},
 		{
 			name		:	"Hammerhead Thin",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Thin Italic.ttf",
-			style		:	"italic",
-			weight		:	"200",
+			variants	:	[
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Thin.ttf",
+					style		:	"normal",
+					weight		:	"200",
+				},
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Thin Italic.ttf",
+					style		:	"italic",
+					weight		:	"200",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
 		},
 		{
 			name		:	"Hammerhead Outline",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Outline.ttf",
-			style		:	"normal",
-			weight		:	"normal",
-			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern", "Negative Space" ]
-		},
-		{
-			name		:	"Hammerhead Outline",
-			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Outline Italic.ttf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Outline.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"Hammerhead - by Dieter Schumacher/Hammerhead Outline Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern", "Negative Space" ]
 		},
 		{
 			name		:	"Hearts",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Hearts - by Aenigma Fonts/Hearts.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Hearts - by Aenigma Fonts/Hearts.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Holiday", "Monospace" ]
 		},
 		{
 			name		:	"It Lives In The Swamp",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"It Lives In The Swamp - by Aenigma Fonts/It Lives In The Swamp.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"It Lives In The Swamp - by Aenigma Fonts/It Lives In The Swamp.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Handwriting", "Marker", "Dripping", "Logo" ]
 		},
 		{
 			name		:	"Kaliber Solid",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Kaliber - by Aenigma Fonts/Kaliber Solid.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Kaliber - by Aenigma Fonts/Kaliber Solid.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Angular", "Thick" ]
 		},
 		{
 			name		:	"Kaliber Round",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Kaliber - by Aenigma Fonts/Kaliber Round.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Kaliber - by Aenigma Fonts/Kaliber Round.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Kaliber Xtreme",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Kaliber - by Aenigma Fonts/Kaliber Xtreme.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Kaliber - by Aenigma Fonts/Kaliber Xtreme.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
 			name		:	"New Walt Disney Font",
 			authors		:	[ "538Lyons Font Design (Daniel Lyons)" ],
-			path		:	"New Walt Disney Font - by 538Lyons Font Design (Daniel Lyons)/NewWaltDisneyFontRegular-BPen.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"New Walt Disney Font - by 538Lyons Font Design (Daniel Lyons)/NewWaltDisneyFontRegular-BPen.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Elaborate", "Marker" ]
 		},
 		{
 			name		:	"New Walt Disney UI",
 			authors		:	[ "538Lyons Font Design (Daniel Lyons)" ],
-			path		:	"New Walt Disney Font - by 538Lyons Font Design (Daniel Lyons)/NewWaltDisneyUi-8YdA.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"New Walt Disney Font - by 538Lyons Font Design (Daniel Lyons)/NewWaltDisneyUi-8YdA.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Elaborate", "Marker" ]
 		},
 		{
 			name		:	"KidZone",
 			authors		:	[ "538Lyons Font Design (Daniel Lyons)" ],
-			path		:	"KidZone - by 538Lyons Font Design (Daniel Lyons)/KidZone.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"KidZone - by 538Lyons Font Design (Daniel Lyons)/KidZone.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
 			name		:	"Loki Cola",
 			authors		:	[ "Utopiafonts" ],
-			path		:	"Loki Cola - by Utopiafonts/Loki Cola.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Loki Cola - by Utopiafonts/Loki Cola.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Logo", "Script" ]
 		},
 		{
 			name		:	"Alex Brush",
 			authors		:	[ "TypeSETit" ],
-			path		:	"Alex Brush - by TypeSETit/AlexBrush-Regular.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Alex Brush - by TypeSETit/AlexBrush-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Script" ]
 		},
 		{
 			name		:	"Mage 1999",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Mage 1999 - by Dieter Schumacher/Mage 1999.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mage 1999 - by Dieter Schumacher/Mage 1999.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Pixelated" ]
 		},
 		{
 			name		:	"Minercraftory",
 			authors		:	[ "Grandoplex Productions" ],
-			path		:	"Minercraftory - by Grandoplex Productions/Minercraftory.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Minercraftory - by Grandoplex Productions/Minercraftory.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Game", "Pixelated", "Retro", "Thick" ]
 		},
 		{
 			name		:	"That's Font Folks",
 			authors		:	[ "Grandoplex Productions" ],
-			path		:	"That's Font Folks - by Grandoplex Productions/That's Font Folks!.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"That's Font Folks - by Grandoplex Productions/That's Font Folks!.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Script" ]
 		},
 		{
 			name		:	"Mishmash",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Mishmash Fuse",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash Fuse.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash Fuse.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Negative Space", "Offset" ]
 		},
 		{
 			name		:	"Mishmash Alt 1",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash Alt 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash Alt 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular" ]
 		},
 		{
 			name		:	"Mishmash Alt 2",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash Alt 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash Alt 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular" ]
 		},
 		{
 			name		:	"Mishmash 4x4 Outline",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash 4x4 Outline.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash 4x4 Outline.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular", "Elaborate", "Negative Space" ]
 		},
 		{
 			name		:	"Mishmash 4x4 Italic",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Mish Mash - by Aenigma Fonts/Mishmash 4x4 Italic.ttf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Mish Mash - by Aenigma Fonts/Mishmash 4x4 Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular", "Playful" ]
 		},
 		{
 			name		:	"November",
 			authors		:	[ "Tepid Monkey" ],
-			path		:	"November - by Tepid Monkey/November.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"November - by Tepid Monkey/November.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Monospace", "Basic", "Pixelated", "Retro" ]
 		},
 		{
 			name		:	"Orbitron",
 			authors		:	[ "Matt McInerney" ],
-			path		:	"Orbitron - by Matt McInerney/Orbitron.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Orbitron - by Matt McInerney/Orbitron.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Modern" ]
 		},
 		{
 			name		:	"Orbitron",
 			authors		:	[ "Matt McInerney" ],
-			path		:	"Orbitron - by Matt McInerney/Orbitron Medium.ttf",
-			style		:	"normal",
-			weight		:	"550",
+			variants	:	[
+				{
+					path		:	"Orbitron - by Matt McInerney/Orbitron Medium.ttf",
+					style		:	"normal",
+					weight		:	"550",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Modern" ]
 		},
 		{
 			name		:	"Orbitron",
 			authors		:	[ "Matt McInerney" ],
-			path		:	"Orbitron - by Matt McInerney/Orbitron Bold.ttf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"Orbitron - by Matt McInerney/Orbitron Bold.ttf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Orbitron",
 			authors		:	[ "Matt McInerney" ],
-			path		:	"Orbitron - by Matt McInerney/Orbitron Black.ttf",
-			style		:	"normal",
-			weight		:	"900",
+			variants	:	[
+				{
+					path		:	"Orbitron - by Matt McInerney/Orbitron Black.ttf",
+					style		:	"normal",
+					weight		:	"900",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Perfect Dark",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Perfect Dark - by Aenigma Fonts/Perfect Dark.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Perfect Dark - by Aenigma Fonts/Perfect Dark.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Game", "Retro", "Thick", "Angular" ]
 		},
 		{
 			name		:	"Persuasion",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Persuasion - by Aenigma Fonts/Persuasion.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Persuasion - by Aenigma Fonts/Persuasion.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Modern", "Thick" ]
 		},
 		{
 			name		:	"PixelForce",
 			authors		:	[ "Vasily Draigo aka Daymarius" ],
-			path		:	"PixelForce - by Vasily Draigo aka Daymarius/PixelForce.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"PixelForce - by Vasily Draigo aka Daymarius/PixelForce.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
 			name		:	"Plasma Drip",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Plasma Drip - by Aenigma Fonts/Plasma Drip.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Plasma Drip - by Aenigma Fonts/Plasma Drip.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dripping", "Thick" ]
 		},
 		{
 			name		:	"Plasma Drip Empty",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Plasma Drip - by Aenigma Fonts/Plasma Drip Empty.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Plasma Drip - by Aenigma Fonts/Plasma Drip Empty.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dripping", "Thick", "Negative Space" ]
 		},
 		{
 			name		:	"Pseudo",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Pseudo - by Aenigma Fonts/Pseudo.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Pseudo - by Aenigma Fonts/Pseudo.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
 		},
 		{
 			name		:	"Rational Integer",
 			authors		:	[ "Tepid Monkey" ],
-			path		:	"Rational Integer - by Tepid Monkey/Rational Integer.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Rational Integer - by Tepid Monkey/Rational Integer.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Angular" ]
 		},
 		{
 			name		:	"Registry",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Registry - by Aenigma Fonts/Registry.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Registry - by Aenigma Fonts/Registry.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
 		},
 		{
 			name		:	"Retron2000",
 			authors		:	[ "Vasily Draigo aka Daymarius" ],
-			path		:	"Retron2000 - by Vasily Draigo aka Daymarius/Retron2000.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Retron2000 - by Vasily Draigo aka Daymarius/Retron2000.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro" ]
 		},
 		{
 			name		:	"RetroVille NC",
 			authors		:	[ "Grandoplex Productions" ],
-			path		:	"RetroVille - by Grandoplex Productions/RetroVille NC.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"RetroVille - by Grandoplex Productions/RetroVille NC.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
 			name		:	"Righteous",
 			authors		:	[ "Brian J. Bonislawsky" ],
-			path		:	"Righteous - by Brian J. Bonislawsky/Righteous.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Righteous - by Brian J. Bonislawsky/Righteous.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Thick" ]
 		},
 		{
 			name		:	"ROBOTECH GP",
 			authors		:	[ "Gustavo Paz L" ],
-			path		:	"Robotech GP - by Gustavo Paz L/ROBOTECH GP.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Robotech GP - by Gustavo Paz L/ROBOTECH GP.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Angular" ]
 		},
 		{
 			name		:	"Roses Are FF0000",
 			authors		:	[ "AJ Paglia" ],
-			path		:	"Roses Are FF0000 - by AJ Paglia/Roses Are FF0000.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Roses Are FF0000 - by AJ Paglia/Roses Are FF0000.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
 			name		:	"Segment 16C",
 			authors		:	[ "Daniel Wikholm" ],
-			path		:	"Segment 16C - by Daniel Wikholm/Segment 16C.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
 			name		:	"Segment 16C",
 			authors		:	[ "Daniel Wikholm" ],
-			path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Italic.ttf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
 			name		:	"Segment 16C",
 			authors		:	[ "Daniel Wikholm" ],
-			path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold.ttf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold.ttf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
 			name		:	"Segment 16C",
 			authors		:	[ "Daniel Wikholm" ],
-			path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold Italic.ttf",
-			style		:	"italic",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"Segment 16C - by Daniel Wikholm/Segment 16C Bold Italic.ttf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
 			name		:	"Star Jedi",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi/Star Jedi.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi/Star Jedi.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Star Jedi Hollow",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi/Star Jedi Hollow.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi/Star Jedi Hollow.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro", "Negative Space" ]
 		},
 		{
 			name		:	"Star Jedi Logo Double Line 1",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Double Line 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Double Line 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Star Jedi Logo Double Line 2",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Double Line 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Double Line 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Star Jedi Logo Mono Line",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Mono Line.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi Logo/Star Jedi Logo Mono Line.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Star Jedi Outline",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi Outline/Star Jedi Outline.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi Outline/Star Jedi Outline.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro", "Outline" ]
 		},
 		{
 			name		:	"Star Jedi Special Edition",
 			authors		:	[ "Boba Fonts" ],
-			path		:	"Star Jedi - by Boba Fonts/Star Jedi Special Edition/Star Jedi Special Edition.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Jedi - by Boba Fonts/Star Jedi Special Edition/Star Jedi Special Edition.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Star Trek Future",
 			authors		:	[ "Alphabet & Type" ],
-			path		:	"Star Trek Future - by Alphabet & Type/Star Trek Future.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Trek Future - by Alphabet & Type/Star Trek Future.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Negative Space", "Narrow", "Offset" ]
 		},
 		{
 			name		:	"Star Trek Enterprise Future",
 			authors		:	[ "Alphabet & Type" ],
-			path		:	"Star Trek Future - by Alphabet & Type/Star Trek Enterprise Future.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Star Trek Future - by Alphabet & Type/Star Trek Enterprise Future.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Negative Space", "Narrow", "Offset" ]
 		},
 		{
 			name		:	"Holy Union",
 			authors		:	[ "Digital Graphic Labs" ],
-			path		:	"Holy Union - by Digital Graphic Labs/Holy Union.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Holy Union - by Digital Graphic Labs/Holy Union.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
 			name		:	"UnifrakturMaguntia",
 			authors		:	[ "J. 'Mach' Wust" ],
-			path		:	"UnifrakturMaguntia - by J. 'Mach' Wust/UnifrakturMaguntia-Regular.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"UnifrakturMaguntia - by J. 'Mach' Wust/UnifrakturMaguntia-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
 			name		:	"Super Mario 256",
 			authors		:	[ "fsuarez913" ],
-			path		:	"Super Mario 256 - by fsuarez913/Super Mario 256.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Super Mario 256 - by fsuarez913/Super Mario 256.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Logo", "Angular", "Playful", "Thick" ]
 		},
 		{
 			name		:	"Syndrome",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Syndrome - by Aenigma Fonts/Syndrome.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Syndrome - by Aenigma Fonts/Syndrome.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Synthetic",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Synthetic - by Aenigma Fonts/Synthetic.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Synthetic - by Aenigma Fonts/Synthetic.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow" ]
 		},
 		{
 			name		:	"Technique",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Technique - by Aenigma Fonts/Technique.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Technique - by Aenigma Fonts/Technique.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Playful" ]
 		},
 		{
 			name		:	"Technique Outline",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Technique - by Aenigma Fonts/Technique Outline.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Technique - by Aenigma Fonts/Technique Outline.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Playful", "Negative Space" ]
 		},
 		{
 			name		:	"Techno Overload",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Techno Overload - by Aenigma Fonts/Techno Overload.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Techno Overload - by Aenigma Fonts/Techno Overload.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Thick" ]
 		},
 		{
 			name		:	"Tetricide",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Tetricide - by Aenigma Fonts/Tetricide.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Tetricide - by Aenigma Fonts/Tetricide.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Pixelated" ]
 		},
 		{
 			name		:	"Tonik",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Tonik - by Aenigma Fonts/Tonik.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Tonik - by Aenigma Fonts/Tonik.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Elaborate" ]
 		},
 		{
 			name		:	"Underwhelmed",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Underwhelmed - by Aenigma Fonts/Underwhelmed.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Underwhelmed - by Aenigma Fonts/Underwhelmed.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Game", "Thick", "Modern" ]
 		},
 		{
 			name		:	"Underwhelmed Outline",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Underwhelmed - by Aenigma Fonts/Underwhelmed Outline.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Underwhelmed - by Aenigma Fonts/Underwhelmed Outline.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Game", "Thick", "Modern", "Negative Space" ]
 		},
 		{
 			name		:	"Unlearned",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Unlearned - by Aenigma Fonts/Unlearned.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Unlearned - by Aenigma Fonts/Unlearned.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Negative Space", "Thick", "Retro" ]
 		},
 		{
 			name		:	"Unlearned 2",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Unlearned - by Aenigma Fonts/Unlearned 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Unlearned - by Aenigma Fonts/Unlearned 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Thick", "Retro" ]
 		},
 		{
 			name		:	"VCR OSD Mono",
 			authors		:	[ "mrmanet" ],
-			path		:	"VCR OSD Mono - by mrmanet/VCR OSD Mono.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"VCR OSD Mono - by mrmanet/VCR OSD Mono.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Monospace", "Basic" ]
 		},
 		{
 			name		:	"Weathered",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Weathered - by Aenigma Fonts/Weathered.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Weathered - by Aenigma Fonts/Weathered.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Negative Space" ]
 		},
 		{
 			name		:	"Weathered Solid",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Weathered - by Aenigma Fonts/Weathered Solid.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Weathered - by Aenigma Fonts/Weathered Solid.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Basic" ]
 		},
 		{
 			name		:	"Where Is The Rest",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Where Is The Rest - by Dieter Schumacher/Where Is The Rest.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Where Is The Rest - by Dieter Schumacher/Where Is The Rest.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
 		},
 		{
 			name		:	"Where Is The Rest Italic",
 			authors		:	[ "Dieter Schumacher" ],
-			path		:	"Where Is The Rest - by Dieter Schumacher/Where Is The Rest Italic.ttf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Where Is The Rest - by Dieter Schumacher/Where Is The Rest Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
 		},
 		{
 			name		:	"Celtic Knots",
 			authors		:	[ "Renn Crump" ],
-			path		:	"Celtic Knots - by Renn Crump/Celtic Knots.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Celtic Knots - by Renn Crump/Celtic Knots.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Celtic", "Gothic", "Elaborate" ]
 		},
 		{
 			name		:	"Wickhop Handwriting",
 			authors		:	[ "Wick van den Belt" ],
-			path		:	"Wickhop Handwriting - by Wick van den Belt/Wickhop Handwriting.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Wickhop Handwriting - by Wick van den Belt/Wickhop Handwriting.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Playful" ]
 		},
 		{
 			name		:	"Xerox Malfunction",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Xerox Malfunction - by Aenigma Fonts/Xerox Malfunction.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Xerox Malfunction - by Aenigma Fonts/Xerox Malfunction.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Smudged" ]
 		},
 		{
 			name		:	"Xmas Lights",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Xmas Lights - by Aenigma Fonts/Xmas Lights.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Xmas Lights - by Aenigma Fonts/Xmas Lights.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Monospace", "Holiday" ]
 		},
 		{
 			name		:	"Comic Relief",
 			authors		:	[ "Loudifier" ],
-			path		:	"Comic Relief - by Loudifier/ComicRelief.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Comic Relief - by Loudifier/ComicRelief.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Basic" ]
 		},
 		{
 			name		:	"Nandaka Western",
 			authors		:	[ "Goma Shin" ],
-			path		:	"Nandaka Western - by Goma Shin/gomarice_nandaka_western.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Nandaka Western - by Goma Shin/gomarice_nandaka_western.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Thick", "Western" ]
 		},
 		{
 			name		:	"Humeur",
 			authors		:	[ "ClaudeP" ],
-			path		:	"Humeur - by ClaudeP/Humeur.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Humeur - by ClaudeP/Humeur.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Faces" ]
 		},
 		{
 			name		:	"Memetica",
 			authors		:	[ "Rodolfo Santos" ],
-			path		:	"Memetica - by Rodolfo Santos/Memetica.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Memetica - by Rodolfo Santos/Memetica.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Faces", "Meme" ]
 		},
 		{
 			name		:	"Web Symbols",
 			authors		:	[ "Just Be Nice Studio" ],
-			path		:	"Web Symbols - by Just Be Nice Studio/WebSymbols-Regular.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Web Symbols - by Just Be Nice Studio/WebSymbols-Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Icons" ]
 		},
 		{
 			name		:	"Stateface",
 			authors		:	[ "ProPublica" ],
-			path		:	"Stateface - by ProPublica/StateFace-Regular.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Stateface - by ProPublica/StateFace-Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Outgunned",
 			authors		:	[ "Robby Woodard" ],
-			path		:	"Outgunned - by Robby Woodard/Outgunned.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Outgunned - by Robby Woodard/Outgunned.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Guns" ]
 		},
 		{
 			name		:	"Notice",
 			authors		:	[ "otlab.ru" ],
-			path		:	"Notice - by otlab.ru/Notice.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Notice - by otlab.ru/Notice.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Notice 2",
 			authors		:	[ "otlab.ru" ],
-			path		:	"Notice - by otlab.ru/Notice 2.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Notice - by otlab.ru/Notice 2.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Notice 3",
 			authors		:	[ "otlab.ru" ],
-			path		:	"Notice - by otlab.ru/Notice 3.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Notice - by otlab.ru/Notice 3.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Modern Pictograms",
 			authors		:	[ "John Caserta" ],
-			path		:	"Modern Pictograms - by John Caserta/Modern Pictograms.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Modern Pictograms - by John Caserta/Modern Pictograms.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"WebHostingHub Glyphs",
 			authors		:	[ "Web Hosting Hub" ],
-			path		:	"WebHostingHub Glyphs - by Web Hosting Hub/WebHostingHub Glyphs.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"WebHostingHub Glyphs - by Web Hosting Hub/WebHostingHub Glyphs.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Heydings Common Icons",
 			authors		:	[ "Heydon Pickering" ],
-			path		:	"Heydings Common Icons - by Heydon Pickering/Heydings Common Icons.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Heydings Common Icons - by Heydon Pickering/Heydings Common Icons.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Heydings Controls",
 			authors		:	[ "Heydon Pickering" ],
-			path		:	"Heydings Controls - by Heydon Pickering/Heydings Controls.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Heydings Controls - by Heydon Pickering/Heydings Controls.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Helloween",
 			authors		:	[ "Gem Fonts" ],
-			path		:	"Helloween - by Gem Fonts/Helloween.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Helloween - by Gem Fonts/Helloween.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Halloween" ]
 		},
 		{
 			name		:	"Helloween 2",
 			authors		:	[ "Gem Fonts" ],
-			path		:	"Helloween - by Gem Fonts/Helloween 2.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Helloween - by Gem Fonts/Helloween 2.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Halloween" ]
 		},
 		{
 			name		:	"Skull Capz",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Skull Capz - by Aenigma Fonts/Skull Capz.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Skull Capz - by Aenigma Fonts/Skull Capz.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Symbol", "Halloween" ]
 		},
 		{
 			name		:	"Zero Velocity",
 			authors		:	[ "Aenigma Fonts" ],
-			path		:	"Zero Velocity - by Aenigma Fonts/Zero Velocity.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Zero Velocity - by Aenigma Fonts/Zero Velocity.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Outline", "Elaborate" ]
 		},
 		{
 			name		:	"OpenDyslexic",
 			authors		:	[ "Abbie Gonzalez" ],
-			path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Regular.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
 		},
 		{
 			name		:	"OpenDyslexic",
 			authors		:	[ "Abbie Gonzalez" ],
-			path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Italic.otf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Italic.otf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
 		},
 		{
 			name		:	"OpenDyslexic",
 			authors		:	[ "Abbie Gonzalez" ],
-			path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold.otf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold.otf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
 		},
 		{
 			name		:	"OpenDyslexic",
 			authors		:	[ "Abbie Gonzalez" ],
-			path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold-Italic.otf",
-			style		:	"italic",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"OpenDyslexic - by Abbie Gonzalez/OpenDyslexic-Bold-Italic.otf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
 		},
 		{
 			name		:	"Baileys Car",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Baileys Car.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Baileys Car.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Negative Space", "Fire" ]
 		},
 		{
 			name		:	"Barbatrick",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Barbatrick.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Barbatrick.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Slanted", "Fast" ]
 		},
 		{
 			name		:	"Biometric Joe",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biometric Joe.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biometric Joe.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Crumbling" ]
 		},
 		{
 			name		:	"Birdland Aeroplane",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
 			name		:	"Birdland Aeroplane",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane Bold.otf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane Bold.otf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
 			name		:	"Biting My Nails Outline",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails Outline.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails Outline.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Angular", "Modern" ]
 		},
 		{
 			name		:	"Biting My Nails",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Modern" ]
 		},
 		{
 			name		:	"Borg 9",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Borg 9.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Borg 9.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
 			name		:	"Boron",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Boron.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Boron.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow", "Circuit" ]
 		},
 		{
 			name		:	"Bramalea Beauty",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Bramalea Beauty.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Bramalea Beauty.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Narrow", "Basic" ]
 		},
 		{
 			name		:	"Capacitor",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Capacitor.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Capacitor.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thin", "Modern", "Angular" ]
 		},
 		{
 			name		:	"Colourbars",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Colourbars.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Colourbars.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
 			name		:	"Colourbars",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Colourbars Bd.otf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Colourbars Bd.otf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
 			name		:	"Counterscraps",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Counterscraps.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Counterscraps.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Kitchen" ]
 		},
 		{
 			name		:	"Cutiful",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Cutiful.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Cutiful.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Script" ]
 		},
 		{
 			name		:	"Deluxe Ducks",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Deluxe Ducks.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Deluxe Ducks.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Modern" ]
 		},
 		{
 			name		:	"Deportees",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Deportees.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Deportees.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Thin", "Halloween" ]
 		},
 		{
 			name		:	"Desard",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Desard.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Desard.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
 			name		:	"Dyspepsia",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Dyspepsia.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Dyspepsia.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Script" ]
 		},
 		{
 			name		:	"Electorate Boogaloo 3",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Electorate Boogaloo 3.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Electorate Boogaloo 3.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Thick" ]
 		},
 		{
 			name		:	"Fabian",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Fabian.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Fabian.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Slanted", "Modern", "Angular", "Narrow" ]
 		},
 		{
 			name		:	"Filepile",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Filepile.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Filepile.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Shadow" ]
 		},
 		{
 			name		:	"First Blind 2",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/First Blind 2.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/First Blind 2.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Wide" ]
 		},
 		{
 			name		:	"Fluoride Beings",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Fluoride Beings.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Fluoride Beings.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Angled", "Angular" ]
 		},
 		{
 			name		:	"Frak",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Frak.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Frak.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Angular" ]
 		},
 		{
 			name		:	"Frozdotre",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Frozdotre.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Frozdotre.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
 			name		:	"Giant Tigers Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Basic" ]
 		},
 		{
 			name		:	"Giant Tigers Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped" ]
 		},
 		{
 			name		:	"Giant Tigers",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped", "Negative Space" ]
 		},
 		{
 			name		:	"Got No Heart Solid",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart Solid.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart Solid.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Got No Heart",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
 			name		:	"Graffiti Treat Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Angular", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Graffiti Treat Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Angular", "Elaborate" ]
 		},
 		{
 			name		:	"Graffiti Treat",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Angular", "Elaborate", "Negative Space" ]
 		},
 		{
 			name		:	"Groovy Ghosties Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Groovy Ghosties Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Groovy Ghosties",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Negative Space" ]
 		},
 		{
 			name		:	"Gumtuckey",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Gumtuckey.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Gumtuckey.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif" ]
 		},
 		{
 			name		:	"Hamma Mamma Jamma",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hamma Mamma Jamma.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hamma Mamma Jamma.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Narrow" ]
 		},
 		{
 			name		:	"Hawkeye Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Hawkeye Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Shadow" ]
 		},
 		{
 			name		:	"Hawkeye",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Shadow" ]
 		},
 		{
 			name		:	"Hello Larry",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hello Larry.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hello Larry.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Holy Smokes",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Holy Smokes.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Holy Smokes.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Cigarettes", "Negative Space", "Elaborate" ]
 		},
 		{
 			name		:	"Hurontario",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hurontario.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Hurontario.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thin", "Narrow", "Script" ]
 		},
 		{
 			name		:	"Husky Stash",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Husky Stash.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Husky Stash.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Elaborate" ]
 		},
 		{
 			name		:	"Icicle Country 2",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Icicle Country 2.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Icicle Country 2.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Modern" ]
 		},
 		{
 			name		:	"Jandles",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jandles.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jandles.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thin", "Loopy", "Elaborate", "Handwriting" ]
 		},
 		{
 			name		:	"Jigsaw Trouserdrop",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jigsaw Trouserdrop.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jigsaw Trouserdrop.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Jingopop",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jingopop.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Jingopop.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Script" ]
 		},
 		{
 			name		:	"Lesser Concern Shadow",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern Shadow.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern Shadow.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Shadow" ]
 		},
 		{
 			name		:	"Lesser Concern",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif" ]
 		},
 		{
 			name		:	"Let's Eat",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Let's Eat.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Let's Eat.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif" ]
 		},
 		{
 			name		:	"Letter Set A",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set A.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set A.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
 			name		:	"Letter Set B",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set B.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set B.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
 			name		:	"Letter Set C",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set C.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Letter Set C.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Snow" ]
 		},
 		{
 			name		:	"Lewinsky",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lewinsky.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lewinsky.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Slanted" ]
 		},
 		{
 			name		:	"Lucky Ape",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lucky Ape.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Lucky Ape.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Slot Machine", "Monospace" ]
 		},
 		{
 			name		:	"Mai Tai",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mai Tai.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mai Tai.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Modern" ]
 		},
 		{
 			name		:	"Malache Crunch",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Malache Crunch.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Malache Crunch.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Sequins" ]
 		},
 		{
 			name		:	"Map Of You",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Map Of You.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Map Of You.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Modern", "Alien" ]
 		},
 		{
 			name		:	"Minya",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Minya.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Minya.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic", "Handwriting", "Basic" ]
 		},
 		{
 			name		:	"Misirlou Day",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Misirlou Day.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Misirlou Day.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Modern" ]
 		},
 		{
 			name		:	"Misirlou",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Misirlou.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Misirlou.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Retro", "Modern" ]
 		},
 		{
 			name		:	"Mississauga",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mississauga.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mississauga.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Narrow", "Modern" ]
 		},
 		{
 			name		:	"Mlurmlry",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mlurmlry.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mlurmlry.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Decay", "Negative Space" ]
 		},
 		{
 			name		:	"Mob Concrete",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mob Concrete.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mob Concrete.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Thick", "Elaborate", "Decay" ]
 		},
 		{
 			name		:	"Mold Papa",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mold Papa.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Mold Papa.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Playful", "Thick" ]
 		},
 		{
 			name		:	"Motorcade",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Motorcade.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Motorcade.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Negative Space", "Thick", "Shadow" ]
 		},
 		{
 			name		:	"Nasal",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Nasal.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Nasal.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern" ]
 		},
 		{
 			name		:	"Neurochrome",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Neurochrome.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Neurochrome.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Elaborate" ]
 		},
 		{
 			name		:	"New Brilliant",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/New Brilliant.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/New Brilliant.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Wide", "Modern" ]
 		},
 		{
 			name		:	"Night Court",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Night Court.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Night Court.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Thick" ]
 		},
 		{
 			name		:	"Nightporter",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Nightporter.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Nightporter.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Distorted" ]
 		},
 		{
 			name		:	"No Clocks",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/No Clocks.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/No Clocks.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Wide" ]
 		},
 		{
 			name		:	"Oil Crisis A",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis A.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis A.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Cars" ]
 		},
 		{
 			name		:	"Oil Crisis B",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis B.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis B.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Cars" ]
 		},
 		{
 			name		:	"Operational Amplifier",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Operational Amplifier.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Operational Amplifier.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Modern", "Angular" ]
 		},
 		{
 			name		:	"Outright",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Outright.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Outright.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Thick" ]
 		},
 		{
 			name		:	"Paint Boy",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Paint Boy.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Paint Boy.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Paintbrushes" ]
 		},
 		{
 			name		:	"Pantspatrol",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pantspatrol.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pantspatrol.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Striped", "Thick"  ]
 		},
 		{
 			name		:	"Peatloaf",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Peatloaf.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Peatloaf.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Decay" ]
 		},
 		{
 			name		:	"Plain Cred 1978",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Plain Cred 1978.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Plain Cred 1978.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thin", "Narrow", "Modern", "Basic" ]
 		},
 		{
 			name		:	"Po Beef",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Po Beef.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Po Beef.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Playful" ]
 		},
 		{
 			name		:	"Poke",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Poke.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Poke.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
 			name		:	"Pop Up Fontio",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pop Up Fontio.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pop Up Fontio.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Playful", "Jack-in-the-box" ]
 		},
 		{
 			name		:	"Port Credit",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Port Credit.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Port Credit.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
 			name		:	"Pulse State",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pulse State.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Pulse State.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Quinine",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Quinine.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Quinine.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Quixotic",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Quixotic.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Quixotic.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow" ]
 		},
 		{
 			name		:	"Rina",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Rina.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Rina.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Basic", "Curvy" ]
 		},
 		{
 			name		:	"Riot Act 2 Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Riot Act 2 Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Riot Act 2 Glop",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Glop.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 Glop.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
 			name		:	"Riot Act 2",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Negative Space" ]
 		},
 		{
 			name		:	"Robokoz",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Robokoz.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Robokoz.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Calligraphy", "Basic" ]
 		},
 		{
 			name		:	"Sad Films",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sad Films.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sad Films.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Slanted", "Modern" ]
 		},
 		{
 			name		:	"Sandoval Speed",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sandoval Speed.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sandoval Speed.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Slanted", "Wide", "Thick" ]
 		},
 		{
 			name		:	"Sandoval",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sandoval.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sandoval.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Thick" ]
 		},
 		{
 			name		:	"Sappy Mugs",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sappy Mugs.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sappy Mugs.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Faces", "Animals", "Playful" ]
 		},
 		{
 			name		:	"Sayso Chic",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sayso Chic.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Sayso Chic.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
 			name		:	"Scritzy X",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Scritzy X.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Scritzy X.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Modern", "Elaborate" ]
 		},
 		{
 			name		:	"Send Cash",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Send Cash.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Send Cash.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay" ]
 		},
 		{
 			name		:	"Shifty Chica 2",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Shifty Chica 2.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Shifty Chica 2.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Curvy", "Thick" ]
 		},
 		{
 			name		:	"Skeletor Stance",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Skeletor Stance.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Skeletor Stance.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Curvy" ]
 		},
 		{
 			name		:	"Skrybylr",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Skrybylr.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Skrybylr.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Playful", "Elaborate" ]
 		},
 		{
 			name		:	"Snidely",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Snidely.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Snidely.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Curvy", "Vintage" ]
 		},
 		{
 			name		:	"Spongy",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Spongy.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Spongy.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thin" ]
 		},
 		{
 			name		:	"Stitch & Bitch",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Stitch & Bitch.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Stitch & Bitch.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dashed", "Negative Space" ]
 		},
 		{
 			name		:	"Styrofoam Feelings",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Styrofoam Feelings.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Styrofoam Feelings.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Wide", "Elaborate" ]
 		},
 		{
 			name		:	"Superheterodyne",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Superheterodyne.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Superheterodyne.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Lightning", "Thick" ]
 		},
 		{
 			name		:	"Switching & Effects",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Switching & Effects.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Switching & Effects.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Thin", "Elaborate" ]
 		},
 		{
 			name		:	"Terylene Top",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Terylene Top.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Terylene Top.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Diamond", "Elaborate", "Playful" ]
 		},
 		{
 			name		:	"That Secret Feeling",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/That Secret Feeling.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/That Secret Feeling.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Striped", "Playful", "Shadow" ]
 		},
 		{
 			name		:	"Thiamine",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Thiamine.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Thiamine.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Elaborate" ]
 		},
 		{
 			name		:	"Tobin Tax",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tobin Tax.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tobin Tax.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
 			name		:	"Tommy Gun",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tommy Gun.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tommy Gun.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay" ]
 		},
 		{
 			name		:	"Top Bond",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Top Bond.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Top Bond.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Wavy", "Playful" ]
 		},
 		{
 			name		:	"Tork",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Curvy" ]
 		},
 		{
 			name		:	"Tork",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold.otf",
-			style		:	"normal",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold.otf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Curvy", "Thick" ]
 		},
 		{
 			name		:	"Tork",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Italic.otf",
-			style		:	"italic",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Italic.otf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Curvy" ]
 		},
 		{
 			name		:	"Tork",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold Italic.otf",
-			style		:	"italic",
-			weight		:	"bold",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold Italic.otf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Curvy", "Thick" ]
 		},
 		{
 			name		:	"Troll Bait",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Troll Bait.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Troll Bait.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Gothic", "Negative Space" ]
 		},
 		{
 			name		:	"TRS-Million",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/TRS-Million.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/TRS-Million.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
 			name		:	"TRS-Million Twinkle",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/TRS-Million Twinkle.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/TRS-Million Twinkle.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
 			name		:	"Ur Ur Ma",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Ur Ur Ma.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Ur Ur Ma.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Calligraphy", "Narrow" ]
 		},
 		{
 			name		:	"Waker",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Waker.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Waker.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Playful", "Curvy" ]
 		},
 		{
 			name		:	"Walshes",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Walshes.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Walshes.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Halloween", "Angular" ]
 		},
 		{
 			name		:	"Webster World",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Webster World.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Webster World.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Elaborate", "Shadow" ]
 		},
 		{
 			name		:	"Welfare Brat",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Welfare Brat.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Welfare Brat.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Negative Space", "Monospace" ]
 		},
 		{
 			name		:	"Wet Pet",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Wet Pet.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Wet Pet.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space" ]
 		},
 		{
 			name		:	"White Lake",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/White Lake.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/White Lake.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate" ]
 		},
 		{
 			name		:	"Wild Sewerage",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Wild Sewerage.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Wild Sewerage.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay", "Elaborate" ]
 		},
 		{
 			name		:	"Worthless",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Worthless.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Worthless.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow", "Distorted" ]
 		},
 		{
 			name		:	"Xenowort",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xenowort.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xenowort.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
 			name		:	"Xolto",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xolto.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xolto.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Block", "Elaborate" ]
 		},
 		{
 			name		:	"Xtraflexidisc",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xtraflexidisc.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Xtraflexidisc.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Narrow", "Curvy" ]
 		},
 		{
 			name		:	"Y-Band Tuner",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Y-Band Tuner.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Y-Band Tuner.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Playful" ]
 		},
 		{
 			name		:	"Yadou",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yadou.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yadou.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Thick" ]
 		},
 		{
 			name		:	"Yawnovision",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yawnovision.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yawnovision.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
 			name		:	"Yellow Pills",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yellow Pills.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yellow Pills.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow" ]
 		},
 		{
 			name		:	"Yytrium Back",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium Back.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium Back.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Shadow" ]
 		},
 		{
 			name		:	"Yytrium Front",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium Front.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium Front.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Shadow" ]
 		},
 		{
 			name		:	"Yytrium",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Yytrium.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Elaborate", "Shadow", "Negative Space" ]
 		},
 		{
 			name		:	"Zodillin",
 			authors		:	[ "Typodermic Fonts" ],
-			path		:	"_Typodermic Public Domain Fonts/opentype fonts/Zodillin.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Zodillin.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Thick", "Curvy" ]
 		},
 		{
 			name		:	"Sans Forgetica",
 			authors		:	[ "RMIT University" ],
-			path		:	"Sans Forgetica - by RMIT University/SansForgetica-Regular.otf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"Sans Forgetica - by RMIT University/SansForgetica-Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Broken letters", "Angular", "Modern" ]
 		},
 		{
 			name		:	"Corporate HQ",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Corporate HQ.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Corporate HQ.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Basic" ]
 		},
 		{
 			name		:	"Karmatic Arcade",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Karmatic Arcade.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Karmatic Arcade.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Negative Space", "Pixelated", "Offset" ]
 		},
 		{
 			name		:	"Curses",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Curses.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Curses.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol" ]
 		},
 		{
 			name		:	"Yukarimobile",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Yukarimobile.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Yukarimobile.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Angular", "Anime" ]
 		},
 		{
 			name		:	"Azudings 1",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Azudings 1.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Azudings 1.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Anime" ]
 		},
 		{
 			name		:	"Airstrip Four",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Airstrip Four.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Airstrip Four.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Rounded", "Modern" ]
 		},
 		{
 			name		:	"Alpha Echo",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Alpha Echo.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Alpha Echo.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay", "Thick" ]
 		},
 		{
 			name		:	"Archipelago",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Archipelago.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Archipelago.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Angular", "Sideways" ]
 		},
 		{
 			name		:	"Armalite Rifle",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Armalite Rifle.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Armalite Rifle.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Decay", "Military", "Broken Letters", "Thick" ]
 		},
 		{
 			name		:	"Boston Traffic",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Boston Traffic.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Boston Traffic.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Narrow", "Military", "Broken Letters" ]
 		},
 		{
 			name		:	"CarbonType",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/CarbonType.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/CarbonType.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Monospace", "Typewriter", "Smudged" ]
 		},
 		{
 			name		:	"Daisy Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Daisy Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Daisy Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
 			name		:	"Death To Smudgey",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Death To Smudgey.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Death To Smudgey.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Smudged", "Elaborate" ]
 		},
 		{
 			name		:	"Edo SZ",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Edo SZ.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Edo SZ.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Marker", "Handwriting" ]
 		},
 		{
 			name		:	"Eurocentric",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Eurocentric.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Eurocentric.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Thick", "Soviet" ]
 		},
 		{
 			name		:	"Extended Play",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Extended Play.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Extended Play.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Modern", "Playful" ]
 		},
 		{
 			name		:	"Fawn Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Fawn Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Fawn Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
 			name		:	"Freelance Kamchatka",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Freelance Kamchatka.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Freelance Kamchatka.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Striped" ]
 		},
 		{
 			name		:	"Gang of Three",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Gang of Three.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Gang of Three.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular" ]
 		},
 		{
 			name		:	"Gisele Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Gisele Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Gisele Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
 			name		:	"Helsinki",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Helsinki.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Helsinki.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
 			name		:	"Hydrogen Type",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Hydrogen Type.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Hydrogen Type.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Dotted", "Monospace" ]
 		},
 		{
 			name		:	"ICBM SS-20",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/ICBM SS-20.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/ICBM SS-20.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Military", "Angular", "Broken Letters", "Thick" ]
 		},
 		{
 			name		:	"ICBM SS-25",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/ICBM SS-25.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/ICBM SS-25.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Military", "Angular", "Broken Letters", "Thick", "Decay" ]
 		},
 		{
 			name		:	"Know Your Product",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Know Your Product.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Know Your Product.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Broken Letters", "Thick", "Military" ]
 		},
 		{
 			name		:	"Kremlin",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Kremlin.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Kremlin.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Soviet", "Angular" ]
 		},
 		{
 			name		:	"Major Snafu",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Major Snafu.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Major Snafu.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Military", "Thick", "Broken Letters" ]
 		},
 		{
 			name		:	"Maritime Flags",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Maritime Flags.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Maritime Flags.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Symbol", "Flags" ]
 		},
 		{
 			name		:	"Maxine Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Maxine Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Maxine Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
 			name		:	"Nuku Nuku",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Nuku Nuku.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Nuku Nuku.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Curvy", "Anime", "Elaborate" ]
 		},
 		{
 			name		:	"Nyamomobile",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Nyamomobile.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Nyamomobile.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Anime", "Broken Letters", "Thick", "Narrow", "Elaborate" ]
 		},
 		{
 			name		:	"Osaka Sans Serif",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Osaka Sans Serif.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Osaka Sans Serif.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Anime", "Angular", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Quick End Jerk",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Quick End Jerk.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Quick End Jerk.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Playful", "Decay" ]
 		},
 		{
 			name		:	"Ruth Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Ruth Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Ruth Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
 		},
 		{
 			name		:	"Siamese Katsong",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Siamese Katsong.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Siamese Katsong.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
 			name		:	"Single Sleeve",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Single Sleeve.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Single Sleeve.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Narrow" ]
 		},
 		{
 			name		:	"Terry Script",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Terry Script.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Terry Script.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
 			name		:	"Umbrage",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Umbrage.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Umbrage.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay", "Thick" ]
 		},
 		{
 			name		:	"Underwood Champion",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Underwood Champion.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Underwood Champion.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Serif", "Typewriter", "Monospace" ]
 		},
 		{
 			name		:	"virgo.01",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/virgo.01.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/virgo.01.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Thick", "Curvy" ]
 		},
 		{
 			name		:	"Whitehall",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Whitehall.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Whitehall.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
 			name		:	"Xenophone",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Xenophone.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Xenophone.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Decay", "Elaborate" ]
 		},
 		{
 			name		:	"Zero & Zero Is",
 			authors		:	[ "Vic Fieger" ],
-			path		:	"_Vic Fieger Fonts/Zero & Zero Is.ttf",
-			style		:	"normal",
-			weight		:	"normal",
+			variants	:	[
+				{
+					path		:	"_Vic Fieger Fonts/Zero & Zero Is.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
 			tags		:	[ "Sans-Serif", "Smudged", "Thick" ]
 		},
 
@@ -2765,10 +4022,6 @@ function getFontIndex(inputFontName) {
 		}
 	}
 
-	while(mid > 0 && customFonts.fontData[mid - 1].name.toLowerCase() == inputFontName) {
-		mid--
-	}
-
 	if(test != inputFontName) {
 		console.log('getFontIndex Error: Could not find font \'' + inputFontName +  '\'!')
 		return false
@@ -2791,15 +4044,7 @@ function getFontData(inputFontName) {
 							path : '',
 						}
 
-	//Now, we need to get font data from adjacent fonts with the same name...
-
-	secondTest = customFonts.fontData[fontIndex].name.toLowerCase()
-	while(tempFontName == secondTest) {
-		fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[fontIndex])
-		fontIndex++
-		if(fontIndex >= customFonts.fontData.length) break
-		secondTest = customFonts.fontData[fontIndex].name.toLowerCase()
-	}
+	fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[fontIndex])
 
 	newFontObject.authors.sort()
 	newFontObject.styles.sort()
@@ -2814,19 +4059,7 @@ function getAllFontData(inputFontName) {
 	let fontIndex = getFontIndex(tempFontName)
 	if(fontIndex === false) return
 
-	let newFontObjects = []
-
-	//Now, we need to get font data from adjacent fonts with the same name...
-
-	secondTest = customFonts.fontData[fontIndex].name.toLowerCase()
-	while(tempFontName == secondTest) {
-		newFontObjects.push(customFonts.fontData[fontIndex])
-		fontIndex++
-		if(fontIndex >= customFonts.fontData.length) break
-		secondTest = customFonts.fontData[fontIndex].name.toLowerCase()
-	}
-
-	return newFontObjects
+	return customFonts.fontData[fontIndex]
 }
 
 function fontsLibMergeIntoArray(array1, array2) {
@@ -3039,12 +4272,6 @@ function getFilteredFontList(searchTemplate) {
 							}
 		fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[i])
 
-		while(i + 1 < customFonts.fontData.length && newFontObject.name.toLowerCase() == customFonts.fontData[i + 1].name.toLowerCase()) {
-			// The next font is a duplicate! Copy this info over to newFontObject as well.
-			i++
-			fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[i])
-		}
-
 		outputArray.push(newFontObject)
 	}
 
@@ -3112,19 +4339,21 @@ function fontsLibParseCustomFonts() {
 		if(customFontData[i].name != '' && customFontData[i].path != '') {
 			customFontData[i].tags.sort()
 			customFontData[i].authors.sort()
-			if(customFontData[i].hasOwnProperty('style')) {
-				if(customFontData[i].style == '') {
-					customFontData[i].style = 'normal'
+			for(let j = 0; j < customFontData[i].variants.length; j++) {
+				if(customFontData[i].variants[j].hasOwnProperty('style')) {
+					if(customFontData[i].variants[j].style == '') {
+						customFontData[i].variants[j].style = 'normal'
+					}
+				} else {
+					customFontData[i].variants[j].style = 'normal'
 				}
-			} else {
-				customFontData[i].style = 'normal'
-			}
-			if(customFontData[i].hasOwnProperty('weight')) {
-				if(customFontData[i].weight == '') {
-					customFontData[i].weight = 'normal'
+				if(customFontData[i].variants[j].hasOwnProperty('weight')) {
+					if(customFontData[i].variants[j].weight == '') {
+						customFontData[i].variants[j].weight = 'normal'
+					}
+				} else {
+					customFontData[i].variants[j].weight = 'normal'
 				}
-			} else {
-				customFontData[i].weight = 'normal'
 			}
 			customFonts.fontData.push(customFontData[i])
 		} else {
@@ -3163,9 +4392,13 @@ function fontsLibParseCustomFonts() {
 	// ADD THIS SEPARATELY - it should not be included with the fonts list, but it must always be included!
 	createFontCSS([{ name	:	"Adobe Blank",
 					authors	:	[ "Ken Lunde" ],
-					path	:	"Adobe Blank - by Ken Lunde/AdobeBlank.otf",
-					style	:	"normal",
-					weight	:	"normal",
+					variants	:	[
+						{
+							path	:	"Adobe Blank - by Ken Lunde/AdobeBlank.otf",
+							style	:	"normal",
+							weight	:	"normal",
+						}
+					],
 					tags	:	[ "blank" ],
 		}])
 
@@ -3184,29 +4417,13 @@ function fontsLibParseCustomFonts() {
 }
 
 function createDefaultFont(fontName, defaultFamily) {
-	if(fontName != '') {
-		let fontList = getAllFontData(fontName)
+	if(fontName == '') return
 
-		let fontObject = {}
-		Object.assign(fontObject, fontList[0])
+	let fontObject = {}
+	Object.assign(fontObject, getAllFontData(fontName))
+	fontObject.name = 'nabfonts ' + defaultFamily
 
-		for(let i = 0; i < fontList.length; i++) {
-
-			if( (	fontList[i].weight.toLowerCase() == 'normal' ||
-					fontList[i].weight == '400' ||
-					fontList[i].weight == 400 )
-				&& fontList[i].style == 'normal') {
-				fontObject = {}
-				Object.assign(fontObject, fontList[i])
-				break
-			}
-		}
-
-		fontObject.name = 'nabfonts ' + defaultFamily
-		fontObject.weight = 'normal'
-		fontObject.style = 'normal'
-		createFontCSS([ fontObject ])
-	}
+	createFontCSS([ fontObject ])
 }
 
 function createFontCSS(inputFonts) {
@@ -3214,40 +4431,42 @@ function createFontCSS(inputFonts) {
 	var newStyle = ''
 
 	for(i = 0; i < inputFonts.length; i++) {
-		// Figure out what format the font is
-		let fontFormat = inputFonts[i].path.split('.')
-		fontFormat = fontFormat.pop()
-		fontFormat = fontFormat.split('?').shift()
-		fontFormat = fontFormat.split('#').shift()
-		switch(fontFormat) {
-			case 'otf':
-				fontFormat = 'opentype'
-				break
-			case 'eot':
-				fontFormat = 'embedded-opentype'
-				break
-			case 'woff':
-				fontFormat = 'woff'
-				break
-			case 'woff2':
-				fontFormat = 'woff2'
-				break
-			case 'ttf':
-				fontFormat = 'truetype'
-				break
-			case 'svg':
-				fontFormat = 'svg'
-				break
-			default:
-				console.log('parseCustomFonts Error: Unrecognized font format: ' + fontFormat, inputFonts[i])
-				fontFormat = ''
-				continue
-		}
-		newStyle += '@font-face { font-family: "' + inputFonts[i].name + '"; src: url("' + encodeURI(customFonts.path + '/' + inputFonts[i].path) + '") format("' + fontFormat + '"); font-style: ' + inputFonts[i].style + '; font-weight: ' + inputFonts[i].weight + '; }\n'
-		if((i + 1) % cutPoint == 0) {
-			// For whatever reason, this object cannot hold everything at once. To make a cleaner web page, group fonts together into a single <style> element every 'cutPoint' number of fonts.
-			fontsLibCreateFontElement(newStyle)
-			newStyle = ''
+		for(j = 0; j < inputFonts[i].variants.length; j++) {
+			// Figure out what format the font is
+			let fontFormat = inputFonts[i].variants[j].path.split('.')
+			fontFormat = fontFormat.pop()
+			fontFormat = fontFormat.split('?').shift()
+			fontFormat = fontFormat.split('#').shift()
+			switch(fontFormat) {
+				case 'otf':
+					fontFormat = 'opentype'
+					break
+				case 'eot':
+					fontFormat = 'embedded-opentype'
+					break
+				case 'woff':
+					fontFormat = 'woff'
+					break
+				case 'woff2':
+					fontFormat = 'woff2'
+					break
+				case 'ttf':
+					fontFormat = 'truetype'
+					break
+				case 'svg':
+					fontFormat = 'svg'
+					break
+				default:
+					console.log('parseCustomFonts Error: Unrecognized font format: ' + fontFormat, inputFonts[i].variants[j])
+					fontFormat = ''
+					continue
+			}
+			newStyle += '@font-face { font-family: "' + inputFonts[i].name + '"; src: url("' + encodeURI(customFonts.path + '/' + inputFonts[i].variants[j].path) + '") format("' + fontFormat + '"); font-style: ' + inputFonts[i].variants[j].style + '; font-weight: ' + inputFonts[i].variants[j].weight + '; }\n'
+			if((i + j + 1) % cutPoint == 0) {
+				// For whatever reason, this object cannot hold everything at once. To make a cleaner web page, group fonts together into a single <style> element every 'cutPoint' number of fonts.
+				fontsLibCreateFontElement(newStyle)
+				newStyle = ''
+			}
 		}
 	}
 	if(newStyle != '') {
