@@ -6,12 +6,6 @@
 	<script src="js/nabLib.js"></script>
 	<script src="js/nabFonts.js"></script>
 
-<!--
-// FIXME: The "Name" filter does not update the font list when the value changes. But, if the user reloads the page, the list is then updated correctly.
-
-// FIXME: The "Name" filter sometimes bugs out. Like if you type new contents in it, then press back or forward, that seems to trigger it...
--->
-
 <style>
 
 input:focus, select:focus, textarea.focus {
@@ -901,7 +895,7 @@ function renderAsDropdown(outputElement, metadata) {
 
 	let match = false
 	for(let i = 0; i < customFonts[metadata].length; i++) {
-		let newOption = { elementType: 'option', value : customFonts[metadata][i].name, text : customFonts[metadata][i].name + ' (' + customFonts[metadata][i].count + ' ' + pluralize('font', customFonts[metadata][i].count) + ')' }
+		let newOption = { elementType: 'option', value : customFonts[metadata][i].name, text : customFonts[metadata][i].name + ' (' + customFonts[metadata][i].count + ' ' + pluralize([ 'font', 'fonts' ], customFonts[metadata][i].count) + ')' }
 		if(!match && filters.include && filters.include[metadata] && filters.include[metadata].length > 0) {
 			if(customFonts[metadata][i].name.toLowerCase() == filters.include[metadata][0].toLowerCase()) {
 				newOption.selected = 'selected'
