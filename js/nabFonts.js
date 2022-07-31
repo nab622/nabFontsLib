@@ -239,6 +239,69 @@ function getCustomFonts() {
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Offset", "Angular", "Logo" ]
 		},
 		{
+			name		:	"Pacifico",
+			authors		:	[ "Vernon Adams" ],
+			variants	:	[
+				{
+					path		:	"Pacifico - by Vernon Adams/Pacifico-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Script", "Handwriting", "Thick" ]
+		},
+		{
+			name		:	"Great Vibes",
+			authors		:	[ "TypeSETit" ],
+			variants	:	[
+				{
+					path		:	"Great Vibes - by TypeSETit/GreatVibes-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Script", "Formal" ]
+		},
+		{
+			name		:	"Lobster",
+			authors		:	[ "Impallari Type" ],
+			variants	:	[
+				{
+					path		:	"Lobster - by Impallari Type/Lobster-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Script", "Thick" ]
+		},
+		{
+			name		:	"Lobster Two",
+			authors		:	[ "Impallari Type" ],
+			variants	:	[
+				{
+					path		:	"Lobster Two - by Impallari Type/LobsterTwo-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"Lobster Two - by Impallari Type/LobsterTwo-Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+				{
+					path		:	"Lobster Two - by Impallari Type/LobsterTwo-Bold.ttf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+				{
+					path		:	"Lobster Two - by Impallari Type/LobsterTwo-BoldItalic.ttf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Script", "Thick" ]
+		},
+		{
 			name		:	"Blockstepped",
 			authors		:	[ "Gem Fonts" ],
 			variants	:	[
@@ -261,6 +324,18 @@ function getCustomFonts() {
 				},
 			],
 			tags		:	[ "Serif", "Negative Space", "Retro", "Shadow", "Offset", "Pixelated", "Formal", "3D" ]
+		},
+		{
+			name		:	"Sofia",
+			authors		:	[ "LatinoType" ],
+			variants	:	[
+				{
+					path		:	"Sofia - by LatinoType/Sofia-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Elegant", "Script", "Handwriting"  ]
 		},
 		{
 			name		:	"Blox",
@@ -648,6 +723,102 @@ function getCustomFonts() {
 				},
 			],
 			tags		:	[ "Sans-Serif", "Elaborate", "Script" ]
+		},
+		{
+			name		:	"Allura",
+			authors		:	[ "TypeSETit" ],
+			variants	:	[
+				{
+					path		:	"Allura - by TypeSETit/Allura-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
+		},
+		{
+			name		:	"Arizonia",
+			authors		:	[ "TypeSETit" ],
+			variants	:	[
+				{
+					path		:	"Arizonia - by TypeSETit/Arizonia-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Marker", "Thick", "Calligraphy", "Script" ]
+		},
+		{
+			name		:	"Bilbo",
+			authors		:	[ "Robert Leuschke" ],
+			variants	:	[
+				{
+					path		:	"Bilbo - by Robert Leuschke/Bilbo-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
+		},
+		{
+			name		:	"Bilbo Swash Caps",
+			authors		:	[ "TypeSETit" ],
+			variants	:	[
+				{
+					path		:	"Bilbo Swash Caps - by TypeSETit/BilboSwashCaps-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
+		},
+		{
+			name		:	"Dancing Script",
+			authors		:	[ "Impallari Type" ],
+			variants	:	[
+				{
+					path		:	"Dancing Script - by Impallari Type/DancingScript-VariableFont_wght.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Script" ]
+		},
+		{
+			name		:	"Grand Hotel",
+			authors		:	[ "Astigmatic One Eye Typographic Institute" ],
+			variants	:	[
+				{
+					path		:	"Grand Hotel - by Astigmatic One Eye Typographic Institute/GrandHotel-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Thick", "Script" ]
+		},
+		{
+			name		:	"Dynalight",
+			authors		:	[ "Astigmatic One Eye Typographic Institute" ],
+			variants	:	[
+				{
+					path		:	"Dynalight - by Astigmatic One Eye Typographic Institute/Dynalight-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Thick", "Script" ]
+		},
+		{
+			name		:	"Kaushan Script",
+			authors		:	[ "Impallari Type" ],
+			variants	:	[
+				{
+					path		:	"Kaushan Script - by Impallari Type/KaushanScript-Regular.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Calligraphy", "Marker", "Script" ]
 		},
 		{
 			name		:	"Mage 1999",
@@ -1257,10 +1428,10 @@ function getCustomFonts() {
 		},
 		{
 			name		:	"VCR OSD Mono",
-			authors		:	[ "mrmanet" ],
+			authors		:	[ "Riciery Leal" ],
 			variants	:	[
 				{
-					path		:	"VCR OSD Mono - by mrmanet/VCR OSD Mono.ttf",
+					path		:	"VCR OSD Mono - by Riciery Leal/VCR OSD Mono.ttf",
 					style		:	"normal",
 					weight		:	"normal",
 				},
@@ -1598,6 +1769,42 @@ function getCustomFonts() {
 				},
 			],
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
+		},
+		{
+			name		:	"Abberancy",
+			authors		:	[ "Typodermic Fonts" ],
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Abberancy.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Serif", "Slanted", "Thick", "Fast" ]
+		},
+		{
+			name		:	"Joy Circuit",
+			authors		:	[ "Typodermic Fonts" ],
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Joy Circuit.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Negative Space", "Thick", "Outline" ]
+		},
+		{
+			name		:	"Y2K Bug",
+			authors		:	[ "Typodermic Fonts" ],
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Y2Kbug.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Elaborate", "Playful" ]
 		},
 		{
 			name		:	"Baileys Car",
@@ -2867,7 +3074,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			tags		:	[ "Serif", "Curvy", "Vintage" ]
+			tags		:	[ "Serif", "Curvy", "Vintage", "Playful" ]
 		},
 		{
 			name		:	"Spongy",
@@ -3027,6 +3234,43 @@ function getCustomFonts() {
 				},
 			],
 			tags		:	[ "Sans-Serif", "Curvy", "Thick" ]
+		},
+		{
+			name		:	"Canada 1500",
+			authors		:	[ "Typodermic Fonts" ],
+			variants	:	[
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Regular Italic.otf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light.otf",
+					style		:	"normal",
+					weight		:	"lighter",
+				},
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light Italic.otf",
+					style		:	"italic",
+					weight		:	"lighter",
+				},
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Bold.otf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+				{
+					path		:	"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Bold Italic.otf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
+			tags		:	[ "Sans-Serif", "Basic" ]
 		},
 		{
 			name		:	"Troll Bait",
@@ -3879,7 +4123,7 @@ customFonts = {
 	path : '',			// This is the path to the folder the custom fonts are found in
 	tags : [],			// This array contains all the unique tags found in the entire fonts list, with no duplicates
 	authors : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
-	fontNames : [],			// This array contains all the unique artists found in the entire fonts list, with no duplicates
+	fontNames : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
 	fontData : [],		// This is an array of objects, sorted by font name, each object corresponding to a single font's attributes
 	errors : []			// This array contains an entry for every font that fails to parse
 }
@@ -4009,9 +4253,17 @@ function fontsLibCheckArraysDuringFiltering(array1, array2, strict = false) {
 
 function fontsLibParseFontDataIntoNewObject(outputObject, incomingFontData) {
 	outputObject.authors = fontsLibMergeIntoArray(outputObject.authors, incomingFontData.authors)
-	outputObject.styles = fontsLibMergeIntoArray(outputObject.styles, incomingFontData.style)
-	outputObject.weights = fontsLibMergeIntoArray(outputObject.weights, incomingFontData.weight)
 	outputObject.tags = fontsLibMergeIntoArray(outputObject.tags, incomingFontData.tags)
+
+	if(incomingFontData.hasOwnProperty('variants')) {
+		for(let i = 0; i < incomingFontData.variants.length; i++) {
+			outputObject.styles = fontsLibMergeIntoArray(outputObject.styles, incomingFontData.variants[i].style)
+			outputObject.weights = fontsLibMergeIntoArray(outputObject.weights, incomingFontData.variants[i].weight)
+		}
+	} else {
+		outputObject.styles = [ 'normal' ]
+		outputObject.weights = [ 'normal' ]
+	}
 }
 
 function fontsLibLowercaseArray(inputArray) {
@@ -4174,8 +4426,11 @@ function getFilteredFontList(searchTemplate) {
 }
 
 function fontsLibAddDataToObject(inputData, outputObject, key, duplicate = false) {
+	let test = ''
+	keyType = key.toLowerCase()
+
 	for(let i = 0; i < inputData[key].length; i++) {
-		let test = inputData[key][i].toLowerCase()
+		test = inputData[key][i].toLowerCase()
 
 		match = false
 		for(let j = 0; j < outputObject[key].length; j++) {
@@ -4235,19 +4490,19 @@ function fontsLibParseCustomFonts() {
 			customFontData[i].tags.sort()
 			customFontData[i].authors.sort()
 			for(let j = 0; j < customFontData[i].variants.length; j++) {
-				if(customFontData[i].variants[j].hasOwnProperty('style')) {
+				if(!customFontData[i].variants[j].hasOwnProperty('style')) {
+					customFontData[i].variants[j].style = 'normal'
+				} else {
 					if(customFontData[i].variants[j].style == '') {
 						customFontData[i].variants[j].style = 'normal'
 					}
-				} else {
-					customFontData[i].variants[j].style = 'normal'
 				}
-				if(customFontData[i].variants[j].hasOwnProperty('weight')) {
+				if(!customFontData[i].variants[j].hasOwnProperty('weight')) {
+					customFontData[i].variants[j].weight = 'normal'
+				} else {
 					if(customFontData[i].variants[j].weight == '') {
 						customFontData[i].variants[j].weight = 'normal'
 					}
-				} else {
-					customFontData[i].variants[j].weight = 'normal'
 				}
 			}
 			customFonts.fontData.push(customFontData[i])

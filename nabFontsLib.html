@@ -145,9 +145,9 @@ body {
 	flex-shrink: 0;
 	overflow-y: hidden;
 	overflow-x: hidden;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	background-color: #132646;
-	height: 100%;
 	user-select: none;
 }
 
@@ -170,15 +170,18 @@ body {
 	width: 220px;
 }
 
-#tagsContainer {
-	font-size: 11pt;
+#filteredTagsContainer {
+	font-size: 10pt;
 }
 
 #unusedTagsContainer {
+	font-size: 11pt;
+	flex: 1 1;
 	overflow-y: scroll;
 }
 
 .navigation {
+	padding-left: 30px;
 	background-color: #122A12;
 }
 
@@ -610,13 +613,17 @@ function play() {
 function next(count = 1) {
 	stop()
 
-	let tempIndex = getSelectIndex(fontSelection, 0)
-
-	if(fontSelection.children.length == 0) {
+	let tempIndex = getSelectIndex(fontSelection, null)
+	if(tempIndex === null) {
 		tempIndex = 0
 	} else {
-		tempIndex = (tempIndex + count) % fontSelection.children.length
+		if(fontSelection.children.length == 0) {
+			tempIndex = 0
+		} else {
+			tempIndex = (tempIndex + count) % fontSelection.children.length
+		}
 	}
+
 	setSelectIndex(fontSelection, tempIndex)
 
 	currentFont = fontSelection.value
@@ -626,13 +633,17 @@ function next(count = 1) {
 function prev(count = 1) {
 	stop()
 
-	let tempIndex = getSelectIndex(fontSelection, 0)
-
-	if(fontSelection.children.length == 0) {
+	let tempIndex = getSelectIndex(fontSelection, null)
+	
+	if(tempIndex === null) {
 		tempIndex = 0
 	} else {
-		tempIndex = (tempIndex - count) % fontSelection.children.length
-		if(tempIndex < 0) tempIndex += fontSelection.children.length
+		if(fontSelection.children.length == 0) {
+			tempIndex = 0
+		} else {
+			tempIndex = (tempIndex - count) % fontSelection.children.length
+			if(tempIndex < 0) tempIndex += fontSelection.children.length
+		}
 	}
 
 	setSelectIndex(fontSelection, tempIndex)
@@ -748,12 +759,12 @@ function updatePage() {
 				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'weights')
 				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'tags')
 			}
-			renderAsTags(tagsContainer, 'tags')
+			renderAsTags(filteredTagsContainer, 'tags')
 			renderFontSelectionList(getFilteredFontList(filters))
 		}
 	} else {
 		filters = {}
-		renderAsTags(tagsContainer, 'tags')
+		renderAsTags(filteredTagsContainer, 'tags')
 		renderFontSelectionList(getFilteredFontList(filters))
 	}
 
@@ -798,7 +809,7 @@ function changeDropdown(inputDropdown, metadata) {
 	changeFilters(newFilters, metadata)
 }
 
-function changeFilters(inputFilters, property) {
+function changeFilters(inputFilters, property, updateHash = true) {
 	/*	inputFilters MUST be in the following format:
 			{
 				include	:	{
@@ -880,7 +891,7 @@ function changeFilters(inputFilters, property) {
 	if(tempFilters.include && tempFilters.include[property] && tempFilters.include[property].length == 0) delete tempFilters.include[property]
 	if(tempFilters.exclude && tempFilters.exclude[property] && tempFilters.exclude[property].length == 0) delete tempFilters.exclude[property]
 
-	setHashData({ filters : tempFilters })
+	if(updateHash) setHashData({ filters : tempFilters })
 }
 
 function renderAsDropdown(outputElement, metadata) {
@@ -985,32 +996,29 @@ function renderAsTags(outputElement, metadata) {
 	}
 
 	// For scrolling purposes, the unused tags need to be in their own container
-	let unusedTagsContainer = { elementType : 'div', id : 'unusedTagsContainer', children : [] }
+	clearElement(unusedTagsContainer)
+	let tempElement = { elementType : 'div', children : [] }
 	for(let i = 0; i < metadataOutput.unusedData.length; i++) {
 		if(metadataOutput.unusedData[i].count < 1) continue
-		unusedTagsContainer.children.push({ elementType : 'div', title : metadataOutput.unusedData[i].name, children : [
+		unusedTagsContainer.appendChild(createElement({ elementType : 'div', title : metadataOutput.unusedData[i].name, children : [
 			{ elementType : 'span', className : 'tag', children : [
 				{ elementType : 'span', className : 'excludedTag', onclick : ()=>{ changeFilters({ exclude : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : ' - ' },
 				{ elementType : 'span', className : 'includedTag', onclick : ()=>{ changeFilters({ include : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : ' + ' },
 				{ elementType : 'span', text : metadataOutput.unusedData[i].name },
 				{ elementType : 'span', className : 'tagCount', text : ' (' + metadataOutput.unusedData[i].count + ')' }
 			] }
-		] })
+		] }))
 	}
-	outputElement.appendChild(createElement(unusedTagsContainer))
+//	unusedTagsContainer.appendChild(createElement(tempElement))
 }
 
 function changeNameFilter(newText, updateHash = true) {
 	if(newText != '') {
-	filters.include.name = newText
+		nameFilter.value = newText
 	} else {
 		if(filters.include && filters.include.name) delete filters.include.name
 	}
-	changeFilters({ include : { name : 'newText' } }, 'name')
-	nameFilter.value = newText
-	if(updateHash) {
-		setHashData({ 'filters' : filters })
-	}
+	changeFilters({ include : { name : newText } }, 'name', updateHash)
 }
 
 function clearNameFilter() {
@@ -1046,51 +1054,54 @@ document.addEventListener("DOMContentLoaded", function(event) {
 </head>
 <body onhashchange="updatePage()">
 	<div id="fontSettings">
-		Sample text:
-		<br>
-		<div class="textInputContainer">
-			<input type="text" size="20" id="sampleTextText" /><div class="clearButton" onclick="clearSampleText()"></div>
-		</div>
-		<br>
-		<br>
-
-		Size: <span id="fontSizeText"></span>
-		<div class="slidecontainer">
-			<input type="range" min="8" max="300" value="4" step="4" id="fontSize" onchange="changeAllSampleFontSizes(this.value)" />
-		</div>
-		<br>
-			<div id="boldButton" title="Bold" class="button boldButton" onclick="toggleBold()">6</div>
-			<div id="italicButton" title="Italic" class="button italicButton" onclick="toggleItalic()">7</div>
-		<br>
-		<hr width="85%"></hr>
-		<div>
-			<div class="filtersHeader">
-				Filters
-			</div>
-			<span class="tagHeader">
-				Name:
-			</span>
+		<div style="flex: 0 0;">
+			Sample text:
 			<br>
 			<div class="textInputContainer">
-				<input type="text" size="20" id="nameFilter" /><div class="clearButton" onclick="clearNameFilter()"></div>
+				<input type="text" size="20" id="sampleTextText" />
+				<div class="clearButton" onclick="clearSampleText()"></div>
 			</div>
 			<br>
 			<br>
-			<span class="tagHeader">
-				Authors:
-			</span>
-			<div id="authorsContainer">
+
+			Size: <span id="fontSizeText"></span>
+			<div class="slidecontainer">
+				<input type="range" min="8" max="300" value="4" step="4" id="fontSize" onchange="changeAllSampleFontSizes(this.value)" />
 			</div>
 			<br>
-			<div style="display:flex;">
-				<div>
-					<span class="tagHeader">
-						Tags:
-					</span>
-					<div id="tagsContainer">
-					</div>
-					<br>
+				<div id="boldButton" title="Bold" class="button boldButton" onclick="toggleBold()">6</div>
+				<div id="italicButton" title="Italic" class="button italicButton" onclick="toggleItalic()">7</div>
+			<br>
+			<hr width="85%"></hr>
+			<div>
+				<div class="filtersHeader">
+					Filters
 				</div>
+				<span class="tagHeader">
+					Name:
+				</span>
+				<br>
+				<div class="textInputContainer">
+					<input type="text" size="20" id="nameFilter" />
+					<div class="clearButton" onclick="clearNameFilter()"></div>
+				</div>
+				<br>
+				<br>
+				<span class="tagHeader">
+					Authors:
+				</span>
+				<div id="authorsContainer">
+				</div>
+				<br>
+			</div>
+		</div>
+		<span class="tagHeader">
+			Tags:
+		</span>
+		<div style="flex: 1 1; display: flex; flex-direction: column; overflow: auto;">
+			<div id="filteredTagsContainer">
+			</div>
+			<div id="unusedTagsContainer">
 			</div>
 		</div>
 	</div>
