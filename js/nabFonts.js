@@ -1881,7 +1881,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			tags		:	[ "Sans-Serif", "Angular", "Modern" ]
+			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Borg 9",
@@ -3233,7 +3233,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
-			tags		:	[ "Sans-Serif", "Curvy", "Thick" ]
+			tags		:	[ "Sans-Serif", "Curvy" ]
 		},
 		{
 			name		:	"Canada 1500",
@@ -4581,6 +4581,7 @@ function createFontCSS(inputFonts) {
 	var newStyle = ''
 
 	for(i = 0; i < inputFonts.length; i++) {
+		newStyle = ''
 		for(j = 0; j < inputFonts[i].variants.length; j++) {
 			// Figure out what format the font is
 			let fontFormat = inputFonts[i].variants[j].path.split('.')
@@ -4612,17 +4613,24 @@ function createFontCSS(inputFonts) {
 					continue
 			}
 			newStyle += '@font-face { font-family: "' + inputFonts[i].name + '"; src: url("' + encodeURI(customFonts.path + '/' + inputFonts[i].variants[j].path) + '") format("' + fontFormat + '"); font-style: ' + inputFonts[i].variants[j].style + '; font-weight: ' + inputFonts[i].variants[j].weight + '; }\n'
-			if((i + j + 1) % cutPoint == 0) {
-				// For whatever reason, this object cannot hold everything at once. To make a cleaner web page, group fonts together into a single <style> element every 'cutPoint' number of fonts.
-				fontsLibCreateFontElement(newStyle)
-				newStyle = ''
-			}
 		}
+		inputFonts[i].css = newStyle
+		fontsLibCreateFontElement(newStyle)
 	}
 	if(newStyle != '') {
 		// Add whatever is left
 		fontsLibCreateFontElement(newStyle)
 	}
+}
+
+function fontsLibGetCSSValue(fontName) {
+	for(let i = 0; i < customFonts.fontData.length; i++) {
+		if(customFonts.fontData[i].name.toLowerCase() == fontName.toLowerCase()) {
+			return customFonts.fontData[i].css
+		}
+	}
+
+	return ''
 }
 
 function fontsLibCreateFontElement(inputValues) {
