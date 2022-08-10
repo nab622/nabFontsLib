@@ -4639,6 +4639,5 @@ function fontsLibCreateFontElement(inputValues) {
 	document.head.appendChild(new_element)
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-	fontsLibParseCustomFonts()
-})
+
+fontsLibParseCustomFonts()	// DO NOT wait for the page to load, or we create a race condition!!
