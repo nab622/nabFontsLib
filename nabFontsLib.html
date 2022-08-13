@@ -1,3 +1,27 @@
+<!--
+MIT License
+
+Copyright (c) 2021 nab622
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
 <html>
 <head>
 
@@ -80,6 +104,12 @@ body {
 	font-family: 'nabfonts monospace';
 }
 
+#fontLicense {
+	text-align: center;
+	font-size: 14pt;
+	font-family: 'nabfonts monospace';
+}
+
 #fontTags {
 	text-align: center;
 	font-size: 12pt;
@@ -88,6 +118,10 @@ body {
 
 .fontAuthor {
 	color: #4CC;
+}
+
+.fontLicense {
+	color: #C44;
 }
 
 .fontTags {
@@ -168,6 +202,10 @@ body {
 }
 
 #authorsDropdown {
+	width: 220px;
+}
+
+#licensesDropdown {
 	width: 220px;
 }
 
@@ -495,17 +533,30 @@ function changeAllSampleFonts(inputFont, updateHash = true) {
 
 	clearElement(fontTitle)
 	clearElement(fontAuthor)
+	clearElement(fontLicense)
 	clearElement(fontTags)
 
 	fontTitle.appendChild(createElement({ elementType: 'span', text: tempFont.name }))
 
 	fontAuthor.appendChild(createElement({ elementType: 'span', text: 'By: ' }))
+
+	let currentAuthors = []
+	let currentLicenses = []
+	let currentFilters = getHashData()
+	if(currentFilters.hasOwnProperty('filters')) currentFilters = currentFilters.filters
+	if(currentFilters.hasOwnProperty('include')) currentFilters = currentFilters.include
+	if(currentFilters.hasOwnProperty('authors')) currentAuthors = currentFilters.authors
+	if(currentFilters.hasOwnProperty('licenses')) currentLicenses = currentFilters.licenses
+
 	for(let i = 0; i < tempFont.authors.length; i++) {
-		fontAuthor.appendChild(createElement({ elementType: 'span', className : 'fontAuthor clickable', onclick : ()=>{ changeFilters({ include : { authors : [ tempFont.authors[i] ] } }, 'authors') }, text: tempFont.authors[i] }))
+		fontAuthor.appendChild(createElement({ elementType: 'span', className : 'fontAuthor clickable', onclick : ()=>{ changeFilters({ unused : currentAuthors, include : { authors : [ tempFont.authors[i] ] } }, 'authors') }, text: tempFont.authors[i] }))
 		if(i + 1 < tempFont.authors.length) {
 			fontAuthor.appendChild(createElement({ elementType: 'span', text: ', ' }))
 		}
 	}
+
+	fontLicense.appendChild(createElement({ elementType: 'span', text: 'License: ' }))
+	fontLicense.appendChild(createElement({ elementType: 'span', className : 'fontLicense clickable', onclick : ()=>{ changeFilters({ include : { unused : currentLicenses, licenses : [ tempFont.license ] } }, 'licenses') }, text: ((!tempFont.hasOwnProperty('license') || tempFont.license == '') ? 'Unknown' : tempFont.license) }))
 
 	fontTags.appendChild(createElement({ elementType: 'span', text: 'Tags: ' }))
 	for(let i = 0; i < tempFont.tags.length; i++) {
@@ -712,10 +763,8 @@ function updatePage() {
 	}
 
 	if(hashData.hasOwnProperty('sampleText')) {
-		if(sampleTextText.value != hashData.sampleText) {
-			sampleTextText.value = hashData.sampleText
-			changeSampleText(sampleTextText.value, false)
-		}
+		sampleTextText.value = hashData.sampleText
+		changeSampleText(sampleTextText.value, false)
 	} else {
 		changeSampleText('', false)
 	}
@@ -760,6 +809,7 @@ function updatePage() {
 				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'styles')
 				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'weights')
 				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'tags')
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'licenses')
 			}
 			renderAsTags(filteredTagsContainer, 'tags')
 			renderFontSelectionList(getFilteredFontList(filters))
@@ -775,6 +825,13 @@ function updatePage() {
 		setSelectValue(authorsDropdown, filters.include.authors[0], false)
 	} else {
 		setSelectValue(authorsDropdown, '', false)
+	}
+
+	// This needs to ALWAYS be updated
+	if(filters.include && filters.include.licenses && filters.include.licenses.length > 0) {
+		setSelectValue(licensesDropdown, filters.include.licenses[0], false)
+	} else {
+		setSelectValue(licensesDropdown, '', false)
 	}
 
 	if(filters.include && filters.include.name) {
@@ -822,21 +879,24 @@ function changeFilters(inputFilters, property, updateHash = true) {
 					authors	:	[ 'author', 'names', 'array' ],
 					styles	:	[ 'styles', 'array' ],
 					weights	:	[ 'weights', 'array' ],
-					tags	:	[ 'tags', 'array' ]
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
 				},
 				exclude	:	{
 					name	:	nameSearchTerm,
 					authors	:	[ 'author', 'names', 'array' ],
 					styles	:	[ 'styles', 'array' ],
 					weights	:	[ 'weights', 'array' ],
-					tags	:	[ 'tags', 'array' ]
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
 				},
 				unused	:	{
 					name	:	nameSearchTerm,
 					authors	:	[ 'author', 'names', 'array' ],
 					styles	:	[ 'styles', 'array' ],
 					weights	:	[ 'weights', 'array' ],
-					tags	:	[ 'tags', 'array' ]
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
 				}
 			}
 	*/
@@ -903,6 +963,9 @@ function renderAsDropdown(outputElement, metadata) {
 	let selectOutput = { elementType : 'select', id : metadata + 'Dropdown', children : [] }
 
 	let allOption = ({ elementType: 'option', value : '', text : '-----  All ' + metadata + ' (' + customFonts[metadata].length + ' ' + metadata + ')  -----' })
+
+	let metadata2 = metadata
+	if(metadata.toLowerCase() == 'licenses') metadata2 = 'license'	// A bit hacky, but this isn't plural in some uses
 
 	let match = false
 	for(let i = 0; i < customFonts[metadata].length; i++) {
@@ -1040,6 +1103,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	drawFontSamples()
 
 	renderAsDropdown(authorsContainer, 'authors')
+	renderAsDropdown(licenseContainer, 'licenses')
 
 	// This is declared up above, but it has to be set here, after the font data is parsed
 	defaultFont = customFonts.fontData[0].name
@@ -1099,6 +1163,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div id="authorsContainer">
 				</div>
 				<br>
+				<span class="tagHeader">
+					License:
+				</span>
+				<div id="licenseContainer">
+				</div>
+				<br>
 			</div>
 		</div>
 		<span class="tagHeader">
@@ -1131,6 +1201,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<div id="fontTitle">
 		</div>
 		<div id="fontAuthor">
+		</div>
+		<div id="fontLicense">
 		</div>
 		<div id="fontTags">
 		</div>

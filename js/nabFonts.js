@@ -20,9 +20,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-*/
 
-/*
+---------------------------------------------------------------------------------
+
 	DISCLAIMER:
 	NONE OF THESE FONTS	ARE MADE BY ME. ALL LICENSES THAT I RECIEVED
 	WITH THESE FONTS ARE INCLUDED WITH THEM.
@@ -53,6 +53,7 @@ SOFTWARE.
 				path : '',			// This is the path to the folder the custom fonts are found in
 				tags : [],			// This array contains all the unique tags found in the entire fonts list, with no duplicates
 				authors : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
+				license : [],		// This string is the name of the license for the font
 				names : [],			// This array contains all the unique font names found in the entire fonts list, with no duplicates
 				fontData : [],		// This is an array of objects, sorted by font name, each object corresponding to a single font's attributes
 				errors : []			// This array contains an entry for every font that fails to parse
@@ -113,8 +114,9 @@ SOFTWARE.
 
 */
 
-customFontPath = 'fonts'	//This is the subdirectory the custom fonts are found in, relative to the HTML file loading this library
 
+
+customFontPath = 'fonts'	//This is the subdirectory the custom fonts are found in, relative to the HTML file loading this library
 
 function getCustomFonts() {
 	return [	//	IF YOU ADD ANY ADDITIONAL FONTS, YOU MUST DEFINE THEM AS OBJECTS IN THIS ARRAY.
@@ -128,6 +130,7 @@ function getCustomFonts() {
 					weight		:	"normal"
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Dripping", "Handwriting", "Marker" ]
 		},
 		{
@@ -140,6 +143,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Basic", "Pixelated", "Retro" ]
 		},
 		{
@@ -152,6 +156,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'ShareAlike License',
 			tags		:	[ "Sans-Serif", "Calligraphy", "Modern", "Thick", "Angular" ]
 		},
 		{
@@ -164,6 +169,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
@@ -176,6 +182,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
@@ -188,6 +195,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
@@ -200,6 +208,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful", "Outline", "Thick" ]
 		},
 		{
@@ -212,6 +221,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful", "Outline", "Striped" ]
 		},
 		{
@@ -224,6 +234,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Marker", "Handwriting" ]
 		},
 		{
@@ -236,6 +247,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Offset", "Angular", "Logo" ]
 		},
 		{
@@ -248,6 +260,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Script", "Handwriting", "Thick" ]
 		},
 		{
@@ -260,6 +273,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Script", "Formal" ]
 		},
 		{
@@ -272,6 +286,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Script", "Thick" ]
 		},
 		{
@@ -299,6 +314,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Script", "Thick" ]
 		},
 		{
@@ -311,6 +327,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Retro", "Shadow", "Offset", "Pixelated", "Formal" ]
 		},
 		{
@@ -323,6 +340,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Negative Space", "Retro", "Shadow", "Offset", "Pixelated", "Formal", "3D" ]
 		},
 		{
@@ -335,6 +353,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Elegant", "Script", "Handwriting"  ]
 		},
 		{
@@ -347,6 +366,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Blocks", "3D"  ]
 		},
 		{
@@ -359,6 +379,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful", "Holiday", "Striped" ]
 		},
 		{
@@ -371,6 +392,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Negative Space", "Playful" ]
 		},
 		{
@@ -383,6 +405,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
@@ -395,6 +418,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
@@ -407,6 +431,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern" ]
 		},
 		{
@@ -419,6 +444,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern" ]
 		},
 		{
@@ -431,6 +457,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern", "Negative Space" ]
 		},
 		{
@@ -443,6 +470,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Basic", "Thick", "Modern", "Negative Space" ]
 		},
 		{
@@ -455,6 +483,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Modern" ]
 		},
 		{
@@ -467,6 +496,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Serif", "Monospace", "Basic" ]
 		},
 		{
@@ -479,6 +509,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
@@ -491,6 +522,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick" ]
 		},
 		{
@@ -503,6 +535,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick" ]
 		},
 		{
@@ -515,6 +548,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Thick", "Dotted" ]
 		},
 		{
@@ -527,6 +561,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Game", "Negative Space", "Retro", "Angular" ]
 		},
 		{
@@ -539,6 +574,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Angular", "Monospace", "Blocks", "Elaborate" ]
 		},
 		{
@@ -551,6 +587,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Negative Space", "Monospace", "Elaborate" ]
 		},
 		{
@@ -568,6 +605,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
 		},
 		{
@@ -585,6 +623,7 @@ function getCustomFonts() {
 					weight		:	"200",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern" ]
 		},
 		{
@@ -602,6 +641,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Game", "Modern", "Negative Space" ]
 		},
 		{
@@ -614,6 +654,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Holiday", "Monospace" ]
 		},
 		{
@@ -626,6 +667,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Handwriting", "Marker", "Dripping", "Logo" ]
 		},
 		{
@@ -638,6 +680,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Angular", "Thick" ]
 		},
 		{
@@ -650,6 +693,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
@@ -662,6 +706,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
@@ -674,6 +719,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Elaborate", "Marker" ]
 		},
 		{
@@ -686,6 +732,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Elaborate", "Marker" ]
 		},
 		{
@@ -698,6 +745,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
@@ -710,6 +758,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Logo", "Script" ]
 		},
 		{
@@ -722,6 +771,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Elaborate", "Script" ]
 		},
 		{
@@ -734,6 +784,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
@@ -746,6 +797,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Marker", "Thick", "Calligraphy", "Script" ]
 		},
 		{
@@ -758,6 +810,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
@@ -770,6 +823,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
@@ -782,6 +836,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Script" ]
 		},
 		{
@@ -794,6 +849,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Thick", "Script" ]
 		},
 		{
@@ -806,6 +862,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Thick", "Script" ]
 		},
 		{
@@ -818,6 +875,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Calligraphy", "Marker", "Script" ]
 		},
 		{
@@ -830,6 +888,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Pixelated" ]
 		},
 		{
@@ -842,6 +901,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Game", "Pixelated", "Retro", "Thick" ]
 		},
 		{
@@ -854,6 +914,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Logo", "Script" ]
 		},
 		{
@@ -866,6 +927,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick" ]
 		},
 		{
@@ -878,6 +940,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Negative Space", "Offset" ]
 		},
 		{
@@ -890,6 +953,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular" ]
 		},
 		{
@@ -902,6 +966,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular" ]
 		},
 		{
@@ -914,6 +979,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular", "Elaborate", "Negative Space" ]
 		},
 		{
@@ -926,6 +992,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Thick", "Angular", "Playful" ]
 		},
 		{
@@ -938,6 +1005,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Monospace", "Basic", "Pixelated", "Retro" ]
 		},
 		{
@@ -965,6 +1033,7 @@ function getCustomFonts() {
 					weight		:	"900",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Basic", "Modern", "Thick" ]
 		},
 		{
@@ -977,6 +1046,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Game", "Retro", "Thick", "Angular" ]
 		},
 		{
@@ -989,6 +1059,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful", "Modern", "Thick" ]
 		},
 		{
@@ -1001,6 +1072,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1013,6 +1085,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Dripping", "Thick" ]
 		},
 		{
@@ -1025,6 +1098,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Dripping", "Thick", "Negative Space" ]
 		},
 		{
@@ -1037,6 +1111,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
 		},
 		{
@@ -1049,6 +1124,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Angular" ]
 		},
 		{
@@ -1061,6 +1137,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
 		},
 		{
@@ -1073,6 +1150,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro" ]
 		},
 		{
@@ -1085,6 +1163,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1097,6 +1176,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Modern", "Thick" ]
 		},
 		{
@@ -1109,6 +1189,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'ShareAlike License',
 			tags		:	[ "Sans-Serif", "Modern", "Angular" ]
 		},
 		{
@@ -1121,6 +1202,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1148,6 +1230,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
@@ -1160,6 +1243,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
@@ -1172,6 +1256,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro", "Negative Space" ]
 		},
 		{
@@ -1184,6 +1269,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
@@ -1196,6 +1282,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
@@ -1208,6 +1295,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
@@ -1220,6 +1308,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro", "Outline" ]
 		},
 		{
@@ -1232,6 +1321,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Thick", "Retro" ]
 		},
 		{
@@ -1244,6 +1334,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Negative Space", "Narrow", "Offset" ]
 		},
 		{
@@ -1256,6 +1347,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Negative Space", "Narrow", "Offset" ]
 		},
 		{
@@ -1268,6 +1360,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
@@ -1280,6 +1373,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
@@ -1292,6 +1386,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Logo", "Angular", "Playful", "Thick" ]
 		},
 		{
@@ -1304,6 +1399,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Modern" ]
 		},
 		{
@@ -1316,6 +1412,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow" ]
 		},
 		{
@@ -1328,6 +1425,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Playful" ]
 		},
 		{
@@ -1340,6 +1438,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Playful", "Negative Space" ]
 		},
 		{
@@ -1352,6 +1451,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Narrow", "Thick" ]
 		},
 		{
@@ -1364,6 +1464,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Retro", "Pixelated" ]
 		},
 		{
@@ -1376,6 +1477,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Elaborate" ]
 		},
 		{
@@ -1388,6 +1490,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Game", "Thick", "Modern" ]
 		},
 		{
@@ -1400,6 +1503,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Game", "Thick", "Modern", "Negative Space" ]
 		},
 		{
@@ -1412,6 +1516,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Negative Space", "Thick", "Retro" ]
 		},
 		{
@@ -1424,6 +1529,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Negative Space", "Thick", "Retro" ]
 		},
 		{
@@ -1436,6 +1542,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Monospace", "Basic" ]
 		},
 		{
@@ -1448,6 +1555,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Negative Space" ]
 		},
 		{
@@ -1460,6 +1568,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Basic" ]
 		},
 		{
@@ -1477,6 +1586,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Striped", "Thick" ]
 		},
 		{
@@ -1489,6 +1599,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Celtic", "Gothic", "Elaborate" ]
 		},
 		{
@@ -1501,6 +1612,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Playful" ]
 		},
 		{
@@ -1513,6 +1625,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Smudged" ]
 		},
 		{
@@ -1525,6 +1638,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Monospace", "Holiday" ]
 		},
 		{
@@ -1537,6 +1651,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Playful", "Basic" ]
 		},
 		{
@@ -1549,6 +1664,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Thick", "Western" ]
 		},
 		{
@@ -1561,6 +1677,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Faces" ]
 		},
 		{
@@ -1573,6 +1690,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Faces", "Meme" ]
 		},
 		{
@@ -1585,6 +1703,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Symbol", "Icons" ]
 		},
 		{
@@ -1597,6 +1716,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1609,6 +1729,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Guns" ]
 		},
 		{
@@ -1621,6 +1742,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1633,6 +1755,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1645,6 +1768,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1657,6 +1781,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1669,6 +1794,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1681,6 +1807,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1693,6 +1820,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -1705,6 +1833,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Halloween" ]
 		},
 		{
@@ -1717,6 +1846,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Halloween" ]
 		},
 		{
@@ -1729,6 +1859,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Symbol", "Halloween" ]
 		},
 		{
@@ -1741,6 +1872,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Outline", "Elaborate" ]
 		},
 		{
@@ -1768,6 +1900,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'SIL Open Font License',
 			tags		:	[ "Sans-Serif", "Basic", "Playful" ]
 		},
 		{
@@ -1780,6 +1913,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Slanted", "Thick", "Fast" ]
 		},
 		{
@@ -1792,6 +1926,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Thick", "Outline" ]
 		},
 		{
@@ -1804,6 +1939,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Playful" ]
 		},
 		{
@@ -1816,6 +1952,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Negative Space", "Fire" ]
 		},
 		{
@@ -1828,6 +1965,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Slanted", "Fast" ]
 		},
 		{
@@ -1840,6 +1978,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Crumbling" ]
 		},
 		{
@@ -1857,6 +1996,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
@@ -1869,6 +2009,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Angular", "Modern" ]
 		},
 		{
@@ -1881,6 +2022,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
@@ -1893,6 +2035,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
@@ -1905,6 +2048,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow", "Circuit" ]
 		},
 		{
@@ -1917,6 +2061,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Narrow", "Basic" ]
 		},
 		{
@@ -1929,6 +2074,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thin", "Modern", "Angular" ]
 		},
 		{
@@ -1946,6 +2092,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
@@ -1958,6 +2105,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Kitchen" ]
 		},
 		{
@@ -1970,6 +2118,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Script" ]
 		},
 		{
@@ -1982,6 +2131,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Modern" ]
 		},
 		{
@@ -1994,6 +2144,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Thin", "Halloween" ]
 		},
 		{
@@ -2006,6 +2157,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Playful" ]
 		},
 		{
@@ -2018,6 +2170,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Script" ]
 		},
 		{
@@ -2030,6 +2183,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Thick" ]
 		},
 		{
@@ -2042,6 +2196,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Slanted", "Modern", "Angular", "Narrow" ]
 		},
 		{
@@ -2054,6 +2209,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Shadow" ]
 		},
 		{
@@ -2066,6 +2222,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Modern", "Wide" ]
 		},
 		{
@@ -2078,6 +2235,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Angled", "Angular" ]
 		},
 		{
@@ -2090,6 +2248,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Angular" ]
 		},
 		{
@@ -2102,6 +2261,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
@@ -2114,6 +2274,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Basic" ]
 		},
 		{
@@ -2126,6 +2287,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped" ]
 		},
 		{
@@ -2138,6 +2300,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped", "Negative Space" ]
 		},
 		{
@@ -2150,6 +2313,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -2162,6 +2326,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
@@ -2174,6 +2339,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Angular", "Thick", "Elaborate" ]
 		},
 		{
@@ -2186,6 +2352,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Angular", "Elaborate" ]
 		},
 		{
@@ -2198,6 +2365,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Angular", "Elaborate", "Negative Space" ]
 		},
 		{
@@ -2210,6 +2378,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2222,6 +2391,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2234,6 +2404,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Negative Space" ]
 		},
 		{
@@ -2246,6 +2417,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif" ]
 		},
 		{
@@ -2258,6 +2430,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Modern", "Narrow" ]
 		},
 		{
@@ -2270,6 +2443,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -2282,6 +2456,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Shadow" ]
 		},
 		{
@@ -2294,6 +2469,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Shadow" ]
 		},
 		{
@@ -2306,6 +2482,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -2318,6 +2495,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Cigarettes", "Negative Space", "Elaborate" ]
 		},
 		{
@@ -2330,6 +2508,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thin", "Narrow", "Script" ]
 		},
 		{
@@ -2342,6 +2521,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Modern", "Elaborate" ]
 		},
 		{
@@ -2354,6 +2534,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Playful", "Modern" ]
 		},
 		{
@@ -2366,6 +2547,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thin", "Loopy", "Elaborate", "Handwriting" ]
 		},
 		{
@@ -2378,6 +2560,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -2390,6 +2573,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Playful", "Script" ]
 		},
 		{
@@ -2402,6 +2586,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Shadow" ]
 		},
 		{
@@ -2414,6 +2599,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif" ]
 		},
 		{
@@ -2426,6 +2612,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif" ]
 		},
 		{
@@ -2438,6 +2625,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
@@ -2450,6 +2638,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
 		},
 		{
@@ -2462,6 +2651,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Snow" ]
 		},
 		{
@@ -2474,6 +2664,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Slanted" ]
 		},
 		{
@@ -2486,6 +2677,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Slot Machine", "Monospace" ]
 		},
 		{
@@ -2498,6 +2690,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Modern" ]
 		},
 		{
@@ -2510,6 +2703,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Sequins" ]
 		},
 		{
@@ -2522,6 +2716,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Modern", "Alien" ]
 		},
 		{
@@ -2534,6 +2729,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Basic", "Handwriting", "Basic" ]
 		},
 		{
@@ -2546,6 +2742,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Retro", "Modern" ]
 		},
 		{
@@ -2558,6 +2755,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Retro", "Modern" ]
 		},
 		{
@@ -2570,6 +2768,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Narrow", "Modern" ]
 		},
 		{
@@ -2582,6 +2781,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Decay", "Negative Space" ]
 		},
 		{
@@ -2594,6 +2794,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Thick", "Elaborate", "Decay" ]
 		},
 		{
@@ -2606,6 +2807,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Playful", "Thick" ]
 		},
 		{
@@ -2618,6 +2820,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Negative Space", "Thick", "Shadow" ]
 		},
 		{
@@ -2630,6 +2833,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Modern" ]
 		},
 		{
@@ -2642,6 +2846,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Elaborate" ]
 		},
 		{
@@ -2654,7 +2859,8 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			tags		:	[ "Sans-Serif", "Wide", "Modern" ]
+			license		:	'Public Domain',
+			tags		:	[ "Sans-Serif", "Wide", "Modern", "Angular" ]
 		},
 		{
 			name		:	"Night Court",
@@ -2666,6 +2872,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Playful", "Thick" ]
 		},
 		{
@@ -2678,6 +2885,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Distorted" ]
 		},
 		{
@@ -2690,6 +2898,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Modern", "Wide" ]
 		},
 		{
@@ -2702,6 +2911,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Cars" ]
 		},
 		{
@@ -2714,6 +2924,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Cars" ]
 		},
 		{
@@ -2726,6 +2937,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Modern", "Angular" ]
 		},
 		{
@@ -2738,6 +2950,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Thick" ]
 		},
 		{
@@ -2750,6 +2963,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Paintbrushes" ]
 		},
 		{
@@ -2762,6 +2976,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Striped", "Thick"  ]
 		},
 		{
@@ -2774,6 +2989,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Decay" ]
 		},
 		{
@@ -2786,6 +3002,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thin", "Narrow", "Modern", "Basic" ]
 		},
 		{
@@ -2798,6 +3015,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Playful" ]
 		},
 		{
@@ -2810,6 +3028,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
@@ -2822,6 +3041,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Playful", "Jack-in-the-box" ]
 		},
 		{
@@ -2834,6 +3054,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Basic" ]
 		},
 		{
@@ -2846,6 +3067,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2858,6 +3080,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -2870,6 +3093,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow" ]
 		},
 		{
@@ -2882,6 +3106,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Basic", "Curvy" ]
 		},
 		{
@@ -2894,6 +3119,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2906,6 +3132,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2918,6 +3145,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
 		},
 		{
@@ -2930,6 +3158,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Negative Space" ]
 		},
 		{
@@ -2942,6 +3171,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Calligraphy", "Basic" ]
 		},
 		{
@@ -2954,6 +3184,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Slanted", "Modern" ]
 		},
 		{
@@ -2966,6 +3197,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Slanted", "Wide", "Thick" ]
 		},
 		{
@@ -2978,6 +3210,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Thick" ]
 		},
 		{
@@ -2990,6 +3223,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Symbol", "Faces", "Animals", "Playful" ]
 		},
 		{
@@ -3002,6 +3236,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
@@ -3014,6 +3249,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Modern", "Elaborate" ]
 		},
 		{
@@ -3026,6 +3262,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Decay" ]
 		},
 		{
@@ -3038,6 +3275,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Curvy", "Thick" ]
 		},
 		{
@@ -3050,6 +3288,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Curvy" ]
 		},
 		{
@@ -3062,6 +3301,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Playful", "Elaborate" ]
 		},
 		{
@@ -3074,6 +3314,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Curvy", "Vintage", "Playful" ]
 		},
 		{
@@ -3086,6 +3327,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Thin" ]
 		},
 		{
@@ -3098,6 +3340,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Dashed", "Negative Space" ]
 		},
 		{
@@ -3110,6 +3353,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Wide", "Elaborate" ]
 		},
 		{
@@ -3122,6 +3366,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Lightning", "Thick" ]
 		},
 		{
@@ -3134,6 +3379,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Thin", "Elaborate" ]
 		},
 		{
@@ -3146,6 +3392,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Diamond", "Elaborate", "Playful" ]
 		},
 		{
@@ -3158,6 +3405,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Striped", "Playful", "Shadow" ]
 		},
 		{
@@ -3170,6 +3418,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Elaborate" ]
 		},
 		{
@@ -3182,6 +3431,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
@@ -3194,6 +3444,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Decay" ]
 		},
 		{
@@ -3206,6 +3457,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Wavy", "Playful" ]
 		},
 		{
@@ -3233,6 +3485,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Curvy" ]
 		},
 		{
@@ -3270,6 +3523,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Basic" ]
 		},
 		{
@@ -3282,6 +3536,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Gothic", "Negative Space" ]
 		},
 		{
@@ -3294,6 +3549,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
@@ -3306,6 +3562,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Dotted", "Retro" ]
 		},
 		{
@@ -3318,6 +3575,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Calligraphy", "Narrow" ]
 		},
 		{
@@ -3330,6 +3588,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Playful", "Curvy" ]
 		},
 		{
@@ -3342,6 +3601,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Halloween", "Angular" ]
 		},
 		{
@@ -3354,6 +3614,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Elaborate", "Shadow" ]
 		},
 		{
@@ -3366,6 +3627,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Negative Space", "Monospace" ]
 		},
 		{
@@ -3378,6 +3640,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space" ]
 		},
 		{
@@ -3390,6 +3653,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate" ]
 		},
 		{
@@ -3402,6 +3666,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Decay", "Elaborate" ]
 		},
 		{
@@ -3414,6 +3679,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Narrow", "Distorted" ]
 		},
 		{
@@ -3426,6 +3692,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate" ]
 		},
 		{
@@ -3438,6 +3705,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Block", "Elaborate" ]
 		},
 		{
@@ -3450,6 +3718,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Narrow", "Curvy" ]
 		},
 		{
@@ -3462,6 +3731,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Playful" ]
 		},
 		{
@@ -3474,6 +3744,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Negative Space", "Thick" ]
 		},
 		{
@@ -3486,6 +3757,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Gothic", "Elaborate" ]
 		},
 		{
@@ -3498,6 +3770,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Elaborate", "Narrow" ]
 		},
 		{
@@ -3510,6 +3783,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Shadow" ]
 		},
 		{
@@ -3522,6 +3796,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Shadow" ]
 		},
 		{
@@ -3534,6 +3809,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Elaborate", "Shadow", "Negative Space" ]
 		},
 		{
@@ -3546,6 +3822,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Serif", "Thick", "Curvy" ]
 		},
 		{
@@ -3558,6 +3835,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Public Domain',
 			tags		:	[ "Sans-Serif", "Broken letters", "Angular", "Modern" ]
 		},
 		{
@@ -3570,6 +3848,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Basic" ]
 		},
 		{
@@ -3582,6 +3861,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Negative Space", "Pixelated", "Offset" ]
 		},
 		{
@@ -3594,6 +3874,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol" ]
 		},
 		{
@@ -3606,6 +3887,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Angular", "Anime" ]
 		},
 		{
@@ -3618,6 +3900,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Anime" ]
 		},
 		{
@@ -3630,6 +3913,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Rounded", "Modern" ]
 		},
 		{
@@ -3642,6 +3926,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Decay", "Thick" ]
 		},
 		{
@@ -3654,6 +3939,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Angular", "Sideways" ]
 		},
 		{
@@ -3666,6 +3952,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Decay", "Military", "Broken Letters", "Thick" ]
 		},
 		{
@@ -3678,6 +3965,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Narrow", "Military", "Broken Letters" ]
 		},
 		{
@@ -3690,6 +3978,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Monospace", "Typewriter", "Smudged" ]
 		},
 		{
@@ -3702,6 +3991,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
@@ -3714,6 +4004,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Smudged", "Elaborate" ]
 		},
 		{
@@ -3726,6 +4017,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Marker", "Handwriting" ]
 		},
 		{
@@ -3738,6 +4030,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Thick", "Soviet" ]
 		},
 		{
@@ -3750,6 +4043,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Modern", "Playful" ]
 		},
 		{
@@ -3762,6 +4056,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
@@ -3774,6 +4069,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Striped" ]
 		},
 		{
@@ -3786,6 +4082,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular" ]
 		},
 		{
@@ -3798,6 +4095,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting", "Script" ]
 		},
 		{
@@ -3810,6 +4108,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick" ]
 		},
 		{
@@ -3822,6 +4121,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Dotted", "Monospace" ]
 		},
 		{
@@ -3834,6 +4134,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Military", "Angular", "Broken Letters", "Thick" ]
 		},
 		{
@@ -3846,6 +4147,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Military", "Angular", "Broken Letters", "Thick", "Decay" ]
 		},
 		{
@@ -3858,6 +4160,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Broken Letters", "Thick", "Military" ]
 		},
 		{
@@ -3870,6 +4173,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Soviet", "Angular" ]
 		},
 		{
@@ -3882,6 +4186,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Military", "Thick", "Broken Letters" ]
 		},
 		{
@@ -3894,6 +4199,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Flags" ]
 		},
 		{
@@ -3906,6 +4212,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
@@ -3918,6 +4225,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Angular", "Thick", "Curvy", "Anime", "Elaborate" ]
 		},
 		{
@@ -3930,6 +4238,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Anime", "Broken Letters", "Thick", "Narrow", "Elaborate" ]
 		},
 		{
@@ -3942,6 +4251,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Anime", "Angular", "Thick", "Elaborate" ]
 		},
 		{
@@ -3954,6 +4264,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Playful", "Decay" ]
 		},
 		{
@@ -3966,6 +4277,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
 		},
 		{
@@ -3978,6 +4290,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
 		},
 		{
@@ -3990,6 +4303,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Narrow" ]
 		},
 		{
@@ -4002,6 +4316,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
@@ -4014,6 +4329,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Decay", "Thick" ]
 		},
 		{
@@ -4026,6 +4342,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Typewriter", "Monospace" ]
 		},
 		{
@@ -4038,6 +4355,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Thick", "Curvy" ]
 		},
 		{
@@ -4050,6 +4368,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting" ]
 		},
 		{
@@ -4062,6 +4381,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Decay", "Elaborate" ]
 		},
 		{
@@ -4074,6 +4394,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Smudged", "Thick" ]
 		},
 
@@ -4084,8 +4405,6 @@ function getCustomFonts() {
 
 
 }
-
-
 
 
 
@@ -4180,6 +4499,7 @@ function getFontData(inputFontName) {
 							styles : [],
 							weights : [],
 							tags : [],
+							license : [],
 							path : '',
 						}
 
@@ -4254,8 +4574,9 @@ function fontsLibCheckArraysDuringFiltering(array1, array2, strict = false) {
 function fontsLibParseFontDataIntoNewObject(outputObject, incomingFontData) {
 	outputObject.authors = fontsLibMergeIntoArray(outputObject.authors, incomingFontData.authors)
 	outputObject.tags = fontsLibMergeIntoArray(outputObject.tags, incomingFontData.tags)
+	outputObject.license = incomingFontData.license
 
-	if(incomingFontData.hasOwnProperty('variants')) {
+	if(incomingFontData.hasOwnProperty('variants') && incomingFontData.variants.length > 0) {
 		for(let i = 0; i < incomingFontData.variants.length; i++) {
 			outputObject.styles = fontsLibMergeIntoArray(outputObject.styles, incomingFontData.variants[i].style)
 			outputObject.weights = fontsLibMergeIntoArray(outputObject.weights, incomingFontData.variants[i].weight)
@@ -4280,14 +4601,16 @@ function getFilteredFontList(searchTemplate) {
 					authors	:	[ 'author', 'names', 'array' ],
 					styles	:	[ 'styles', 'array' ],
 					weights	:	[ 'weights', 'array' ],
-					tags	:	[ 'tags', 'array' ]
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'license', 'array' ],
 				},
 				exclude	:	{
 					name	:	nameSearchTerm,
 					authors	:	[ 'author', 'names', 'array' ],
 					styles	:	[ 'styles', 'array' ],
 					weights	:	[ 'weights', 'array' ],
-					tags	:	[ 'tags', 'array' ]
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'license', 'array' ],
 				}
 			}
 	*/
@@ -4331,6 +4654,12 @@ function getFilteredFontList(searchTemplate) {
 			}
 			fontsLibLowercaseArray(searchTemplate.include.tags)
 		}
+		if(searchTemplate.include.hasOwnProperty('licenses')) {
+			if(!Array.isArray(searchTemplate.include.licenses)) {
+				searchTemplate.include.licenses = [ searchTemplate.include.licenses ]
+			}
+			fontsLibLowercaseArray(searchTemplate.include.licenses)
+		}
 	}
 
 	if(searchTemplate.hasOwnProperty('exclude')) {
@@ -4361,6 +4690,12 @@ function getFilteredFontList(searchTemplate) {
 			}
 			fontsLibLowercaseArray(searchTemplate.exclude.tags)
 		}
+		if(searchTemplate.exclude.hasOwnProperty('licenses')) {
+			if(!Array.isArray(searchTemplate.exclude.licenses)) {
+				searchTemplate.exclude.licenses = [ searchTemplate.exclude.licenses ]
+			}
+			fontsLibLowercaseArray(searchTemplate.exclude.licenses)
+		}
 	}
 
 	for(let i = 0; i < customFonts.fontData.length; i++) {
@@ -4385,6 +4720,12 @@ function getFilteredFontList(searchTemplate) {
 			if(searchTemplate.include.hasOwnProperty('tags')) {
 				if(!fontsLibCheckArraysDuringFiltering(customFonts.fontData[i].tags, searchTemplate.include.tags, true)) continue
 			}
+
+			if(searchTemplate.include.hasOwnProperty('licenses')) {
+				if(!customFonts.fontData[i].hasOwnProperty('license')) continue
+				if(!fontsLibCheckArraysDuringFiltering([ customFonts.fontData[i].license ], searchTemplate.include.licenses, true)) continue
+			}
+
 		}
 
 		if(searchTemplate.hasOwnProperty('exclude')) {
@@ -4408,6 +4749,11 @@ function getFilteredFontList(searchTemplate) {
 			if(searchTemplate.exclude.hasOwnProperty('tags')) {
 				if(fontsLibCheckArraysDuringFiltering(customFonts.fontData[i].tags, searchTemplate.exclude.tags, false)) continue
 			}
+
+			if(searchTemplate.exclude.hasOwnProperty('licenses')) {
+				if(!customFonts.fontData[i].hasOwnProperty('license')) continue
+				if(fontsLibCheckArraysDuringFiltering([ customFonts.fontData[i].license ], searchTemplate.exclude.licenses, false)) continue
+			}
 		}
 
 
@@ -4416,6 +4762,7 @@ function getFilteredFontList(searchTemplate) {
 								styles : [],
 								weights : [],
 								tags : [],
+								license : '',
 							}
 		fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[i])
 
@@ -4429,8 +4776,18 @@ function fontsLibAddDataToObject(inputData, outputObject, key, duplicate = false
 	let test = ''
 	keyType = key.toLowerCase()
 
-	for(let i = 0; i < inputData[key].length; i++) {
-		test = inputData[key][i].toLowerCase()
+	let metadata = key
+	if(metadata.toLowerCase() == 'licenses') metadata = 'license'	// A bit hacky, but this isn't plural in some uses
+
+	if(!inputData.hasOwnProperty(metadata)) return
+	if(!outputObject.hasOwnProperty(key)) outputObject[key] = []
+
+	for(let i = 0; i < inputData[metadata].length; i++) {
+		if(metadata == 'license') {
+			test = inputData[metadata].toLowerCase()
+		} else {
+			test = inputData[metadata][i].toLowerCase()
+		}
 
 		match = false
 		for(let j = 0; j < outputObject[key].length; j++) {
@@ -4442,7 +4799,14 @@ function fontsLibAddDataToObject(inputData, outputObject, key, duplicate = false
 				break
 			}
 		}
-		if(match == false) outputObject[key].push({ name : inputData[key][i], count : 1 })
+		if(match == false) {
+			if(metadata == 'license') {
+				outputObject[key].push({ name : inputData[metadata], count : 1 })
+			} else {
+				outputObject[key].push({ name : inputData[metadata][i], count : 1 })
+			}
+		}
+	if(metadata == 'license') break		// Stop executing if this is licenses - we'll just end up looping over every character in the string
 	}
 }
 
@@ -4512,25 +4876,32 @@ function fontsLibParseCustomFonts() {
 	}
 
 
+	customFonts.licenses = []
 	let previousName = ''
 	for(let i = 0; i < customFonts.fontData.length; i++) {
 		if(customFonts.fontData[i].name.toLowerCase() == previousName) {
 			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'tags', true)
 			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'authors', true)
+			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'licenses', true)
 		} else {
 			customFonts.fontNames.push(customFonts.fontData[i].name)
 			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'tags')
 			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'authors')
+			fontsLibAddDataToObject(customFonts.fontData[i], customFonts, 'licenses')
 		}
 		previousName = customFonts.fontData[i].name.toLowerCase()
 	}
-
 	customFonts.authors.sort( function(a, b) {
 	if(a.name > b.name) return 1
 	if(a.name < b.name) return -1
 	return 0
 	})
 	customFonts.tags.sort( function(a, b) {
+	if(a.name > b.name) return 1
+	if(a.name < b.name) return -1
+	return 0
+	})
+	customFonts.licenses.sort( function(a, b) {
 	if(a.name > b.name) return 1
 	if(a.name < b.name) return -1
 	return 0
@@ -4550,6 +4921,7 @@ function fontsLibParseCustomFonts() {
 						}
 					],
 					tags	:	[ "blank" ],
+					licenses	:	[ "SIL Open Font License" ],
 		}])
 
 	// Set the default fonts - USE AN EMPTY STRING FOR NONE
