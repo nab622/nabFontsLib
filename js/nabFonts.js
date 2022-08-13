@@ -118,6 +118,14 @@ SOFTWARE.
 
 customFontPath = 'fonts'	//This is the subdirectory the custom fonts are found in, relative to the HTML file loading this library
 
+// Set the default fonts - USE AN EMPTY STRING FOR NONE
+serifFont		=	'Minya'
+sansSerifFont	=	'Comic Relief'
+cursiveFont		=	'Alex Brush'
+fantasyFont		=	'Holy Union'	// 'Celtic Knots' and 'New Walt Disney Font' are also good fantasy fonts!
+monospaceFont	=	'Cutive Mono'
+
+
 function getCustomFonts() {
 	return [	//	IF YOU ADD ANY ADDITIONAL FONTS, YOU MUST DEFINE THEM AS OBJECTS IN THIS ARRAY.
 		{
@@ -4924,13 +4932,6 @@ function fontsLibParseCustomFonts() {
 					licenses	:	[ "SIL Open Font License" ],
 		}])
 
-	// Set the default fonts - USE AN EMPTY STRING FOR NONE
-	let serifFont		=	'Minya'
-	let sansSerifFont	=	'Comic Relief'
-	let cursiveFont		=	'Alex Brush'
-	let fantasyFont		=	'Holy Union'	// 'Celtic Knots' and 'New Walt Disney Font' are also good fantasy fonts!
-	let monospaceFont	=	'Cutive Mono'
-
 	createDefaultFont(serifFont, 'serif')
 	createDefaultFont(sansSerifFont, 'sans-serif')
 	createDefaultFont(cursiveFont, 'cursive')
@@ -4954,6 +4955,10 @@ function createFontCSS(inputFonts) {
 
 	for(i = 0; i < inputFonts.length; i++) {
 		newStyle = ''
+		if(!inputFonts[i].hasOwnProperty('variants')) {
+			printWarning('Malformed font data: no variants listed!', inputFonts[i])
+			continue
+		}
 		for(j = 0; j < inputFonts[i].variants.length; j++) {
 			// Figure out what format the font is
 			let fontFormat = inputFonts[i].variants[j].path.split('.')

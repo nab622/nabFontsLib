@@ -162,9 +162,9 @@ function readColor(color) {
 function printWarning(message) {
 	warningCount++
 
-	console.log('Warning: ' + message)
+//	console.log('Warning: ' + message)
 	for(let i = 1; i < arguments.length; i++) {
-		console.log('Warning ' + warningCount + ': ', arguments[i])
+		console.log('Warning ' + warningCount + ': ' + message, arguments[i])
 	}
 	if(debug) {
 		console.trace()
@@ -174,9 +174,9 @@ function printWarning(message) {
 function printError(message) {
 	errorCount++
 
-	console.log('Error: ' + message)
+//	console.log('Error: ' + message)
 	for(let i = 1; i < arguments.length; i++) {
-		console.log('Error ' + errorCount + ': ', arguments[i])
+		console.log('Error ' + errorCount + ': ' + message, arguments[i])
 	}
 	if(debug) {
 		console.trace()
