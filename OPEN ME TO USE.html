@@ -719,7 +719,7 @@ function changeSampleText(inputText, updateHash = true) {
 	}
 
 	clearElement(sampleTextArea)
-	sampleTextArea.appendChild(createElement({ elementType: 'div', className: 'characterBoxes', children: [{ elementType: 'span', className: 'sampleCharacter', text: newSampleText } ] }))
+	sampleTextArea.appendChild(createElement({ elementType: 'div', className: 'characterBoxes', children: [{ elementType: 'span', className: 'sampleCharacter', children : superTextMarkup(newSampleText, false) } ] }))
 }
 
 function renderFontSelectionList(fontList) {

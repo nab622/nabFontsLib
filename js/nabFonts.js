@@ -1685,8 +1685,177 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Faces" ]
+		},
+		{
+			name		:	"Champignon",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Champignon - by ClaudeP/Champignon.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'SIL Open Font License',
+			tags		:	[ "Sans-Serif", "Script", "Handwriting", "Elaborate" ]
+		},
+		{
+			name		:	"Champignon Alt Swash",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Champignon - by ClaudeP/champignonaltswash.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'SIL Open Font License',
+			tags		:	[ "Sans-Serif", "Script", "Handwriting", "Elaborate" ]
+		},
+		{
+			name		:	"LouisaCP",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"LouisaCP - By ClaudeP/LouisaCP.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
+		},
+		{
+			name		:	"Bolina",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Bolina - by ClaudeP/Bolina.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
+		},
+		{
+			name		:	"ZenithCP",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"ZenithCP - by ClaudeP/ZenithCP.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Script", "Handwriting" ]
+		},
+		{
+			name		:	"Postface",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Postface - by ClaudeP/Postface.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Thick", "Handwriting", "Marker" ]
+		},
+		{
+			name		:	"OxfordCP",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"OxfordCP - by ClaudeP/OxfordCP.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
+		},
+		{
+			name		:	"Pepinot",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Pepinot - by ClaudeP/pepinot.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Elaborate" ]
+		},
+		{
+			name		:	"UptightC",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"UptightC - by ClaudeP/UptightC.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Modern" ]
+		},
+		{
+			name		:	"Niaisage",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Niaisage - by ClaudeP/Niaisage.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Modern" ]
+		},
+		{
+			name		:	"DojoCP",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"DojoCP - by ClaudeP/DojoCP.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Thick", "Modern" ]
+		},
+		{
+			name		:	"Les Etoiles",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Les Etoiles - by ClaudeP/LesEtoiles.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Elaborate", "Thick" ]
+		},
+		{
+			name		:	"Bonte Divine",
+			authors		:	[ "ClaudeP" ],
+			variants	:	[
+				{
+					path		:	"Bonte Divine - by ClaudeP/BonteDivine.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Curvy" ]
 		},
 		{
 			name		:	"Memetica",
