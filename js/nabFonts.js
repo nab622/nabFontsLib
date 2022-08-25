@@ -4003,19 +4003,6 @@ function getCustomFonts() {
 			tags		:	[ "Serif", "Thick", "Curvy" ]
 		},
 		{
-			name		:	"Sans Forgetica",
-			authors		:	[ "RMIT University" ],
-			variants	:	[
-				{
-					path		:	"Sans Forgetica - by RMIT University/SansForgetica-Regular.otf",
-					style		:	"normal",
-					weight		:	"normal",
-				},
-			],
-			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Broken letters", "Angular", "Modern" ]
-		},
-		{
 			name		:	"Corporate HQ",
 			authors		:	[ "Vic Fieger" ],
 			variants	:	[

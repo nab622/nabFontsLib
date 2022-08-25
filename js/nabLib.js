@@ -151,7 +151,7 @@ function readColor(color) {
 	}
 
 	console.log('Invalid color: \'' + color + '\'')
-	return 'F0F'
+	return 'FFF9'
 }
 
 
@@ -1135,225 +1135,274 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 // -------------------- SUPERTEXT MARKUP --------------------
 // -------------------- SUPERTEXT MARKUP --------------------
 
-superTextMarkupTags = [
-	// Anything in the parameters object will be SuperImposed on the created element. Even elementType is okay to change
-	// 'parameters' are automatically applied styles
-	// 'variables' are things the user can set, like URL links and such, inside the declaring tag, like: "[url link='page.php']Link Text Here[/url]"
-	// noText : true		means that even if the user put text in the tag, it will be ignored (Useful for things like images)
-	// nest : true			means that everything contained within that tag will be a child
-	// noClosingTag : true	means that the parser will not require a closing tag on this element. Uses are things like [br] or [hr]
-	// noMarkup : true	means that the contents of this tag will not be parsed.		BE AWARE THIS IS BUGGED - If you use it on a nested element, it will terminate along with the parent!!
-	// The following are global properties that can be used on any tag:
-	//		fg			=	text color
-	//		bg			=	background color
-	//		font		=	Typeface
-	//		size		=	Font size (Percent, range from 10-500%)
-	//		nomarkup	= 	No other tags inside this tag will be parsed
+superTextMarkupData = {
+	markup : [
+		// Anything in the parameters object will be SuperImposed on the created element. Even elementType is okay to change
+		// 'parameters' are automatically applied styles
+		// 'variables' are things the user can set, like URL links and such, inside the declaring tag, like: "[url link='page.php']Link Text Here[/url]"
+		// noText : true		means that even if the user put text in the tag, it will be ignored (Useful for things like images)
+		// nest : true			means that everything contained within that tag will be a child
+		// noClosingTag : true	means that the parser will not require a closing tag on this element. Uses are things like [br] or [hr]
+		// noMarkup : true	means that the contents of this tag will not be parsed.		BE AWARE THIS IS BUGGED - If you use it on a nested element, it will terminate along with the parent!!
+		// The following are global properties that can be used on any tag:
+		//		fg			=	text color
+		//		bg			=	background color
+		//		font		=	Typeface
+		//		size		=	Font size (Percent, range from 10-500%)
+		//		nomarkup	= 	No other tags inside this tag will be parsed
 
-	// All 'symbol' values correspond to characters in the 'WebHostingHub Glyphs' font. These are intended to be used in a text editor to represent each function.
+		// All 'symbol' values correspond to characters in the 'WebHostingHub Glyphs' font. These are intended to be used in a text editor to represent each function.
 
-	{ tag : 'b',
-						description: 'Bold',
-						symbol : '',
-						parameters : { style : { fontWeight : 'bold' } }
-	},
-	{ tag : 'i',
-						description: 'Italic',
-						symbol : '',
-						parameters : { style : { fontStyle : 'italic' } }
-	},
-	{ tag : 'u',
-						description: 'Underline',
-						symbol : '',
-						parameters : { style : { textDecoration : 'underline' } }
-	},
-	{ tag : 's',
-						description: 'Strikethrough',
-						symbol : '',
-						parameters : { style : { textDecoration : 'line-through' } }
-	},
-	{ tag : 'br',
-						description: 'Line break',
-						symbol : '',
-						noClosingTag : true,
-						noText : true,
-						parameters : { elementType : 'br' }
-	},
-	{ tag : 'hr',
-						description: 'Horizontal Line',
-						symbol : '−',
-						noClosingTag : true,
-						noText : true,
-						parameters : { elementType : 'hr' }, variables : { width : 'width' }
-	},
-	{ tag : 'url',
-						description: 'Hyperlink',
-						symbol : '',
-						nest : true,
-						variables : { href : 'link' },
-						parameters : { elementType : 'a' }
-	},
-	{ tag : 'img',
-						description: 'Image',
-						symbol : '⊷ ',
-						noText : true,
-						variables : { src : 'src' },
-						parameters : { elementType : 'img' }
-	},
-	{ tag : 'c',
-						description: 'Block text and center align',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { width: '100%', textAlign : 'center', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'l',
-						description: 'Block text and left align',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { width: '100%', textAlign : 'left', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'r',
-						description: 'Block text and right align',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { width: '100%', textAlign : 'right', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'j',
-						description: 'Block text and justify',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { width: '100%', textAlign : 'justify', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h1',
-						description: 'Heading 1',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '3em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h2',
-						description: 'Heading 2',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '2.66em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h3',
-						description: 'Heading 3',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '2.33em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h4',
-						description: 'Heading 4',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '2em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h5',
-						description: 'Heading 5',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '1.75em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'h6',
-						description: 'Heading 6',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { fontSize : '1.5em', marginTop : '0px', marginBottom : '0px' } },
-	},
-	{ tag : 'ol',
-						description: 'Ordered list',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'ol' }
-	},
-	{ tag : 'ul',
-						description: 'Unordered list',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'ul' }
-	},
-	{ tag : 'li',
-						description: 'List item',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'li' }
-	},
-	{ tag : 'sub',
-						description: 'Subscript',
-						symbol : '',
-						nest : true,
-						parameters : { style : { verticalAlign : 'sub', fontSize : '0.75em' } }
-	},
-	{ tag : 'sup',
-						description: 'Superscript',
-						symbol : '',
-						nest : true,
-						parameters : { style : { verticalAlign : 'super', fontSize : '0.75em' } }
-	},
-	{ tag : 'color',
-						description: 'Text/background color',
-						symbol : '',
-	},
-	{ tag : 'font',
-						description: 'Switch typeface',
-						symbol : '',
-	},
-	{ tag : 'size',
-						description: 'Font size (Percent, 10 to 500)',
-						symbol : '',
-	},
-	{ tag : 'code',
-						description: 'Code snippet, no markup',
-						symbol : '',
-						noMarkup : true,
-						parameters : { elementType : 'pre', style : { textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '6px 6px', padding : '0.2em', border : '2px inset #333' } }
-	},
-	{ tag : 'quote',
-						description: 'Quote, include markup',
-						symbol : '',
-						nest : true,
-						parameters : { elementType : 'p', style : { textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '6px 6px', padding : '0.2em', border : '2px inset #393939' } }
-	},
-	{ tag : 'nomarkup',
-						description: 'Ignore markup',
-						symbol : '',
-						noMarkup : true
-	},
-]
+		{ tag : 'b',
+							description: 'Bold',
+							symbol : '',
+							category : { name : 'Formatting', index : 1 },
+							parameters : { style : { fontWeight : 'bold' } },
+		},
+		{ tag : 'i',
+							description: 'Italic',
+							symbol : '',
+							category : { name : 'Formatting', index : 2 },
+							parameters : { style : { fontStyle : 'italic' } },
+		},
+		{ tag : 'u',
+							description: 'Underline',
+							symbol : '',
+							category : { name : 'Formatting', index : 3 },
+							parameters : { style : { textDecoration : 'underline' } },
+		},
+		{ tag : 's',
+							description: 'Strikethrough',
+							symbol : '',
+							category : { name : 'Formatting', index : 4 },
+							parameters : { style : { textDecoration : 'line-through' } },
+		},
+		{ tag : 'br',
+							description: 'Line break',
+							symbol : '',
+							noClosingTag : true,
+							noText : true,
+							parameters : { elementType : 'br' },
+		},
+		{ tag : 'hr',
+							description: 'Horizontal Line',
+							symbol : '−',
+							noClosingTag : true,
+							noText : true,
+							category : { name : 'Separators', index : 1 },
+							parameters : { elementType : 'hr' }, variables : { width : 'width' },
+		},
+		{ tag : 'url',
+							description: 'Hyperlink',
+							symbol : '',
+							nest : true,
+							category : { name : 'Links', index : 1 },
+							variables : { href : 'link' },
+							parameters : { elementType : 'a' },
+		},
+		{ tag : 'img',
+							description: 'Image',
+							symbol : '⊷ ',
+							noText : true,
+							category : { name : 'Links', index : 2 },
+							variables : { src : 'src' },
+							parameters : { elementType : 'img' },
+		},
+		{ tag : 'c',
+							description: 'Block text and center align',
+							symbol : '',
+							nest : true,
+							category : { name : 'Alignment', index : 1 },
+							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'center', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'l',
+							description: 'Block text and left align',
+							symbol : '',
+							nest : true,
+							category : { name : 'Alignment', index : 2 },
+							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'left', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'r',
+							description: 'Block text and right align',
+							symbol : '',
+							nest : true,
+							category : { name : 'Alignment', index : 3 },
+							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'right', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'j',
+							description: 'Block text and justify',
+							symbol : '',
+							nest : true,
+							category : { name : 'Alignment', index : 4 },
+							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'justify', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h1',
+							description: 'Block text and make heading 1',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 1 },
+							parameters : { elementType : 'p', style : { fontSize : '3em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h2',
+							description: 'Block text and make heading 2',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 2 },
+							parameters : { elementType : 'p', style : { fontSize : '2.66em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h3',
+							description: 'Block text and make heading 3',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 3 },
+							parameters : { elementType : 'p', style : { fontSize : '2.33em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h4',
+							description: 'Block text and make heading 4',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 4 },
+							parameters : { elementType : 'p', style : { fontSize : '2em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h5',
+							description: 'Block text and make heading 5',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 5 },
+							parameters : { elementType : 'p', style : { fontSize : '1.75em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'h6',
+							description: 'Block text and make heading 6',
+							symbol : '',
+							nest : true,
+							category : { name : 'Heading', index : 6 },
+							parameters : { elementType : 'p', style : { fontSize : '1.5em', marginTop : '0px', marginBottom : '0px' } },
+		},
+		{ tag : 'ol',
+							description: 'Ordered list',
+							symbol : '',
+							nest : true,
+							category : { name : 'Organization', index : 1 },
+							parameters : { elementType : 'ol' },
+		},
+		{ tag : 'ul',
+							description: 'Unordered list',
+							symbol : '',
+							nest : true,
+							category : { name : 'Organization', index : 2 },
+							parameters : { elementType : 'ul' },
+		},
+		{ tag : 'li',
+							description: 'List item',
+							symbol : '',
+							nest : true,
+							category : { name : 'Organization', index : 3 },
+							parameters : { elementType : 'li' },
+		},
+		{ tag : 'sub',
+							description: 'Subscript',
+							symbol : '',
+							nest : true,
+							category : { name : 'Formatting', index : 5 },
+							parameters : { style : { verticalAlign : 'sub', fontSize : '0.75em' } },
+		},
+		{ tag : 'sup',
+							description: 'Superscript',
+							symbol : '',
+							nest : true,
+							category : { name : 'Formatting', index : 6 },
+							parameters : { style : { verticalAlign : 'super', fontSize : '0.75em' } },
+		},
+		{ tag : 'color',
+							description: 'Text/background color',
+							symbol : '',
+							category : { name : 'Formatting', index : 7 },
+		},
+		{ tag : 'font',
+							description: 'Switch typeface',
+							symbol : '',
+							category : { name : 'Formatting', index : 8 },
+		},
+		{ tag : 'size',
+							description: 'Font size (Percent, 10 to 500)',
+							symbol : '',
+							category : { name : 'Formatting', index : 9 },
+		},
+		{ tag : 'code',
+							description: 'Code snippet, no markup',
+							symbol : '',
+							noMarkup : true,
+							category : { name : 'Quote', index : 1 },
+							parameters : { elementType : 'pre', style : { textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #333' } },
+		},
+		{ tag : 'quote',
+							description: 'Quote, include markup',
+							symbol : '',
+							nest : true,
+							category : { name : 'Quote', index : 2 },
+							parameters : { elementType : 'p', style : { textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #393939' } },
+		},
+		{ tag : 'nomarkup',
+							description: 'Ignore markup',
+							symbol : '',
+							noMarkup : true
+		},
+	],
+	smileyFaces : [
+		// All 'replacement' values are done in superTextMarkup. The resulting text from this process is destined for that next.
+		{ text : '[:)]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Smile' },
+		{ text : '[;)]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Wink' },
+		{ text : '[:D]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Grin' },
+		{ text : '[XD]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Eyes closed grin' },
+		{ text : '[>:D]',			font : 'webhostinghub glyphs',		color : 'a00',		character : '',		description : 'Evil grin' },
+		{ text : '[:P]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Stick tongue out' },
+		{ text : '[;P]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Wink with tongue out' },
+		{ text : '[XP]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Eyes closed tongue out' },
+		{ text : '[:(]',			font : 'webhostinghub glyphs',		color : 'bb5',		character : '',		description : 'Frown' },
+		{ text : '[X(]',			font : 'webhostinghub glyphs',		color : 'bb5',		character : '',		description : 'Eyes closed frown' },
+		{ text : '[o.0]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Surprised or confused' },
+		{ text : '[:\'(]',			font : 'webhostinghub glyphs',		color : '3bf',		character : '',			description : 'Crying' },
+		{ text : '[zzz]',			font : 'webhostinghub glyphs',		color : '9cf',		character : '',		description : 'Sleeping' },
+		{ text : '[<3]',			font : 'webhostinghub glyphs',		color : 'f00',		character : '',		description : 'Heart' },
+		{ text : '[trollface]',		font : 'memetica',					color : 'fff',		character : 'T',	size : '210',		description : 'Trollface' },
+	]
+}
 
 // Tags really should be forced to lower case for efficiency down below
-for(let i = 0; i < superTextMarkupTags.length; i++) { superTextMarkupTags[i].tag = superTextMarkupTags[i].tag.toLowerCase() }
+for(let i = 0; i < superTextMarkupData.markup.length; i++) {
+	superTextMarkupData.markup[i].tag = superTextMarkupData.markup[i].tag.toLowerCase()
+}
+
+// Parse the categories
+superTextMarkupData.categories = []
+for(let i = 0; i < superTextMarkupData.markup.length; i++) {
+	if(!superTextMarkupData.markup[i].hasOwnProperty('category')) continue
+	let categoryName = superTextMarkupData.markup[i].category.name.toLowerCase()
+	if(!superTextMarkupData.categories.hasOwnProperty(categoryName)) superTextMarkupData.categories[categoryName] = []
+	superTextMarkupData.categories[categoryName].splice(superTextMarkupData.markup[i].category.index, 1, superTextMarkupData.markup[i])
+}
+
+/*
+for(key in superTextMarkupData.categories) {
+	while(superTextMarkupData.categories[key].length > 0) {
+		if(superTextMarkupData.categories[key][0] == null
+	}
+}
+*/
+
 // This array *MUST* be sorted and then reversed, or tags can get mismatched!
-superTextMarkupTags.sort((a, b)=>{
+superTextMarkupData.markup.sort((a, b)=>{
 	if (a.tag < b.tag) return -1
 	if (a.tag > b.tag) return 1
 	return 0
 }).reverse()
 
-smileyFaces = [
-	// All 'replacement' values are done in superTextMarkup. The resulting text from this process is destined for that next.
-	{ text : '[:)]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Smile' },
-	{ text : '[;)]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Wink' },
-	{ text : '[:D]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Grin' },
-	{ text : '[XD]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Eyes closed grin' },
-	{ text : '[>:D]',			font : 'webhostinghub glyphs',		color : 'a00',		character : '',		description : 'Evil grin' },
-	{ text : '[:P]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Stick tongue out' },
-	{ text : '[;P]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Wink with tongue out' },
-	{ text : '[XP]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Eyes closed tongue out' },
-	{ text : '[:(]',			font : 'webhostinghub glyphs',		color : 'bb5',		character : '',		description : 'Frown' },
-	{ text : '[X(]',			font : 'webhostinghub glyphs',		color : 'bb5',		character : '',		description : 'Eyes closed frown' },
-	{ text : '[o.0]',			font : 'webhostinghub glyphs',		color : 'ff0',		character : '',		description : 'Surprised or confused' },
-	{ text : '[:\'(]',			font : 'webhostinghub glyphs',		color : '3bf',		character : '',		description : 'Crying' },
-	{ text : '[zzz]',			font : 'webhostinghub glyphs',		color : '9cf',		character : '',		description : 'Sleeping' },
-	{ text : '[<3]',			font : 'webhostinghub glyphs',		color : 'f00',		character : '',		description : 'Heart' },
-//	{ text : '[trollface]',		font : 'memetica',					color : 'fff',		character : 'T',	size : '200',		description : 'Trollface' },
-]
 
 function addSmileyFaces(inputText) {
 	let fontList = []
 
-	for(let i = 0; i < smileyFaces.length; i++) {
-		if(smileyFaces[i].hasOwnProperty('font')) fontList = joinArraysNoDuplicates(fontList, [ smileyFaces[i].font.toLowerCase() ])
+	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
+		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('font')) fontList = joinArraysNoDuplicates(fontList, [ superTextMarkupData.smileyFaces[i].font.toLowerCase() ])
 	}
 
 	for(let i = 0; i < fontList.length; i++) {
@@ -1366,19 +1415,19 @@ function addSmileyFaces(inputText) {
 
 	if(fontList.length == 0) return inputText		// Terminate if no fonts are present
 
-	for(let i = 0; i < smileyFaces.length; i++) {
-		if(!fontList.includes(smileyFaces[i].font)) {
-			printWarning('Missing font: ' + smileyFaces[i].font)
+	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
+		if(!fontList.includes(superTextMarkupData.smileyFaces[i].font)) {
+			printWarning('Missing font: ' + superTextMarkupData.smileyFaces[i].font)
 			continue
 		}
 
 		let formatting = []
-		if(smileyFaces[i].hasOwnProperty('font')) formatting.push('font="' + smileyFaces[i].font + '"')
-		if(smileyFaces[i].hasOwnProperty('color')) formatting.push('fg=' + smileyFaces[i].color)
-		if(smileyFaces[i].hasOwnProperty('size')) formatting.push('size=' + smileyFaces[i].size)
+		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('font')) formatting.push('font="' + superTextMarkupData.smileyFaces[i].font + '"')
+		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('color')) formatting.push('fg=' + superTextMarkupData.smileyFaces[i].color)
+		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('size')) formatting.push('size=' + superTextMarkupData.smileyFaces[i].size)
 
-		while(inputText.indexOf(smileyFaces[i].text) >= 0) {
-			inputText = inputText.replace(smileyFaces[i].text, '[font ' + formatting.join(' ') + ']' + smileyFaces[i].character + '[/font]')
+		while(inputText.indexOf(superTextMarkupData.smileyFaces[i].text) >= 0) {
+			inputText = inputText.replace(superTextMarkupData.smileyFaces[i].text, '[font ' + formatting.join(' ') + ']' + superTextMarkupData.smileyFaces[i].character + '[/font]')
 		}
 	}
 
@@ -1400,40 +1449,49 @@ function generateSuperTextElement(inputText, preprocessorInfo) {
 	}
 
 	let variables = []
-	for(let i = 0; i < parameters.length; i++) {
+	let i = 0
+	if(parameters.length > 0) {
+		for(let h = 0; h < superTextMarkupData.markup.length; h++) {
+			if(parameters[parameters.length - 1].tag == superTextMarkupData.markup[h].tag && (superTextMarkupData.markup[h].hasOwnProperty('nest') && superTextMarkupData.markup[h].nest == true)) {
+				// If the current tag is nested, ONLY take the nested tag's properties. The children will take care of the rest
+				i = parameters.length - 1
+			}
+		}
+	}
+	for(i; i < parameters.length; i++) {
 		if(parameters[i].hasOwnProperty('variables')) {
 			variables = parameters[i].variables
 		} else {
 			variables = []
 		}
-		for(let h = 0; h < superTextMarkupTags.length; h++) {
-			if(superTextMarkupTags[h].tag == parameters[i].tag) {
-				if(superTextMarkupTags[h].hasOwnProperty('noText') && superTextMarkupTags[h].noText === true) {
+		for(let h = 0; h < superTextMarkupData.markup.length; h++) {
+			if(superTextMarkupData.markup[h].tag == parameters[i].tag) {
+				if(superTextMarkupData.markup[h].hasOwnProperty('noText') && superTextMarkupData.markup[h].noText === true) {
 					output.text = ''
 				}
 
 				if(noMarkup == false) {
-					if(superTextMarkupTags[h].hasOwnProperty('parameters')) {
-						for(parameter in superTextMarkupTags[h].parameters) {
+					if(superTextMarkupData.markup[h].hasOwnProperty('parameters')) {
+						for(parameter in superTextMarkupData.markup[h].parameters) {
 							if(parameter.toLowerCase() == 'style') {
 								// Apply styles here without overwriting anything
-								for(styleKey in superTextMarkupTags[h].parameters.style) {
+								for(styleKey in superTextMarkupData.markup[h].parameters.style) {
 									if(output.style.hasOwnProperty(styleKey)) {
-										output.style[styleKey] += ' ' + superTextMarkupTags[h].parameters.style[styleKey]
+										output.style[styleKey] += ' ' + superTextMarkupData.markup[h].parameters.style[styleKey]
 									} else {
-										output.style[styleKey] = superTextMarkupTags[h].parameters.style[styleKey]
+										output.style[styleKey] = superTextMarkupData.markup[h].parameters.style[styleKey]
 									}
 								}
 							} else {
-								output[parameter] = superTextMarkupTags[h].parameters[parameter]
+								output[parameter] = superTextMarkupData.markup[h].parameters[parameter]
 							}
 						}
 					}
-					if(superTextMarkupTags[h].hasOwnProperty('variables')) {
-						for(variable in superTextMarkupTags[h].variables) {
-							if(variables.hasOwnProperty(superTextMarkupTags[h].variables[variable])) {
-								output[variable] = variables[superTextMarkupTags[h].variables[variable]]
-								if(superTextMarkupTags[h].tag == 'url' && variable == 'href' && output[variable].toLowerCase().substr(0, 4) == 'http') {
+					if(superTextMarkupData.markup[h].hasOwnProperty('variables')) {
+						for(variable in superTextMarkupData.markup[h].variables) {
+							if(variables.hasOwnProperty(superTextMarkupData.markup[h].variables[variable])) {
+								output[variable] = variables[superTextMarkupData.markup[h].variables[variable]]
+								if(superTextMarkupData.markup[h].tag == 'url' && variable == 'href' && output[variable].toLowerCase().substr(0, 4) == 'http') {
 									// External link! Open in new tab/window
 									output.target = '_blank'
 								}
@@ -1625,8 +1683,8 @@ function processTagInfo(startLoc, inputText, activeMarkups, noMarkup = false) {
 
 function getTagData(tag) {
 	tag = tag.toLowerCase()
-	for(let i = 0; i < superTextMarkupTags.length; i++) {
-		if(tag == superTextMarkupTags[i].tag) return superTextMarkupTags[i]
+	for(let i = 0; i < superTextMarkupData.markup.length; i++) {
+		if(tag == superTextMarkupData.markup[i].tag) return superTextMarkupData.markup[i]
 	}
 	return false
 }
