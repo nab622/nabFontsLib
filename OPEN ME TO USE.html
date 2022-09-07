@@ -53,6 +53,8 @@ body {
 }
 
 #navigationPane {
+	display: flex;
+	flex-direction: column;
 	user-select: none;
 }
 
@@ -176,7 +178,8 @@ body {
 }
 
 #fontSettings {
-	padding: 1%;
+	padding: 0.5em;
+	padding-bottom: 0;
 	flex-shrink: 0;
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -220,7 +223,7 @@ body {
 }
 
 .navigation {
-	padding-left: 10px;
+	display: flex;
 	background-color: #122A12;
 }
 
@@ -242,6 +245,7 @@ body {
 }
 
 #fontSelection {
+	flex: 1 1;
 	border: 2px inset #333;
 	width: 225px;
 	height: 90%;
@@ -253,7 +257,15 @@ body {
 }
 
 .fontSelectionColor {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1;
 	background-color: #321;
+}
+
+.fontSelectionLabel {
+	text-align: center;
+	font-family: 'nabfonts sans-serif';
 }
 
 .filtersHeader {
@@ -360,6 +372,19 @@ body {
 	text-shadow: 1px 1px 1px #EEE;
 }
 
+.formatButtons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.formatButtonsContainer {
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .boldButton {
 	font-weight: bold;
 	font-size: 14pt;
@@ -377,40 +402,36 @@ body {
 	font-family: "heydings controls";
 }
 
-.prevButton {
+.navButtonContainer {
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-style: normal;
 	text-align: left;
-	font-size: 18pt;
-	line-height: 18pt;
-	width: 18pt;
-	font-family: "heydings controls";
+	font-family: "webhostinghub glyphs";
+	font-size: 15pt;
+	line-height: 15pt;
+	width: 15pt;
+	padding: 0.3em;
+}
+
+.prevButton {
 }
 
 .playButton {
-	font-style: normal;
-	text-align: left;
-	font-size: 18pt;
-	line-height: 18pt;
-	width: 18pt;
-	font-family: "heydings controls";
 }
 
 .stopButton {
-	font-style: normal;
-	text-align: left;
-	font-size: 18pt;
-	line-height: 18pt;
-	width: 18pt;
-	font-family: "heydings controls";
 }
 
 .nextButton {
-	font-style: normal;
-	text-align: left;
-	font-size: 18pt;
-	line-height: 18pt;
-	width: 18pt;
-	font-family: "heydings controls";
 }
 
 </style>
@@ -421,7 +442,7 @@ body {
 defaultFont = ''
 defaultFontSize = 48
 
-fontRotationDelay = 3		// Seconds
+fontRotationDelay = 3.5		// Seconds
 rotateFontTimer = null
 
 currentFont = ''
@@ -762,11 +783,16 @@ function updatePage() {
 		changeAllSampleFontSizes(defaultFontSize, false)
 	}
 
-	if(hashData.hasOwnProperty('sampleText')) {
-		sampleTextText.value = hashData.sampleText
-		changeSampleText(sampleTextText.value, false)
+	if(document.activeElement == sampleTextText) {
+		// Text area has focus! Don't change anything
 	} else {
-		changeSampleText('', false)
+		if(hashData.hasOwnProperty('sampleText')) {
+			// Text area does not have focus! Use the hash
+			sampleTextText.value = hashData.sampleText
+			changeSampleText(sampleTextText.value, false)
+		} else {
+			changeSampleText('', false)
+		}
 	}
 
 	if(hashData.hasOwnProperty('bold') && hashData.bold == true) {
@@ -1096,6 +1122,7 @@ function clearNameFilter() {
 
 function clearSampleText() {
 	changeSampleText('')
+	sampleTextText.value = ''
 	sampleTextText.focus()
 }
 
@@ -1138,10 +1165,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<div class="slidecontainer">
 				<input type="range" min="8" max="300" value="4" step="4" id="fontSize" onchange="changeAllSampleFontSizes(this.value)" />
 			</div>
-			<br>
-				<div id="boldButton" title="Bold" class="button boldButton" onclick="toggleBold()">6</div>
-				<div id="italicButton" title="Italic" class="button italicButton" onclick="toggleItalic()">7</div>
-			<br>
+			<div class="formatButtons">
+				<div class="formatButtonsContainer">
+				</div>
+				<div class="formatButtonsContainer">
+					<div id="boldButton" title="Bold" class="button boldButton" onclick="toggleBold()">6</div>
+				</div>
+				<div class="formatButtonsContainer">
+					<div id="italicButton" title="Italic" class="button italicButton" onclick="toggleItalic()">7</div>
+				</div>
+				<div class="formatButtonsContainer">
+				</div>
+			</div>
 			<hr width="85%"></hr>
 			<div>
 				<div class="filtersHeader">
@@ -1184,14 +1219,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	<div id="navigationPane">
 		<div class="navigation">
-			<div id="prevButton" title="Previous Font" class="button prevButton" onclick="prev()">&lt;</div>
-			<div id="playButton" title="Play" class="button playButton" onclick="play()">P</div>
-			<div id="stopButton" title="Stop" class="button stopButton" onclick="stop()">S</div>
-			<div id="nextButton" title="Next Font" class="button nextButton" onclick="next()">&gt;</div>
+			<div class="navButtonContainer">
+				<div id="prevButton" title="Previous Font" class="button navButton prevButton" onclick="prev()"><span></span></div>
+			</div>
+			<div class="navButtonContainer">
+				<div id="playButton" title="Play" class="button navButton playButton" onclick="play()"><span></span></div>
+			</div>
+			<div class="navButtonContainer">
+				<div id="stopButton" title="Stop" class="button navButton stopButton" onclick="stop()"><span></span></div>
+			</div>
+			<div class="navButtonContainer">
+				<div id="nextButton" title="Next Font" class="button navButton nextButton" onclick="next()"><span></span></div>
+			</div>
 		</div>
 		<div class="fontSelectionColor">
-			Fonts:
-			<br>
+			<span class="fontSelectionLabel">Fonts:</span>
 			<select id="fontSelection" size="15" class="fontSelectionColor" onchange="changeAllSampleFonts(this.value)">
 			</select>
 		</div>
