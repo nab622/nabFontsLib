@@ -50,7 +50,7 @@ SOFTWARE.
 
 		PARSED FONTS WILL BE STORED IN THE FOLLOWING OBJECT:
 			customFonts = {
-				path : '',			// This is the path to the folder the custom fonts are found in
+				paths : [],			// This is array of paths to the custom fonts (A single font can have many files)
 				tags : [],			// This array contains all the unique tags found in the entire fonts list, with no duplicates
 				authors : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
 				license : [],		// This string is the name of the license for the font
@@ -89,6 +89,7 @@ SOFTWARE.
 					styles	: [],
 					weights	: [],
 					tags	: [],
+					paths	: [],
 				}
 
 
@@ -4603,7 +4604,7 @@ The above font data will be parsed, style tags with the appropriate @font-family
 each font is available to CSS, and the data will be sorted into the customFonts object below (globally-accessible):
 */
 customFonts = {
-	path : '',			// This is the path to the folder the custom fonts are found in
+	paths : [],			// This is array of paths to the custom fonts (A single font can have many files)
 	tags : [],			// This array contains all the unique tags found in the entire fonts list, with no duplicates
 	authors : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
 	fontNames : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
@@ -4664,7 +4665,7 @@ function getFontData(inputFontName) {
 							weights : [],
 							tags : [],
 							license : [],
-							path : '',
+							paths : [],
 						}
 
 	fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[fontIndex])
@@ -4744,6 +4745,7 @@ function fontsLibParseFontDataIntoNewObject(outputObject, incomingFontData) {
 		for(let i = 0; i < incomingFontData.variants.length; i++) {
 			outputObject.styles = fontsLibMergeIntoArray(outputObject.styles, incomingFontData.variants[i].style)
 			outputObject.weights = fontsLibMergeIntoArray(outputObject.weights, incomingFontData.variants[i].weight)
+			outputObject.paths.push(customFontPath + '/' + incomingFontData.variants[i].path)
 		}
 	} else {
 		outputObject.styles = [ 'normal' ]
@@ -4926,6 +4928,7 @@ function getFilteredFontList(searchTemplate) {
 								styles : [],
 								weights : [],
 								tags : [],
+								paths : [],
 								license : '',
 							}
 		fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[i])

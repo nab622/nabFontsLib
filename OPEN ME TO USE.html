@@ -118,6 +118,12 @@ body {
 	font-family: 'nabfonts monospace';
 }
 
+#fontPaths {
+	text-align: center;
+	font-size: 12pt;
+	font-family: 'nabfonts monospace';
+}
+
 .fontAuthor {
 	color: #4CC;
 }
@@ -128,6 +134,16 @@ body {
 
 .fontTags {
 	color: #CC4;
+}
+
+.fontPaths:hover {
+	filter: none;
+	background-color: #FFF3;
+}
+
+.fontPaths {
+	filter: saturation(50%);
+	text-decoration: none;
 }
 
 .clickable:hover {
@@ -200,8 +216,8 @@ body {
 	display: block;
 }
 
-.fullWidth {
-	display: block;
+.hidden { 
+	display: none;
 }
 
 #authorsDropdown {
@@ -225,6 +241,14 @@ body {
 .navigation {
 	display: flex;
 	background-color: #122A12;
+}
+
+.playbackTimer {
+	font-size: 0.9em;
+	display: flex;
+	gap: 0.5em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
 }
 
 .fontSelectionItem:hover {
@@ -261,11 +285,6 @@ body {
 	flex-direction: column;
 	flex: 1 1;
 	background-color: #321;
-}
-
-.fontSelectionLabel {
-	text-align: center;
-	font-family: 'nabfonts sans-serif';
 }
 
 .filtersHeader {
@@ -352,7 +371,7 @@ body {
 .button {
 	color: #EEE;
 	border: 2px outset #555;
-	border-radius: 25%;
+	border-radius: 0.5em;
 	background-color: #333;
 	cursor: pointer;
 	text-align: center;
@@ -442,7 +461,6 @@ body {
 defaultFont = ''
 defaultFontSize = 48
 
-fontRotationDelay = 3.5		// Seconds
 rotateFontTimer = null
 
 currentFont = ''
@@ -482,7 +500,8 @@ function parseSample(inputString, element) {
 
 function drawAllCharacters(index = 0) {
 	let maxChars = 1114112
-	let increment = 100000	// Each iteration of this function will render this many, wait, then call itself
+	let increment = 1114112	// Each iteration of this function will render this many, wait, then call itself
+		// Increment is likely no longer needed because these are hidden on page load anyway, so everything has time to catch up
 
 	increment += index
 
@@ -556,6 +575,7 @@ function changeAllSampleFonts(inputFont, updateHash = true) {
 	clearElement(fontAuthor)
 	clearElement(fontLicense)
 	clearElement(fontTags)
+	clearElement(fontPaths)
 
 	fontTitle.appendChild(createElement({ elementType: 'span', text: tempFont.name }))
 
@@ -585,6 +605,13 @@ function changeAllSampleFonts(inputFont, updateHash = true) {
 		if(i + 1 < tempFont.tags.length) {
 			fontTags.appendChild(createElement({ elementType: 'span', text: ', ' }))
 		}
+	}
+
+	fontPaths.appendChild(createElement({ elementType: 'span', text: 'File Paths (Click to download):' }))
+	fontPathColors = [ '#0F0', '#0FF', '#00F', '#F0F', '#F00', '#FF0' ]
+	for(let i = 0; i < tempFont.paths.length; i++) {
+		fontPaths.appendChild(createElement({ elementType: 'br' }))
+		fontPaths.appendChild(createElement({ elementType: 'a', href : tempFont.paths[i], download : 'true', className : 'fontPaths clickable', style : { color : fontPathColors[i % fontPathColors.length] }, text: tempFont.paths[i] }))
 	}
 }
 
@@ -680,7 +707,7 @@ function stop() {
 }
 
 function play() {
-	rotateFontTimer = setTimeout(()=>{ next(); play() }, fontRotationDelay * 1000)
+	rotateFontTimer = setTimeout(()=>{ next(); play() }, clamp(playbackDelay.value, 1, 15) * 1000)
 	addClassName(playButton, 'activeButton')
 }
 
@@ -860,10 +887,14 @@ function updatePage() {
 		setSelectValue(licensesDropdown, '', false)
 	}
 
-	if(filters.include && filters.include.name) {
-		nameFilter.value = filters.include.name
+	if(document.activeElement == nameFilter) {
+		// Text area has focus! Don't change anything
 	} else {
-		nameFilter.value = ''
+		if(filters.include && filters.include.name) {
+			nameFilter.value = filters.include.name
+		} else {
+			nameFilter.value = ''
+		}
 	}
 
 	clearElement(cssValue)
@@ -1117,6 +1148,7 @@ function changeNameFilter(newText, updateHash = true) {
 
 function clearNameFilter() {
 	changeNameFilter('')
+	nameFilter.value = ''
 	nameFilter.focus()
 }
 
@@ -1232,8 +1264,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				<div id="nextButton" title="Next Font" class="button navButton nextButton" onclick="next()"><span></span></div>
 			</div>
 		</div>
+		<div class="navigation playbackTimer">
+			<span style="flex: 1 1;">Display time:</span>
+			<input id="playbackDelay" style="text-align: center;" onchange="stop(); play();" type="number" min="1" max="15" value="3.5">
+		</div>
 		<div class="fontSelectionColor">
-			<span class="fontSelectionLabel">Fonts:</span>
+			<span class="tagHeader">Fonts:</span>
 			<select id="fontSelection" size="15" class="fontSelectionColor" onchange="changeAllSampleFonts(this.value)">
 			</select>
 		</div>
@@ -1247,6 +1283,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<div id="fontLicense">
 		</div>
 		<div id="fontTags">
+		</div>
+		<br>
+		<div id="fontPaths">
 		</div>
 		<br>
 		<div>
@@ -1285,7 +1324,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			<br>
 			<div id="allCharacters" class="characterSampleContainers fullWidth">
 				<div class="characterBoxes">
-					<div id="allCharactersOutput" class="sampleCharacter">
+					<div class="button" style="padding:0.25em 1em 0.25em 1em; font-family: 'nabfonts sans-serif'" onclick="if(hideAllCharacters.className.includes('hidden')) { removeClassName(hideAllCharacters, 'hidden') } else { addClassName(hideAllCharacters, 'hidden') }">Click to show/hide all 1,114,112 Unicode characters.<br>WARNING: WILL CAUSE LAG!</div>
+					<div id="hideAllCharacters" class="hidden fullWidth">
+						<div id="allCharactersOutput" class="sampleCharacter">
+						</div>
 					</div>
 				</div>
 			</div>
