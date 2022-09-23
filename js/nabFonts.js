@@ -139,7 +139,7 @@ function getCustomFonts() {
 					weight		:	"normal"
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Elaborate", "Dripping", "Handwriting", "Marker" ]
 		},
 		{
@@ -690,7 +690,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Freeware',
-			tags		:	[ "Sans-Serif", "Angular", "Modern", "Angular", "Thick" ]
+			tags		:	[ "Sans-Serif", "Angular", "Modern", "Thick" ]
 		},
 		{
 			name		:	"Kaliber Round",
@@ -910,7 +910,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Game", "Pixelated", "Retro", "Thick" ]
 		},
 		{
@@ -923,7 +923,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Script" ]
 		},
 		{
@@ -1081,7 +1081,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1159,7 +1159,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro" ]
 		},
 		{
@@ -1172,7 +1172,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1211,7 +1211,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Basic" ]
 		},
 		{
@@ -1239,7 +1239,7 @@ function getCustomFonts() {
 					weight		:	"bold",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Retro", "Angular" ]
 		},
 		{
@@ -1395,7 +1395,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Logo", "Angular", "Playful", "Thick" ]
 		},
 		{
@@ -1551,7 +1551,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Pixelated", "Retro", "Monospace", "Basic" ]
 		},
 		{
@@ -1621,7 +1621,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Handwriting", "Thick", "Playful" ]
 		},
 		{
@@ -1673,7 +1673,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Serif", "Thick", "Western" ]
 		},
 		{
@@ -1868,7 +1868,7 @@ function getCustomFonts() {
 					weight		:	"normal",
 				},
 			],
-			license		:	'Public Domain',
+			license		:	'Freeware',
 			tags		:	[ "Symbol", "Faces", "Meme" ]
 		},
 		{
@@ -4610,6 +4610,1350 @@ customFonts = {
 	fontNames : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
 	fontData : [],		// This is an array of objects, sorted by font name, each object corresponding to a single font's attributes
 	errors : []			// This array contains an entry for every font that fails to parse
+}
+
+
+// Defaults
+fontsLibDefaultFont = ''
+fontsLibDefaultFontSize = 48
+
+fontsLibDisplayTime = 3.5
+
+fontsLibRotateFontTimer = null
+
+fontsLibCurrentFont = ''
+fontsLibCurrentFontSize = 0
+fontsLibFilters = {}
+
+fontsLibUsePageHash = false
+fontsLibPageData = {}	// To be used in place of page hash if hash is disabled
+
+fontsLibSampleText = {
+	capitalLetters		:	"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+	lowercaseLetters	:	"abcdefghijklmnopqrstuvwxyz",
+	punctuation			:	"0123456789+=’'()[]{}<>:,‒–—―…!.«»-‐?\"’“”;/⁄␠·&@*\•^¤¢$€£¥₩₪†‡°¡¿¬#№%‰‱¶′§~¨_|¦⁂☞∴‽※",
+	pangrams			:	[ "The quick brown fox jumps over the lazy dog.", "Amazingly few discotheques provide jukeboxes." ]
+}
+
+
+
+fontsLibStyle = document.createElement('style')
+fontsLibStyle.appendChild(document.createTextNode(`
+.focusHighlight:focus {
+    box-shadow: 0px 0px 0.3em #FF4, inset 0px 0px 0.3em #FF4;
+}
+
+.playbackDelay {
+	width: 5em;
+}
+
+.fontsLibContainer {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+	flex-direction: row;
+    display: flex;
+
+	background-color: #000;
+	color: #EEE;
+	font-family: 'nabfonts monospace';
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+#fontsLibNavigationPane {
+	display: flex;
+	flex-direction: column;
+	user-select: none;
+}
+
+.fontsLibCharacterSampleContainers {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 0 5em;
+	align-items: stretch;
+	padding-bottom: 0.75em;
+}
+
+.fontsLibCharacterSamples {
+	min-width: 1em;
+}
+
+.fontsLibCharacterBoxes:hover {
+	background-color: #222;
+}
+
+.fontsLibCharacterBoxes {
+	text-align: inherit;
+	border: 0.2rem solid #444;
+	padding: 0.5rem;
+}
+
+.fontsLibSampleCharacter {
+	margin: 0.5em;
+	user-select: text;
+}
+
+.fontsLibCharacterHeader {
+	font-size: 35%;
+	color: #777;
+	font-family: 'nabfonts monospace';
+	font-weight: bold;
+	text-align: left;
+}
+
+#fontsLibFontTitle {
+	text-align: center;
+	font-size: 36pt;
+	font-family: 'nabfonts monospace';
+}
+
+#fontsLibFontAuthor {
+	text-align: center;
+	font-size: 18pt;
+	font-family: 'nabfonts monospace';
+}
+
+#fontsLibFontLicense {
+	text-align: center;
+	font-size: 14pt;
+	font-family: 'nabfonts monospace';
+}
+
+#fontsLibFontTags {
+	text-align: center;
+	font-size: 12pt;
+	font-family: 'nabfonts monospace';
+}
+
+#fontsLibFontPaths {
+	text-align: center;
+	font-size: 12pt;
+	font-family: 'nabfonts monospace';
+}
+
+.fontsLibFontAuthor {
+	color: #4CC;
+}
+
+.fontsLibFontLicense {
+	color: #C44;
+}
+
+.fontsLibFontTags {
+	color: #CC4;
+}
+
+.fontsLibFontPaths:hover {
+	filter: none;
+	background-color: #FFF3;
+}
+
+.fontsLibFontPaths {
+	filter: saturation(50%);
+	text-decoration: none;
+}
+
+.fontsLibClickable:hover {
+	color: #F62;
+}
+
+.fontsLibClickable {
+	cursor: pointer;
+}
+
+#fontsLibFontSize {
+	width: 100%;
+}
+
+#fontsLibCSSValue {
+	user-select: all;
+	white-space: break-spaces;
+	text-align: left;
+	font-size: 7pt;
+}
+
+#fontsLibSampleTextArea:focus {
+	box-shadow: 0px 0px 0.5rem #44f, inset 0px 0px 0.25rem #44f;
+}
+
+#fontsLibSampleTextArea {
+	background-color: #000;
+	color: #FFF;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	margin: 0px;
+}
+
+#fontsLibSampleTextText {
+/*
+	width: 100%;
+*/
+}
+
+#fontsLibNameFilter {
+/*
+	width: 100%;
+*/
+}
+
+#fontsLibAllCharacters {
+	word-wrap: break-word;
+}
+
+#fontsLibFontSettings {
+	padding: 0.5em;
+	padding-bottom: 0;
+	flex-shrink: 0;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: #132646;
+	user-select: none;
+}
+
+#fontsLibFontDisplayArea {
+	padding: 1%;
+	overflow-y: scroll;
+	min-width: 0;
+	user-select: none;
+}
+
+.fontsLibFullWidth {
+	display: block;
+}
+
+.fontsLibHidden { 
+	display: none;
+}
+
+.fontsLibauthorsDropdown {
+	width: 15rem;
+}
+
+.fontsLiblicensesDropdown {
+	width: 15rem;
+}
+
+#fontsLibFilteredTagsContainer {
+	font-size: 10pt;
+}
+
+#fontsLibUnusedTagsContainer {
+	font-size: 11pt;
+	flex: 1 1;
+	overflow-y: scroll;
+}
+
+.fontsLibNavigation {
+	display: flex;
+	background-color: #122A12;
+}
+
+.fontsLibPlaybackTimer {
+	font-size: 0.9em;
+	display: flex;
+	gap: 0.5em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+}
+
+.fontsLibFontSelectionItem:hover {
+	background-color: #942;
+}
+
+.fontsLibFontSelectionItem {
+	font-family: 'nabFonts monospace';
+	font-weight: bold;
+	font-size: 12pt;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.fontsLibFontSelectionSample {
+	color: #BBB;
+	padding-left: 1em;
+}
+
+#fontsLibFontSelection {
+	flex: 1 1;
+	border: 0.1rem inset #333;
+	width: 15rem;
+	height: 90%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	color: #FFF;
+	font-size: 14pt;
+	user-select: none;
+}
+
+.fontsLibFontSelectionColor {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1;
+	background-color: #321;
+}
+
+.fontsLibFiltersHeader {
+	text-align: center;
+	font-size: 16pt;
+}
+
+.fontsLibTagHeader {
+	color: #F52;
+}
+
+.fontsLibTagSubGroup {
+	color: #B90;
+}
+
+.fontsLibTag {
+}
+
+.fontsLibIncludedTag:hover {
+	color: #9F9;
+	text-shadow: 0px 0px 0.1em #DDD6;
+}
+
+.fontsLibIncludedTag {
+	cursor: pointer;
+	color: #0F0;
+	font-family: "WebHostingHub Glyphs";
+	font-weight: normal;
+}
+
+.fontsLibExcludedTag:hover {
+	color: #F88;
+	text-shadow: 0px 0px 0.1em #DDD6;
+}
+
+.fontsLibExcludedTag {
+	cursor: pointer;
+	color: #F00;
+	font-family: "WebHostingHub Glyphs";
+	font-weight: normal;
+}
+
+.fontsLibUnusedTag {
+	cursor: pointer;
+	color: #555;
+}
+
+.fontsLibRemoveTag {
+	color: #960;
+	font-family: "WebHostingHub Glyphs";
+}
+
+.fontsLibTagCount {
+	color: #FA0;
+}
+
+.fontsLibTextInputContainer {
+	display: inline-block;
+}
+
+.fontsLibClearButton::before {
+	content: "";
+}
+
+.fontsLibClearButton:hover {
+	color: #F88;
+	text-shadow: 0px 0px 0.1em #DDD6;
+}
+
+.fontsLibClearButton {
+	padding-left: 0.5em;
+	display: inline-block;
+	color: #F33;
+	font-family: "WebHostingHub Glyphs";
+	font-weight: normal;
+}
+
+.fontsLibButton:hover {
+	background-color: #AAA;
+	color: #F90;
+	text-shadow: 0.05em 0.05em 0.05em #000;
+}
+
+.fontsLibButton:active * {
+	transform: translate(0.1em, 0.1em);
+}
+
+.fontsLibButton:active {
+	background-color: #E33;
+	color: #F90;
+	text-shadow: 0.05em 0.05em 0.05em #000;
+}
+
+.fontsLibButton {
+	color: #EEE;
+	border: 0.1em outset #555;
+	border-radius: 0.5em;
+	background-color: #333;
+	cursor: pointer;
+	text-align: center;
+	font-size: 18pt;
+	font-weight: normal;
+	font-style: normal;
+	padding: 0pt 1pt 0pt 1pt;
+	margin: 0.2em;
+	display: inline-block;
+	text-shadow: 0.05em 0.05em 0.05em #000;
+}
+
+.fontsLibActiveButton {
+	color: #000;
+	background-color: #BBB;
+	border-style: inset;
+	text-shadow: 0.05em 0.05em 0.05em #EEE;
+}
+
+.fontsLibFormatButtons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fontsLibFormatButtonsContainer {
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fontsLibBoldButton {
+	font-weight: bold;
+	font-size: 14pt;
+	line-height: 18pt;
+	width: 18pt;
+	font-family: "webhostinghub glyphs";
+}
+
+.fontsLibItalicButton {
+	font-style: italic;
+	text-align: left;
+	font-size: 14pt;
+	line-height: 18pt;
+	width: 18pt;
+	font-family: "webhostinghub glyphs";
+}
+
+.fontsLibNavButtonContainer {
+	flex: 1 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fontsLibNavButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-style: normal;
+	text-align: left;
+	font-family: "webhostinghub glyphs";
+	font-size: 15pt;
+	line-height: 15pt;
+	width: 15pt;
+	padding: 0.3em;
+}
+
+.allCharactersOutput {
+	word-break: break-word;
+}
+
+.fontsLibPrevButton {
+}
+
+.fontsLibPlayButton {
+}
+
+.fontsLibStopButton {
+}
+
+.fontsLibNextButton {
+}
+`))
+document.head.appendChild(fontsLibStyle)
+
+
+
+function fontsLibGetHashData() {
+	if(fontsLibUsePageHash) {
+		return getHashData()
+	} else {
+		return Object.assign(fontsLibPageData)	// Make sure to return a COPY of this object, not the data itself
+	}
+}
+
+function fontsLibSetHashData(input) {
+	if(fontsLibUsePageHash) {
+		setHashData(input)
+	} else {
+		fontsLibPageData = Object.assign(fontsLibPageData, input)
+		fontsLibFilters = {}	// For some reason, without this, the page fails to re-render because the filter values are the same
+		fontsLibUpdatePage()
+	}
+}
+
+function fontsLibDrawFontSamples() {
+	fontsLibParseSample(fontsLibSampleText.capitalLetters, capitalLetters)
+	fontsLibParseSample(fontsLibSampleText.lowercaseLetters, lowercaseLetters)
+	fontsLibParseSample(fontsLibSampleText.punctuation, punctuation)
+
+	let pangramContainer = document.createElement('div')
+	for(let i = 0; i < fontsLibSampleText.pangrams.length; i++) {
+		let newPangram = document.createElement('div')
+		newPangram.id = 'pangram' + (i + 1)
+		newPangram.className = 'fontsLibCharacterSampleContainers fontsLibFullWidth'
+		fontsLibDrawCharacters(fontsLibSampleText.pangrams[i], newPangram, false)
+		pangramContainer.appendChild(newPangram)
+	}
+	pangrams.appendChild(pangramContainer)
+
+	fontsLibDrawAllCharacters()
+}
+
+function fontsLibParseSample(inputString, element) {
+	for(let i = 0; i < inputString.length; i++) {
+		fontsLibDrawCharacters(inputString[i], element)
+	}
+}
+
+function fontsLibDrawAllCharacters(index = 0) {
+	let maxChars = 1114112
+	let increment = 1114112	// Each iteration of this function will render this many, wait, then call itself
+		// Increment is likely no longer needed because these are hidden on page load anyway, so everything has time to catch up
+
+	increment += index
+
+	let output = ''
+	for(index; index < maxChars && index < increment; index++) {
+		output += String.fromCodePoint(index)
+	}
+
+	allCharactersOutput.innerHTML += output
+
+	if(index < maxChars) setTimeout(()=>{ fontsLibDrawAllCharacters(index) }, 1000)
+}
+
+function fontsLibDrawCharacters(characters, element, sampleChars = true) {
+	let newCharacters = document.createElement('div')
+	newCharacters.className = 'fontsLibCharacterBoxes'
+
+	if(sampleChars) {
+		newCharacters.className += ' fontsLibCharacterSamples'
+		let newCharHeader = document.createElement('span')
+		newCharHeader.className = 'fontsLibCharacterHeader'
+		newCharHeader.appendChild(document.createTextNode(characters.toString()))
+		newCharacters.appendChild(newCharHeader)
+		newCharacters.appendChild(document.createElement('br'))
+	}
+
+	let newText = document.createElement('span')
+	newText.appendChild(document.createTextNode(characters.toString()))
+	newText.className = 'fontsLibSampleCharacter'
+	newCharacters.appendChild(newText)
+	element.appendChild(newCharacters)
+}
+
+function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
+	fontsLibStop()
+
+	let tempFont = inputFont
+
+	if(typeof(inputFont) !== 'string') {
+		console.log('fontsLibChangeAllSampleFonts Error: Invalid input type: \'' + inputFont + '\' (' + typeof(inputFont) + ')!')
+		return false
+	} else {
+		tempFont = getFontData(inputFont)
+	}
+
+	if(tempFont == false) {
+		console.log('fontsLibChangeAllSampleFonts Error: Invalid font name: \'' + inputFont + '\'!')
+		return false
+	}
+
+	fontsLibCurrentFont = tempFont.name
+
+	if(updateHash) fontsLibSetHashData({ fontName : fontsLibCurrentFont })
+
+	for(let i = 0; i < fontsLibFontSelection.children.length; i++) {
+		let temp = 'font ' + fontsLibCurrentFont
+		if(fontsLibFontSelection.children[i].id.toLowerCase() == temp.toLowerCase()) {
+			fontsLibFontSelection.children[i].selected = true
+			break
+		}
+	}
+
+	changeFont(fontsLibSampleTextArea, fontsLibCurrentFont, 'Adobe Blank')
+	changeFont(pangrams, fontsLibCurrentFont, 'Adobe Blank')
+	changeFont(capitalLetters, fontsLibCurrentFont, 'Adobe Blank')
+	changeFont(lowercaseLetters, fontsLibCurrentFont, 'Adobe Blank')
+	changeFont(punctuation, fontsLibCurrentFont, 'Adobe Blank')
+	changeFont(fontsLibAllCharacters, fontsLibCurrentFont, 'Adobe Blank')
+
+	clearElement(fontsLibFontTitle)
+	clearElement(fontsLibFontAuthor)
+	clearElement(fontsLibFontLicense)
+	clearElement(fontsLibFontTags)
+	if(typeof(fontsLibFontPaths) !== undefined) {
+		clearElement(fontsLibFontPaths)
+	}
+
+	fontsLibFontTitle.appendChild(createElement({ elementType: 'span', text: tempFont.name }))
+
+	fontsLibFontAuthor.appendChild(createElement({ elementType: 'span', text: 'By: ' }))
+
+	let currentAuthors = []
+	let currentLicenses = []
+	let currentFilters = fontsLibGetHashData()
+	if(currentFilters.hasOwnProperty('filters')) currentFilters = currentFilters.filters
+	if(currentFilters.hasOwnProperty('include')) currentFilters = currentFilters.include
+	if(currentFilters.hasOwnProperty('authors')) currentAuthors = currentFilters.authors
+	if(currentFilters.hasOwnProperty('licenses')) currentLicenses = currentFilters.licenses
+
+	for(let i = 0; i < tempFont.authors.length; i++) {
+		fontsLibFontAuthor.appendChild(createElement({ elementType: 'span', className : 'fontsLibFontAuthor fontsLibClickable', onclick : ()=>{ fontsLibChangeFilters({ unused : currentAuthors, include : { authors : [ tempFont.authors[i] ] } }, 'authors') }, text: tempFont.authors[i] }))
+		if(i + 1 < tempFont.authors.length) {
+			fontsLibFontAuthor.appendChild(createElement({ elementType: 'span', text: ', ' }))
+		}
+	}
+
+	fontsLibFontLicense.appendChild(createElement({ elementType: 'span', text: 'License: ' }))
+	fontsLibFontLicense.appendChild(createElement({ elementType: 'span', className : 'fontsLibFontLicense fontsLibClickable', onclick : ()=>{ fontsLibChangeFilters({ include : { unused : currentLicenses, licenses : [ tempFont.license ] } }, 'licenses') }, text: ((!tempFont.hasOwnProperty('license') || tempFont.license == '') ? 'Unknown' : tempFont.license) }))
+
+	fontsLibFontTags.appendChild(createElement({ elementType: 'span', text: 'Tags: ' }))
+	for(let i = 0; i < tempFont.tags.length; i++) {
+		fontsLibFontTags.appendChild(createElement({ elementType: 'span', className : 'fontsLibFontTags fontsLibClickable', onclick : ()=>{ fontsLibChangeFilters({ include : { tags : [ tempFont.tags[i] ] } }, 'tags') }, text: tempFont.tags[i] }))
+		if(i + 1 < tempFont.tags.length) {
+			fontsLibFontTags.appendChild(createElement({ elementType: 'span', text: ', ' }))
+		}
+	}
+
+	fontsLibFontPaths.appendChild(createElement({ elementType: 'span', text: 'File Paths (Click to download):' }))
+	fontPathColors = [ '#0F0', '#0FF', '#00F', '#F0F', '#F00', '#FF0' ]
+	for(let i = 0; i < tempFont.paths.length; i++) {
+		fontsLibFontPaths.appendChild(createElement({ elementType: 'br' }))
+		fontsLibFontPaths.appendChild(createElement({ elementType: 'a', href : tempFont.paths[i], download : 'true', className : 'fontsLibFontPaths fontsLibClickable', style : { color : fontPathColors[i % fontPathColors.length] }, text: tempFont.paths[i] }))
+	}
+}
+
+function fontsLibBoldFont(inputElement, boldFont = true) {
+	if(boldFont) {
+		boldFont = 'bold'
+	} else {
+		boldFont = 'normal'
+	}
+	inputElement.style.fontWeight = boldFont
+}
+
+function fontsLibItalicFont(inputElement, italicFont = true) {
+	if(italicFont) {
+		italicFont = 'italic'
+	} else {
+		italicFont = 'normal'
+	}
+	inputElement.style.fontStyle = italicFont
+}
+
+function fontsLibSetButtonState(button, activeState = true) {
+	if(activeState) {
+		addClassName(button, 'fontsLibActiveButton')
+	} else {
+		removeClassName(button, 'fontsLibActiveButton')
+	}
+}
+
+function fontsLibSetBold(boldActive) {
+	fontsLibSetButtonState(fontsLibBoldButton, boldActive)
+
+	fontsLibBoldFont(fontsLibSampleTextArea, boldActive)
+	fontsLibBoldFont(pangrams, boldActive)
+	fontsLibBoldFont(capitalLetters, boldActive)
+	fontsLibBoldFont(lowercaseLetters, boldActive)
+	fontsLibBoldFont(punctuation, boldActive)
+	fontsLibBoldFont(fontsLibAllCharacters, boldActive)
+}
+
+function fontsLibSetItalic(italicActive) {
+	fontsLibSetButtonState(fontsLibItalicButton, italicActive)
+
+	fontsLibItalicFont(fontsLibSampleTextArea, italicActive)
+	fontsLibItalicFont(pangrams, italicActive)
+	fontsLibItalicFont(capitalLetters, italicActive)
+	fontsLibItalicFont(lowercaseLetters, italicActive)
+	fontsLibItalicFont(punctuation, italicActive)
+	fontsLibItalicFont(fontsLibAllCharacters, italicActive)
+}
+
+function fontsLibToggleBold() {
+	let temp = fontsLibGetHashData()
+	if(temp.hasOwnProperty('bold') && temp.bold == true) {
+		fontsLibSetHashData({ 'bold' : false })
+		return
+	}
+	fontsLibSetHashData({ 'bold' : true })
+}
+
+function fontsLibToggleItalic() {
+	let temp = fontsLibGetHashData()
+	if(temp.hasOwnProperty('italic') && temp.italic == true) {
+		fontsLibSetHashData({ 'italic' : false })
+		return
+	}
+	fontsLibSetHashData({ 'italic' : true })
+}
+
+function fontsLibChangeAllSampleFontSizes(inputFontSize, updateHash = true) {
+	fontsLibCurrentFontSize = parseInt(inputFontSize)
+	if(isNaN(fontsLibCurrentFontSize)) fontsLibCurrentFontSize = fontsLibDefaultFontSize
+	fontsLibFontSize.value = fontsLibCurrentFontSize
+	fontsLibCurrentFontSize = fontsLibFontSize.value	//This will force fontsLibCurrentFontSize to adhere to the step value of the slider
+
+	if(updateHash) fontsLibSetHashData({ fontSize : parseInt(fontsLibCurrentFontSize) })
+
+	fontsLibSampleTextArea.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+	pangrams.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+	capitalLetters.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+	lowercaseLetters.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+	punctuation.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+	fontsLibAllCharacters.style.fontSize = fontsLibCurrentFontSize.toString() + 'pt'
+
+	clearElement(fontsLibFontSizeText)
+	fontsLibFontSizeText.appendChild(createElement({ elementType: 'span', text: fontsLibCurrentFontSize + ' pt' }))
+	fontsLibFontSize.title = fontsLibCurrentFontSize + ' points'
+}
+
+function fontsLibStop() {
+	clearTimeout(fontsLibRotateFontTimer)
+	removeClassName(fontsLibPlayButton, 'fontsLibActiveButton')
+}
+
+function fontsLibPlay() {
+	clearTimeout(fontsLibRotateFontTimer)
+	fontsLibRotateFontTimer = setTimeout(()=>{ if(document.getElementById('fontsLibPlayButton') === null) return; fontsLibNext(); fontsLibPlay(); }, clamp(parseFloat(playbackDelay.value), 1, 15) * 1000)
+	addClassName(fontsLibPlayButton, 'fontsLibActiveButton')
+}
+
+function fontsLibNext(count = 1) {
+	fontsLibStop()
+
+	let tempIndex = getSelectIndex(fontsLibFontSelection, null)
+	if(tempIndex === null) {
+		tempIndex = 0
+	} else {
+		if(fontsLibFontSelection.children.length == 0) {
+			tempIndex = 0
+		} else {
+			tempIndex = (tempIndex + count) % fontsLibFontSelection.children.length
+		}
+	}
+
+	setSelectIndex(fontsLibFontSelection, tempIndex)
+
+	fontsLibCurrentFont = fontsLibFontSelection.value
+	fontsLibChangeAllSampleFonts(fontsLibCurrentFont)
+}
+
+function fontsLibPrev(count = 1) {
+	fontsLibStop()
+
+	let tempIndex = getSelectIndex(fontsLibFontSelection, null)
+	
+	if(tempIndex === null) {
+		tempIndex = 0
+	} else {
+		if(fontsLibFontSelection.children.length == 0) {
+			tempIndex = 0
+		} else {
+			tempIndex = (tempIndex - count) % fontsLibFontSelection.children.length
+			if(tempIndex < 0) tempIndex += fontsLibFontSelection.children.length
+		}
+	}
+
+	setSelectIndex(fontsLibFontSelection, tempIndex)
+
+	fontsLibCurrentFont = fontsLibFontSelection.value
+	fontsLibChangeAllSampleFonts(fontsLibCurrentFont)
+}
+
+function fontsLibChangeSampleText(inputText, updateHash = true) {
+	let loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+	let newSampleText = loremIpsum
+
+	inputText = inputText.trim()
+
+	if(inputText != '') {
+		newSampleText = inputText
+		if(updateHash) fontsLibSetHashData({ sampleText: newSampleText })
+	} else {
+		if(updateHash) fontsLibSetHashData({ sampleText: '' })
+	}
+
+	clearElement(fontsLibSampleTextArea)
+	fontsLibSampleTextArea.appendChild(createElement({ elementType: 'div', className: 'fontsLibCharacterBoxes', children: [{ elementType: 'span', className: 'fontsLibSampleCharacter', children : superTextMarkup(newSampleText, null, 0) } ] }))
+}
+
+function fontsLibRenderFontSelectionList(fontList) {
+	clearElement(fontsLibFontSelection)
+
+	let test = ''
+	let temp = fontsLibCurrentFont.toLowerCase()
+	for(let i = 0; i < fontList.length; i++) {
+		test = fontList[i].name.toLowerCase()
+
+		let newOption = { elementType: 'option', id: 'font ' + fontList[i].name, value: fontList[i].name, className: 'fontsLibFontSelectionItem', onclick: ()=>{ fontsLibSetHashData({ playbackState : 'stop' }); fontsLibChangeAllSampleFonts(fontList[i].name) }, title : fontList[i].name, children: [
+			{ elementType: 'span', style: { fontFamily: 'nabFonts monospace' }, text: fontList[i].name },
+		] }
+
+		if(test == temp) {
+			newOption.selected = true
+		}
+		fontsLibFontSelection.appendChild(createElement(newOption))
+	}
+}
+
+function fontsLibUpdatePage() {
+	let hashData = fontsLibGetHashData()
+
+	if(hashData.hasOwnProperty('fontName')) {
+		if(fontsLibCurrentFont.toLowerCase() != hashData.fontName.toLowerCase()) {
+			fontsLibCurrentFont = hashData.fontName
+			fontsLibChangeAllSampleFonts(fontsLibCurrentFont, false)
+		}
+	} else {
+		fontsLibChangeAllSampleFonts(fontsLibDefaultFont, false)
+	}
+
+	if(hashData.hasOwnProperty('fontSize')) {
+		if(fontsLibCurrentFontSize != hashData.fontSize) {
+			fontsLibCurrentFontSize = hashData.fontSize
+			fontsLibChangeAllSampleFontSizes(fontsLibCurrentFontSize, false)
+		}
+	} else {
+		fontsLibChangeAllSampleFontSizes(fontsLibDefaultFontSize, false)
+	}
+
+	if(document.activeElement == fontsLibSampleTextText) {
+		// Text area has focus! Don't change anything
+	} else {
+		if(hashData.hasOwnProperty('sampleText')) {
+			// Text area does not have focus! Use the hash
+			fontsLibSampleTextText.value = hashData.sampleText
+			fontsLibChangeSampleText(fontsLibSampleTextText.value, false)
+		} else {
+			fontsLibChangeSampleText('', false)
+		}
+	}
+
+	if(hashData.hasOwnProperty('bold') && hashData.bold == true) {
+		fontsLibSetBold(true)
+	} else {
+		fontsLibSetBold(false)
+	}
+
+	if(hashData.hasOwnProperty('italic') && hashData.italic == true) {
+		fontsLibSetItalic(true)
+	} else {
+		fontsLibSetItalic(false)
+	}
+
+	if(hashData.hasOwnProperty('filters')) {
+		if(!inputsAreIdentical(fontsLibFilters, hashData.filters)) {
+			// Filters have changed!
+			fontsLibFilters = Object.assign(hashData.filters)
+
+			let filteredList =	{	
+									tags : [],
+									authors : [],
+									names : [],
+									styles : [],
+									weights : [],
+									fontData : {}
+								}
+			let metadataList =	{
+									tags : [],
+									authors : [],
+									names : [],
+									styles : [],
+									weights : [],
+								}
+
+			filteredList.fontData = getFilteredFontList(fontsLibFilters)
+
+			for(let i = 0; i < filteredList.fontData.length; i++) {
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'authors')
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'styles')
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'weights')
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'tags')
+				fontsLibAddDataToObject(filteredList.fontData[i], metadataList, 'licenses')
+			}
+			fontsLibRenderAsTags(fontsLibFilteredTagsContainer, 'tags')
+			fontsLibRenderFontSelectionList(getFilteredFontList(fontsLibFilters))
+		}
+	} else {
+		fontsLibFilters = {}
+		fontsLibRenderAsTags(fontsLibFilteredTagsContainer, 'tags')
+		fontsLibRenderFontSelectionList(getFilteredFontList(fontsLibFilters))
+	}
+
+	// This needs to ALWAYS be updated
+	if(fontsLibFilters.include && fontsLibFilters.include.authors && fontsLibFilters.include.authors.length > 0) {
+		setSelectValue(authorsDropdown, fontsLibFilters.include.authors[0], false)
+	} else {
+		setSelectValue(authorsDropdown, '', false)
+	}
+
+	// This needs to ALWAYS be updated
+	if(fontsLibFilters.include && fontsLibFilters.include.licenses && fontsLibFilters.include.licenses.length > 0) {
+		setSelectValue(licensesDropdown, fontsLibFilters.include.licenses[0], false)
+	} else {
+		setSelectValue(licensesDropdown, '', false)
+	}
+
+	if(document.activeElement == fontsLibNameFilter) {
+		// Text area has focus! Don't change anything
+	} else {
+		if(fontsLibFilters.include && fontsLibFilters.include.name) {
+			fontsLibNameFilter.value = fontsLibFilters.include.name
+		} else {
+			fontsLibNameFilter.value = ''
+		}
+	}
+
+	clearElement(fontsLibCSSValue)
+	fontsLibCSSValue.appendChild(createElement({ elementType: 'div', className: 'fontsLibCharacterBoxes', children: [{ elementType: 'span', text: fontsLibGetCSSValue(fontsLibCurrentFont) } ] }))
+}
+
+function fontsLibChangeDropdown(inputDropdown, metadata) {
+	let newValue = getSelectValue(inputDropdown, '')
+
+	let newFilters =	{
+							include	:	{
+								[metadata]	:	[]
+							},
+							unused	:	{
+								[metadata]	:	[]
+							}
+						}
+
+	// match is used here to save the trouble of unnecessarily converting the names to lowercase once a match is found.
+	// There can only ever be one match in a dropdown
+	let match = false
+	for(let i = 0; i < customFonts[metadata].length; i++) {
+		if(!match && newValue != '' && customFonts[metadata][i].name.toLowerCase() == newValue.toLowerCase()) {
+			newFilters.include[metadata].push(customFonts[metadata][i].name)
+			match = true
+		} else {
+			newFilters.unused[metadata].push(customFonts[metadata][i].name)
+		}
+	}
+
+	fontsLibChangeFilters(newFilters, metadata)
+}
+
+function fontsLibChangeFilters(inputFilters, property, updateHash = true) {
+	/*	inputFilters MUST be in the following format:
+			{
+				include	:	{
+					name	:	nameSearchTerm,
+					authors	:	[ 'author', 'names', 'array' ],
+					styles	:	[ 'styles', 'array' ],
+					weights	:	[ 'weights', 'array' ],
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
+				},
+				exclude	:	{
+					name	:	nameSearchTerm,
+					authors	:	[ 'author', 'names', 'array' ],
+					styles	:	[ 'styles', 'array' ],
+					weights	:	[ 'weights', 'array' ],
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
+				},
+				unused	:	{
+					name	:	nameSearchTerm,
+					authors	:	[ 'author', 'names', 'array' ],
+					styles	:	[ 'styles', 'array' ],
+					weights	:	[ 'weights', 'array' ],
+					tags	:	[ 'tags', 'array' ],
+					licenses:	[ 'licenses', 'array' ]
+				}
+			}
+	*/
+
+	let tempFilters = {}
+	let temp = fontsLibGetHashData()
+	if(temp.hasOwnProperty('filters')) {
+		tempFilters = temp.filters
+	}
+
+	if(!tempFilters.hasOwnProperty('include')) tempFilters.include = {}
+	if(!tempFilters.hasOwnProperty('exclude')) tempFilters.exclude = {}
+
+	// Remove any 'unused' items from the filter
+	if(inputFilters.hasOwnProperty('unused') && inputFilters.unused.hasOwnProperty(property)) {
+		for(let i = 0; i < inputFilters.unused[property].length; i++) {
+			inputFilters.unused[property][i] = inputFilters.unused[property][i].toLowerCase()
+		}
+
+		if(tempFilters.hasOwnProperty('include') && tempFilters.include.hasOwnProperty(property)) {
+			for(let i = 0; i < inputFilters.unused[property].length; i++) {
+				removeItemFromArray(tempFilters.include[property], inputFilters.unused[property][i], false)
+			}
+		}
+
+		if(tempFilters.hasOwnProperty('exclude') && tempFilters.exclude.hasOwnProperty(property)) {
+			for(let i = 0; i < inputFilters.unused[property].length; i++) {
+				removeItemFromArray(tempFilters.exclude[property], inputFilters.unused[property][i], false)
+			}
+		}
+	}
+
+	if(	inputFilters.hasOwnProperty('include') &&
+		inputFilters.include.hasOwnProperty(property)) {
+
+		if(	tempFilters.hasOwnProperty('include') &&
+			tempFilters.include.hasOwnProperty(property) &&
+			Array.isArray(tempFilters.include[property])) {
+			tempFilters.include[property] = joinArraysNoDuplicates(tempFilters.include[property], inputFilters.include[property])
+		} else {
+			tempFilters.include[property] = inputFilters.include[property]
+		}
+	}
+
+	if(	inputFilters.hasOwnProperty('exclude') &&
+		inputFilters.exclude.hasOwnProperty(property)) {
+
+		if(	tempFilters.hasOwnProperty('exclude') &&
+			tempFilters.exclude.hasOwnProperty(property) &&
+			Array.isArray(tempFilters.exclude[property])) {
+			tempFilters.exclude[property] = joinArraysNoDuplicates(tempFilters.exclude[property], inputFilters.exclude[property])
+		} else {
+			tempFilters.exclude[property] = inputFilters.exclude[property]
+		}
+	}
+
+	if(tempFilters.hasOwnProperty('include') && tempFilters.include.hasOwnProperty(property) && tempFilters.include[property].length == 0) delete tempFilters.include[property]
+	if(tempFilters.hasOwnProperty('exclude') && tempFilters.exclude.hasOwnProperty(property) && tempFilters.exclude[property].length == 0) delete tempFilters.exclude[property]
+
+	if(updateHash) fontsLibSetHashData({ filters : tempFilters })
+}
+
+function fontsLibRenderAsDropdown(outputElement, metadata) {
+	let selectOutput = { elementType : 'select', className : 'fontsLib' + metadata + 'Dropdown focusHighlight', id : metadata + 'Dropdown', children : [] }
+
+	let allOption = ({ elementType: 'option', value : '', text : '-----  All ' + metadata + ' (' + customFonts[metadata].length + ' ' + metadata + ')  -----' })
+
+	let metadata2 = metadata
+	if(metadata.toLowerCase() == 'licenses') metadata2 = 'license'	// A bit hacky, but this isn't plural in some uses
+
+	let match = false
+	for(let i = 0; i < customFonts[metadata].length; i++) {
+		let newOption = { elementType: 'option', value : customFonts[metadata][i].name, text : customFonts[metadata][i].name + ' (' + customFonts[metadata][i].count + ' ' + pluralize([ 'font', 'fonts' ], customFonts[metadata][i].count) + ')' }
+		if(!match && fontsLibFilters.include && fontsLibFilters.include[metadata] && fontsLibFilters.include[metadata].length > 0) {
+			if(customFonts[metadata][i].name.toLowerCase() == fontsLibFilters.include[metadata][0].toLowerCase()) {
+				newOption.selected = 'selected'
+				match = true
+			}
+		}
+		selectOutput.children.push(newOption)
+	}
+
+	if(!match) {
+		allOption.selected = 'selected'
+	}
+
+	selectOutput.children.unshift(allOption)
+
+	clearElement(outputElement)
+	outputElement.appendChild(createElement(selectOutput))
+
+	// This MUST come after createElement, because the element must be defined before the action can be created
+	document.getElementById([metadata] + 'Dropdown').onchange = ()=>{ fontsLibChangeDropdown(metadata + 'Dropdown', metadata) }
+}
+
+function fontsLibRenderAsTags(outputElement, metadata) {
+	let metadataOutput = 	{
+								includeData	: [],
+								excludeData	: [],
+								unusedData	: []
+							}
+
+	let match = false
+	for(let i = 0; i < customFonts[metadata].length; i++) {
+		match = false
+		if(fontsLibFilters.hasOwnProperty('include') && fontsLibFilters.include.hasOwnProperty(metadata)) {
+			for(let j = 0; j < fontsLibFilters.include[metadata].length; j++) {
+				if(fontsLibFilters.include[metadata][j] == customFonts[metadata][i].name.toLowerCase()) {
+					// This tag is filtered as an include
+					metadataOutput.includeData.push(customFonts[metadata][i])
+					match = true
+					break
+				}
+			}
+		}
+
+		if(match) continue
+
+		if(fontsLibFilters.hasOwnProperty('exclude') && fontsLibFilters.exclude.hasOwnProperty(metadata)) {
+			for(let j = 0; j < fontsLibFilters.exclude[metadata].length; j++) {
+				if(fontsLibFilters.exclude[metadata][j] == customFonts[metadata][i].name.toLowerCase()) {
+					// This tag is filtered as an exclude
+					metadataOutput.excludeData.push(customFonts[metadata][i])
+					match = true
+					break
+				}
+			}
+		}
+
+		if(match) continue
+
+		metadataOutput.unusedData.push(customFonts[metadata][i])
+	}
+
+	clearElement(outputElement)
+
+	if(metadataOutput.includeData.length > 0) {
+		outputElement.appendChild(createElement({ elementType: 'div', className: 'fontsLibTagSubGroup', text : 'Included:' }))
+		for(let i = 0; i < metadataOutput.includeData.length; i++) {
+			if(metadataOutput.includeData[i].count < 1) continue
+			outputElement.appendChild(createElement({ elementType : 'div', title : metadataOutput.includeData[i].name, children : [
+				{ elementType : 'span', className : 'tag', children : [
+					{ elementType : 'span', className : 'fontsLibExcludedTag fontsLibRemoveTag', onclick : ()=>{ fontsLibChangeFilters({ unused : { [metadata] : [ metadataOutput.includeData[i].name ] } }, metadata) }, text : '  ' },
+					{ elementType : 'span', text : metadataOutput.includeData[i].name },
+					{ elementType : 'span', className : 'fontsLibTagCount', text : ' (' + metadataOutput.includeData[i].count + ')' }
+				] }
+			] }))
+		}
+		outputElement.appendChild(createElement({ elementType: 'br' }))
+	}
+
+	if(metadataOutput.excludeData.length > 0) {
+		outputElement.appendChild(createElement({ elementType: 'div', className: 'fontsLibTagSubGroup', text : 'Excluded:' }))
+		for(let i = 0; i < metadataOutput.excludeData.length; i++) {
+			if(metadataOutput.excludeData[i].count < 1) continue
+			outputElement.appendChild(createElement({ elementType : 'div', title : metadataOutput.excludeData[i].name, children : [
+				{ elementType : 'span', className : 'tag', children : [
+					{ elementType : 'span', className : 'fontsLibIncludedTag fontsLibRemoveTag', onclick : ()=>{ fontsLibChangeFilters({ unused : { [metadata] : [ metadataOutput.excludeData[i].name ] } }, metadata) }, text : '  ' },
+					{ elementType : 'span', text : metadataOutput.excludeData[i].name },
+					{ elementType : 'span', className : 'fontsLibTagCount', text : ' (' + metadataOutput.excludeData[i].count + ')' }
+				] }
+			] }))
+		}
+		outputElement.appendChild(createElement({ elementType: 'br' }))
+	}
+
+	// For scrolling purposes, the unused tags need to be in their own container
+	clearElement(fontsLibUnusedTagsContainer)
+	let tempElement = { elementType : 'div', children : [] }
+	for(let i = 0; i < metadataOutput.unusedData.length; i++) {
+		if(metadataOutput.unusedData[i].count < 1) continue
+		fontsLibUnusedTagsContainer.appendChild(createElement({ elementType : 'div', title : metadataOutput.unusedData[i].name, children : [
+			{ elementType : 'span', className : 'tag', children : [
+				{ elementType : 'span', className : 'fontsLibExcludedTag', onclick : ()=>{ fontsLibChangeFilters({ exclude : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : '  ' },
+				{ elementType : 'span', className : 'fontsLibIncludedTag', onclick : ()=>{ fontsLibChangeFilters({ include : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : '  ' },
+				{ elementType : 'span', text : metadataOutput.unusedData[i].name },
+				{ elementType : 'span', className : 'fontsLibTagCount', text : ' (' + metadataOutput.unusedData[i].count + ')' }
+			] }
+		] }))
+	}
+//	fontsLibUnusedTagsContainer.appendChild(createElement(tempElement))
+}
+
+function fontsLibChangeNameFilter(newText, updateHash = true) {
+	if(newText != '') {
+		fontsLibNameFilter.value = newText
+	} else {
+		if(fontsLibFilters.include && fontsLibFilters.include.name) delete fontsLibFilters.include.name
+	}
+	fontsLibChangeFilters({ include : { name : newText } }, 'name', updateHash)
+}
+
+function fontsLibClearNameFilter() {
+	fontsLibChangeNameFilter('')
+	fontsLibNameFilter.value = ''
+	fontsLibNameFilter.focus()
+}
+
+function fontsLibClearSampleText() {
+	fontsLibChangeSampleText('')
+	fontsLibSampleTextText.value = ''
+	fontsLibSampleTextText.focus()
+}
+
+function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
+	let tempHashData = fontsLibGetHashData()
+	if(tempHashData.hasOwnProperty('displayTime')) fontsLibDisplayTime = tempHashData.displayTime
+
+	renderElement.appendChild(createElement({ elementType : 'div', className : 'fontsLibContainer', children : [
+		{ elementType : 'div', id : 'fontsLibFontSettings', children : [
+			{ elementType : 'div', style : { flex : '0 0'}, children : [
+				{ elementType : 'div', text : 'Sample Text:' },
+				{ elementType : 'br' },
+				{ elementType : 'div', className : 'fontsLibTextInputContainer', style : { display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+					{ elementType : 'input', type : 'text', size : '20', className : 'focusHighlight', id : 'fontsLibSampleTextText' },
+					{ elementType : 'div', className : 'fontsLibClearButton', onclick : ()=>{ fontsLibClearSampleText() } },
+				] },
+				{ elementType : 'br' },
+				{ elementType : 'br' },
+				{ elementType : 'span', text : 'Size:' },
+				{ elementType : 'span', id : 'fontsLibFontSizeText' },
+				{ elementType : 'div', className : 'slidecontainer', children : [
+					{ elementType : 'input', type : 'range', min : '8', max : '300', value : '4', step : '4', className : 'focusHighlight', id : 'fontsLibFontSize', onchange : ()=>{ fontsLibChangeAllSampleFontSizes(document.getElementById('fontsLibFontSize').value) } },
+				] },
+				{ elementType : 'div', className : 'fontsLibFormatButtons', children : [
+					{ elementType : 'div', className : 'fontsLibFormatButtonsContainer' },
+					{ elementType : 'div', className : 'fontsLibFormatButtonsContainer', children : [
+						{ elementType : 'div', id : 'fontsLibBoldButton', title : 'Bold', className : 'fontsLibButton fontsLibBoldButton', onclick : ()=>{ fontsLibToggleBold() }, text : '' }
+					]},
+					{ elementType : 'div', className : 'fontsLibFormatButtonsContainer', children : [
+						{ elementType : 'div', id : 'fontsLibItalicButton', title : 'Italic', className : 'fontsLibButton fontsLibItalicButton', onclick : ()=>{ fontsLibToggleItalic() }, text : '' }
+					]},
+					{ elementType : 'div', className : 'fontsLibFormatButtonsContainer' },
+				] },
+				{ elementType : 'hr', width : '85%' },
+				{ elementType : 'div', children : [
+					{ elementType : 'div', className : 'fontsLibFiltersHeader', text : 'Filters' },
+					{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Name:' },
+					{ elementType : 'br' },
+					{ elementType : 'div', className : 'fontsLibTextInputContainer', style : { display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+						{ elementType : 'input', type : 'text', size : '20', className : 'focusHighlight', id : 'fontsLibNameFilter' },
+						{ elementType : 'div', className : 'fontsLibClearButton', onclick : ()=>{ fontsLibClearNameFilter() } },
+					] },
+					{ elementType : 'br' },
+					{ elementType : 'br' },
+					{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Authors:' },
+					{ elementType : 'div', id : 'authorsContainer' },
+					{ elementType : 'br' },
+					{ elementType : 'span', className : 'fontsLibTagHeader', text : 'License:' },
+					{ elementType : 'div', id : 'licenseContainer' },
+					{ elementType : 'br' },
+				] },
+			]},
+			{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Tags:' },
+			{ elementType : 'div', style : { flex : '1 1', display : 'flex', flexDirection : 'column', overflow : 'auto', textAlign : 'left' }, children : [
+				{ elementType : 'div', id : 'fontsLibFilteredTagsContainer' },
+				{ elementType : 'div', id : 'fontsLibUnusedTagsContainer' },
+			] },
+		]},
+		{ elementType : 'div', id : 'fontsLibNavigationPane', children : [
+			{ elementType : 'div', className : 'fontsLibNavigation fontsLibPlaybackTimer', children : [
+				{ elementType : 'span', style : { flex : '1 1' }, text : 'Display Time:' },
+				{ elementType : 'input', id : 'playbackDelay', type : 'number', min : '1', max : '15', value : fontsLibDisplayTime, className : 'playbackDelay focusHighlight', style : { textAlign : 'center' }, onchange : ()=>{ fontsLibSetHashData({ displayTime : document.getElementById('playbackDelay').value }); let tempPlaybackHashData = fontsLibGetHashData(); if(!tempPlaybackHashData.hasOwnProperty('playbackState') || tempPlaybackHashData.playbackState == 'play'){ fontsLibStop(); fontsLibPlay(); } } },
+			]},
+			{ elementType : 'div', className : 'fontsLibNavigation', children : [
+				{ elementType : 'div', className : 'fontsLibNavButtonContainer', children : [
+					{ elementType : 'div', id : 'fontsLibPrevButton', title : 'Previous Font', className : 'fontsLibButton fontsLibNavButton fontsLibPrevButton', onclick : ()=>{ fontsLibPrev() }, text : '' },
+				]},
+				{ elementType : 'div', className : 'fontsLibNavButtonContainer', children : [
+					{ elementType : 'div', id : 'fontsLibPlayButton', title : 'Play', className : 'fontsLibButton fontsLibNavButton fontsLibPlayButton', onclick : ()=>{ fontsLibSetHashData({ playbackState : 'play' }); fontsLibPlay(); }, text : '' },
+				]},
+				{ elementType : 'div', className : 'fontsLibNavButtonContainer', children : [
+					{ elementType : 'div', id : 'fontsLibStopButton', title : 'Stop', className : 'fontsLibButton fontsLibNavButton fontsLibStopButton', onclick : ()=>{ fontsLibSetHashData({ playbackState : 'stop' }); fontsLibStop() }, text : '' },
+				]},
+				{ elementType : 'div', className : 'fontsLibNavButtonContainer', children : [
+					{ elementType : 'div', id : 'fontsLibNextButton', title : 'Next Font', className : 'fontsLibButton fontsLibNavButton fontsLibNextButton', onclick : ()=>{ fontsLibNext() }, text : '' },
+				]},
+			]},
+			{ elementType : 'div', className : 'fontsLibFontSelectionColor', children : [
+				{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Fonts:' },
+				{ elementType : 'select', id : 'fontsLibFontSelection', size : '15', className : 'fontsLibFontSelectionColor focusHighlight' }
+			]},
+		]},
+		{ elementType : 'div', id : 'fontsLibFontDisplayArea', children : [
+			{ elementType : 'div', id : 'fontsLibFontTitle' },
+			{ elementType : 'div', id : 'fontsLibFontAuthor' },
+			{ elementType : 'div', id : 'fontsLibFontLicense' },
+			{ elementType : 'div', id : 'fontsLibFontTags' },
+			{ elementType : 'br' },
+			{ elementType : 'div', id : 'fontsLibFontPaths' },
+			{ elementType : 'div', id : 'fontsLibCSSStyles', children : [
+				{ elementType : 'br' },
+				{ elementType : 'div', children : [
+					{ elementType : 'span', text : 'CSS Style Definition:' },
+					{ elementType : 'pre', id : 'fontsLibCSSValue', className : 'fontsLibCharacterSampleContainers fontsLibFullWidth' },
+				] },
+			]},
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'Sample Text:' },
+				{ elementType : 'pre', id : 'fontsLibSampleTextArea', className : 'fontsLibCharacterSampleContainers fontsLibFullWidth focusHighlight' },
+			] },
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'English Pangrams:' },
+				{ elementType : 'div', id : 'pangrams', className : 'fontsLibFullWidth' },
+			] },
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'Capital Letters:' },
+				{ elementType : 'div', id : 'capitalLetters', className : 'fontsLibCharacterSampleContainers' },
+			] },
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'Lowercase Letters:' },
+				{ elementType : 'div', id : 'lowercaseLetters', className : 'fontsLibCharacterSampleContainers' },
+			] },
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'Numbers, punctuation &amp; Symbols:' },
+				{ elementType : 'div', id : 'punctuation', className : 'fontsLibCharacterSampleContainers' },
+			] },
+			{ elementType : 'div', children : [
+				{ elementType : 'span', text : 'All unicode characters:' },
+				{ elementType : 'div', id : 'fontsLibAllCharacters', className : 'fontsLibCharacterSampleContainers fontsLibFullWidth', children : [
+					{ elementType : 'div', className : 'fontsLibCharacterBoxes', children : [
+						{ elementType : 'div', className : 'fontsLibButton', style : { padding : '0.25em 1em 0.25em 1em', fontFamily : 'nabfonts sans-serif'}, onclick : ()=>{ if(hideAllCharacters.className.includes('fontsLibHidden')) { removeClassName(hideAllCharacters, 'fontsLibHidden') } else { addClassName(hideAllCharacters, 'fontsLibHidden') } }, children : [
+							{ elementType : 'span', text : 'Click to show/hide all 1,114,112 Unicode characters.' },
+							{ elementType : 'br' },
+							{ elementType : 'span', text : 'WARNING: WILL CAUSE LAG!' },
+						] },
+						{ elementType : 'div', id : 'hideAllCharacters', className : 'fontsLibHidden fontsLibFullWidth', children : [
+							{ elementType : 'div', id : 'allCharactersOutput', className : 'fontsLibSampleCharacter allCharactersOutput' }
+						] },
+					] }
+				] },
+			] },
+		]},
+	]}))
+
+	if(fontsLibShowDownloadAndCSS === false) {
+		addClassName(document.getElementById('fontsLibFontPaths'), 'fontsLibHidden')
+		addClassName(document.getElementById('fontsLibCSSStyles'), 'fontsLibHidden')
+	}
+
+	fontsLibDrawFontSamples()
+
+	fontsLibRenderAsDropdown(authorsContainer, 'authors')
+	fontsLibRenderAsDropdown(licenseContainer, 'licenses')
+
+	// This is declared up above, but it has to be set here, after the font data is parsed
+	fontsLibDefaultFont = customFonts.fontData[0].name
+
+	fontsLibUpdatePage()
+
+	fontsLibSampleTextText.oninput = ()=>{ fontsLibChangeSampleText(fontsLibSampleTextText.value, false) }
+	fontsLibSampleTextText.onchange = ()=>{ fontsLibChangeSampleText(fontsLibSampleTextText.value) }
+
+	fontsLibNameFilter.oninput = ()=>{ fontsLibChangeNameFilter(fontsLibNameFilter.value, false) }
+	fontsLibNameFilter.onchange = ()=>{ fontsLibChangeNameFilter(fontsLibNameFilter.value) }
+
+	if(Object.keys(tempHashData).length == 0 || (tempHashData.hasOwnProperty('playbackState') && tempHashData.playbackState == 'play')) {
+		fontsLibChangeAllSampleFonts(getRandomItemsFromArray(customFonts.fontNames)[0])
+		fontsLibPlay()
+	} else if(fontsLibUsePageHash != true) {
+		fontsLibChangeAllSampleFonts(fontsLibFontSelection.value)
+	}
+}
+
+function fontsLibPickRandomFont() {
+	output = []
+	for(let i = 0; i < fontsLibFontSelection.children.length; i++) {
+		output.push(fontsLibFontSelection.children[i].value)
+	}
+	return getRandomItemsFromArray(output)[0]
 }
 
 function changeFont(destinationElement) {
