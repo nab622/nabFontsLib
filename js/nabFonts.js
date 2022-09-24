@@ -4657,7 +4657,6 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	flex-direction: row;
     display: flex;
 
-	background-color: #000;
 	color: #EEE;
 	font-family: 'nabfonts monospace';
 	font-size: 14pt;
@@ -4668,6 +4667,8 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	display: flex;
 	flex-direction: column;
 	user-select: none;
+	border-left: 0.05em solid #000;
+	border-right: 0.05em solid #000;
 }
 
 .fontsLibCharacterSampleContainers {
@@ -4684,7 +4685,7 @@ fontsLibStyle.appendChild(document.createTextNode(`
 }
 
 .fontsLibCharacterBoxes:hover {
-	background-color: #222;
+	background-color: #FFFFFF17;
 }
 
 .fontsLibCharacterBoxes {
@@ -4782,7 +4783,6 @@ fontsLibStyle.appendChild(document.createTextNode(`
 }
 
 #fontsLibSampleTextArea {
-	background-color: #000;
 	color: #FFF;
 	word-wrap: break-word;
 	white-space: pre-wrap;
@@ -4809,17 +4809,19 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	padding: 0.5em;
 	padding-bottom: 0;
 	flex-shrink: 0;
-	overflow-y: hidden;
+	overflow-y: auto;
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
-	background-color: #132646;
 	user-select: none;
+	text-align: left;
 }
 
 #fontsLibFontDisplayArea {
+	background-color: #0009;
 	padding: 1%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	min-width: 0;
 	user-select: none;
 }
@@ -4838,6 +4840,12 @@ fontsLibStyle.appendChild(document.createTextNode(`
 
 .fontsLiblicensesDropdown {
 	width: 15rem;
+}
+
+.fontsLibTag {
+	display: flex;
+	align-items: center;
+	gap: 0.2em;
 }
 
 #fontsLibFilteredTagsContainer {
@@ -4925,6 +4933,8 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	color: #0F0;
 	font-family: "WebHostingHub Glyphs";
 	font-weight: normal;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
 }
 
 .fontsLibExcludedTag:hover {
@@ -4937,6 +4947,8 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	color: #F00;
 	font-family: "WebHostingHub Glyphs";
 	font-weight: normal;
+	padding-left: 0.1em;
+	padding-right: 0.1em;
 }
 
 .fontsLibUnusedTag {
@@ -5000,7 +5012,7 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	font-size: 18pt;
 	font-weight: normal;
 	font-style: normal;
-	padding: 0pt 1pt 0pt 1pt;
+	padding: 0.1em 0.1em 0.1em 0.1em;
 	margin: 0.2em;
 	display: inline-block;
 	text-shadow: 0.05em 0.05em 0.05em #000;
@@ -5032,6 +5044,7 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	line-height: 18pt;
 	width: 18pt;
 	font-family: "webhostinghub glyphs";
+	padding: 0.1em
 }
 
 .fontsLibItalicButton {
@@ -5041,6 +5054,7 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	line-height: 18pt;
 	width: 18pt;
 	font-family: "webhostinghub glyphs";
+	padding: 0.1em
 }
 
 .fontsLibNavButtonContainer {
@@ -5725,7 +5739,7 @@ function fontsLibRenderAsTags(outputElement, metadata) {
 		for(let i = 0; i < metadataOutput.includeData.length; i++) {
 			if(metadataOutput.includeData[i].count < 1) continue
 			outputElement.appendChild(createElement({ elementType : 'div', title : metadataOutput.includeData[i].name, children : [
-				{ elementType : 'span', className : 'tag', children : [
+				{ elementType : 'span', className : 'fontsLibTag', children : [
 					{ elementType : 'span', className : 'fontsLibExcludedTag fontsLibRemoveTag', onclick : ()=>{ fontsLibChangeFilters({ unused : { [metadata] : [ metadataOutput.includeData[i].name ] } }, metadata) }, text : '  ' },
 					{ elementType : 'span', text : metadataOutput.includeData[i].name },
 					{ elementType : 'span', className : 'fontsLibTagCount', text : ' (' + metadataOutput.includeData[i].count + ')' }
@@ -5740,7 +5754,7 @@ function fontsLibRenderAsTags(outputElement, metadata) {
 		for(let i = 0; i < metadataOutput.excludeData.length; i++) {
 			if(metadataOutput.excludeData[i].count < 1) continue
 			outputElement.appendChild(createElement({ elementType : 'div', title : metadataOutput.excludeData[i].name, children : [
-				{ elementType : 'span', className : 'tag', children : [
+				{ elementType : 'span', className : 'fontsLibTag', children : [
 					{ elementType : 'span', className : 'fontsLibIncludedTag fontsLibRemoveTag', onclick : ()=>{ fontsLibChangeFilters({ unused : { [metadata] : [ metadataOutput.excludeData[i].name ] } }, metadata) }, text : '  ' },
 					{ elementType : 'span', text : metadataOutput.excludeData[i].name },
 					{ elementType : 'span', className : 'fontsLibTagCount', text : ' (' + metadataOutput.excludeData[i].count + ')' }
@@ -5756,7 +5770,7 @@ function fontsLibRenderAsTags(outputElement, metadata) {
 	for(let i = 0; i < metadataOutput.unusedData.length; i++) {
 		if(metadataOutput.unusedData[i].count < 1) continue
 		fontsLibUnusedTagsContainer.appendChild(createElement({ elementType : 'div', title : metadataOutput.unusedData[i].name, children : [
-			{ elementType : 'span', className : 'tag', children : [
+			{ elementType : 'span', className : 'fontsLibTag', children : [
 				{ elementType : 'span', className : 'fontsLibExcludedTag', onclick : ()=>{ fontsLibChangeFilters({ exclude : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : '  ' },
 				{ elementType : 'span', className : 'fontsLibIncludedTag', onclick : ()=>{ fontsLibChangeFilters({ include : { [metadata] : [ metadataOutput.unusedData[i].name ] } }, metadata) }, text : '  ' },
 				{ elementType : 'span', text : metadataOutput.unusedData[i].name },
@@ -5795,13 +5809,12 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 	renderElement.appendChild(createElement({ elementType : 'div', className : 'fontsLibContainer', children : [
 		{ elementType : 'div', id : 'fontsLibFontSettings', children : [
 			{ elementType : 'div', style : { flex : '0 0'}, children : [
-				{ elementType : 'div', text : 'Sample Text:' },
+				{ elementType : 'span', text : 'Sample Text:' },
 				{ elementType : 'br' },
 				{ elementType : 'div', className : 'fontsLibTextInputContainer', style : { display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
 					{ elementType : 'input', type : 'text', size : '20', className : 'focusHighlight', id : 'fontsLibSampleTextText' },
 					{ elementType : 'div', className : 'fontsLibClearButton', onclick : ()=>{ fontsLibClearSampleText() } },
 				] },
-				{ elementType : 'br' },
 				{ elementType : 'br' },
 				{ elementType : 'span', text : 'Size:' },
 				{ elementType : 'span', id : 'fontsLibFontSizeText' },
@@ -5828,7 +5841,6 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 						{ elementType : 'div', className : 'fontsLibClearButton', onclick : ()=>{ fontsLibClearNameFilter() } },
 					] },
 					{ elementType : 'br' },
-					{ elementType : 'br' },
 					{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Authors:' },
 					{ elementType : 'div', id : 'authorsContainer' },
 					{ elementType : 'br' },
@@ -5838,7 +5850,7 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 				] },
 			]},
 			{ elementType : 'span', className : 'fontsLibTagHeader', text : 'Tags:' },
-			{ elementType : 'div', style : { flex : '1 1', display : 'flex', flexDirection : 'column', overflow : 'auto', textAlign : 'left' }, children : [
+			{ elementType : 'div', style : { flex : '1 1', display : 'flex', flexDirection : 'column', minHeight : '10em', overflow : 'auto', textAlign : 'left' }, children : [
 				{ elementType : 'div', id : 'fontsLibFilteredTagsContainer' },
 				{ elementType : 'div', id : 'fontsLibUnusedTagsContainer' },
 			] },
@@ -5898,7 +5910,7 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 				{ elementType : 'div', id : 'lowercaseLetters', className : 'fontsLibCharacterSampleContainers' },
 			] },
 			{ elementType : 'div', children : [
-				{ elementType : 'span', text : 'Numbers, punctuation &amp; Symbols:' },
+				{ elementType : 'span', text : 'Numbers, punctuation & Symbols:' },
 				{ elementType : 'div', id : 'punctuation', className : 'fontsLibCharacterSampleContainers' },
 			] },
 			{ elementType : 'div', children : [

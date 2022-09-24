@@ -1882,11 +1882,15 @@ function createModalForm(data) {
 							continue
 						}
 
-//						inputElementToAdd.style = { maxHeight : '90vh' }
-
 						let fontsLibID = 'fontsLib' + inputID
-						inputElementToAdd.children = [{ elementType : 'div', id : fontsLibID, style : { maxHeight : '100%' } }]
-						postRenderExecution.push(()=>{ fontsLibRenderPage(document.getElementById(fontsLibID), false) })
+						inputElementToAdd.children = [{ elementType : 'div', id : fontsLibID, style : { maxWidth : '90vw', maxHeight : 'calc(100vh - 14em)', display : 'flex', flexDirection : 'column' } }]
+						categories[categories.length - 1].style.padding = '0px'
+						postRenderExecution.push(()=>{
+							let fontsLibRenderElement = document.getElementById(fontsLibID)
+							fontsLibRenderPage(fontsLibRenderElement, false);
+//							fontsLibRenderElement.children[0].style.maxHeight = 'calc(90% - 7em)'
+							fontsLibRenderElement.children[0].style.flex = '1 1'
+						})
 
 						// Change the input IDs list to reference the correct element in the fonts library page
 						let lastInputListItem = inputLists.returnInputs[inputLists.returnInputs.length - 1]
@@ -2818,6 +2822,7 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 
 	let terminate = false
 	let nomarkup = false
+	let ignoreNextLineBreak = false
 	for(loc; terminate == false && loc >= 0 && loc < inputText.length; loc++) {
 		loc = inputText.indexOf('[', loc)
 		if(loc < 0) break
@@ -2831,8 +2836,16 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 
 // **************************************************************** OPENING TAGS ****************************************************************
 
-			activeMarkups.push({ tag : result.tagInfo.tag, parameters : result.tagInfo.parameters, variables : result.tagInfo.variables })
 			loc = result.endLoc
+
+			if(ignoreNextLineBreak == true && result.tagInfo.tag == 'br') {
+				ignoreNextLineBreak = false
+				preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
+				continue
+			}
+			ignoreNextLineBreak = false
+			activeMarkups.push({ tag : result.tagInfo.tag, parameters : result.tagInfo.parameters, variables : result.tagInfo.variables })
+
 			preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
 
 			if((result.tagInfo.parameters.hasOwnProperty('noMarkup') && result.tagInfo.parameters.noMarkup === true) || (result.tagInfo.variables.hasOwnProperty('nomarkup') && result.tagInfo.variables.nomarkup.toLowerCase() != 'false')) {
@@ -2859,6 +2872,8 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 				}
 
 				loc = nestedChildren[0].endPoint
+				ignoreNextLineBreak = true
+
 				if(loc <= preprocessor[preprocessor.length - 1].startPoint || loc >= inputText.length) {
 					// If we went backwards or stayed the same, then there's a malformed tag in the nested material and we likely went past the end. Terminate.
 					loc = inputText.length
@@ -2957,11 +2972,14 @@ function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = 
 	// If there is not supposed to be a closing tag, don't do anything with it
 	if(tag.hasOwnProperty('noClosingTag') && tag.noClosingTag === true) closingTag = ''
 
+/*
+// This got annoying really fast
 	if((tag.hasOwnProperty('nest') && tag.nest === true) || (tag.hasOwnProperty('noText') && tag.noText === true)) {
 		if(!(selectionStart > 0 && textArea.value[selectionStart - 1] == ']')) {
 			openingTag = '\n' + openingTag
 		}
 	}
+*/
 
 	let selectedText = additionalText + ''
 
@@ -2972,6 +2990,7 @@ function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = 
 			closingTag = closingTag + '\n'
 		}
 
+		// If we're adding an ordered or unordered list, we should account for that
 		if((tag.tag == 'ol' || tag.tag == 'ul') && selectedText.indexOf('\n') >= 0) {
 			selectedText = selectedText.split('\n')
 			selectedText = '[li]' + selectedText.join('[/li]\n[li]') + '[/li]'
