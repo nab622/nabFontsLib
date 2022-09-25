@@ -1963,6 +1963,19 @@ function getCustomFonts() {
 			tags		:	[ "Symbol" ]
 		},
 		{
+			name		:	"Material Design Icons",
+			authors		:	[ "Google" ],
+			variants	:	[
+				{
+					path		:	"Material Design Icons - by Google/MaterialIconsRound-Regular.otf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Apache License',
+			tags		:	[ "Symbol" ]
+		},
+		{
 			name		:	"WebHostingHub Glyphs",
 			authors		:	[ "Web Hosting Hub" ],
 			variants	:	[
