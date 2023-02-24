@@ -37,6 +37,72 @@ errorCount = 0
 fileSizeDenominations = [ 'byt', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB' ]
 fileSizeColors = [ '33B', '3BB', '3B3', 'BB3', 'B33', 'B3B', '999', 'FFF' ]
 
+nabLibMonths = [
+{	name : 'January',
+	abbr : 'Jan',
+	number : 1,
+},
+{	name : 'February',
+	abbr : 'Feb',
+	number : 2,
+},
+{	name : 'March',
+	abbr : 'Mar',
+	number : 3,
+},
+{	name : 'April',
+	abbr : 'Apr',
+	number : 4,
+},
+{	name : 'May',
+	abbr : 'May',
+	number : 5,
+},
+{	name : 'June',
+	abbr : 'Jun',
+	number : 6,
+},
+{	name : 'July',
+	abbr : 'Jul',
+	number : 7,
+},
+{	name : 'August',
+	abbr : 'Aug',
+	number : 8,
+},
+{	name : 'September',
+	abbr : 'Sep',
+	number : 9,
+},
+{	name : 'October',
+	abbr : 'Oct',
+	number : 10,
+},
+{	name : 'November',
+	abbr : 'Nov',
+	number : 11,
+},
+{	name : 'December',
+	abbr : 'Dec',
+	number : 12,
+},
+]
+
+romanNumerals = [
+	{ 'digit' : 'M',	'value' : 1000 },
+	{ 'digit' : 'CM',	'value' : 900 },
+	{ 'digit' : 'D',	'value' : 500 },
+	{ 'digit' : 'CD',	'value' : 400 },
+	{ 'digit' : 'C',	'value' : 100 },
+	{ 'digit' : 'XC',	'value' : 90 },
+	{ 'digit' : 'L',	'value' : 50 },
+	{ 'digit' : 'XL',	'value' : 40 },
+	{ 'digit' : 'X',	'value' : 10 },
+	{ 'digit' : 'IX',	'value' : 9 },
+	{ 'digit' : 'V',	'value' : 5 },
+	{ 'digit' : 'IV',	'value' : 4 },
+	{ 'digit' : 'I',	'value' : 1 }
+]
 
 
 // -------------------- STYLES --------------------
@@ -76,6 +142,94 @@ function getCSSVar(variableName) {
 function setCSSVar(variableName, newValue) {
 	// This is used to set CSS variable values in :root
 	document.querySelector(':root').style.setProperty('--' + variableName, newValue)
+}
+
+
+
+// -------------------- ROMAN NUMERALS --------------------
+// -------------------- ROMAN NUMERALS --------------------
+
+function convertRomanNumeralsToInt(inputString) {
+	// This function parses a string of Roman Numerals into an integer
+	// If the string is not a valid Roman numeral, it will return False
+
+	inputString = inputString.trim()
+	value = 0
+
+	if(typeof(inputString) !== 'string') return false
+
+	if(inputString.toUpperCase() != inputString) {
+		// Roman numerals must be upper case!
+		return false
+	}
+
+	let i = 0	// Index of romanNumerals
+	let j = 0	// Index of inputString
+	let digitRepeats = 0
+	while(i < romanNumerals.length && j < inputString.length) {
+		digitRepeats = 0
+		digitLength = romanNumerals[i]['digit'].length
+		while(j + digitLength <= inputString.length && romanNumerals[i]['digit'] == inputString.substring(j, j + digitLength)) {
+			digitRepeats++
+			if(digitRepeats > 3) return false
+			value += romanNumerals[i]['value']
+			j += digitLength
+		}
+		i++
+	}
+
+	if(j < inputString.length) return false
+
+	return value
+}
+
+function convertIntToRomanNumerals(inputInt) {
+	// This function parses an integer to a string of Roman Numerals
+
+	output = ''
+
+	if(isNaN(inputInt)) return false
+	inputInt = parseInt(inputInt)
+
+	let i = 0	// Index of romanNumerals
+	let j = 0	// Index of inputString
+	let digitRepeats = 0
+	while(i < romanNumerals.length) {
+		digitRepeats = 0
+		while(inputInt >= romanNumerals[i]['value']) {
+			digitRepeats++
+			if(digitRepeats > 3) return false
+			output = output + romanNumerals[i]['digit']
+			inputInt -= romanNumerals[i]['value']
+		}
+		i++
+	}
+
+	return output
+}
+
+
+// -------------------- DATES --------------------
+// -------------------- DATES --------------------
+
+function dateToString(inputTimestamp, fullMonthName = true) {
+
+	inputTimestamp *= 1000
+	let offset = new Date().getTimezoneOffset() * 60 * 1000
+	let date = new Date(inputTimestamp - offset)
+
+	let year = parseInt(date.toISOString().substr(0, 4))
+	let month = nabLibMonths[parseInt(date.toISOString().substr(5, 2)) - 1]
+	if(fullMonthName == true) {
+		month = month.name
+	} else {
+		month = month.abbr
+	}
+	let day = parseInt(date.toISOString().substr(8, 2))
+
+	// If we need to output the date in a specific order, determine that here
+
+	return month + ' ' + day.toString() + getNumberSuffix(day) + ', ' + year
 }
 
 
@@ -148,6 +302,7 @@ function interpolateHexColorInRange(min, max, value, color1, color2) {
 }
 
 function readColor(color, multiplier = 1, additional = 0) {
+	// This function takes in a color and returns a 6 or 8 digit hex color. To remove the alpha, use .substring(0, 6) on the result
 	// multiplier and additional do not affect alpha values, only color values!
 
 	if(typeof(color) !== 'string') color = color.toString(16)
@@ -233,13 +388,20 @@ function readColor(color, multiplier = 1, additional = 0) {
 
 	if(debug) console.log('Invalid color: \'' + color + '\'')
 
-	return 'FFF9'
+	return 'CCCCCC99'
 }
 
 
 
 // -------------------- MESSAGES --------------------
 // -------------------- MESSAGES --------------------
+
+function consoleLog() {
+	for(let i = 0; i < arguments.length; i++) {
+		arguments[i] = JSON.parse(JSON.stringify(arguments[i]))
+	}
+	console.log(arguments)
+}
 
 function printWarning() {
 	warningCount++
@@ -262,7 +424,7 @@ function printError() {
 	}
 	if(debug) {
 		console.trace()
-		throw arguments.length + pluralize(' Error', arguments.length) + ': ' + arguments.join(', ')
+		throw arguments.length + ' Error' + pluralize(['', 's'], arguments.length) + ': ' + arguments
 	}
 }
 
@@ -311,6 +473,9 @@ function reduceFileSize(size, betterColorSpectrum = true) {
 // -------------------- VARIABLES --------------------
 // -------------------- VARIABLES --------------------
 
+function deepCopy(input) {
+	return JSON.parse(JSON.stringify(input))
+}
 
 
 
@@ -472,6 +637,33 @@ function randIntRange(min, max) {
 	return Math.round(Math.random() * (max - min) + min)
 }
 
+function round(number, places = 0) {
+	places = parseInt(places)
+	let factor = Math.pow(10, places)
+	number *= factor
+	number = Math.round(number)
+	return number / factor
+}
+
+// Copied from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-10.php
+function lcm(x, y) {
+   if ((typeof x !== 'number') || (typeof y !== 'number')) 
+    return false;
+  return (!x || !y) ? 0 : Math.abs((x * y) / gcd(x, y));
+}
+
+// Copied from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-10.php
+function gcd(x, y) {
+  x = Math.abs(x);
+  y = Math.abs(y);
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+
 
 
 // -------------------- RANDOMS --------------------
@@ -488,6 +680,37 @@ function randomItem() {
 
 // -------------------- STRINGS --------------------
 // -------------------- STRINGS --------------------
+
+function getNumberSuffix(number) {
+	if(number === 0) return ''	// Zero doesn't have a suffix
+	if(number % 1 > 0) {
+	// Float point errors make this part buggy, not sure how to fix that...
+		number %= 1
+		number *= (10 ** (number.toString().length - 2))
+	}
+
+	number %= 100
+
+	if(number > 10 && number < 20) {
+		return 'th'
+	}
+
+	number %= 10
+	switch(number) {
+		case 1:
+			return 'st'
+			break
+		case 2:
+			return 'nd'
+			break
+		case 3:
+			return 'rd'
+			break
+		default:
+			return 'th'
+			break
+	}
+}
 
 function ucwords(inputString) {
 	// This function makes the first letter of every word uppercase
@@ -1146,8 +1369,15 @@ function hslToRgb(h, s, l, o = 1) {
 // -------------------- BACKGROUNDS --------------------
 // -------------------- BACKGROUNDS --------------------
 
-function generateBackgroundGradientLines(angle = 90, color = '999', maxLines = 500) {
+function generateBackgroundGradientLines(angle = 90, color = '999', maxLines = 500, opacityMultiplier = 1) {
 	let opacityArray = ['00', '00', '00', '00', '00', '00', '00', '07', '08', '09', '0A', '0C']
+
+	for(let i = 0; i < opacityArray.length; i++) {
+		opacityArray[i] = parseInt(parseInt(opacityArray[i], 16) * opacityMultiplier).toString(16)
+		while(opacityArray[i].length < 2) {
+			opacityArray[i] = '0' + opacityArray[i]
+		}
+	}
 
 	color = readColor(color)
 	let outputArray = []
@@ -1602,6 +1832,11 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 	let defaultStyle = { 'width' : '100%', 'height' : '100%', 'margin' : '0px' }
 	let renderChild = createElement({ 'elementType' : 'div', 'style' : defaultStyle, 'children' : [] })
 
+	layers = parseInt(layers)
+
+	backgroundColor = readColor(backgroundColor)
+	starColor = readColor(starColor)
+
 	let savedElements = []
 	for (let i = renderElement.children.length - 1; i >= 0; i--)
 	{
@@ -1609,14 +1844,17 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 		savedElements.unshift(c)
 		renderElement.removeChild(c)
 	}
-
-//	renderElement.style.position = 'relative'	// This causes issues with the parent element if it is the body element...
+/*
+	let parentTagName = renderElement.parentElement.tagName.toLowerCase()
+	if(parentTagName !== null && parentTagName != 'body') {
+		renderElement.style.position = 'relative'	// This causes issues with the parent element if it is the body element...
+	}
+*/
 	renderElement.style.backgroundColor = '#' + backgroundColor
 
-	defaultStyle.position = 'absolute'
 	defaultStyle.padding = '0px'
 
-	scrollSpeed = clamp(scrollSpeed, 1, 500)	// Prevent division by 0 below and restrict this to it's max value
+	scrollSpeed = clamp(scrollSpeed, 1, 50000)	// Prevent division by 0 below and restrict this to it's max value
 
 	// Colors
 	backgroundColor = readColor(backgroundColor)
@@ -1628,7 +1866,7 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 
 	// Sizes
 	let layerSizeMultiplier = 100
-	let layerBaseSize = 5 * layerSizeMultiplier		// Do not change this or animations will look awful
+	let layerBaseSize = (layers / 2) * layerSizeMultiplier		// Do not change this or animations will look awful
 	let canvasSizeXMax = 0
 	let canvasSizeXMin = 0
 	let canvasSizeYMax = 0
@@ -1650,6 +1888,15 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 		let newElement = { 'elementType' : 'div', 'style' : defaultStyle }
 		newElement.style.zIndex = currentLayer * -1
 
+		if(currentLayer == 1) {
+			// The first layer MUST be relative positioned
+			newElement.style.position = 'relative'
+		} else {
+			newElement.style.position = 'absolute'
+			newElement.style.top = '0px'
+			newElement.style.left = '0px'
+		}
+
 		if(currentLayer == 1) newElement.id = renderChildID
 
 		canvasSizeXMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
@@ -1663,8 +1910,6 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 		canvasSize = { 'x' : randFloatRange(canvasSizeXMin, canvasSizeXMax), 'y' : randFloatRange(canvasSizeYMin, canvasSizeYMax) }
 		newElement.style.backgroundImage = 'url(' + generateStarCanvasURL(canvasSize.x, canvasSize.y, Math.floor(starCount / layers), starColor, starIntensity - starIntensityVariance, starIntensity + starIntensityVariance) + ')'
 		newElement.style.animation = animationName + ' ' + 500 / scrollSpeed * layerMultiplier + 's linear infinite'
-		newElement.style.top = '0px'
-		newElement.style.left = '0px'
 
 		starIntensity = clamp(((starIntensityMax - starIntensityMin) / layers * currentLayer) + starIntensityMin, starIntensityVariance + 0.001, 1 - starIntensityVariance - 0.001)
 		renderElement.appendChild(createElement(newElement))
@@ -1724,6 +1969,7 @@ function createModalForm(data) {
 					prompts : [
 						{
 							label : 'Question',
+							readOnly : false,
 							default : 'true/placeholderText',
 							style : { <Styles to apply to the element> },
 						},
@@ -1734,6 +1980,15 @@ function createModalForm(data) {
 	]
 }
 */
+
+	let modalBlacklist = superTextConvertWhitelistToBlacklist([ 'b', 'i', 'u', 's', 'size', 'color', 'sub', 'sup', 'ol', 'ul', 'li', 'br' ])
+
+	if(data.hasOwnProperty('elementToFocusOnAfterClose')) {
+		if(typeof(data.elementToFocusOnAfterClose) === 'string') data.elementToFocusOnAfterClose = document.getElementById(data.elementToFocusOnAfterClose)
+		if(typeof(data.elementToFocusOnAfterClose) === 'undefined') data.elementToFocusOnAfterClose = document.activeElement
+	} else {
+		data.elementToFocusOnAfterClose = document.activeElement
+	}
 
 	let focusElement = null
 
@@ -1748,19 +2003,20 @@ function createModalForm(data) {
 
 	let modalID = 'modalForm' + modalFormCount + randomString(30)
 	modalFormCount++
+	let modalFocusID = modalID + 'FocusID'
 
 	let modalButtonStyle = { flex : '1 1 0px', width : '0px', cursor : 'pointer' }
 	let categoryDisabledFilters = 'blur(0.05em) saturate(50%) brightness(85%)'
 
 	let inputCount = 0	// This is used to set up the IDs for retrieving the data
 	let modalInputs = []
-	let modalContent = { elementType : 'div', style : { flex : '1 1', display : 'flex', padding : '0.5em', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'auto' }, children : modalInputs }
-	let modal = { elementType : 'div', className : 'modalForm', onclick : (evt)=>{ evt.stopPropagation() }, style : { minWidth : '15em', maxHeight : '90%', display : 'flex', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'hidden', fontFamily : '\'nabfonts sans-serif\', sans-serif', backgroundImage : generateBackgroundGradientLines(90) }, children : [ modalContent ] }
+	let modalContent = { elementType : 'div', id : modalFocusID, tabIndex : (-1 * modalFormCount).toString(), style : { flex : '1 1', display : 'flex', padding : '0.5em', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'auto' }, children : modalInputs }
+	let modal = { elementType : 'div', className : 'modalForm', onclick : (evt)=>{ evt.stopPropagation() }, style : { minWidth : '15em', maxHeight : '90%', display : 'flex', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'hidden', fontFamily : '\'nabfonts sans-serif\', sans-serif', backgroundImage : generateBackgroundGradientLines(90, '999', 500, 0.5) }, children : [ modalContent ] }
 	let modalBackground = { elementType : 'div', id : modalID, style : { backgroundColor : '#111B', display : 'flex', alignItems : 'center', justifyContent : 'center', position: 'fixed', top : '0px', left : '0px', width : '100%', height : '100%', userSelect : 'none' }, children : [ modal ] }
 
 	if(data.hasOwnProperty('style')) modal.style = combineObjects(getValue(data, 'style', {}), modal.style)
 
-	if(data.hasOwnProperty('label') && data.label != '') modal.children.unshift({ elementType : 'span', className : 'modalHeadline', style : { borderBottom : '0.1em inset #4449' }, text : data.label })
+	if(data.hasOwnProperty('label') && data.label != '') modal.children.unshift({ elementType : 'span', className : 'modalHeadline', style : { borderBottom : '0.1em inset #4449' }, children : superTextMarkup(data.label, modalBlacklist, null, null, false) })
 
 	if(data.hasOwnProperty('clickBackgroundToClose') && data.clickBackgroundToClose === true) {
 		modalBackground.style.cursor = 'pointer'
@@ -1768,12 +2024,12 @@ function createModalForm(data) {
 	}
 
 	let inputLists = { forceInputs : [], returnInputs : [] }
-	let submitModalForm = ()=>{ returnModalInputs(modalID, data.callback, data.callbackDataArray, inputLists.returnInputs, inputLists.forceInputs) }
 
 	for(let i = 0; i < data.categories.length; i++) {
 		let categories = []
 
 		let categoryID = modalID + 'Category' + i.toString() + 'Container'
+
 		let categoryInputs = []
 		let categoryToggle = modalID + 'category' + i.toString() + 'Toggle'
 
@@ -1781,7 +2037,8 @@ function createModalForm(data) {
 		let startDisabled = false
 		if(data.categories[i].hasOwnProperty('allowDisable') && data.categories[i].allowDisable === true && data.categories[i].hasOwnProperty('startDisabled') && data.categories[i].startDisabled === true) startDisabled = true
 
-		categoryLabel.push({ elementType : 'div', text : (data.categories[i].hasOwnProperty('label') && data.categories[i].label != '' ? data.categories[i].label : ' '), style : { textAlign: 'left', flex : '1 1' } })
+		if(!data.categories[i].hasOwnProperty('label')) data.categories[i].label = ''
+		categoryLabel.push({ elementType : 'div', children : superTextMarkup(data.categories[i].label, modalBlacklist, null, null, false), style : { textAlign: 'left', flex : '1 1' } })
 		if(data.categories[i].hasOwnProperty('allowDisable') && data.categories[i].allowDisable === true) {
 			categoryLabel.push({ elementType : 'div', style : { display : 'flex', alignItems : 'center', justifyContent : 'center', gap : '0.333em', color : '#9999', textAlign: 'right' }, children : [
 				{ elementType : 'span', style : { opacity : '.75', textAlign: 'right', fontFamily : '\'nabfonts monospace\', monospace' }, text : 'Enabled:' },
@@ -1803,190 +2060,190 @@ function createModalForm(data) {
 
 		modalContent.children.push({ elementType : 'div', style : { display : 'flex', gap : '2em', alignItems : 'center', justifyContent : 'center', textAlign: 'left', padding : '0em 0.9em 0em 0.9em', transform : 'translateY(0.6em)', lineHeight : '1em', zIndex : '9999' }, children : categoryLabel })
 
-		categories.push({ elementType : 'div', id : categoryID, className : 'modalFormCategory', style : { display : 'flex', filter : (startDisabled ? categoryDisabledFilters : ''), flexDirection : 'column', margin : '0em 0em 0.75em 0em', padding : '1.5em 0.5em 1.75em 0.5em', borderRadius : '1em', border : '0.1em inset #777F', borderTop : 'none', backgroundImage : generateBackgroundGradientLines(90) }, children : [ 
+		categories.push({ elementType : 'div', id : categoryID, className : 'modalFormCategory', style : { display : 'flex', filter : (startDisabled ? categoryDisabledFilters : ''), flexDirection : 'column', margin : '0em 0em 0.75em 0em', padding : '1.5em 0.5em 1.75em 0.5em', borderRadius : '1em', border : '0.1em inset #777F', borderTop : 'none', backgroundImage : generateBackgroundGradientLines(90, '999', 500, 0.35) }, children : [ 
 		]})
+
 		if(data.categories[i].hasOwnProperty('style')) categories[categories.length - 1].style = combineObjects(data.categories[i].style, categories[categories.length - 1].style)
 
 		let inputElements = []
-		let inputsData = data.categories[i].inputs
-		for(let j = 0; j < inputsData.length; j++) {
-			if(inputsData[j].type != 'button') {
-				if(!inputsData[j].hasOwnProperty('name')) {
-/*
-					inputsData[j].name = ''
-					if(inputsData[j].hasOwnProperty('label')) {
-						inputsData[j].name = inputsData[j].label.replace(/[^A-F0-9]/ig, '').toLowerCase()
+		if(data.categories[i].hasOwnProperty('inputs')) {
+			let inputsData = data.categories[i].inputs
+			for(let j = 0; j < inputsData.length; j++) {
+				if(inputsData[j].type != 'button') {
+					if(!inputsData[j].hasOwnProperty('name')) {
+						inputsData[j].name = null
 					}
-					if(inputsData[j].name == '') {
-						delete inputsData[j].name
-*/
-						printWarning('No name given for modal input!', inputsData[j])
-						continue
-//					}
+				}
+
+				if(inputsData[j].hasOwnProperty('label') && inputsData[j].label != '') {
+					inputElements.push({ elementType : 'span', style : { fontSize : '1.25em' }, children : [
+						{ elementType : 'span', className : 'modalFormInputLabel', children : superTextMarkup(inputsData[j].label, modalBlacklist, null, null, false) }
+					]})
+				}
+
+				if(!inputsData[j].hasOwnProperty('prompts')) continue
+				let inputPrompts = inputsData[j].prompts
+
+				if(!Array.isArray(inputPrompts)) {
+					inputPrompts = [ inputPrompts ]
+				}
+
+				if(inputPrompts.length <= 0) {
+					printWarning('No prompts given for input ' + j + (data.categories[i].hasOwnProperty('label') && data.categories[i].label != '' ? ' in category \'' + data.categories[i].label + '\'' : ''))
+					continue
+				}
+
+				inputLists.returnInputs.push({ name : inputsData[j].name, ids : [] })
+
+				for(let l = 0; l < inputPrompts.length; l++) {
+					let inputID = modalID + 'input' + inputCount.toString()
+					inputLists.returnInputs[inputLists.returnInputs.length - 1].ids.push(inputID)
+					categoryInputs.push(inputID)	// This is used for the "Activated" checkbox
+
+					if(inputsData[j].hasOwnProperty('required') && inputsData[j].required === true) inputLists.forceInputs.push(inputID)
+					let inputItem = { elementType : 'div', style : {}, children : [] }
+
+	//				if(data.hasOwnProperty('style')) modal.style = combineObjects(getValue(data, 'style', {}), modal.style)
+					if(inputsData[j].hasOwnProperty('style')) inputItem.style = combineObjects(inputsData[j].style, inputItem.style)
+
+					// Every 'input' tag needs to start with this as the basis. It contains everything needed to make sure the JS and CSS works correctly
+					let inputElementToAdd = { elementType : 'div', id : inputID, disabled : startDisabled }
+					if(inputPrompts[l].hasOwnProperty('style')) inputElementToAdd.style = inputPrompts[l].style
+
+					if(focusElement === null && startDisabled === false) focusElement = inputID		// Mark the first active element for automatic focus
+
+					if(inputPrompts[l].hasOwnProperty('readOnly') && inputPrompts[l].readOnly === true) {
+						inputElementToAdd.readOnly = true
+//						inputElementToAdd.style.userSelect = 'all'		// This doesn't seem to work on text inputs...
+					}
+
+					switch(inputsData[j].type.toLowerCase()) {
+
+	//	Types are: text/radio/checkbox/color/date/dropdown/font/login
+	//	inputItem is the element that will contain the output for each type of input
+
+	/*
+						case 'login':
+							break
+
+						case 'date':
+							break
+
+	*/
+
+						case 'font':
+							if(typeof(fontsLibRenderPage) === 'undefined') {
+								printWarning('nabFontsLib is not installed! Font selection impossible.')
+								continue
+							}
+
+							let fontsLibID = 'fontsLib' + inputID
+							inputElementToAdd.children = [{ elementType : 'div', id : fontsLibID, style : { maxWidth : '90vw', maxHeight : 'calc(100vh - 14em)', display : 'flex', flexDirection : 'column' } }]
+							categories[categories.length - 1].style.padding = '0px'
+							postRenderExecution.push(()=>{
+								let fontsLibRenderElement = document.getElementById(fontsLibID)
+								fontsLibRenderPage(fontsLibRenderElement, false);
+	//							fontsLibRenderElement.children[0].style.maxHeight = 'calc(90% - 7em)'
+								fontsLibRenderElement.children[0].style.flex = '1 1'
+							})
+
+							// Change the input IDs list to reference the correct element in the fonts library page
+							let lastInputListItem = inputLists.returnInputs[inputLists.returnInputs.length - 1]
+							lastInputListItem.ids[lastInputListItem.ids.length - 1] = 'fontsLibFontSelection'
+
+							break
+
+						case 'button':
+							inputItem.style = combineObjects(inputItem.style, { display : 'flex', flex : '1 1', width : '100%' })
+							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'div', style : { display : 'flex', gap : '0.75em', textAlign : 'left', alignItems : 'center', justifyContent : 'center' }, children : [
+									{ elementType : 'button', style : combineObjects(inputPrompts[l].style, { cursor : 'pointer', borderRadius : '20%' }), text : inputPrompts[l].value, onclick : ()=>{ inputPrompts[l].onclick } },
+									{ elementType : 'span', style : { flex : '1 1' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+								]
+							})
+
+							if(inputsData[j].hasOwnProperty('closeAfterClick') && inputsData[j].closeAfterClick === true) {
+								inputElementToAdd.children[0].onclick = ()=>{ inputPrompts[l].onclick(); closeModalForm(modalID); }
+							}
+							break
+
+
+						case 'color':
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'color', style : { cursor : 'pointer', width : '12rem', height : '3rem' } },
+							] })
+							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = '#' + readColor(inputPrompts[l].default)
+							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
+							break
+
+						case 'number':
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' } },
+							] })
+							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
+							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = inputPrompts[l].min
+							if(inputPrompts[l].hasOwnProperty('max')) inputElementToAdd.children[0].max = inputPrompts[l].max
+							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
+							break
+
+						case 'dropdown':
+							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'select' })
+							if(!inputElementToAdd.hasOwnProperty('children')) inputElementToAdd.children = []
+							// Prevent other iterations from taking place. Iterate here and do everything now.
+							while(l < inputPrompts.length) {
+								if(!inputPrompts[l].hasOwnProperty('value')) inputPrompts[l].value = inputPrompts[l].label
+								inputElementToAdd.children.push({ elementType : 'option', disabled : startDisabled, value : inputPrompts[l].value, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+								if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default === true) inputElementToAdd.children[inputElementToAdd.children.length - 1].selected = true
+								l++
+							}
+							break
+
+						case 'checkbox':
+							let selected = false
+							if(inputPrompts[l].hasOwnProperty('default') && typeof(inputPrompts[l].default) === 'string') {
+								inputPrompts[l].default = inputPrompts[l].default.toLowerCase()
+								if(inputPrompts[l].default == 'true') inputPrompts[l].default = true
+							} else if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default === true) {
+								selected = true
+							}
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', children : [
+								{ elementType : 'input', type : 'checkbox', id : inputID, disabled : startDisabled, checked : selected },
+								{ elementType : 'label', 'for' : inputID, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+							] })
+
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
+							break
+
+						case 'radio':
+							let radioSelected = false
+							if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default !== false) radioSelected = true
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', children : [
+								{ elementType : 'input', type : 'radio', id : inputID, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : inputPrompts[l].label },
+								{ elementType : 'label', 'for' : inputID, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+							] })
+							break
+
+						case 'text':
+							inputItem.style = combineObjects(inputItem.style, { display : 'flex', gap : '0.5em' })
+							if(inputPrompts[l].hasOwnProperty('label') && inputPrompts[l].label != '') inputItem.children.push({ elementType : 'span', style : { textAlign : 'right' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+							let defaultValue = ''
+							if(inputPrompts[l].hasOwnProperty('default')) defaultValue = inputPrompts[l].default
+							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'input', disabled : startDisabled, type : 'text', id : inputID, style : {}, placeholder : defaultValue, value : defaultValue })
+							if(inputPrompts[l].hasOwnProperty('style')) inputElementToAdd.style = combineObjects(inputPrompts[l].style, inputElementToAdd.style)
+							inputElementToAdd.onfocus = ()=>{ document.getElementById(inputID).select(); }
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
+							break
+
+						default:
+							printError('createModalForm(): No modal input type \'' + inputsData[j].type + '\'!')
+
+					}
+					inputItem.children.push(inputElementToAdd)
+					inputElements = inputElements.concat([ inputItem ])
+					inputCount++
 				}
 			}
-
-			let inputPrompts = inputsData[j].prompts
-
-			if(!Array.isArray(inputPrompts)) {
-				inputPrompts = [ inputPrompts ]
-			}
-			if(inputPrompts.length <= 0) {
-				printWarning('No prompts given for input ' + j + (data.categories[i].hasOwnProperty('label') && data.categories[i].label != '' ? ' in category \'' + data.categories[i].label + '\'' : ''))
-				continue
-			}
-
-			if(inputsData[j].hasOwnProperty('label') && inputsData[j].label != '') {
-				inputElements.push({ elementType : 'span', style : { fontSize : '1.25em' }, children : [
-					{ elementType : 'span', className : 'modalFormInputLabel', text : inputsData[j].label }
-				]})
-			}
-
-			inputLists.returnInputs.push({ name : inputsData[j].name, ids : [] })
-
-			if(!Array.isArray(inputPrompts)) inputPrompts = [ inputPrompts ]	// Just to make 100% sure this is an array before proceeding...
-			for(let l = 0; l < inputPrompts.length; l++) {
-				let inputID = modalID + 'input' + inputCount.toString()
-				inputLists.returnInputs[inputLists.returnInputs.length - 1].ids.push(inputID)
-				categoryInputs.push(inputID)	// This is used for the "Activated" checkbox
-
-				if(inputsData[j].hasOwnProperty('required') && inputsData[j].required === true) inputLists.forceInputs.push(inputID)
-				let inputItem = { elementType : 'div', style : {}, children : [] }
-
-//				if(data.hasOwnProperty('style')) modal.style = combineObjects(getValue(data, 'style', {}), modal.style)
-				if(inputsData[j].hasOwnProperty('style')) inputItem.style = combineObjects(inputsData[j].style, inputItem.style)
-
-				// Every 'input' tag needs to start with this as the basis. It contains everything needed to make sure the JS and CSS works correctly
-				let inputElementToAdd = { elementType : 'div', id : inputID, disabled : startDisabled }
-				if(inputPrompts[l].hasOwnProperty('style')) inputElementToAdd.style = inputPrompts[l].style
-
-				if(focusElement === null && startDisabled === false) focusElement = inputID		// Mark the first active element for automatic focus
-
-				switch(inputsData[j].type.toLowerCase()) {
-
-//	Types are: text/radio/checkbox/color/date/dropdown/font/login
-//	inputItem is the element that will contain the output for each type of input
-
-/*
-					case 'login':
-						break
-
-					case 'date':
-						break
-
-*/
-
-					case 'font':
-						if(typeof(fontsLibRenderPage) === 'undefined') {
-							printWarning('nabFontsLib is not installed! Font selection impossible.')
-							continue
-						}
-
-						let fontsLibID = 'fontsLib' + inputID
-						inputElementToAdd.children = [{ elementType : 'div', id : fontsLibID, style : { maxWidth : '90vw', maxHeight : 'calc(100vh - 14em)', display : 'flex', flexDirection : 'column' } }]
-						categories[categories.length - 1].style.padding = '0px'
-						postRenderExecution.push(()=>{
-							let fontsLibRenderElement = document.getElementById(fontsLibID)
-							fontsLibRenderPage(fontsLibRenderElement, false);
-//							fontsLibRenderElement.children[0].style.maxHeight = 'calc(90% - 7em)'
-							fontsLibRenderElement.children[0].style.flex = '1 1'
-						})
-
-						// Change the input IDs list to reference the correct element in the fonts library page
-						let lastInputListItem = inputLists.returnInputs[inputLists.returnInputs.length - 1]
-						lastInputListItem.ids[lastInputListItem.ids.length - 1] = 'fontsLibFontSelection'
-
-						break
-
-					case 'button':
-						inputItem.style = combineObjects(inputItem.style, { display : 'flex', flex : '1 1', width : '100%' })
-						inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'div', style : { display : 'flex', gap : '0.75em', textAlign : 'left', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'button', style : combineObjects(inputPrompts[l].style, { cursor : 'pointer', borderRadius : '20%' }), text : inputPrompts[l].value, onclick : ()=>{ inputPrompts[l].onclick } },
-								{ elementType : 'span', style : { flex : '1 1' }, text : inputPrompts[l].label },
-							]
-						})
-
-						if(inputsData[j].hasOwnProperty('closeAfterClick') && inputsData[j].closeAfterClick === true) {
-							inputElementToAdd.children[0].onclick = ()=>{ inputPrompts[l].onclick(); closeModalForm(modalID); }
-						}
-						break
-
-
-					case 'color':
-						inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-							{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'color', style : { cursor : 'pointer', width : '12rem', height : '3rem' } },
-						] })
-						if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = '#' + readColor(inputPrompts[l].default)
-						if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', text : inputPrompts[l].label })
-						l = inputPrompts.length		// Terminate the loop, we can only have one prompt
-						break
-
-					case 'number':
-						inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-							{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' } },
-						] })
-						if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
-						if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = inputPrompts[l].min
-						if(inputPrompts[l].hasOwnProperty('max')) inputElementToAdd.children[0].max = inputPrompts[l].max
-						if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', text : inputPrompts[l].label })
-						l = inputPrompts.length		// Terminate the loop, we can only have one prompt
-						break
-
-					case 'dropdown':
-						inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'select' })
-						if(!inputElementToAdd.hasOwnProperty('children')) inputElementToAdd.children = []
-						// Prevent other iterations from taking place. Iterate here and do everything now.
-						while(l < inputPrompts.length) {
-							if(!inputPrompts[l].hasOwnProperty('value')) inputPrompts[l].value = inputPrompts[l].label
-							inputElementToAdd.children.push({ elementType : 'option', disabled : startDisabled, value : inputPrompts[l].value, text : inputPrompts[l].label })
-							if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default === true) inputElementToAdd.children[inputElementToAdd.children.length - 1].selected = true
-							l++
-						}
-						break
-
-					case 'checkbox':
-						let selected = false
-						if(inputPrompts[l].hasOwnProperty('default') && typeof(inputPrompts[l].default) === 'string') {
-							inputPrompts[l].default = inputPrompts[l].default.toLowerCase()
-							if(inputPrompts[l].default == 'true') inputPrompts[l].default = true
-						} else if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default === true) {
-							selected = true
-						}
-						inputElementToAdd = combineObjects(inputElementToAdd, { id : '', children : [
-							{ elementType : 'input', type : 'checkbox', id : inputID, disabled : startDisabled, checked : selected },
-							{ elementType : 'label', 'for' : inputID, text : inputPrompts[l].label },
-						] })
-
-						l = inputPrompts.length		// Terminate the loop, we can only have one prompt
-						break
-
-					case 'radio':
-						let radioSelected = false
-						if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default !== false) radioSelected = true
-						inputElementToAdd = combineObjects(inputElementToAdd, { id : '', children : [
-							{ elementType : 'input', type : 'radio', id : inputID, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : inputPrompts[l].label },
-							{ elementType : 'label', 'for' : inputID, text : inputPrompts[l].label },
-						] })
-						break
-
-					case 'text':
-						inputItem.style = combineObjects(inputItem.style, { display : 'flex', gap : '0.5em' })
-						if(inputPrompts[l].hasOwnProperty('label') && inputPrompts[l].label != '') inputItem.children.push({ elementType : 'span', style : { textAlign : 'right' }, text : inputPrompts[l].label })
-						inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'input', disabled : startDisabled, type : 'text', id : inputID, style : {}, placeholder : (inputPrompts[l].hasOwnProperty('default') ? inputPrompts[l].default : '') })
-						if(inputPrompts[l].hasOwnProperty('style')) inputElementToAdd.style = combineObjects(inputPrompts[l].style, inputElementToAdd.style)
-
-						l = inputPrompts.length		// Terminate the loop, we can only have one prompt
-						break
-
-					default:
-						printError('createModalForm(): No modal input type \'' + inputsData[j].type + '\'!')
-
-				}
-				inputItem.children.push(inputElementToAdd)
-				inputElements = inputElements.concat([ inputItem ])
-				inputCount++
-			}
-
 		}
 
 		categories[categories.length - 1].children.push({ elementType : 'div', style : { display : 'flex', gap : '0.5em', flexDirection : 'column', alignItems : 'center', justifyContent : 'center' }, children : inputElements, onclick : ()=>{
@@ -2011,7 +2268,7 @@ function createModalForm(data) {
 			cancelText = 'Close'
 		}
 		okayCancelButtons.push(
-		{ elementType : 'div', className : 'modalFormButton modalForm' + cancelText + 'Button', onclick : ()=>{ closeModalForm(modalID) }, style : modalButtonStyle, children : [
+		{ elementType : 'div', className : 'modalFormButton modalForm' + cancelText + 'Button', onclick : ()=>{ data.elementToFocusOnAfterClose.focus(); closeModalForm(modalID); }, style : modalButtonStyle, children : [
 				{ elementType : 'div', style : { lineHeight : '2em' }, text : cancelText }
 		]})
 	}
@@ -2019,7 +2276,7 @@ function createModalForm(data) {
 	if(data.okayButton === true) {
 		// Okay button
 		okayCancelButtons.push(
-		{ elementType : 'div', className : 'modalFormButton modalFormOkayButton', onclick : submitModalForm, style : modalButtonStyle, children : [
+		{ elementType : 'div', className : 'modalFormButton modalFormOkayButton', onclick : ()=>{ data.elementToFocusOnAfterClose.focus(); returnModalInputs(modalID, data.callback, data.callbackDataArray, inputLists.returnInputs, inputLists.forceInputs); }, style : modalButtonStyle, children : [
 			{ elementType : 'div', style : { lineHeight : '2em' }, text : 'Okay' }
 		]})
 	}
@@ -2034,7 +2291,8 @@ function createModalForm(data) {
 		postRenderExecution[i]()
 	}
 
-	if(focusElement !== null) document.getElementById(focusElement).focus()
+	if(focusElement === null) focusElement = modalFocusID	// If no focus element specified, focus on the scrolling div for accessibility
+	document.getElementById(focusElement).focus()
 }
 
 function getModalInputValue(inputElement) {
@@ -2147,21 +2405,24 @@ function closeModalForm(id) {
 // -------------------- SUPERTEXT MARKUP --------------------
 
 superTextMarkupData = {
+	hideTags : 0,
 	markup : [
-		// Anything in the parameters object will be SuperImposed on the created element. Even elementType is okay to change
+		// Anything in the parameters object will be SuperImposed on the created element. Even elementType is okay to change.
 		// 'parameters' are automatically applied styles
 		// 'variables' are things the user can set, like URL links and such, inside the declaring tag, like: "[url link='page.php']Link Text Here[/url]"
 		// noText : true		means that even if the user put text in the tag, it will be ignored (Useful for things like images)
 		// nest : true			means that everything contained within that tag will be a child
+		// block : true			means that the button in the editor will get special formatting
 		// noClosingTag : true	means that the parser will not require a closing tag on this element. Uses are things like [br] or [hr]
 		// noMarkup : true	means that the contents of this tag will not be parsed.		BE AWARE THIS IS BUGGED - If you use it on a nested element, it will terminate along with the parent!!
 		// The following are global properties that can be used on any tag:
-		//		fg				=	text color
-		//		bg				=	background color
-		//		font			=	Typeface
-		//		size			=	Font size (Percent, range from 25-500%)
-		//		nomarkup		= 	No other tags inside this tag will be parsed
-		//		ignoreNomarkup	= 	Even when nomarkup is active, this tag will still apply
+		//		fg					=	text color
+		//		bg					=	background color
+		//		font				=	Typeface
+		//		block				= 	If the next tag after this is a line break, ignore that line break (Helps with formatting). Also, in the editor this will have a colored border
+		//		size				=	Font size (Percent, range from 25-500%)
+		//		nomarkup			= 	No other tags inside this tag will be parsed
+		//		ignoreNomarkup		= 	Even when nomarkup is active, this tag will still apply
 
 
 		{ tag : 'b',
@@ -2200,6 +2461,7 @@ superTextMarkupData = {
 							description: 'Horizontal Line',
 							symbol : { character : '−', font : 'webhostinghub glyphs', color : '55B' },
 							noClosingTag : true,
+							block : true,
 							noText : true,
 							category : { name : 'Separators', index : 1 },
 							parameters : { elementType : 'hr' }, variables : { width : 'width' },
@@ -2208,7 +2470,7 @@ superTextMarkupData = {
 							description: 'Hyperlink',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '39B' },
 							nest : true,
-							category : { name : 'Links', index : 2 },
+							category : { name : 'embed', index : 1 },
 							variables : { href : 'link' },
 							parameters : { elementType : 'a', target : '_blank' },
 		},
@@ -2217,13 +2479,14 @@ superTextMarkupData = {
 							symbol : { character : '⊷ ', font : 'webhostinghub glyphs', color : '2C2' },
 							noText : true,
 							noClosingTag : true,
-							category : { name : 'Links', index : 1 },
+							category : { name : 'embed', index : 2 },
 							variables : { src : 'link' },
 							parameters : { elementType : 'img' },
 		},
 		{ tag : 'l',
 							description: 'Block text and left align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
+							block : true,
 							nest : true,
 							category : { name : 'Alignment', index : 1 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'left', marginTop : '0px', marginBottom : '0px' } },
@@ -2231,6 +2494,7 @@ superTextMarkupData = {
 		{ tag : 'c',
 							description: 'Block text and center align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
+							block : true,
 							nest : true,
 							category : { name : 'Alignment', index : 2 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'center', marginTop : '0px', marginBottom : '0px' } },
@@ -2238,6 +2502,7 @@ superTextMarkupData = {
 		{ tag : 'r',
 							description: 'Block text and right align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
+							block : true,
 							nest : true,
 							category : { name : 'Alignment', index : 3 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'right', marginTop : '0px', marginBottom : '0px' } },
@@ -2245,10 +2510,12 @@ superTextMarkupData = {
 		{ tag : 'j',
 							description: 'Block text and justify',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
+							block : true,
 							nest : true,
 							category : { name : 'Alignment', index : 4 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'justify', marginTop : '0px', marginBottom : '0px' } },
 		},
+/*
 		{ tag : 'h1',
 							description: 'Heading 1',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'DC2' },
@@ -2285,39 +2552,41 @@ superTextMarkupData = {
 							category : { name : 'Heading', index : 6 },
 							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 1).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
 		},
+*/
 		{ tag : 'ol',
 							description: 'Ordered list',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
+							block : true,
 							nest : true,
 							category : { name : 'Organization', index : 1 },
-							parameters : { elementType : 'ol' },
+							parameters : { elementType : 'ol', style : { marginTop : '0', marginBottom : '0' } },
 		},
 		{ tag : 'ul',
 							description: 'Unordered list',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
+							block : true,
 							nest : true,
 							category : { name : 'Organization', index : 2 },
-							parameters : { elementType : 'ul' },
+							parameters : { elementType : 'ul', style : { marginTop : '0', marginBottom : '0' } },
 		},
 		{ tag : 'li',
 							description: 'List item',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
+							block : true,
 							nest : true,
 							category : { name : 'Organization', index : 3 },
 							parameters : { elementType : 'li' },
 		},
 		{ tag : 'sup',
 							description: 'Superscript',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
-							nest : true,
-							category : { name : 'Formatting', index : 5 },
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
+							category : { name : 'Formatting', index : 8 },
 							parameters : { style : { verticalAlign : 'super', fontSize : '0.75em' } },
 		},
 		{ tag : 'sub',
 							description: 'Subscript',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
-							nest : true,
-							category : { name : 'Formatting', index : 6 },
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
+							category : { name : 'Formatting', index : 9 },
 							parameters : { style : { verticalAlign : 'sub', fontSize : '0.75em' } },
 		},
 		{ tag : 'color',
@@ -2328,46 +2597,76 @@ superTextMarkupData = {
 		{ tag : 'font',
 							description: 'Change typeface',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 8 },
+							category : { name : 'Formatting', index : 6 },
 		},
 		{ tag : 'size',
 							description: 'Font size (Percent, 25 to 500)',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 9 },
-		},
-		{ tag : 'code',
-							description: 'Block code snippet, no markup',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'B44' },
-							noMarkup : true,
-							category : { name : 'Quote', index : 4 },
-							parameters : { elementType : 'pre', style : { textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #333' } },
-		},
-		{ tag : 'icode',
-							description: 'Inline code snippet, no markup',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'B44' },
-							noMarkup : true,
-							category : { name : 'Quote', index : 3 },
-							parameters : { elementType : 'span', style : { textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #333' } },
+							category : { name : 'Formatting', index : 5 },
 		},
 		{ tag : 'quote',
 							description: 'Block quote, include markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '3B3' },
+							block : true,
 							nest : true,
-							category : { name : 'Quote', index : 2 },
+							category : { name : 'Quote', index : 1 },
 							parameters : { elementType : 'p', style : { textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #393939' } },
 		},
 		{ tag : 'iquote',
 							description: 'Inline quote, include markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '3B3' },
 							nest : true,
-							category : { name : 'Quote', index : 1 },
-							parameters : { elementType : 'span', style : { textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #393939' } },
+							category : { name : 'Quote', index : 3 },
+							parameters : { elementType : 'span', style : { display : 'inline-block',  textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', margin : '0.3em', padding : '0em 0.375em 0em 0.375em', lineHeight : '2.1em',  border : '0.1em inset #393939' } },
+		},
+		{ tag : 'code',
+							description: 'Block code snippet, no markup',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'B44' },
+							noMarkup : true,
+							block : true,
+							nest : true,
+							category : { name : 'Quote', index : 2 },
+							parameters : { elementType : 'pre', style : { textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', padding : '0.2em', border : '0.1em inset #333' } },
+		},
+		{ tag : 'icode',
+							description: 'Inline code snippet, no markup',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'B44' },
+							noMarkup : true,
+							nest : true,
+							category : { name : 'Quote', index : 4 },
+							parameters : { elementType : 'span', style : { display : 'inline-block', textAlign : 'left', fontFamily : '"nabfonts monospace", monospace', whiteSpace : 'break-spaces', backgroundColor : '#222', backgroundImage : 'linear-gradient(45deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', margin : '0.3em', padding : '0em 0.375em 0em 0.375em', lineHeight : '2.1em', border : '0.1em inset #333' } },
+		},
+		{ tag : 'hide',
+							description: 'Hide contents until user shows them',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '228' },
+							block : true,
+							nest : true,
+							category : { name : 'Control', index : 1 },
+							parameters : { elementType : 'div', border : '0.1em inset #0005', borderRadius : '0.5em', padding : '0.5em' },
 		},
 		{ tag : 'nomarkup',
 							description: 'Ignore markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F00' },
-							category : { name : 'Control', index : 1 },
+							category : { name : 'meta', index : 1 },
 							noMarkup : true
+		},
+		{ tag : 'youtube',
+							description: 'Embed a YouTube video',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'FF2209' },
+							category : { name : 'embed', index : 3 },
+							noClosingTag : true,
+							block : true,
+							noText : true,
+							parameters : { elementType : 'iframe', style : { aspectRatio : '560 / 315', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'YouTube video player', frameborder : '0', allow : 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen : 'true' }, variables : { link : 'link' },
+		},
+		{ tag : 'soundcloud',
+							description: 'Embed a SoundCloud track',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F50' },
+							category : { name : 'embed', index : 4 },
+							noClosingTag : true,
+							block : true,
+							noText : true,
+							parameters : { elementType : 'iframe', style : { minHeight : '300', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'SoundCloud Player', scrolling : 'no', frameborder : '0', allow : 'autoplay;', allowfullscreen : 'true' }, variables : { link : 'link' },
 		},
 	],
 	smileyFaces : [
@@ -2389,51 +2688,96 @@ superTextMarkupData = {
 		{ text : '</3',				font : 'webhostinghub glyphs',		color : 'f00',		character : '',		description : 'Heartbreak' },
 		{ text : 'trollface',		font : 'memetica',					color : 'fff',		character : 'T',		size : '175',		description : 'Trollface' },
 	],
-	instructions : `[c][h4]SuperText Markup Help[/h4]
+	instructions : {
+		character : '',
+		color : '09B',
+		font : 'webhostinghub glyphs',
+		text : `[c][size size=300]SuperText Markup Help[/size]
 SuperText Markup is similar to BBCode, with a few important differences.
 
 Just like BBCode, tags are used to format text. These tags can change the color, size, font, alignment, and more.
 
 [hr width=75% fg=f00]
 
-Tags are created by putting brackets around the tag name, like so:
-[icode fg=F55][b]Sample Text[/b][/icode]
+Tags are created by putting brackets around the tag name. For example, to create a [b fg=0bb]b[/b] tag for bold text:
+[iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
+
+To terminate the bold formatting, add another tag with a slash in it:
+[iquote][b fg=f55 nomarkup][/[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
+
+When put together:
+[iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b]Sample Text[b fg=f55 nomarkup][/[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
 Becomes:
 [iquote][b]Sample Text[/b][/iquote]
 
 [hr width=75% fg=0f0]
 
-Unlike BBCode, tags do not have to be nested to work properly:
-[icode fg=F55][u]Sa[s]mple [i]T[/u]e[/s]xt[/i][/icode]
+Unlike BBCode, many tags do not have to be correctly nested to work properly:
+[iquote][b nomarkup fg=f55][u][/b]Sa[b nomarkup fg=5f5][s][/b]mple [b nomarkup fg=33f][i][/b]T[b nomarkup fg=f55][/u][/b]e[b nomarkup fg=5f5][/s][/b]xt[b nomarkup fg=33f][/i][/b][/iquote]
 Becomes:
 [iquote][u]Sa[s]mple [i]T[/u]e[/s]xt[/i][/iquote]
 
+The only tags that require correct nesting are the [b fg=08b]block[/b] tags:
+[c][iquote font='nabfonts monospace']:_-ADDBLOCKTAGSHERE-_:[/iquote][/c]
+All buttons for [b fg=08b]block[/b] tags have a [b fg=08b]colored outline[/b] around them.
+
 [hr width=75% fg=00f]
 
-Some tags, like [b fg=F55 nomarkup][hr][/b], do not need a closing tag.
+Some tags, like [b fg=F55 nomarkup][hr][/b], [b fg=F55 nomarkup][img][/b], and [b fg=F55 nomarkup][youtube][/b], do not need a closing tag.
 
 [hr width=75% fg=ff0]
 
 SuperText also features global options that can be applied to any tag. These include:
-[l][ul][li][b fg=f55]font[/b] (Typeface [sub]Can be the name of a specific font, or a generic CSS font-family. Put the name in quotes if there is a space in it![/sub])[/li]
-[li][b fg=f55]size[/b] (Font size)[/li]
-[li][b fg=f55]fg[/b] (Foreground color, given in hex)[/li]
-[li][b fg=f55]bg[/b] (Background Color, given in hex)[/li]
+[l]
+[ul]
+[li][b fg=f55]font[/b] (Typeface [sub]Can be the name of a specific font, or a generic CSS font-family. Put the name in quotes if there is a space in it![/sub])[/li]
+[li][b fg=f55]size[/b] (Font size, given as a percentage)[/li]
 [li][b fg=f55]nomarkup[/b] (SuperText will not process any markup inside this tag)[/li]
+[li][b fg=f55]fg[/b] (Foreground color, given in hexadecimal)[/li]
+[li][b fg=f55]bg[/b] (Background color, given in hexadecimal)[/li]
 [/ul][/l]
+
+Hexadecimal colors can be given in the following formats:
+[size size=65][b fg=f55]R = Red[/b], [b fg=5f5]G = Green[/b], [b fg=55f]B = Blue[/b], [b fg=444]A = Alpha[/b], [b fg=888]L = Luminosity[/b]
+(Alpha values cause problems and thus are ignored, but the rest of the color will still work)[/size]
+[l]
+[ul]
+[li]1 digit: [b fg=888]L[/b][/li]
+[li]2 digits: [b fg=888]L[/b][b fg=444]A[/b][/li]
+[li]3 digits: [b fg=f55]R[/b][b fg=5f5]G[/b][b fg=55f]B[/b][/li]
+[li]4 digits: [b fg=f55]R[/b][b fg=5f5]G[/b][b fg=55f]B[/b][b fg=444]A[/b][/li]
+[li]6 digits: [b fg=f55]RR[/b][b fg=5f5]GG[/b][b fg=55f]BB[/b][/li]
+[li]8 digits: [b fg=f55]RR[/b][b fg=5f5]GG[/b][b fg=55f]BB[/b][b fg=444]AA[/b][/li]
+[/ul]
+[/l]
+
 So, for example:
-[icode][b font='monospace' fg=4a4 bg=44a]Sam[i fg=48a nomarkup]pl[u]e T[/u]e[/i]xt[/b][/icode]
+[iquote][b nomarkup][b [/b][b nomarkup fg=c44]font='monospace' fg=2d2 bg=22c[/b][b nomarkup]]Sam[i [/b][b nomarkup fg=c44]fg=e44 nomarkup[/b][b nomarkup]]pl[u]e T[/u]e[/i]xt[/b][/b][/iquote]
 Becomes:
-[iquote][b font='monospace' fg=4a4 bg=44a]Sam[i fg=48a nomarkup]pl[u]e T[/u]e[/i]xt[/b][/iquote]
+[iquote][b font='monospace' fg=2d2 bg=22c]Sam[i fg=e44 nomarkup]pl[u]e T[/u]e[/i]xt[/b][/iquote]
 
 [hr width=75% fg=0ff]
 
+[color fg=c44 nomarkup][hide][/color] tags can be used to hide a portion of a message until a button is clicked:
+
+[hide]Surprise![/hide]
+
+You can also change the text on the button, like this:
+
+[iquote][nomarkup][hide [/nomarkup][nomarkup fg=c44]text='Zeeky Boogy Doog!'[/nomarkup][nomarkup]]BOOM[/hide][/nomarkup][/iquote]
+
+[hide text='Zeeky Boogy Doog!']BOOM[/hide]
+
+[hr width=75% fg=a0f]
+
 Finally, all tags and parameters in SuperText Markup are case-insensitive.
+
+[hr width=75% fg=777]
 
 Happy formatting!
 
-[hr width=75% fg=a0f]
-[/c]`
+[/c]`,
+	}
 }
 
 // Parse the data
@@ -2455,7 +2799,11 @@ for(let i = 0; i < superTextMarkupData.markup.length; i++) {
 		}
 	}
 }
+
 superTextMarkupData.categories.smileyFaces = [{ tag : 'smiley', description : 'Add a smiley face', noClosingTag : true, symbol : { character : superTextMarkupData.smileyFaces[0].character, font : superTextMarkupData.smileyFaces[0].font, color : superTextMarkupData.smileyFaces[0].color } }]
+if(!superTextMarkupData.categories.hasOwnProperty('meta')) superTextMarkupData.categories.meta = []
+superTextMarkupData.categories.meta.push({ tag : 'cleanup', description : 'Remove tags from selection', symbol : { character : '', font : superTextMarkupData.instructions.font, color : '444' } })
+superTextMarkupData.categories.meta.push({ tag : 'help', description : 'Help', symbol : { character : superTextMarkupData.instructions.character, font : superTextMarkupData.instructions.font, color : superTextMarkupData.instructions.color } })
 
 // Remove any rogue entries in the categories...
 for(category in superTextMarkupData.categories) {
@@ -2471,50 +2819,24 @@ for(category in superTextMarkupData.categories) {
 // This array *MUST* be sorted and then reversed, or tags can get incorrectly matched
 // Also this must happen AFTER the parsing step above, or the category order will be messed up
 superTextMarkupData.markup.sort((a, b)=>{
-	if (a.tag < b.tag) return -1
-	if (a.tag > b.tag) return 1
+	if (a.tag < b.tag) return 1
+	if (a.tag > b.tag) return -1
 	return 0
-}).reverse()
+})
 
-
-function addSmileyFaces(inputText) {
-	let fontList = []
-
-	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
-		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('font')) fontList = joinArraysNoDuplicates(fontList, [ superTextMarkupData.smileyFaces[i].font.toLowerCase() ])
-	}
-
-	for(let i = 0; i < fontList.length; i++) {
-		if(getFontIndex(fontList[i]) === false) {
-			// getFontIndex() will print an error if the font is not found
-			fontList.splice(i, 1)
-			i--
-		}
-	}
-
-	if(fontList.length == 0) return inputText		// Terminate if no fonts are present
-
-	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
-		if(!fontList.includes(superTextMarkupData.smileyFaces[i].font)) {
-			printWarning('Missing font: ' + superTextMarkupData.smileyFaces[i].font)
-			continue
-		}
-
-		let formatting = []
-		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('font')) formatting.push('font="' + superTextMarkupData.smileyFaces[i].font + '"')
-		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('color')) formatting.push('fg=' + superTextMarkupData.smileyFaces[i].color)	// readColor will be run on this later, don't do it here
-		if(superTextMarkupData.smileyFaces[i].hasOwnProperty('size')) formatting.push('size=' + superTextMarkupData.smileyFaces[i].size)
-
-		while(inputText.indexOf(superTextMarkupData.smileyFaces[i].text) >= 0) {
-			inputText = inputText.replace(superTextMarkupData.smileyFaces[i].text, '[font ' + formatting.join(' ') + ']' + superTextMarkupData.smileyFaces[i].character + '[/font]')
-		}
-	}
-
-	return inputText
+// Automatically add all block tags to the help screen
+superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.split(':_-ADDBLOCKTAGSHERE-_:')
+for(let i = superTextMarkupData.markup.length - 1; i >= 0; i--) {
+	if(!superTextMarkupData.markup[i].hasOwnProperty('block') || superTextMarkupData.markup[i].block !== true) continue
+	superTextMarkupData.instructions.text.splice(superTextMarkupData.instructions.text.length - 1, 0, (superTextMarkupData.instructions.text.length == 2 ? '' : ', ') + '[b fg=f55 nomarkup][[/b][b fg=0bb nomarkup]' + superTextMarkupData.markup[i].tag + '[/b][b fg=f55 nomarkup]][/b]')
 }
+superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2] = superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2].replace(', ', ', and ')
+superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.join('')
 
-function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
-	let output = { elementType : 'span', text : inputText, style : {} }
+
+function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlacklist = []) {
+	let output = { elementType : 'span', style : {} }
+	if(preprocessorInfo.hasOwnProperty('text')) output.text = preprocessorInfo.text
 	let noMarkup = false
 
 	let parameters = []
@@ -2522,21 +2844,23 @@ function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
 		parameters = preprocessorInfo.markup
 	}
 
-	if(preprocessorInfo.hasOwnProperty('children')) {
-		output.children = preprocessorInfo.children
-		output.text = ''	// Not sure about this..?
-	}
-
+	let spoilerText = 'Show/Hide'
+	let hasChildren = false
+	let hideTag = false
 	let variables = []
-	let i = 0
-	if(parameters.length > 0) {
-		let testParameter = parameters[parameters.length - 1]
-		if(testParameter.hasOwnProperty('parameters') && (testParameter.parameters.hasOwnProperty('nest') && testParameter.parameters.nest == true)) {
-			// If the current tag is nested, ONLY take the nested tag's properties. The children will take care of the rest
-			i = parameters.length - 1
+
+	if(parameters.length > 0 && !(parameters[parameters.length - 1].hasOwnProperty('doNotRender') && parameters[parameters.length - 1].doNotRender == true)) {
+		if(parameters[parameters.length - 1].parameters.hasOwnProperty('nest') &&
+		parameters[parameters.length - 1].parameters.nest == true &&
+		parameters[parameters.length - 1].parameters.tag == 'hide') {
+			hideTag = true
 		}
 	}
-	for(i; i < parameters.length; i++) {
+
+	for(i = 0; i < parameters.length; i++) {
+		if(parameters[i].parameters.hasOwnProperty('noText') && parameters[i].parameters.noText === true) {
+			output.text = ''
+		}
 
 		if(parameters[i].hasOwnProperty('variables')) {
 			variables = parameters[i].variables
@@ -2544,50 +2868,110 @@ function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
 			variables = []
 		}
 
-		if(parameters[i].parameters.hasOwnProperty('noText') && parameters[i].parameters.noText === true) {
-			output.text = ''
-		}
-
 		if(noMarkup == false) {
 
 			if(parameters[i].parameters.hasOwnProperty('smileyFace') && parameters[i].parameters.smileyFace === true) {
+				hasChildren = true
 				output.text = ''
 				if(!output.hasOwnProperty('children')) output.children = []
-				let smiley = { elementType : 'span', style : { fontFamily : parameters[i].parameters.symbol.font, color : '#' + readColor(parameters[i].parameters.symbol.color) }, text : parameters[i].parameters.symbol.character }
+				let smiley = { elementType : 'span', style : { fontFamily : parameters[i].parameters.symbol.font, color : '#' + readColor(parameters[i].parameters.symbol.color), textDecoration : 'none', fontWeight : 'normal', fontStyle : 'normal' }, text : parameters[i].parameters.symbol.character }
 				if(parameters[i].parameters.symbol.hasOwnProperty('size')) smiley.style.fontSize = (parameters[i].parameters.symbol.size / 100).toString() + 'em'
 				output.children.push(smiley)
-				continue
+				break
 			}
 
-			if(parameters[i].parameters.hasOwnProperty('parameters')) {
-				for(parameter in parameters[i].parameters.parameters) {
-					if(parameter.toLowerCase() == 'style') {
-						// Apply styles here without overwriting anything
-						for(styleKey in parameters[i].parameters.parameters.style) {
-							if(output.style.hasOwnProperty(styleKey)) {
-								if(styleKey.toLowerCase() == 'fontsize') {
-									output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
-								} else {
+			if(!(parameters[i].hasOwnProperty('doNotRender')) || parameters[i].doNotRender !== true) {
+				if(parameters[i].parameters.hasOwnProperty('parameters')) {
+					for(parameter in parameters[i].parameters.parameters) {
+						if(parameter.toLowerCase() == 'style') {
+							// Apply styles here without overwriting anything
+							for(styleKey in parameters[i].parameters.parameters.style) {
+								if(output.style.hasOwnProperty(styleKey)) {
 									output.style[styleKey] += ' ' + parameters[i].parameters.parameters.style[styleKey]
+								} else {
+									output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
 								}
-							} else {
-								output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
 							}
+						} else {
+							output[parameter] = parameters[i].parameters.parameters[parameter]
 						}
-					} else {
-						output[parameter] = parameters[i].parameters.parameters[parameter]
 					}
 				}
 			}
+
 			if(parameters[i].parameters.hasOwnProperty('variables')) {
 				for(variable in parameters[i].parameters.variables) {
 					if(variables.hasOwnProperty(parameters[i].parameters.variables[variable])) {
+						if(parameters[i].parameters.tag == 'youtube' && variable == 'link') {
+							let tempVideoSource = variables[parameters[i].parameters.variables[variable]].split('/').pop().split('?', 2).pop().substring(2)
+							output.src = 'https://www.youtube.com/embed/' + tempVideoSource.split('&', 1).shift()
+							let videoVariables = tempVideoSource.split('&')
+							videoVariables.shift()
+							let parsedVariables = []
+							let allowedVariables = [ 'start', 'end' ]	// THESE MUST BE LOWERCASE
+							for(let c = 0; c < allowedVariables.length; c++) {
+								for(let v = videoVariables.length - 1; v >= 0 ; v--) {
+									if(videoVariables[v].substring(0, 2).toLowerCase() == 't=') {
+										// Make sure to change 't' to 'start' so it works!
+										videoVariables[v] = 'star' + videoVariables[v]
+									}
+									if(videoVariables[v].substring(0, allowedVariables[c].length + 1).toLowerCase() == allowedVariables[c] + '=') {
+										let variableValue = videoVariables[v].split('=').pop()
+										if(allowedVariables[c] == 'start' || allowedVariables[c] == 'end') {
+											//Parse the time value
+											let tempTimeValue = variableValue.toLowerCase()
+											let h = 0
+											let m = 0
+											let s = 0
+											if(tempTimeValue.length > 0 && tempTimeValue.includes('h')) {
+												tempTimeValue = tempTimeValue.split('h')
+												h = parseInt(tempTimeValue.shift())
+												tempTimeValue = tempTimeValue[0]
+											}
+											if(tempTimeValue.length > 0 && tempTimeValue.includes('m')) {
+												tempTimeValue = tempTimeValue.split('m')
+												m = parseInt(tempTimeValue.shift())
+												tempTimeValue = tempTimeValue[0]
+											}
+											if(tempTimeValue.length > 0) {
+												if(tempTimeValue.includes('s')) {
+													tempTimeValue = tempTimeValue.split('s')
+													s = parseInt(tempTimeValue.shift())
+													tempTimeValue = tempTimeValue[0]
+												} else {
+													s = parseInt(tempTimeValue)
+												}
+											}
+											if(isNaN(h) || isNaN(m) || isNaN(s)) {
+												printWarning('Invalid YouTube video time: ' + variableValue)
+												break
+											}
+											variableValue = ((h * 3600) + (m * 60) + s).toString()
+										}
+										parsedVariables.push(allowedVariables[c] + '=' + (variableValue))
+									}
+								}
+							}
+							if(parsedVariables.length > 0) output.src = output.src + '?' + parsedVariables.join('&')
+							continue
+						}
+						if(parameters[i].parameters.tag == 'soundcloud' && variable == 'link') {
+							let link = variables[parameters[i].parameters.variables[variable]].toLowerCase()	// FIXME: Eventually this may not work...
+							link = link.split('/')
+							let track = link.pop()
+							let author = link.pop()
+							output.src = 'https://w.soundcloud.com/player/?url=https://soundcloud.com/' + author + '/' + track
+							continue
+						}
 						output[variable] = variables[parameters[i].parameters.variables[variable]]
 						if(parameters[i].parameters.tag == 'hr' && variable == 'width') {
 							output[variable] = clamp(output[variable], 1, 100) + '%'
 						}
+/*
+// Pretty sure this was only used for hackish nonsense and can be removed...
 					} else {
-						output[variable] = inputText
+						output[variable] = output.text
+*/
 					}
 				}
 			}
@@ -2596,7 +2980,12 @@ function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
 			for(key in variables) {
 				let temp = key.toLowerCase()
 				switch(temp) {
+					case 'text':
+						if(hideTag == true && variables[key].trim() != '') spoilerText = variables[key]
+						break
+
 					case 'nomarkup':
+						if(tagBlacklist.includes('nomarkup')) continue
 						if(variables[key].toLowerCase() == 'false') break
 						noMarkup = true
 						break
@@ -2604,26 +2993,28 @@ function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
 					case 'fg':
 					case 'color':
 					case 'fgcolor':
-					case 'text':
+						if(tagBlacklist.includes('color')) continue
 						temp = 'color'
 						if(output.elementType == 'hr') {
 							temp = 'borderColor'
 						}
-						output.style[temp] = '#' + readColor(variables[key])
+						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end
 						break
 
-					case 'backgroundcolor':
-					case 'highlight':
-					case 'bgcolor':
 					case 'bg':
+					case 'bgcolor':
+					case 'highlight':
+						if(tagBlacklist.includes('color')) continue
 						temp = 'backgroundColor'
-						output.style[temp] = '#' + readColor(variables[key])
+						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end
 						break
 
 					case 'font':
 					case 'fontfamily':
 					case 'font-family':
 					case 'type':
+						if(variables[key].trim() == '') continue
+						if(tagBlacklist.includes('font')) continue
 						temp = 'fontFamily'
 						let newFont = variables[key].toLowerCase()
 						if(typeof(customFonts) !== 'undefined') {
@@ -2639,28 +3030,99 @@ function generateSuperTextElement(inputText, preprocessorInfo, baseFontSize) {
 									if(getFontData(newFont) === false) newFont = 'nabfonts sans-serif'
 							}
 						}
-
 						output.style[temp] = "'" + newFont + "'"
 						break
 
 					case 'size':
+						if(tagBlacklist.includes('size')) continue
 					case 'fontsize':
+						if((parameters[i].hasOwnProperty('doNotRender')) && parameters[i].doNotRender === true) break	// If this is a nested tag, DO NOT apply a fontSize - it is already applied!
 						temp = 'fontSize'
-						if(typeof(output.style[temp]) !== 'undefined') {
-							output.style[temp] = 'min(calc(' + baseFontSize + 'rem + 6rem), calc(' + (clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100).toString() + ' * ' + output.style[temp] + '))'
+						if(typeof(baseFontSize) === 'number') {
+							output.style[temp] = 'min(calc(6rem * ' + baseFontSize + '), ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100)).toString() + 'em)'
 						} else {
-							output.style[temp] = 'min(calc(' + baseFontSize + 'rem + 6rem), ' + (clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100).toString() + 'em)'
+							output.style[temp] = 'min(6rem, ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100)).toString() + 'em)'
 						}
 						break
 				}
 			}
 		}
+		if(parameters[i].parameters.hasOwnProperty('nest') && parameters[i].parameters.nest == true) {
+			parameters[i].doNotRender = true
+		}
+	}
+
+	if(preprocessorInfo.hasOwnProperty('children')) {
+		output.children = []
+		for(let i = 0; i < preprocessorInfo.children.length; i++) {
+			let tempChild = superTextMarkupGenerateElement(preprocessorInfo.children[i], baseFontSize, tagBlacklist)
+			if(tempChild !== null) {
+				hasChildren = true
+				output.children.push(tempChild)
+			}
+		}
+	}
+
+	if(output.elementType == 'span' && output.text == '' && hasChildren == false) {
+		// Empty tag. Skip it.
+		return null
+	}
+
+	if(hideTag == true) {
+		let spoilerButtonID = 'superTextMarkuphideTag' + superTextMarkupData.hideTags++
+		let spoilerDivID = spoilerButtonID + 'div'
+		output.id = spoilerDivID
+		let tempStyle = Object.assign(output.style)
+		output.style = { display : 'none', minHeight : '0.5em' }
+		output = { elementType : 'div', children : [
+			{ elementType : 'button', id : spoilerButtonID, className : 'superTextMarkupButton', style : { fontFamily : '\'nabfonts monospace\', monospace', fontWeight : 'bold', fontSize : '0.75em', borderRadius : '0.35em', padding : '0.1em 0.5em 0.1em 0.5em', userSelect : 'none', cursor : 'pointer' }, text : spoilerText, onclick : ()=>{ let temp = document.getElementById(spoilerDivID); if(temp.style.display != 'none') { temp.style.display = 'none' } else { temp.style.display = 'block' } } },
+			{ elementType : 'br' },
+			{ elementType : 'div', style : { marginTop : '0.25em', padding : '0.25em', border : '0.2em solid #000', backgroundColor : '#0002', overflow : 'auto' }, children : [ output ] },
+		]}
 	}
 
 	return output
 }
 
-function processTagInfo(startLoc, inputText, activeMarkups = [], noMarkup = false, addSmilies = true) {
+function superTextMarkupStripTagsFromText(inputText) {
+	let output = []
+
+	let loc = 0
+	let prevLoc = 0
+	let i = 0
+	for(i; i < inputText.length; i++) {
+		loc = inputText.indexOf('[', i)
+		if(loc < 0) break
+		let result = superTextMarkupProcessTagInfo(loc, inputText, [], [], false, true)
+		if(result === false) {
+			continue	// No tag here. Keep going
+		}
+
+		if(result.tagInfo.tag == 'br') {
+			inputText = inputText.substring(0, loc) + "\n" + inputText.substring(result.endLoc + 1, inputText.length)
+			i = loc
+			continue
+		}
+
+		output.push(inputText.substring(prevLoc, loc))
+		loc = i = result.endLoc
+		prevLoc = loc + 1
+	}
+
+	output.push(inputText.substring(prevLoc, inputText.length))	// Get the remaining text
+
+	i = 0
+	for(i; i < output.length; i++) {
+		if(output[i] == '') {
+			output.splice(i, 1)
+			i--
+		}
+	}
+
+	return output.join('')
+}
+
+function superTextMarkupProcessTagInfo(startLoc, inputText, tagBlacklist = [], activeMarkups = [], noMarkup = false, addSmilies = true) {
 	// startLoc must be the location of the opening '['
 
 	if(activeMarkups.length < 1) noMarkup = false	// Force this if the markup array is empty
@@ -2675,12 +3137,17 @@ function processTagInfo(startLoc, inputText, activeMarkups = [], noMarkup = fals
 		loc++
 		let endLoc = inputText.indexOf(']', loc)
 		let tagName = inputText.substring(loc, endLoc).trim().toLowerCase()
+
+		let tagInfo = superTextMarkupGetTagData(tagName)
+		if(tagInfo == false) return false
+		if(tagInfo.hasOwnProperty('noClosingTag') && tagInfo.noClosingTag == true) return false
 		if(noMarkup) {
 			if(tagName != activeMarkups[activeMarkups.length - 1].tag) {
 				return false
 			}
 		}
-		return { openingTag : false, endLoc : endLoc, tagInfo : { tag : tagName, parameters : getTagData(tagName) } }
+		if(tagBlacklist.includes(tagName)) return false
+		return { openingTag : false, endLoc : endLoc, tagInfo : { tag : tagName, parameters : tagInfo } }
 	}
 
 	let parameters = []
@@ -2730,7 +3197,8 @@ function processTagInfo(startLoc, inputText, activeMarkups = [], noMarkup = fals
 	}
 
 	let tagName = parameters.shift()
-	let tagData = getTagData(tagName.toLowerCase())
+	if(tagBlacklist.includes(tagName)) return false
+	let tagData = superTextMarkupGetTagData(tagName.toLowerCase())
 	if(tagData === false && addSmilies === false) {
 		// Did not match a tag!
 		return false
@@ -2741,10 +3209,13 @@ function processTagInfo(startLoc, inputText, activeMarkups = [], noMarkup = fals
 	}
 
 	if(tagData === false) {
-		tagData = getSmileyData(tagName)
+		tagData = superTextMarkupGetSmileyData(tagName)
 		if(tagData === false) return false	// No smiley, no tag. Terminate.
+		tagData = Object.assign(tagData)
 		return { openingTag : true, endLoc : loc, tagInfo : { tag : tagName, parameters : { smileyFace : true, noClosingTag : true, symbol : tagData }, variables : {} } }
 	}
+
+	tagData = Object.assign(tagData)
 
 	let outputVariables = {}
 	for(let i = 0; i < parameters.length; i++) {
@@ -2784,7 +3255,7 @@ function processTagInfo(startLoc, inputText, activeMarkups = [], noMarkup = fals
 	return { openingTag : true, endLoc : loc, tagInfo : { tag : tagName, parameters : tagData, variables : outputVariables } }
 }
 
-function getTagData(tag) {
+function superTextMarkupGetTagData(tag) {
 	tag = tag.toLowerCase()
 	for(let i = 0; i < superTextMarkupData.markup.length; i++) {
 		if(tag == superTextMarkupData.markup[i].tag) return superTextMarkupData.markup[i]
@@ -2792,43 +3263,69 @@ function getTagData(tag) {
 	return false
 }
 
-function getSmileyData(tag) {
+function superTextMarkupGetSmileyData(tag) {
 	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
 		if(tag == superTextMarkupData.smileyFaces[i].text) return superTextMarkupData.smileyFaces[i]
 	}
 	return false
 }
 
-function superTextMarkup(inputText, defaultFont = 'nabfonts sans-serif', defaultFontSize = 1.5, addSmilies = true) {
+function superTextConvertWhitelistToBlacklist(whiteList) {
+	// This function is useful if you want to use a whitelist for your tags, rather than a blacklist
+	let output = []
+	for(let i = 0; i < whiteList.length; i++) {
+		whiteList[i] = whiteList[i].toLowerCase()
+	}
+
+	for(let i = 0; i < superTextMarkupData.markup.length; i++) {
+		if(!whiteList.includes(superTextMarkupData.markup[i].tag)) output.push(superTextMarkupData.markup[i].tag)
+	}
+
+	return output
+}
+
+function superTextMarkup(inputText, tagBlacklist = [], defaultFont = 'nabfonts sans-serif', defaultFontSize = 1.5, addSmilies = true) {
 	// This function takes text as input, and returns an array of objects ready to be rendered by createElement()
 	// To render the output, apply it as a child to another element, and call createElement() on it, like this:
 	//			createElement({ elementType : 'span', children : superTextMarkup(inputText) })
 
 	// Since this is the parent element of the markup, force the correct font and size
 	let parentStyle = { textAlign : 'justify' }
-	if(defaultFont != '' && defaultFont != null ** defaultFont !== false) parentStyle.fontFamily = defaultFont
-	if(defaultFontSize > 0) parentStyle.fontSize = defaultFontSize + 'rem'
+	if(defaultFont !== '' && defaultFont !== null && defaultFont !== false) parentStyle.fontFamily = defaultFont
+	if(defaultFontSize !== null && defaultFontSize !== false && defaultFontSize > 0) {
+		parentStyle.fontSize = defaultFontSize + 'rem'
+	} else {
+		defaultFontSize = 1		// No font size desired, so we need to set the multiplier to 1!
+	}
+	if(!Array.isArray(tagBlacklist)) tagBlacklist = []
 
-	return [ { elementType : 'span', style : parentStyle, children : generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies) } ]
+	return [ { elementType : 'span', style : parentStyle, children : superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies) } ]
 }
 
-function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies = true, loc = 0, activeMarkups = [], terminateRecursionOnTag = '', recursions = 0) {
+function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist = [], addSmilies = true, loc = 0, activeMarkups = [], nomarkup = false, recursions = 0) {
+	let ignoreNextLineBreak = false
+
 	let preprocessor = [{ markup : activeMarkups.slice(0), startPoint : loc }]
 
 	if(recursions === 0) {
+		for(let i = 0; i < tagBlacklist.length; i++) {
+			tagBlacklist[i] = tagBlacklist[i].toLowerCase()
+		}
+		tagBlacklist.sort()
 		if(typeof(customFonts) === 'undefined') addSmilies = false	// Disable smilies if there are no custom fonts
 		inputText = inputText.replace(new RegExp("\n", 'g'), '[br]')		// Change line breaks to the correct formatting
+	} else {
+		ignoreNextLineBreak = true	// When starting a nested tag, ignore the first line break. Helps with formatting the input text
 	}
 
 	let terminate = false
-	let nomarkup = false
-	let ignoreNextLineBreak = false
 	for(loc; terminate == false && loc >= 0 && loc < inputText.length; loc++) {
 		loc = inputText.indexOf('[', loc)
 		if(loc < 0) break
-		let result = processTagInfo(loc, inputText, activeMarkups, nomarkup, addSmilies)
-
-		if(result === false) continue	// No tag here. Keep going
+		let result = superTextMarkupProcessTagInfo(loc, inputText, tagBlacklist, activeMarkups, nomarkup, addSmilies)
+		if(result === false) {
+			continue	// No tag here. Keep going
+		}
 
 		if(preprocessor.length > 0) preprocessor[preprocessor.length - 1].endPoint = loc
 
@@ -2838,7 +3335,7 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 
 			loc = result.endLoc
 
-			if(ignoreNextLineBreak == true && result.tagInfo.tag == 'br') {
+			if(ignoreNextLineBreak == true && result.tagInfo.tag == 'br' && preprocessor.length > 0 && preprocessor[preprocessor.length - 1].startPoint == preprocessor[preprocessor.length - 1].endPoint) {
 				ignoreNextLineBreak = false
 				preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
 				continue
@@ -2853,6 +3350,10 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 				nomarkup = true
 			}
 
+			if(result.tagInfo.parameters.hasOwnProperty('block') && result.tagInfo.parameters.block == true) {
+				ignoreNextLineBreak = true
+			}
+
 			if(result.tagInfo.parameters.hasOwnProperty('noClosingTag') && result.tagInfo.parameters.noClosingTag === true) {
 				preprocessor[preprocessor.length - 1].endPoint = loc + 1
 				activeMarkups.pop()
@@ -2861,23 +3362,17 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 			}
 
 			if(result.tagInfo.parameters.hasOwnProperty('nest') && result.tagInfo.parameters.nest === true) {
-				preprocessor[preprocessor.length - 1].children = generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies, loc + 1, activeMarkups, activeMarkups.pop().tag, recursions + 1)
+				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, activeMarkups, nomarkup, recursions + 1)
+				nomarkup = false
 				let nestedChildren = preprocessor[preprocessor.length - 1].children
 
-				if(nestedChildren[0].hasOwnProperty('text')) {
-					// FIXME: This is a bit hackish...it's intended to work for URLs so you don't always have to use 'link=' as a parameter
-					preprocessor[preprocessor.length - 1].endPoint = clamp(preprocessor[preprocessor.length - 1].startPoint + nestedChildren[0].text.length, 0, inputText.length - 1)
-				} else {
-					preprocessor[preprocessor.length - 1].endPoint = preprocessor[preprocessor.length - 1].startPoint
-				}
-
-				loc = nestedChildren[0].endPoint
-				ignoreNextLineBreak = true
+				loc = nestedChildren[0].endPoint	// This is forced back up for us from the recursion of this function
 
 				if(loc <= preprocessor[preprocessor.length - 1].startPoint || loc >= inputText.length) {
 					// If we went backwards or stayed the same, then there's a malformed tag in the nested material and we likely went past the end. Terminate.
 					loc = inputText.length
 				} else {
+					preprocessor[preprocessor.length - 1].endPoint = loc - 1
 					preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
 				}
 			}
@@ -2886,12 +3381,11 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 
 // **************************************************************** CLOSING TAGS ****************************************************************
 
-			if(recursions > 0 && result.tagInfo.tag == terminateRecursionOnTag) {
-				terminate = true
-			}
-
 			for(let j = activeMarkups.length - 1; j >= 0; j--) {
 				if(activeMarkups[j].tag == result.tagInfo.tag) {
+					if(recursions > 0 && result.tagInfo.hasOwnProperty('parameters') && result.tagInfo.parameters.hasOwnProperty('nest') && result.tagInfo.parameters.nest == true) {
+						terminate = true
+					}
 					activeMarkups.splice(j, 1)
 					nomarkup = false	// This can't possibly be true any longer if we just closed a tag
 					if(loc > 0) {
@@ -2910,41 +3404,53 @@ function generateSuperTextMarkupElements(inputText, defaultFontSize, addSmilies 
 		}
 	}
 
+
 	// Terminate the last tag here
 	if(recursions == 0) {
 		preprocessor[preprocessor.length - 1].endPoint = inputText.length
 	} else {
 		if(loc >= 0 && loc < inputText.length) {
-			preprocessor[preprocessor.length - 1].endPoint = loc - 1
+			preprocessor[preprocessor.length - 1].endPoint = loc
 		} else {
 			preprocessor[preprocessor.length - 1].endPoint = inputText.length
 		}
 	}
 
-	let output = []
 	for(let i = 0; i < preprocessor.length; i++) {
 		if(i > 0 && preprocessor[i].startPoint == preprocessor[i].endPoint && preprocessor[i].markup.length == 0) {
 			// Blank element. Ignore it. (Always allow a blank element 0, because it is necessary for nesting to work correctly)
+			preprocessor.splice(i, 1)
+			i--
 			continue
 		}
-		output.push(generateSuperTextElement(inputText.substring(preprocessor[i].startPoint, preprocessor[i].endPoint), preprocessor[i], defaultFontSize ))
+		if(!preprocessor[i].hasOwnProperty('children')) preprocessor[i].text = inputText.substring(preprocessor[i].startPoint, preprocessor[i].endPoint)
 	}
 
 	if(recursions > 0) {
+
 		// Need to pass this back for recursions...
 		if(loc >= 0 && loc < inputText.length) {
-			let newIndex = inputText.indexOf(']', loc)
+			let newIndex = inputText.indexOf(']', loc - 1)
 			if(newIndex < 0) newIndex = inputText.length - 1
-			output[0].endPoint = newIndex
+			preprocessor[0].endPoint = newIndex
 		} else {
-			output[0].endPoint = loc
+			preprocessor[0].endPoint = loc - 1
 		}
+
+		return preprocessor
 	}
 
+//console.log('ALL PREPROCESSOR DATA:', preprocessor)
+
+	let output = []
+	for(let i = 0; i < preprocessor.length; i++) {
+		let tempChild = superTextMarkupGenerateElement(preprocessor[i], defaultFontSize, tagBlacklist)
+		if(tempChild !== null) output.push(tempChild)
+	}
 	return output
 }
 
-function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = '') {
+function superTextMarkupAddMarkupToTextField(textAreaID, tag, variables = {}, additionalText = '') {
 	let textArea = document.getElementById(textAreaID)
 	let openingTag = '[' + tag.tag
 	let closingTag = '[/' + tag.tag + ']'
@@ -2968,6 +3474,7 @@ function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = 
 
 	let selectionStart = textArea.selectionStart
 	let selectionEnd = textArea.selectionEnd
+	let endText = textArea.value.substring(selectionEnd)
 
 	// If there is not supposed to be a closing tag, don't do anything with it
 	if(tag.hasOwnProperty('noClosingTag') && tag.noClosingTag === true) closingTag = ''
@@ -2991,16 +3498,51 @@ function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = 
 		}
 
 		// If we're adding an ordered or unordered list, we should account for that
-		if((tag.tag == 'ol' || tag.tag == 'ul') && selectedText.indexOf('\n') >= 0) {
+		if((tag.tag == 'ol' || tag.tag == 'ul')) {
+			let addEndingNewlines = 0
 			selectedText = selectedText.split('\n')
+			for(let x = 0; x < selectedText.length; x++) {
+				if(selectedText[x].trim().substring(0, 4) == '[li]') {
+					// This line already has a [li] tag
+					// FIXME: I have no idea how to handle this condition...
+				} else if(selectedText[x].trim() == '') {
+					// Blank line. Skip
+					selectedText.splice(x, 1)
+					x--
+					addEndingNewlines++
+					continue
+				}
+				addEndingNewlines = 0
+			}
+			openingTag += '\n'
+			closingTag = '\n' + closingTag + '\n'.repeat(addEndingNewlines)
 			selectedText = '[li]' + selectedText.join('[/li]\n[li]') + '[/li]'
+			selectionEnd = selectionStart + selectedText.length
+		}
+
+		// If we're making list items, we should split them on every line too
+		if(tag.tag == 'li') {
+			let addEndingNewlines = 0
+			selectedText = selectedText.split('\n')
+			for(let x = 0; x < selectedText.length; x++) {
+				if(selectedText[x].trim() == '') {
+					// Blank line. Skip
+					selectedText.splice(x, 1)
+					x--
+					addEndingNewlines++
+					continue
+				}
+				addEndingNewlines = 0
+			}
+			closingTag += '\n'.repeat(addEndingNewlines)
+			selectedText = selectedText.join('[/li]\n[li]')
 			selectionEnd = selectionStart + selectedText.length
 		}
 	} else {
 		// Nothing is selected
 	}
 
-	textArea.value = textArea.value.substring(0, selectionStart) + openingTag + selectedText + closingTag + textArea.value.substring(selectionEnd)		// Add the tags
+	textArea.value = textArea.value.substring(0, selectionStart) + openingTag + selectedText + closingTag + endText		// Add the tags
 	textArea.selectionEnd = selectionEnd
 
 	if(typeof(textArea.oninput) !== 'undefined') textArea.oninput()	// Force an update to the markup
@@ -3008,14 +3550,45 @@ function addMarkupToTextField(textAreaID, tag, variables = {}, additionalText = 
 	textArea.setSelectionRange(selectionStart + openingTag.length, selectionEnd + openingTag.length)
 }
 
-function superTextPickColors(colors, data) {
+function superTextMarkupRemoveTagsFromSelection(inputData, data) {
+	let textAreaID = data[0]
+
+	let textArea = document.getElementById(textAreaID)
+	let selectionStart = textArea.selectionStart
+	let selectionEnd = textArea.selectionEnd
+
+	let startText = textArea.value.substring(0, selectionStart)
+	let	selectedText = superTextMarkupStripTagsFromText(textArea.value.substring(selectionStart, selectionEnd))
+	let endText = textArea.value.substring(selectionEnd)
+
+	textArea.value = startText + selectedText + endText
+	textArea.focus()
+	textArea.setSelectionRange(selectionStart, selectionStart + selectedText.length)
+	textArea.oninput()
+}
+
+function superTextMarkupPickColors(colors, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
-	addMarkupToTextField(textAreaID, tagInfo, colors)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, colors)
 }
 
-function superTextAddURL(inputData, data) {
+function superTextMarkupAddYouTube(inputData, data) {
+	let textAreaID = data[0]
+	let tagInfo = data[1]
+
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
+}
+
+function superTextMarkupAddSoundCloud(inputData, data) {
+	let textAreaID = data[0]
+	let tagInfo = data[1]
+
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
+}
+
+function superTextMarkupAddURL(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
@@ -3028,42 +3601,49 @@ function superTextAddURL(inputData, data) {
 		inputData.url = text
 	}
 
-	addMarkupToTextField(textAreaID, tagInfo, inputData, text)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData, text)
 }
 
-function superTextAddImage(inputData, data) {
+function superTextMarkupAddHide(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
-	addMarkupToTextField(textAreaID, tagInfo, inputData)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
-function superTextPickFont(inputData, data) {
+function superTextMarkupAddImage(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
-	addMarkupToTextField(textAreaID, tagInfo, inputData)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
-function superTextAddHr(inputData, data) {
+function superTextMarkupPickFont(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
-	addMarkupToTextField(textAreaID, tagInfo, inputData)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
-function superTextAddSize(inputData, data) {
+function superTextMarkupAddHr(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
 
-	addMarkupToTextField(textAreaID, tagInfo, inputData)
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
-function addSmileyToTextField(textAreaID, tagInfo) {
-	addMarkupToTextField(textAreaID, combineObjects(tagInfo, { tag : tagInfo.text, noClosingTag : true }))
+function superTextMarkupAddSize(inputData, data) {
+	let textAreaID = data[0]
+	let tagInfo = data[1]
+
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
-function makeSuperTextMarkupEditorHighlights(inputText) {
+function superTextMarkupAddSmileyToTextField(textAreaID, tagInfo) {
+	superTextMarkupAddMarkupToTextField(textAreaID, combineObjects(tagInfo, { tag : tagInfo.text, noClosingTag : true }))
+}
+
+function superTextMarkupMakeEditorHighlights(inputText, tagBlacklist = [], addSmilies = true) {
 	inputText += '\n\n\n'	// Without this, the scroll breaks when there are newlines at the bottom
 	inputText = inputText.split('\n')
 
@@ -3084,7 +3664,7 @@ function makeSuperTextMarkupEditorHighlights(inputText) {
 			outputElements.push({ elementType : 'span', id : elementID, text : inputText[i].substring(startLoc, endLoc) })
 			startLoc = endLoc
 
-			let tagInfo = processTagInfo(startLoc, inputText[i])
+			let tagInfo = superTextMarkupProcessTagInfo(startLoc, inputText[i], tagBlacklist, [], false, addSmilies)
 			if(tagInfo === false) {
 				spellCheckElements.push(elementID)
 				outputElements.push({ elementType : 'span', style : { backgroundColor : 'none' }, text : '[' })
@@ -3137,10 +3717,19 @@ function superTextMarkupEditorCharCount(textAreaID, charCountID, maxChars) {
 
 superTextEditorTimers = {}
 superTextMarkupEditorCount = 0
-function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
+function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, textAreaHasFocus = true, tagBlacklist = [], defaultFont = 'nabfonts sans-serif', defaultFontSize = 1.5, addSmilies = true) {
+	for(let i = 0; i < tagBlacklist.length; i++) {
+		tagBlacklist[i] = tagBlacklist[i].toLowerCase()
+	}
+	tagBlacklist.sort()		// Used for the help menu. Makes things more readable
+
+	reRenderTimeout = 500 
+
 	// Spell check doesn't have good browser support right now, and it slows down the page like crazy.
 	// If that ever changes, change this to true and spell check will work again
 	let allowSpellCheck = false
+
+	renderElement.style.whiteSpace = 'pre'
 
 	superTextMarkupEditorCount++
 
@@ -3150,26 +3739,32 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 	let formatDivID = textAreaID + 'Formatting'
 	let outputElement = { elementType : 'div', style : { width : '100%' }, children : [] }
 	let emGridSpacing = 0.1
-	let formatButtons = { elementType : 'div', style : { display : 'grid', gridGap : emGridSpacing + 'em ' + emGridSpacing + 'em', margin : '0 auto', padding : emGridSpacing + 'em', fontSize : '2em' }, children : [] }
+	let formatButtons = { elementType : 'div', style : { display : 'grid', gridGap : emGridSpacing + 'em ' + emGridSpacing + 'em', margin : '0 auto', padding : emGridSpacing + 'em', fontSize : '1.5em' }, children : [] }
 	let buttonShadow = '0.025em 0.025em #0003, -0.025em 0.025em #0003, 0.025em -0.025em #0003, -0.025em -0.025em #0003'
 
 	clearElement(editorElement)
 
 	let categoryOrder = [	// This array configures the arrangement of the buttons. Each array is a row, and it's contents are the categories it will contain
 		[ 'formatting', 'separators' ],
-		[ 'alignment', 'heading' ],
-		[ 'quote', 'organization', 'links' ],
-		[ 'control', 'smileyFaces' ],
+		[ 'alignment', 'organization', 'control' ],
+		[ 'quote', 'embed' ],
+		[ 'smileyFaces', 'meta' ],
 	]
 
+	// Let's grab any categories that were missed...
 	let addedCategories = []
 	for(let i = 0; i < categoryOrder.length; i++) {
 		for(let h = 0; h < categoryOrder[i].length; h++) {
+			if(categoryOrder[i][h] == 'smileyFaces' && addSmilies !== true) {
+				categoryOrder[i].splice(h, 1)
+				h--
+				continue
+			}
 			addedCategories.push(categoryOrder[i][h])
 		}
 	}
 	for(category in superTextMarkupData.categories) {
-		if(!addedCategories.includes(category)) categoryOrder.push( [ category ])
+		if(!addedCategories.includes(category) && !(addSmilies !== true && category != 'smileyFaces')) categoryOrder.push([ category ])
 	}
 
 	let rows = categoryOrder.length
@@ -3181,7 +3776,7 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 			if(superTextMarkupData.categories.hasOwnProperty(categoryOrder[i][h])) {
 				tempCols += superTextMarkupData.categories[categoryOrder[i][h]].length
 			} else {
-				printWarning('SuperTextMarkup property does not exist: "' + category + '"')
+				printWarning('SuperTextMarkup property does not exist: "' + categoryOrder[i][h] + '"')
 			}
 		}
 		if(tempCols > cols) cols = tempCols
@@ -3202,12 +3797,14 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 		let categoryChildren = []
 		let h = 0
 		let cumulative = 0	// The number of elements pushed to the grid so far. Used to count out the columns per row and pad as needed
+		let lastCumulative = 0	// For preventing stray line breaks
 		for(h; h < categoryOrder[i].length; h++) {
-			if(h > 0) {
+			if(h > 0 && cumulative != lastCumulative) {
 				// Add a spacer
 				formatButtons.children.push(spacer)
 				cumulative++
 			}
+			lastCumulative = cumulative
 
 			let categoryEntries = []
 			let category = categoryOrder[i][h]
@@ -3216,16 +3813,18 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 				let j = 0
 				for(j; j < superTextMarkupData.categories[category].length; j++) {
 					let tagInfo = superTextMarkupData.categories[category][j]	// 'let' is necessary here, because of the function declaration below
+					if(tagBlacklist.includes(tagInfo.tag)) continue
 					if(tagInfo.hasOwnProperty('symbol')) {
 						let onclickAction = ()=>{
-							addMarkupToTextField(textAreaID, tagInfo)
+							superTextMarkupAddMarkupToTextField(textAreaID, tagInfo)
 						}
 						switch(tagInfo.tag.toLowerCase()) {
 
 							case 'color':
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextPickColors,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupPickColors,
 										callbackDataArray : [ textAreaID, tagInfo ],
 										label : 'Pick Colors',
 										categories : [
@@ -3276,7 +3875,8 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 /*
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextPickFont,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupPickFont,
 										callbackDataArray : [ textAreaID, tagInfo ],
 										label : 'Select Font',
 										categories : [
@@ -3296,7 +3896,8 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 */
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextPickFont,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupPickFont,
 										callbackDataArray : [ textAreaID, tagInfo ],
 										label : 'Select Font',
 										categories : [
@@ -3322,7 +3923,8 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 							case 'size':
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextAddSize,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddSize,
 										callbackDataArray : [ textAreaID, tagInfo ],
 										label : 'Font Size',
 										categories : [
@@ -3353,9 +3955,10 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 							case 'hr':
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextAddHr,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddHr,
 										callbackDataArray : [ textAreaID, tagInfo ],
-										label : 'HR Width',
+										label : 'Horizontal Rule Width',
 										categories : [
 											{
 												allowDisable : false,
@@ -3384,15 +3987,16 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 							case 'img':
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextAddImage,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddImage,
 										callbackDataArray : [ textAreaID, tagInfo ],
-										label : 'Hyperlink',
+										label : 'Image',
 										categories : [
 											{
-												label : 'URL',
 												allowDisable : false,
 												inputs : [
 													{
+														label : 'URL',
 														type : 'text',
 														name : 'link',
 														required : true,
@@ -3413,15 +4017,16 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 							case 'url':
 								onclickAction = ()=>{
 									createModalForm({
-										callback : superTextAddURL,
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddURL,
 										callbackDataArray : [ textAreaID, tagInfo ],
 										label : 'Hyperlink',
 										categories : [
 											{
-												label : 'URL',
 												allowDisable : false,
 												inputs : [
 													{
+														label : 'URL',
 														type : 'text',
 														name : 'link',
 														required : true,
@@ -3435,11 +4040,11 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 												]
 											},
 											{
-												label : 'Link Text',
 												allowDisable : true,
 												startDisabled : true,
 												inputs : [
 													{
+														label : 'Link Text',
 														type : 'text',
 														name : 'text',
 														prompts : [
@@ -3456,6 +4061,65 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 								}
 								break
 
+							case 'youtube':
+								onclickAction = ()=>{
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddYouTube,
+										callbackDataArray : [ textAreaID, tagInfo ],
+										label : 'YouTube Video',
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														label : 'URL or video ID',
+														type : 'text',
+														name : 'link',
+														required : true,
+														prompts : [
+															{
+																default : 'https://',
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
+															},
+														],
+													},
+												]
+											},
+										]
+									})
+								}
+								break
+
+							case 'soundcloud':
+								onclickAction = ()=>{
+									createModalForm({
+										callback : superTextMarkupAddSoundCloud,
+										callbackDataArray : [ textAreaID, tagInfo ],
+										label : 'SoundCloud Player',
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														label : 'URL',
+														type : 'text',
+														name : 'link',
+														required : true,
+														prompts : [
+															{
+																default : 'https://',
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
+															},
+														],
+													},
+												]
+											},
+										]
+									})
+								}
+								break
+
 							case 'smiley':
 								let smileyArray = []
 								for(let x = 0; x < superTextMarkupData.smileyFaces.length; x++) {
@@ -3465,13 +4129,14 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 											value : superTextMarkupData.smileyFaces[x].character,
 											style : { aspectRatio : '1 / 1', backgroundColor : '#999', fontSize : (superTextMarkupData.smileyFaces[x].hasOwnProperty('size') ? 'calc(' + superTextMarkupData.smileyFaces[x].size / 100 + ' * 1.5em)' : '1.5em'), fontFamily : superTextMarkupData.smileyFaces[x].font, color : '#' + superTextMarkupData.smileyFaces[x].color, textShadow : buttonShadow },
 											onclick : ()=>{
-												addSmileyToTextField(textAreaID, superTextMarkupData.smileyFaces[x])
+												superTextMarkupAddSmileyToTextField(textAreaID, superTextMarkupData.smileyFaces[x])
 											},
 										})
 								}
 
 								onclickAction = ()=>{
 									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
 										label : 'Insert Smiley',
 										okayButton : false,
 										categories : [
@@ -3490,12 +4155,114 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 								}
 							break
 
+							case 'hide':
+								onclickAction = ()=>{
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddHide,
+										callbackDataArray : [ textAreaID, tagInfo ],
+										label : 'Hidden Text',
+										categories : [
+											{
+												allowDisable : true,
+												startDisabled : true,
+												inputs : [
+													{
+														label : 'Button Label (Optional)',
+														type : 'text',
+														name : 'text',
+														required : true,
+														prompts : [
+															{
+//																default : '',
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 15em)' },
+															},
+														],
+													},
+												]
+											},
+										]
+									})
+								}
+								break
 
+							case 'help':
+/*
+// This part doesn't work right because the blacklist on markup for modals prevents a lot of the formatting necessary for this to be readable
+								let disallowedTags = 'None.'
+								if(tagBlacklist.length > 0) disallowedTags = '[b fg=f55 nomarkup][' + tagBlacklist.join('][/b], [b fg=f55 nomarkup][') + '][/b]'
+								onclickAction = ()=>{
+									let testString = 'modalForm' + modalFormCount.toString()
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										label : 'SuperText Markup Help',
+										cancelButton : false,
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														label : 'Disallowed tags:\n[b font="nabfonts monospace"]' + disallowedTags + '[/b]\n\n[hr width=75 fg=f90]' + superTextMarkupData.instructions.text
+													}
+												]
+											}
+										]
+									})
+								}
+								break
+*/
+								onclickAction = ()=>{
+									let testString = 'modalForm' + modalFormCount.toString()
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										label : 'SuperText Markup Help',
+										cancelButton : false,
+										categories : [
+											{
+												allowDisable : false,
+											}
+										]
+									})
+									let elementList = document.getElementsByClassName('modalFormCategory')
+									let disallowedTags = 'None.'
+									if(tagBlacklist.length > 0) disallowedTags = '[b fg=f55 nomarkup][' + tagBlacklist.join('][/b], [b fg=f55 nomarkup][') + '][/b]'
+									for(let i = 0; i < elementList.length; i++) {
+										if(elementList[i].id.indexOf(testString) == 0){
+											elementList[i].appendChild(createElement({ elementType : 'span', children : superTextMarkup('Disallowed tags:\n[b font="nabfonts monospace"]' + disallowedTags + '[/b]\n\n[hr width=75 fg=f90]' + superTextMarkupData.instructions.text, defaultFont, defaultFontSize, addSmilies) }))
+											break
+										}
+									}
+								}
+								break
+
+							case 'cleanup':
+								onclickAction = ()=>{
+									let testString = 'modalForm' + modalFormCount.toString()
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupRemoveTagsFromSelection,
+										callbackDataArray : [ textAreaID ],
+										label : 'Clean Up Tags',
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														type : 'text',
+														label : 'Are you sure you want to remove [b]ALL[/b]\nSuperText tags from the selected text?',
+													}
+												]
+											}
+										]
+									})
+								}
+								break
 						}
 
 						let newCategoryEntry = { elementType : 'button', className : 'superTextMarkupButton', style : { fontSize : (superTextMarkupData.categories[category][j].symbol.hasOwnProperty('size') ? superTextMarkupData.categories[category][j].symbol.size / 100 + 'em' : 'inherit'), cursor : 'pointer', borderRadius : '20%', userSelect : 'none', aspectRatio : '1 / 1', textShadow : buttonShadow }, text : superTextMarkupData.categories[category][j].symbol.character, onclick : onclickAction }
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('font')) newCategoryEntry.style.fontFamily = superTextMarkupData.categories[category][j].symbol.font
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('color')) newCategoryEntry.style.color = '#' + readColor(superTextMarkupData.categories[category][j].symbol.color)
+						if(superTextMarkupData.categories[category][j].hasOwnProperty('block') && superTextMarkupData.categories[category][j].block === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #08B'
 
 						let tooltip = { elementType : 'div', id : editorID + tagInfo.tag.toLowerCase() + 'Tooltip', style : { zIndex : '999999999', display : 'inline-block', position : 'absolute', transform : 'translateY(calc(-50% + 4.5rem))', pointerEvents : 'none', userSelect : 'none', textAlign : 'center', border : 'outset 0.125em #555', opacity : 0, padding : '0.25em', margin : '0', backgroundColor: '#335', backgroundImage : 'linear-gradient(180deg, #fff0 0%, #fff2 100%)', borderRadius : '.4em', transition : 'opacity 0.25s', fontSize : '1rem', fontFamily : '"nabfonts sans-serif", "sans-serif"' }, text : superTextMarkupData.categories[category][j].description }
 						newCategoryEntry.onmouseover = ()=>{ document.getElementById(editorID + tagInfo.tag.toLowerCase() + 'Tooltip').style.opacity = 1 }
@@ -3507,6 +4274,13 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 				}
 			}
 		}
+
+		if(cumulative == lastCumulative && cumulative > 0) {
+			// Remove any stray spacers at the end of a row
+			formatButtons.children.pop()
+			cumulative--
+		}
+
 		while(cumulative < cols) {
 			formatButtons.children.push({ elementType : 'div' })
 			cumulative++
@@ -3538,7 +4312,7 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 		]},
 		{ elementType : 'textarea', id : textAreaID, style : { cursor : 'auto', color : '#FFF', caretColor : '#F00', height : '100%', margin : '0px', padding : '0px', overflowY : 'scroll', overflowX : 'hidden', transform : 'translateY(-100%)', fontFamily : 'inherit', fontSize : 'inherit', lineHeight : 'normal', border : 'none', outline : 'none', borderRadius : '0', backgroundColor : 'transparent', height: '100%', width : '100%', resize : 'none' }, placeholder : 'Enter your text here', oninput : ()=>{
 			if(superTextEditorTimers.hasOwnProperty(textAreaID)) {
-				 if(superTextEditorTimers[textAreaID].active == true) returnInputs	// If there is an operation running, don't touch anything
+				 if(superTextEditorTimers[textAreaID].active == true) return	// If there is an operation running, don't touch anything
 				clearTimeout(superTextEditorTimers[textAreaID].timer)
 			} else {
 				superTextEditorTimers[textAreaID] = { timer : null, active : false }
@@ -3546,10 +4320,10 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 			superTextEditorTimers[textAreaID].timer = setTimeout(()=>{
 				superTextEditorTimers[textAreaID].active = true
 				clearElement(renderElement)
-				renderElement.appendChild(createElement({ elementType : 'span', children : superTextMarkup(document.getElementById(textAreaID).value) }))
+				renderElement.appendChild(createElement({ elementType : 'span', children : superTextMarkup(document.getElementById(textAreaID).value, tagBlacklist, defaultFont, defaultFontSize, addSmilies) }))
 				clearElement(document.getElementById(formatDivID).children[0])
 				spellCheckElements = []
-				document.getElementById(formatDivID).children[0].appendChild(createElement(makeSuperTextMarkupEditorHighlights(document.getElementById(textAreaID).value)))
+				document.getElementById(formatDivID).children[0].appendChild(createElement(superTextMarkupMakeEditorHighlights(document.getElementById(textAreaID).value, tagBlacklist, addSmilies)))
 				superTextMarkupEditorCharCount(textAreaID, charCountID, maxChars)
 
 				if(allowSpellCheck == true) {
@@ -3571,7 +4345,7 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 				document.getElementById(textAreaID).onscroll()		// Make sure to line the elements up after every input. Newlines matter!
 
 				superTextEditorTimers[textAreaID].active = false
-			}, 150)
+			}, reRenderTimeout)
 			}, onscroll : ()=>{
 				document.getElementById(formatDivID).scrollTop = document.getElementById(textAreaID).scrollTop
 				document.getElementById(formatDivID).scrollLeft = document.getElementById(textAreaID).scrollLeft
@@ -3582,7 +4356,8 @@ function makeSuperTextMarkupEditor(editorElement, renderElement, maxChars = 0) {
 
 	editorElement.appendChild(createElement(outputElement))
 
-//	superTextMarkupEditorCharCount(textAreaID, charCountID, maxChars)	// Initialize the character count
+	if(textAreaHasFocus == true) document.getElementById(textAreaID).focus()
+
 	document.getElementById(textAreaID).spellcheck = false	// For some stupid reason, this doesn't work if set up above, so it has to be set here
 
 	document.getElementById(textAreaID).oninput()	// Do an initial render

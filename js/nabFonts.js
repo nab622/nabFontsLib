@@ -4575,10 +4575,470 @@ function getCustomFonts() {
 			license		:	'Freeware',
 			tags		:	[ "Sans-Serif", "Smudged", "Thick" ]
 		},
+		{
+			name		:	"BoereTudor",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/BoereTudor.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Gothic", "Elaborate" ]
+		},
+		{
+			name		:	"Cayetano",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Cayetano.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Bold.ttf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Bold Italic.ttf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Retro", "Pixelated" ]
+		},
+		{
+			name		:	"Cayetano Round",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Cayetano Round.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Round Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Round Bold.ttf",
+					style		:	"normal",
+					weight		:	"bold",
+				},
+				{
+					path		:	"_Apostrophic Labs/Cayetano Round Bold Italic.ttf",
+					style		:	"italic",
+					weight		:	"bold",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Retro", "Pixelated" ]
+		},
+		{
+			name		:	"Control Freak",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Control Freak.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Angular", "Modern" ]
+		},
+		{
+			name		:	"Control Freak Upset",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Control Freak Upset.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Angular", "Modern" ]
+		},
+		{
+			name		:	"Control Freak Offset",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Control Freak Offset.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Angular", "Modern", "Negative Space" ]
+		},
+		{
+			name		:	"Desyrel",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Desyrel.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Handwriting", "Marker" ]
+		},
+		{
+			name		:	"Duralith",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Duralith.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Modern" ]
+		},
+		{
+			name		:	"Endor Alt",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Endor Alt.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Halloween", "Gothic" ]
+		},
+		{
+			name		:	"Endor",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Endor.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Halloween", "Gothic" ]
+		},
+		{
+			name		:	"Erectlorite",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Erectlorite.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Thick", "Negative Space" ]
+		},
+		{
+			name		:	"Erectlorite Light",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Erectlorite Light.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Thick", "Negative Space" ]
+		},
+		{
+			name		:	"Erectlorite Reft",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Erectlorite Reft.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Thick", "Negative Space" ]
+		},
+		{
+			name		:	"Eskargot",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Eskargot.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Swirl" ]
+		},
+		{
+			name		:	"Fluoxetine",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Fluoxetine.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Typewriter", "Elaborate", "Decay" ]
+		},
+		{
+			name		:	"Halcion",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Halcion.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/Halcion Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Elaborate", "Striped" ]
+		},
+		{
+			name		:	"Impossible - 0 Minus 30",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 0 Minus 30.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "3D", "Angular", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - 0 Plus 30",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 0 Plus 30.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "3D", "Angular", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - 0",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 0.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Angular", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - 050",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 050.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Angular", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - 500",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 500.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Angular", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - 1000",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - 1000.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Angular", "Thick", "Broken Letters" ]
+		},
+		{
+			name		:	"Impossible - SelfDestruct",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Impossible - SelfDestruct.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Angular", "Modern", "Broken Letters" ]
+		},
+		{
+			name		:	"LaBrit",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/LaBrit.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Angular", "Gothic" ]
+		},
+		{
+			name		:	"Labtop Graphed",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Labtop Graphed.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Striped", "Elaborate", "Decay" ]
+		},
+		{
+			name		:	"Powderfinger",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Powderfinger.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Fingerprint", "Elaborate", "Typewriter", "Negative Space", "Decay" ]
+		},
+		{
+			name		:	"Powderfinger Smudged",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Powderfinger Smudged.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Fingerprint", "Elaborate", "Typewriter", "Negative Space", "Decay" ]
+		},
+		{
+			name		:	"Powderfinger Ghost",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Powderfinger Ghost.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Fingerprint", "Elaborate", "Typewriter", "Negative Space", "Decay" ]
+		},
+		{
+			name		:	"Powderfinger Pad",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Powderfinger Pad.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Symbol", "Fingerprint" ]
+		},
+		{
+			name		:	"Powderfinger Type",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Powderfinger Type.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Serif", "Typewriter", "Decay" ]
+		},
+		{
+			name		:	"Reprobate",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/Reprobate.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Modern", "Marker", "Handwriting" ]
+		},
+		{
+			name		:	"TRACEROUTE",
+			authors		:	[ "Apostrophic Labs" ],
+			variants	:	[
+				{
+					path		:	"_Apostrophic Labs/TRACEROUTE.ttf",
+					style		:	"normal",
+					weight		:	"normal",
+				},
+				{
+					path		:	"_Apostrophic Labs/TRACEROUTE Italic.ttf",
+					style		:	"italic",
+					weight		:	"normal",
+				},
+			],
+			license		:	'Freeware',
+			tags		:	[ "Sans-Serif", "Modern", "Angular" ]
+		},
 
 
 
-// DO NOT MODIFY BELOW THIS POINT
+
+// ========================================================================
+//						DO NOT MODIFY BELOW THIS POINT
+//						DO NOT MODIFY BELOW THIS POINT
+// ========================================================================
 	]
 
 
@@ -4740,13 +5200,13 @@ fontsLibStyle.appendChild(document.createTextNode(`
 
 #fontsLibFontTags {
 	text-align: center;
-	font-size: 12pt;
+	font-size: 14pt;
 	font-family: 'nabfonts monospace';
 }
 
 #fontsLibFontPaths {
 	text-align: center;
-	font-size: 12pt;
+	font-size: 11pt;
 	font-family: 'nabfonts monospace';
 }
 
@@ -5424,7 +5884,7 @@ function fontsLibChangeSampleText(inputText, updateHash = true) {
 	}
 
 	clearElement(fontsLibSampleTextArea)
-	fontsLibSampleTextArea.appendChild(createElement({ elementType: 'div', className: 'fontsLibCharacterBoxes', children: [{ elementType: 'span', className: 'fontsLibSampleCharacter', children : superTextMarkup(newSampleText, null, 0) } ] }))
+	fontsLibSampleTextArea.appendChild(createElement({ elementType: 'div', className: 'fontsLibCharacterBoxes', children: [{ elementType: 'span', className: 'fontsLibSampleCharacter', children : superTextMarkup(newSampleText, null, null, null) } ] }))
 }
 
 function fontsLibRenderFontSelectionList(fontList) {
@@ -5997,6 +6457,12 @@ function changeFont(destinationElement) {
 
 function getFontIndex(inputFontName) {
 	inputFontName = inputFontName.toLowerCase()
+
+	if(inputFontName == 'nabfonts serif') inputFontName = serifFont.toLowerCase()
+	if(inputFontName == 'nabfonts sans-serif') inputFontName = sansSerifFont.toLowerCase()
+	if(inputFontName == 'nabfonts cursive') inputFontName = cursiveFont.toLowerCase()
+	if(inputFontName == 'nabfonts fantasy') inputFontName = fantasyFont.toLowerCase()
+	if(inputFontName == 'nabfonts monospace') inputFontName = monospaceFont.toLowerCase()
 
 	let min = 0
 	let max = customFonts.fontData.length
