@@ -2466,7 +2466,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Narrow", "Basic" ]
+			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Composite Font" ]
 		},
 		{
 			name		:	"Giant Tigers Front",
@@ -2479,7 +2479,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped" ]
+			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped", "Composite Font" ]
 		},
 		{
 			name		:	"Giant Tigers",
@@ -2492,7 +2492,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped", "Negative Space" ]
+			tags		:	[ "Sans-Serif", "Narrow", "Basic", "Striped", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Got No Heart Solid",
@@ -2505,7 +2505,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Composite Font" ]
 		},
 		{
 			name		:	"Got No Heart",
@@ -2518,7 +2518,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Graffiti Treat Back",
@@ -2531,7 +2531,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Angular", "Thick", "Elaborate" ]
+			tags		:	[ "Serif", "Angular", "Thick", "Elaborate", "Composite Font" ]
 		},
 		{
 			name		:	"Graffiti Treat Front",
@@ -2544,7 +2544,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Angular", "Elaborate" ]
+			tags		:	[ "Serif", "Angular", "Elaborate", "Composite Font" ]
 		},
 		{
 			name		:	"Graffiti Treat",
@@ -2557,7 +2557,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Angular", "Elaborate", "Negative Space" ]
+			tags		:	[ "Serif", "Angular", "Elaborate", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Groovy Ghosties Back",
@@ -2570,7 +2570,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Composite Font" ]
 		},
 		{
 			name		:	"Groovy Ghosties Front",
@@ -2583,7 +2583,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Composite Font" ]
 		},
 		{
 			name		:	"Groovy Ghosties",
@@ -2596,7 +2596,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Negative Space" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Halloween", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Gumtuckey",
@@ -2635,7 +2635,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Composite Font" ]
 		},
 		{
 			name		:	"Hawkeye Front",
@@ -2648,7 +2648,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Shadow" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Shadow", "Composite Font" ]
 		},
 		{
 			name		:	"Hawkeye",
@@ -2661,7 +2661,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Shadow" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Shadow", "Composite Font" ]
 		},
 		{
 			name		:	"Hello Larry",
@@ -2752,7 +2752,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Decay" ]
 		},
 		{
 			name		:	"Jingopop",
@@ -2778,7 +2778,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Negative Space", "Shadow" ]
+			tags		:	[ "Sans-Serif", "Negative Space", "Shadow", "Composite Font" ]
 		},
 		{
 			name		:	"Lesser Concern",
@@ -2791,7 +2791,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif" ]
+			tags		:	[ "Sans-Serif", "Composite Font" ]
 		},
 		{
 			name		:	"Let's Eat",
@@ -2804,7 +2804,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif" ]
+			tags		:	[ "Sans-Serif", "Decay" ]
 		},
 		{
 			name		:	"Letter Set A",
@@ -2843,7 +2843,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Negative Space", "Snow" ]
+			tags		:	[ "Sans-Serif", "Thick", "Elaborate", "Snow" ]
 		},
 		{
 			name		:	"Lewinsky",
@@ -3311,7 +3311,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
+			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Composite Font" ]
 		},
 		{
 			name		:	"Riot Act 2 Front",
@@ -3324,7 +3324,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
+			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Composite Font" ]
 		},
 		{
 			name		:	"Riot Act 2 Glop",
@@ -3337,7 +3337,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Elaborate", "Halloween" ]
+			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Composite Font" ]
 		},
 		{
 			name		:	"Riot Act 2",
@@ -3350,7 +3350,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Negative Space" ]
+			tags		:	[ "Sans-Serif", "Elaborate", "Halloween", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Robokoz",
@@ -3975,7 +3975,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Elaborate", "Shadow" ]
+			tags		:	[ "Serif", "Elaborate", "Shadow", "Composite Font" ]
 		},
 		{
 			name		:	"Yytrium Front",
@@ -3988,7 +3988,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Elaborate", "Shadow" ]
+			tags		:	[ "Serif", "Elaborate", "Shadow", "Composite Font" ]
 		},
 		{
 			name		:	"Yytrium",
@@ -4001,7 +4001,7 @@ function getCustomFonts() {
 				},
 			],
 			license		:	'Public Domain',
-			tags		:	[ "Serif", "Elaborate", "Shadow", "Negative Space" ]
+			tags		:	[ "Serif", "Elaborate", "Shadow", "Negative Space", "Composite Font" ]
 		},
 		{
 			name		:	"Zodillin",
@@ -5724,7 +5724,7 @@ function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 	}
 
 	fontsLibFontPaths.appendChild(createElement({ elementType: 'span', text: 'File Paths (Click to download):' }))
-	fontPathColors = [ '#0F0', '#0FF', '#00F', '#F0F', '#F00', '#FF0' ]
+	fontPathColors = [ '#4F4', '#4FF', '#44F', '#F4F', '#F44', '#FF4' ]
 	for(let i = 0; i < tempFont.paths.length; i++) {
 		fontsLibFontPaths.appendChild(createElement({ elementType: 'br' }))
 		fontsLibFontPaths.appendChild(createElement({ elementType: 'a', href : tempFont.paths[i], download : 'true', className : 'fontsLibFontPaths fontsLibClickable', style : { color : fontPathColors[i % fontPathColors.length] }, text: tempFont.paths[i] }))
