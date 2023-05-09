@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 
+nabLibPresent = true
 
 
 // -------------------- GLOBALS --------------------
@@ -209,6 +210,25 @@ function convertIntToRomanNumerals(inputInt) {
 }
 
 
+// -------------------- TIME --------------------
+// -------------------- TIME --------------------
+
+function secondsToTime(inputSeconds, minFields = 2) {
+	let output = []
+
+	let divisors = [ 60, 60, 24, 7 ]
+
+	for(let i = 0; i < divisors.length; i++) {
+		if(inputSeconds <= 0 && i >= minFields) break
+		output.unshift(leadingString(inputSeconds % divisors[i], divisors[i].toString().length, '0'))
+		inputSeconds = parseInt(inputSeconds / divisors[i])
+	}
+
+	return output.join(':')
+}
+
+
+
 // -------------------- DATES --------------------
 // -------------------- DATES --------------------
 
@@ -389,6 +409,32 @@ function readColor(color, multiplier = 1, additional = 0) {
 	if(debug) console.log('Invalid color: \'' + color + '\'')
 
 	return 'CCCCCC99'
+}
+
+function invertColor(color, invertAlpha = false) {
+	if(color.length != 6 && color.length != 8) {
+		color = readColor(color)
+	}
+
+	let r = clamp(Math.round(parseInt(color.substring(0, 2), 16)), 0, 255)
+	let g = clamp(Math.round(parseInt(color.substring(2, 4), 16)), 0, 255)
+	let b = clamp(Math.round(parseInt(color.substring(4, 6), 16)), 0, 255)
+	let a = ''
+	if(color.length == 8) {
+		let a = clamp(parseInt(color.substring(6, 8), 16), 0, 255).toString(16)
+	}
+
+	r = (255 - r).toString(16)
+	g = (255 - g).toString(16)
+	b = (255 - b).toString(16)
+	if(invertAlpha) a = (255 - a).toString(16)
+
+	r = leadingString(r, 2, '0')
+	g = leadingString(g, 2, '0')
+	b = leadingString(b, 2, '0')
+	if(a != '') a = leadingString(a, 2, '0')
+
+	return r + g + b + a
 }
 
 
@@ -1246,6 +1292,10 @@ function createElement(inputValues) {
 					}
 					applyStyle(new_element, inputValues[key])
 					break
+				case 'content':
+					// This is to be used for things like style tags, DO NOT use it for text!
+					new_element.appendChild(document.createTextNode(inputValues[key]))
+					break
 				case 'text':
 					let test = typeof(inputValues[key])
 					if(test !== "string" && test !== "number") {
@@ -1797,6 +1847,7 @@ function sevenSegStatic(displayObject) {
 // -------------------- STARSCAPE --------------------
 // -------------------- STARSCAPE --------------------
 
+nabLibStarscapes = 0
 function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, starIntensityMin, starIntensityMax) {
 	// There is a bug in Chrome that randomly causes the canvas to have a black background
 
@@ -1829,27 +1880,14 @@ function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, 
 }
 
 function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundColor = '000', starColor = 'FFF', scrollLeftOrRight = 1, scrollUpOrDown = 0, scrollSpeed = 20) {
-	let defaultStyle = { 'width' : '100%', 'height' : '100%', 'margin' : '0px' }
-	let renderChild = createElement({ 'elementType' : 'div', 'style' : defaultStyle, 'children' : [] })
+	let outputChild = { elementType : 'div', style : { display : 'grid', width : '100%', height : '100%', margin : '0px' }, children : [] }
+	let defaultStyle = { gridArea : '1 / 1', width : '100%', height : '100%', margin : '0px' }
 
 	layers = parseInt(layers)
 
 	backgroundColor = readColor(backgroundColor)
 	starColor = readColor(starColor)
 
-	let savedElements = []
-	for (let i = renderElement.children.length - 1; i >= 0; i--)
-	{
-		let c = renderElement.children[i]
-		savedElements.unshift(c)
-		renderElement.removeChild(c)
-	}
-/*
-	let parentTagName = renderElement.parentElement.tagName.toLowerCase()
-	if(parentTagName !== null && parentTagName != 'body') {
-		renderElement.style.position = 'relative'	// This causes issues with the parent element if it is the body element...
-	}
-*/
 	renderElement.style.backgroundColor = '#' + backgroundColor
 
 	defaultStyle.padding = '0px'
@@ -1883,21 +1921,12 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 	let canvasSize = {}
 	let starIntensity = starIntensityMax
 	let layerMultiplier = 1
-	let renderChildID = randomString(75)
+
+	nabLibStarscapes++
+
 	for(let currentLayer = 1; currentLayer <= layers; currentLayer++) {
-		let newElement = { 'elementType' : 'div', 'style' : defaultStyle }
+		let newElement = { elementType : 'div', style : defaultStyle }
 		newElement.style.zIndex = currentLayer * -1
-
-		if(currentLayer == 1) {
-			// The first layer MUST be relative positioned
-			newElement.style.position = 'relative'
-		} else {
-			newElement.style.position = 'absolute'
-			newElement.style.top = '0px'
-			newElement.style.left = '0px'
-		}
-
-		if(currentLayer == 1) newElement.id = renderChildID
 
 		canvasSizeXMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
 		canvasSizeXMin = canvasSizeXMax
@@ -1905,14 +1934,14 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 		canvasSizeYMin = canvasSizeYMax
 
 		layerMultiplier = 1 / layers * currentLayer * 0.5 + 0.5
-		animationName = randomString(50) + layers + currentLayer
+		animationName = 'nabLibStarscape-' + nabLibStarscapes.toString() + '-layer-' + currentLayer.toString() + '-of-' + layers.toString()
 
 		canvasSize = { 'x' : randFloatRange(canvasSizeXMin, canvasSizeXMax), 'y' : randFloatRange(canvasSizeYMin, canvasSizeYMax) }
 		newElement.style.backgroundImage = 'url(' + generateStarCanvasURL(canvasSize.x, canvasSize.y, Math.floor(starCount / layers), starColor, starIntensity - starIntensityVariance, starIntensity + starIntensityVariance) + ')'
 		newElement.style.animation = animationName + ' ' + 500 / scrollSpeed * layerMultiplier + 's linear infinite'
 
 		starIntensity = clamp(((starIntensityMax - starIntensityMin) / layers * currentLayer) + starIntensityMin, starIntensityVariance + 0.001, 1 - starIntensityVariance - 0.001)
-		renderElement.appendChild(createElement(newElement))
+		outputChild.children.push(deepCopy(newElement))
 
 		if(scrollLeftOrRight != 0 || scrollUpOrDown != 0) {
 			let horizontalScroll = '0%'
@@ -1927,13 +1956,10 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 			} else if(scrollUpOrDown > 0) {
 				verticalScroll = '-' + canvasSize.y + 'px'
 			}
-			renderElement.appendChild(createElement({ 'elementType' : 'style', 'text' : '@keyframes ' + animationName + ' {0% { background-position: 0px 0px; } 100% { background-position: ' + horizontalScroll + ' ' + verticalScroll + ' } }' }))
+			outputChild.children.push({ elementType : 'style', text : '@keyframes ' + animationName + ' {0% { background-position: 0px 0px; } 100% { background-position: ' + horizontalScroll + ' ' + verticalScroll + ' } }' })
 		}
 	}
-
-	for(let i = 0; i < savedElements.length; i++) {
-		renderElement.appendChild(savedElements[i])
-	}
+	renderElement.appendChild(createElement(outputChild))
 }
 
 
@@ -2423,6 +2449,7 @@ superTextMarkupData = {
 		//		size				=	Font size (Percent, range from 25-500%)
 		//		nomarkup			= 	No other tags inside this tag will be parsed
 		//		ignoreNomarkup		= 	Even when nomarkup is active, this tag will still apply
+		//		ignoreLineBreaks	=	Ignore all line breaks immediately nested inside this element. This option MUST be used with 'nest'
 
 
 		{ tag : 'b',
@@ -2464,7 +2491,8 @@ superTextMarkupData = {
 							block : true,
 							noText : true,
 							category : { name : 'Separators', index : 1 },
-							parameters : { elementType : 'hr' }, variables : { width : 'width' },
+							parameters : { elementType : 'hr' },
+							variables : { width : 'width' },
 		},
 		{ tag : 'url',
 							description: 'Hyperlink',
@@ -2476,12 +2504,36 @@ superTextMarkupData = {
 		},
 		{ tag : 'img',
 							description: 'Image',
-							symbol : { character : '⊷ ', font : 'webhostinghub glyphs', color : '2C2' },
+							symbol : { character : '⊷', font : 'webhostinghub glyphs', color : '2C2' },
 							noText : true,
 							noClosingTag : true,
 							category : { name : 'embed', index : 2 },
 							variables : { src : 'link' },
 							parameters : { elementType : 'img' },
+		},
+		{ tag : 'hbox',
+							description: 'Box with horizontally aligned items (No line breaks)',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '607' },
+							category : { name : 'grouping', index : 1 },
+							nest : true,
+							ignoreLineBreaks : true,
+							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'row', justifyContent : 'center', alignItems : 'center', gap : '0.5em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
+		},
+		{ tag : 'vbox',
+							description: 'Box with vertically aligned items (No line breaks)',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '607' },
+							category : { name : 'grouping', index : 2 },
+							nest : true,
+							ignoreLineBreaks : true,
+							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'column', justifyContent : 'center', alignItems : 'center', gap : '0.5em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
+		},
+		{ tag : 'grid',
+							description: 'Box with a grid layout (No line breaks)',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '607' },
+							category : { name : 'grouping', index : 3 },
+							nest : true,
+							ignoreLineBreaks : true,
+							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-grid', gap : '0.5em', border : '0.1em #9994 solid' } },
 		},
 		{ tag : 'l',
 							description: 'Block text and left align',
@@ -2641,13 +2693,13 @@ superTextMarkupData = {
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '228' },
 							block : true,
 							nest : true,
-							category : { name : 'Control', index : 1 },
+							category : { name : 'visibility', index : 1 },
 							parameters : { elementType : 'div', border : '0.1em inset #0005', borderRadius : '0.5em', padding : '0.5em' },
 		},
 		{ tag : 'nomarkup',
 							description: 'Ignore markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F00' },
-							category : { name : 'meta', index : 1 },
+							category : { name : 'meta', index : 2 },
 							noMarkup : true
 		},
 		{ tag : 'youtube',
@@ -2657,7 +2709,8 @@ superTextMarkupData = {
 							noClosingTag : true,
 							block : true,
 							noText : true,
-							parameters : { elementType : 'iframe', style : { aspectRatio : '560 / 315', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'YouTube video player', frameborder : '0', allow : 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen : 'true' }, variables : { link : 'link' },
+							parameters : { elementType : 'iframe', style : { aspectRatio : '560 / 315', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'YouTube video player', frameborder : '0', allow : 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen : 'true' },
+							variables : { link : 'link' },
 		},
 		{ tag : 'soundcloud',
 							description: 'Embed a SoundCloud track',
@@ -2666,7 +2719,8 @@ superTextMarkupData = {
 							noClosingTag : true,
 							block : true,
 							noText : true,
-							parameters : { elementType : 'iframe', style : { minHeight : '300', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'SoundCloud Player', scrolling : 'no', frameborder : '0', allow : 'autoplay;', allowfullscreen : 'true' }, variables : { link : 'link' },
+							parameters : { elementType : 'iframe', style : { minHeight : '300', width : 'calc(100% - 0.2em)', border : '0.1em inset #333' }, title : 'SoundCloud Player', scrolling : 'no', frameborder : '0', allow : 'autoplay;', allowfullscreen : 'true' },
+							variables : { link : 'link' },
 		},
 	],
 	smileyFaces : [
@@ -2721,6 +2775,14 @@ The only tags that require correct nesting are the [b fg=08b]block[/b] tags:
 [c][iquote font='nabfonts monospace']:_-ADDBLOCKTAGSHERE-_:[/iquote][/c]
 All buttons for [b fg=08b]block[/b] tags have a [b fg=08b]colored outline[/b] around them.
 
+The [b fg=F40]hbox[/b], [b fg=F40]vbox[/b] and [b fg=F40]grid[/b] tags can be used to organize and group things in place:
+[c][grid cols=3]Test 1
+Test 2
+Test 3
+Test 4
+Test 5[/grid][/c]
+All buttons for [b fg=F40]grouping[/b] tags have a [b fg=F40]colored outline[/b] around them as well. They will also suppress all line breaks inside them (Except for those inside a nested tag).
+
 [hr width=75% fg=00f]
 
 Some tags, like [b fg=F55 nomarkup][hr][/b], [b fg=F55 nomarkup][img][/b], and [b fg=F55 nomarkup][youtube][/b], do not need a closing tag.
@@ -2739,7 +2801,7 @@ SuperText also features global options that can be applied to any tag. These inc
 
 Hexadecimal colors can be given in the following formats:
 [size size=65][b fg=f55]R = Red[/b], [b fg=5f5]G = Green[/b], [b fg=55f]B = Blue[/b], [b fg=444]A = Alpha[/b], [b fg=888]L = Luminosity[/b]
-(Alpha values cause problems and thus are ignored, but the rest of the color will still work)[/size]
+(Alpha values cause problems and thus are ignored on everything but borders and lines)[/size]
 [l]
 [ul]
 [li]1 digit: [b fg=888]L[/b][/li]
@@ -2967,11 +3029,6 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 						if(parameters[i].parameters.tag == 'hr' && variable == 'width') {
 							output[variable] = clamp(output[variable], 1, 100) + '%'
 						}
-/*
-// Pretty sure this was only used for hackish nonsense and can be removed...
-					} else {
-						output[variable] = output.text
-*/
 					}
 				}
 			}
@@ -2990,15 +3047,25 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 						noMarkup = true
 						break
 
+					case 'cols':
+					case 'columns':
+						if(tagBlacklist.includes('grid')) continue
+						if(parameters[i].parameters.tag != 'grid') continue
+						output.style.gridTemplateColumns = 'repeat(' + variables[key] + ', 1fr)'
+						break
+
 					case 'fg':
 					case 'color':
 					case 'fgcolor':
 						if(tagBlacklist.includes('color')) continue
-						temp = 'color'
-						if(output.elementType == 'hr') {
+						if(parameters[i].parameters.tag == 'hr' || parameters[i].parameters.tag == 'vbox' || parameters[i].parameters.tag == 'hbox' || parameters[i].parameters.tag == 'grid') {
 							temp = 'borderColor'
+							let tempColor = readColor(variables[key]).substring(0, 8)
+							output.style[temp] = '#' + tempColor + ' ' + '#' + tempColor + ' ' + '#' + tempColor + ' ' + '#' + tempColor	// Allow alphas on border colors
+							break
 						}
-						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end
+						temp = 'color'
+						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end. Stuff breaks when alpha is used
 						break
 
 					case 'bg':
@@ -3006,7 +3073,7 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 					case 'highlight':
 						if(tagBlacklist.includes('color')) continue
 						temp = 'backgroundColor'
-						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end
+						output.style[temp] = '#' + readColor(variables[key]).substring(0, 6)	// Use substring to cut off any alpha values from the end. Stuff breaks when alpha is used
 						break
 
 					case 'font':
@@ -3196,9 +3263,9 @@ function superTextMarkupProcessTagInfo(startLoc, inputText, tagBlacklist = [], a
 		return false
 	}
 
-	let tagName = parameters.shift()
+	let tagName = parameters.shift().toLowerCase()
 	if(tagBlacklist.includes(tagName)) return false
-	let tagData = superTextMarkupGetTagData(tagName.toLowerCase())
+	let tagData = superTextMarkupGetTagData(tagName)
 	if(tagData === false && addSmilies === false) {
 		// Did not match a tag!
 		return false
@@ -3302,7 +3369,7 @@ function superTextMarkup(inputText, tagBlacklist = [], defaultFont = 'nabfonts s
 	return [ { elementType : 'span', style : parentStyle, children : superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies) } ]
 }
 
-function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist = [], addSmilies = true, loc = 0, activeMarkups = [], nomarkup = false, recursions = 0) {
+function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist = [], addSmilies = true, loc = 0, activeMarkups = [], nomarkup = false, recursions = 0, ignoreLineBreaks = false) {
 	let ignoreNextLineBreak = false
 
 	let preprocessor = [{ markup : activeMarkups.slice(0), startPoint : loc }]
@@ -3335,6 +3402,12 @@ function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklis
 
 			loc = result.endLoc
 
+
+			if(ignoreLineBreaks == true && result.tagInfo.tag == 'br') {
+				preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
+				continue
+			}
+
 			if(ignoreNextLineBreak == true && result.tagInfo.tag == 'br' && preprocessor.length > 0 && preprocessor[preprocessor.length - 1].startPoint == preprocessor[preprocessor.length - 1].endPoint) {
 				ignoreNextLineBreak = false
 				preprocessor.push({ markup : activeMarkups.slice(0), startPoint : loc + 1 })
@@ -3362,7 +3435,11 @@ function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklis
 			}
 
 			if(result.tagInfo.parameters.hasOwnProperty('nest') && result.tagInfo.parameters.nest === true) {
-				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, activeMarkups, nomarkup, recursions + 1)
+				let ignoreLineBreaksOnChildren = false
+				if(result.tagInfo.parameters.hasOwnProperty('ignoreLineBreaks') && result.tagInfo.parameters.ignoreLineBreaks === true) {
+					ignoreLineBreaksOnChildren = true
+				}
+				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, activeMarkups, nomarkup, recursions + 1, ignoreLineBreaksOnChildren)
 				nomarkup = false
 				let nestedChildren = preprocessor[preprocessor.length - 1].children
 
@@ -3618,6 +3695,14 @@ function superTextMarkupAddImage(inputData, data) {
 	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
 }
 
+function superTextMarkupAddGrid(inputData, data) {
+	let textAreaID = data[0]
+	let tagInfo = data[1]
+
+	if(inputData.hasOwnProperty('columns'))	inputData.columns[0] = Math.max(0, parseInt(inputData.columns[0])).toString()
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData)
+}
+
 function superTextMarkupPickFont(inputData, data) {
 	let textAreaID = data[0]
 	let tagInfo = data[1]
@@ -3746,9 +3831,9 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 	let categoryOrder = [	// This array configures the arrangement of the buttons. Each array is a row, and it's contents are the categories it will contain
 		[ 'formatting', 'separators' ],
-		[ 'alignment', 'organization', 'control' ],
+		[ 'alignment', 'organization', 'visibility' ],
 		[ 'quote', 'embed' ],
-		[ 'smileyFaces', 'meta' ],
+		[ 'grouping', 'smileyFaces', 'meta' ],
 	]
 
 	// Let's grab any categories that were missed...
@@ -4155,6 +4240,36 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 								}
 							break
 
+							case 'grid':
+								onclickAction = ()=>{
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddGrid,
+										callbackDataArray : [ textAreaID, tagInfo ],
+										label : 'Grid Columns',
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														label : 'Number of Columns',
+														type : 'number',
+														name : 'columns',
+														required : true,
+														prompts : [
+															{
+																default : '3',
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 20em)' },
+															},
+														],
+													},
+												]
+											},
+										]
+									})
+								}
+								break
+
 							case 'hide':
 								onclickAction = ()=>{
 									createModalForm({
@@ -4263,6 +4378,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('font')) newCategoryEntry.style.fontFamily = superTextMarkupData.categories[category][j].symbol.font
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('color')) newCategoryEntry.style.color = '#' + readColor(superTextMarkupData.categories[category][j].symbol.color)
 						if(superTextMarkupData.categories[category][j].hasOwnProperty('block') && superTextMarkupData.categories[category][j].block === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #08B'
+						if(superTextMarkupData.categories[category][j].hasOwnProperty('ignoreLineBreaks') && superTextMarkupData.categories[category][j].ignoreLineBreaks === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #F40'
 
 						let tooltip = { elementType : 'div', id : editorID + tagInfo.tag.toLowerCase() + 'Tooltip', style : { zIndex : '999999999', display : 'inline-block', position : 'absolute', transform : 'translateY(calc(-50% + 4.5rem))', pointerEvents : 'none', userSelect : 'none', textAlign : 'center', border : 'outset 0.125em #555', opacity : 0, padding : '0.25em', margin : '0', backgroundColor: '#335', backgroundImage : 'linear-gradient(180deg, #fff0 0%, #fff2 100%)', borderRadius : '.4em', transition : 'opacity 0.25s', fontSize : '1rem', fontFamily : '"nabfonts sans-serif", "sans-serif"' }, text : superTextMarkupData.categories[category][j].description }
 						newCategoryEntry.onmouseover = ()=>{ document.getElementById(editorID + tagInfo.tag.toLowerCase() + 'Tooltip').style.opacity = 1 }
