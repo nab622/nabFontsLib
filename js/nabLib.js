@@ -127,6 +127,11 @@ nabLibStyle.appendChild(document.createTextNode(`
 	85%		{ box-shadow: 0px 0px 0.7em 0.2em #F44, inset 0px 0px 3em #F44; color: #444; }
 	100%	{ box-shadow: 0px 0px 0.7em 0.2em #44F, inset 0px 0px 3em #44F; }
 }
+
+.nabLibHoverHighlight:hover {
+	filter: brightness(125%);
+}
+
 `))
 document.head.appendChild(nabLibStyle)
 
@@ -592,19 +597,96 @@ function inputsAreIdentical() {
 // -------------------- PAGE HASH --------------------
 
 function getHashData() {
+	return unpackData(decodeURI(window.location.hash.substring(1)))
+}
+
+function setHashData(inputObject) {
+	let hashData = getHashData()
+
+	// Add the new data to the hash data
+	for(key in inputObject) {
+		if(key == '' || typeof(key) == 'undefined') continue
+		hashData[key] = inputObject[key]
+	}
+
+	hashData = packData(hashData)
+	let output = ''
+	for(key in hashData) {
+		output += key + '=' + hashData[key].dataType + ':' + encodeURI(hashData[key].value) + ';'
+	}
+
+	window.location.hash = encodeURI(output)
+}
+
+
+
+// -------------------- COOKIES --------------------
+// -------------------- COOKIES --------------------
+
+function getCookieData() {
+	return unpackData(document.cookie)
+}
+
+function setCookieData(inputObject, path = '/', expirationDays = 400) {
+	// 400 days is the maximum for Chrome at the time of writing this
+
+	let outputData = {}
+
+	outputData = packData(inputObject)
+	let tail = ''
+
+	let d = new Date()
+	d.setTime(d.getTime() + (expirationDays * 86400000))
+	tail += 'expires=' + d.toUTCString() + '; '
+
+	tail += 'path=' + path + ';'
+
+	for(key in outputData) {
+		if(key == '' || typeof(key) == 'undefined') continue
+		document.cookie = key + '=' + outputData[key].dataType + ':' + encodeURI(outputData[key].value) + '; ' + tail
+	}
+}
+
+
+
+// -------------------- DATA PACKING --------------------
+// -------------------- DATA PACKING --------------------
+
+// These functions are used to pack and unpack data for hashdata and cookies
+function packData(inputData) {
 	let output = {}
-	let hashData = decodeURI(window.location.hash.substring(1))
 
-	hashData = hashData.split(';')
-	for(let i = 0; i < hashData.length; i++) {
-		if(hashData[i] == '') continue
+	for(key in inputData) {
+		if(key == '' || typeof(key) == 'undefined') continue
 
-		let temp1 = hashData[i].indexOf('=')
-		let temp2 = hashData[i].indexOf(':')
+		key = key.trim()
+		let dataType = typeof(inputData[key])
+		switch(dataType) {
+			case 'object':
+				inputData[key] = btoa(JSON.stringify(inputData[key]))
+				break
+			case 'boolean':
+				inputData[key] = ((inputData[key]) ? 1 : 0)
+				break
+		}
+		output[key] = { 'dataType' : dataType, 'value' : inputData[key] }
+	}
 
-		let varName = hashData[i].substring(0, temp1)
-		let dataType = hashData[i].substring(temp1 + 1, temp2)
-		let value = decodeURI(hashData[i].substring(temp2 + 1))
+	return output
+}
+
+function unpackData(inputData) {
+	let output = {}
+	inputData = inputData.split(';')
+	for(let i = 0; i < inputData.length; i++) {
+		if(inputData[i] == '') continue
+
+		let temp1 = inputData[i].indexOf('=')
+		let temp2 = inputData[i].indexOf(':')
+
+		let varName = inputData[i].substring(0, temp1).trim()
+		let dataType = inputData[i].substring(temp1 + 1, temp2)
+		let value = decodeURI(inputData[i].substring(temp2 + 1))
 
 		switch(dataType) {
 			case 'number':
@@ -627,34 +709,7 @@ function getHashData() {
 		}
 		output[varName] = value
 	}
-
 	return output
-}
-
-function setHashData(inputObject) {
-	let hashData = getHashData()
-	let output = ''
-
-	// Add the new data to the hash data
-	for(key in inputObject) {
-		if(key == '' || typeof(key) == 'undefined') continue
-		hashData[key] = inputObject[key]
-	}
-
-	for(key in hashData) {
-		let dataType = typeof(hashData[key])
-		switch(dataType) {
-			case 'object':
-				hashData[key] = btoa(JSON.stringify(hashData[key]))
-				break
-			case 'boolean':
-				hashData[key] = ((hashData[key]) ? 1 : 0)
-				break
-		}
-		output += key + '=' + dataType + ':' + encodeURI(hashData[key]) + ';'
-	}
-
-	window.location.hash = encodeURI(output)
 }
 
 
@@ -911,6 +966,43 @@ function getRandomItemsFromArray(inputArray, count = 1) {
 	let output = []
 	for(let i = 0; i < count; i++) {
 		output.push(inputArray[randIntRange(0, (inputArray.length - 1))])
+	}
+
+	return output
+}
+
+function generateRandomIndexArray(inputArrayOrCount) {
+	let count = 0
+	if(typeof(inputArrayOrCount) == 'number') {
+		count = parseInt(inputArrayOrCount)
+	} else if(Array.isArray(inputArrayOrCount)) {
+		count = inputArrayOrCount.length
+	} else {
+		printError('generateRandomIndexArray: Input is not an array or a number!')
+		return null
+	}
+
+	let temp = []
+	for(let i = 0; i < count; i++) {
+		temp.push(i)
+	}
+
+	let output = []
+	let randomNumber = 0
+	for(let i = temp.length - 1; i >= 0; i--) {
+		randomNumber = randIntRange(0, i)
+		output.push(temp[randomNumber])
+		temp.splice(randomNumber, 1)
+	}
+	return output
+}
+
+function randomizeArray(inputArray) {
+	let bucketArray = generateRandomIndexArray(inputArray)
+
+	let output = []
+	for(let i = 0; i < inputArray.length; i++) {
+		output[i] = inputArray[bucketArray[i]]
 	}
 
 	return output
@@ -1420,6 +1512,10 @@ function hslToRgb(h, s, l, o = 1) {
 // -------------------- BACKGROUNDS --------------------
 
 function generateBackgroundGradientLines(angle = 90, color = '999', maxLines = 500, opacityMultiplier = 1) {
+	if(maxLines < 3) {
+		printError('generateBackgroundGradientLines: Cannot render with less than two lines! \'' + maxLines.toString() + '\' lines were requested.')
+		return
+	}
 	let opacityArray = ['00', '00', '00', '00', '00', '00', '00', '07', '08', '09', '0A', '0C']
 
 	for(let i = 0; i < opacityArray.length; i++) {
@@ -1431,9 +1527,11 @@ function generateBackgroundGradientLines(angle = 90, color = '999', maxLines = 5
 
 	color = readColor(color)
 	let outputArray = []
+	maxLines--
 	for(let i = 0; i < maxLines; i++) {
 		outputArray.push('#' + color + opacityArray[randIntRange(0, opacityArray.length - 1)] + ' ' + i / maxLines * 100 + '%')
 	}
+	outputArray.push(outputArray[0])	// This makes sure the end result will tile
 
 	let backgroundFlavor = 'linear-gradient(' + angle + 'deg, ' + outputArray.join(', ')
 	return backgroundFlavor
