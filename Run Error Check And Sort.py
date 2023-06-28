@@ -308,14 +308,14 @@ def compareFontTags(a, b):
 		return -1
 	if a == 'serif':
 		return -1
-	if a == 'symbol':
+	if a == 'symbols only':
 		return -1
 
 	if b == 'sans-serif':
 		return 1
 	if b == 'serif':
 		return 1
-	if b == 'symbol':
+	if b == 'symbols only':
 		return 1
 
 	if a < b:
@@ -395,18 +395,18 @@ for fontParameters in data:
 			else:
 				tempTags.append(fontParameters['tags'][i].lower())
 
-		if len(fontParameters['tags']) < 3 and not 'symbol' in tempTags:
+		if len(fontParameters['tags']) < 3 and not 'symbols only' in tempTags:
 			otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has less than 3 tags!' })
 
-		if not 'sans-serif' in tempTags and not 'serif' in tempTags and not 'symbol' in tempTags:
-			otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has no serif, sans-serif or symbol tag!' })
+		if not 'sans-serif' in tempTags and not 'serif' in tempTags and not 'symbols only' in tempTags:
+			otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has no serif, sans-serif or \'Symbols Only\' tag!' })
 		else:
 			if 'sans-serif' in tempTags and 'serif' in tempTags:
 				otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has mixed Serif and Sans-Serif tags!' })
-			if 'sans-serif' in tempTags and 'symbol' in tempTags:
-				otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has mixed Symbol and Sans-Serif tags!' })
-			if 'symbol' in tempTags and 'serif' in tempTags:
-				otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has mixed Serif and Symbol tags!' })
+			if 'sans-serif' in tempTags and 'symbols only' in tempTags:
+				otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has mixed \'Symbols Only\' and Sans-Serif tags!' })
+			if 'symbols only' in tempTags and 'serif' in tempTags:
+				otherErrors.append({'fontName' : fontParameters['name'], 'message' : 'Font has mixed Serif and \'Symbols Only\' tags!' })
 
 		for i in range(len(tempTags)):
 			for j in range(len(tempTags)):

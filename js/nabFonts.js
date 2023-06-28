@@ -453,7 +453,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Stars"
 	]
 },
@@ -964,7 +964,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -981,7 +981,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -998,7 +998,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1015,7 +1015,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1032,7 +1032,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1049,7 +1049,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1066,7 +1066,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1083,7 +1083,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1100,7 +1100,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -1562,7 +1562,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Decorated",
 		"Keyboard",
 		"Ornamental"
@@ -1734,7 +1734,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"ASCII",
 		"Binary",
 		"Decorated",
@@ -1824,7 +1824,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace"
 	]
 },
@@ -2317,11 +2317,11 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Decay",
 		"Narrow Chars",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
-		"Plain"
+		"Partial Symbol Set"
 	]
 },
 {
@@ -3742,7 +3742,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Kitchen"
 	]
 },
@@ -4038,7 +4038,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -4409,6 +4409,7 @@ function getCustomFonts() {
 		"Multi-Stroke",
 		"Negative Space",
 		"No Uppercase",
+		"Ornamental",
 		"Outline"
 	]
 },
@@ -5533,7 +5534,7 @@ function getCustomFonts() {
 	],
 	"license":"ShareAlike License",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -5972,7 +5973,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Snow"
 	]
 },
@@ -8070,7 +8071,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Faces"
 	]
 },
@@ -8206,7 +8207,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -8223,7 +8224,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -9758,7 +9759,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Dotted",
-		"Monospace"
+		"Monospace",
+		"No Lowercase"
 	]
 },
 {
@@ -10438,7 +10440,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10464,7 +10466,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10490,7 +10492,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10516,7 +10518,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10542,7 +10544,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10568,7 +10570,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10594,7 +10596,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Bar Code"
 	]
 },
@@ -10708,7 +10710,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace"
 	]
 },
@@ -11401,7 +11403,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Flags",
 		"Monospace"
 	]
@@ -11463,7 +11465,7 @@ function getCustomFonts() {
 	],
 	"license":"Apache License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace"
 	]
 },
@@ -11503,7 +11505,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Faces",
 		"Meme"
 	]
@@ -11920,7 +11922,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -11961,7 +11963,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Frame"
 	]
@@ -11980,7 +11982,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Frame"
 	]
@@ -11999,7 +12001,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Frame"
 	]
@@ -12561,7 +12563,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace",
 		"Negative Space"
 	]
@@ -12580,7 +12582,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace",
 		"Negative Space"
 	]
@@ -12599,7 +12601,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace",
 		"Negative Space"
 	]
@@ -12618,7 +12620,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace"
 	]
 },
@@ -12660,7 +12662,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Monospace",
 		"Negative Space"
@@ -12680,7 +12682,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Outline"
 	]
@@ -12918,7 +12920,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Cars"
 	]
 },
@@ -12936,7 +12938,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Cars"
 	]
 },
@@ -13212,7 +13214,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Guns"
 	]
 },
@@ -14875,7 +14877,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Snow",
 		"Stars"
 	]
@@ -16883,7 +16885,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Morse Code"
 	]
 },
@@ -17427,7 +17429,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font",
 		"Monsters"
 	]
@@ -17792,7 +17794,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Animals",
 		"Faces",
 		"Negative Space",
@@ -18993,7 +18995,7 @@ function getCustomFonts() {
 		"Here are the characters for each state by name:[font font='nabfonts monospace'][br][grid cols=3][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]B[/b][font font=stateface size=250 fg=b22]B[/font][font size=75]Alabama[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]A[/b][font font=stateface size=250 fg=b22]A[/font][font size=75]Alaska[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]D[/b][font font=stateface size=250 fg=b22]D[/font][font size=75]Arizona[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]C[/b][font font=stateface size=250 fg=b22]C[/font][font size=75]Arkansas[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]E[/b][font font=stateface size=250 fg=b22]E[/font][font size=75]California[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]F[/b][font font=stateface size=250 fg=b22]F[/font][font size=75]Colorado[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]G[/b][font font=stateface size=250 fg=b22]G[/font][font size=75]Connecticut[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]H[/b][font font=stateface size=250 fg=b22]H[/font][font size=75]Delaware[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]I[/b][font font=stateface size=250 fg=b22]I[/font][font size=75]Florida[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]J[/b][font font=stateface size=250 fg=b22]J[/font][font size=75]Georgia[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]K[/b][font font=stateface size=250 fg=b22]K[/font][font size=75]Hawaii[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]M[/b][font font=stateface size=250 fg=b22]M[/font][font size=75]Idaho[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]N[/b][font font=stateface size=250 fg=b22]N[/font][font size=75]Illinois[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]O[/b][font font=stateface size=250 fg=b22]O[/font][font size=75]Indiana[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]L[/b][font font=stateface size=250 fg=b22]L[/font][font size=75]Iowa[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]P[/b][font font=stateface size=250 fg=b22]P[/font][font size=75]Kansas[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]Q[/b][font font=stateface size=250 fg=b22]Q[/font][font size=75]Kentucky[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]R[/b][font font=stateface size=250 fg=b22]R[/font][font size=75]Louisiana[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]U[/b][font font=stateface size=250 fg=b22]U[/font][font size=75]Maine[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]T[/b][font font=stateface size=250 fg=b22]T[/font][font size=75]Maryland[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]S[/b][font font=stateface size=250 fg=b22]S[/font][font size=75]Massachusetts[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]V[/b][font font=stateface size=250 fg=b22]V[/font][font size=75]Michigan[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]W[/b][font font=stateface size=250 fg=b22]W[/font][font size=75]Minnesota[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]Y[/b][font font=stateface size=250 fg=b22]Y[/font][font size=75]Mississippi[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]X[/b][font font=stateface size=250 fg=b22]X[/font][font size=75]Missouri[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]Z[/b][font font=stateface size=250 fg=b22]Z[/font][font size=75]Montana[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]c[/b][font font=stateface size=250 fg=b22]c[/font][font size=75]Nebraska[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]g[/b][font font=stateface size=250 fg=b22]g[/font][font size=75]Nevada[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]d[/b][font font=stateface size=250 fg=b22]d[/font][font size=75]New Hampshire[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]e[/b][font font=stateface size=250 fg=b22]e[/font][font size=75]New Jersey[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]f[/b][font font=stateface size=250 fg=b22]f[/font][font size=75]New Mexico[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]h[/b][font font=stateface size=250 fg=b22]h[/font][font size=75]New York[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]a[/b][font font=stateface size=250 fg=b22]a[/font][font size=75]North Carolina[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]b[/b][font font=stateface size=250 fg=b22]b[/font][font size=75]North Dakota[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]i[/b][font font=stateface size=250 fg=b22]i[/font][font size=75]Ohio[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]j[/b][font font=stateface size=250 fg=b22]j[/font][font size=75]Oklahoma[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]k[/b][font font=stateface size=250 fg=b22]k[/font][font size=75]Oregon[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]l[/b][font font=stateface size=250 fg=b22]l[/font][font size=75]Pennsylvania[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]m[/b][font font=stateface size=250 fg=b22]m[/font][font size=75]Rhode Island[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]n[/b][font font=stateface size=250 fg=b22]n[/font][font size=75]South Carolina[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]o[/b][font font=stateface size=250 fg=b22]o[/font][font size=75]South Dakota[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]p[/b][font font=stateface size=250 fg=b22]p[/font][font size=75]Tennessee[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]q[/b][font font=stateface size=250 fg=b22]q[/font][font size=75]Texas[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]r[/b][font font=stateface size=250 fg=b22]r[/font][font size=75]Utah[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]t[/b][font font=stateface size=250 fg=b22]t[/font][font size=75]Vermont[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]s[/b][font font=stateface size=250 fg=b22]s[/font][font size=75]Virginia[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]u[/b][font font=stateface size=250 fg=b22]u[/font][font size=75]Washington[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]y[/b][font font=stateface size=250 fg=b22]y[/font][font size=75]Washington D.C.[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]v[/b][font font=stateface size=250 fg=b22]v[/font][font size=75]Wisconsin[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]w[/b][font font=stateface size=250 fg=b22]w[/font][font size=75]West Virginia[/font][/vbox][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]x[/b][font font=stateface size=250 fg=b22]x[/font][font size=75]Wyoming[/font][/vbox][br][b] [/b][br][vbox][b font='nabfonts monospace' size=125 fg=0ff]z[/b][font font=stateface size=250 fg=b22]z[/font][font size=75]U.S. Map[/font][/vbox][br][/grid][br][/font]"
 	],
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"U.S.A."
 	]
 },
@@ -19349,7 +19351,7 @@ function getCustomFonts() {
 	],
 	"license":"Freeware",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Monospace"
 	]
 },
@@ -19967,7 +19969,7 @@ function getCustomFonts() {
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Composite Font"
 	]
 },
@@ -21208,7 +21210,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol"
+		"Symbols Only"
 	]
 },
 {
@@ -21225,7 +21227,7 @@ function getCustomFonts() {
 	],
 	"license":"SIL Open Font License",
 	"tags":[
-		"Symbol",
+		"Symbols Only",
 		"Faces"
 	]
 },
@@ -24360,11 +24362,11 @@ function fontsLibSortTags(a, b) {
 
 	if (a == 'sans-serif') return -1
 	if (a == 'serif') return -1
-	if (a == 'symbol') return -1
+	if (a == 'symbols only') return -1
 
 	if (b == 'sans-serif') return 1
 	if (b == 'serif') return 1
-	if (b == 'symbol') return 1
+	if (b == 'symbols only') return 1
 
 	if (a < b) return -1
 	if (a > b) return 1
