@@ -1,2 +1,28 @@
 The Vic Fieger fonts are freeware, to be downloaded and used by anyone who wants them for free. I didn't put them here so people couldn't use them! You don't have to ask for my permission, though it's always good to receive an e-mail from somebody to show me what they are using them for.
 If you wish to write to let me know how a certain font will be used, and for what purpose, send your e-mail to: vic@vicfieger.com
+
+
+
+
+https://vicfieger.com/~font/faq.html
+The following excerpts are from Vic Fieger's website FAQ:
+
+
+
+Do I require a license for using any of these fonts?
+
+For free fonts: No license is required, no payment is required. These fonts may be used by anyone for any design or artistic purpose, whether it be personal, commercial, or charitable.
+
+(Editor's note: Vic Fieger does make some paid fonts, but they are not included in this library)
+
+
+
+What are the restrictions on using these fonts?
+
+Please don't sell them. My free fonts are meant to be free for everybody and I don't want anyone getting the idea that they should have to pay for them. If you have to include a font file in/with a piece of commercial software so that it will function/display properly, that's fine.
+
+
+
+Would you allow me to make an alteration to the font myself?
+
+Yes, please do! I love to see how others choose to implement my fonts for their own purposes. If you feel something needs to be changed in order to better reflect your vision, go right ahead! My only request here is that these alternate versions not be distributed online, so that they can not be confused for the originals.

@@ -22,7 +22,7 @@ SOFTWARE.
 
 
 
-This library contains fonts that are all free to use in a commercial capacity. All licenses have been included with the fonts to make things simple.
+This library contains only fonts that are free to use in a commercial capacity. All licenses have been included with the fonts to make things simple.
 
 To open the interface, open the file: "OPEN ME TO USE.html" in your web browser.
 

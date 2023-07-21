@@ -523,6 +523,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Ackbar",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Ackbar.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Partial Symbol Set",
+		"Plain",
+		"Star Wars",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Acknowledge",
 	"authors":[
 		"Aenigma Fonts"
@@ -657,7 +678,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Airstrip Four.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Airstrip Four.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -669,6 +690,25 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Plain",
 		"Rounded Edges"
+	]
+},
+{
+	"name":"Aldo the Apache",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Aldo the Apache.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Partial Symbol Set",
+		"Thick Stroke"
 	]
 },
 {
@@ -690,6 +730,26 @@ function getCustomFonts() {
 		"Handwriting",
 		"Script",
 		"Slanted"
+	]
+},
+{
+	"name":"AlleyOop",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/AlleyOop.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Plain",
+		"Thick Stroke"
 	]
 },
 {
@@ -738,7 +798,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Alpha Echo.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Alpha Echo.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -795,6 +855,49 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Amity Jack",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Amity Jack.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"No Lowercase",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Amperzand",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Amperzand.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Leading Left Hook",
+		"Ornamental",
+		"Partial Symbol Set",
+		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Amplitude",
 	"authors":[
 		"Aenigma Fonts"
@@ -841,13 +944,33 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Anchor Jack",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Anchor Jack.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"No Lowercase",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Archipelago",
 	"authors":[
 		"Vic Fieger"
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Archipelago.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Archipelago.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -886,13 +1009,34 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Arm Wrestler",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Arm Wrestler.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Partial Symbol Set",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Armalite Rifle",
 	"authors":[
 		"Vic Fieger"
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Armalite Rifle.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Armalite Rifle.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1420,6 +1564,27 @@ function getCustomFonts() {
 		"No Lowercase",
 		"Ornamental",
 		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Beagle Brigade AU",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Beagle Brigade AU.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Decay",
+		"No Lowercase",
+		"Plain",
 		"Thick Stroke"
 	]
 },
@@ -2241,7 +2406,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Boston Traffic.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Boston Traffic.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2300,6 +2465,25 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Braille CC0",
+	"authors":[
+		"GGBotNet"
+	],
+	"variants":[
+		{
+			"path":"Braille CC0 - by GGBotNet/Braille CC0.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Braille",
+		"Dotted"
 	]
 },
 {
@@ -2688,7 +2872,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/CarbonType.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/CarbonType.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -3673,7 +3857,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Corporate HQ.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Corporate HQ.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4031,7 +4215,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Curses.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Curses.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4131,7 +4315,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Daisy Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Daisy Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4332,7 +4516,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Death To Smudgey.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Death To Smudgey.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5108,7 +5292,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Edo SZ.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Edo SZ.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5585,7 +5769,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Eurocentric.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Eurocentric.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5621,13 +5805,33 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Excelsior Sans",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Excelsior Sans.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Calligraphy",
+		"Partial Symbol Set",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Extended Play",
 	"authors":[
 		"Vic Fieger"
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Extended Play.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Extended Play.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5984,7 +6188,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Fawn Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Fawn Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6493,7 +6697,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Freelance Kamchatka.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Freelance Kamchatka.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6620,7 +6824,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Gang of Three.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Gang of Three.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7046,7 +7250,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Gisele Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Gisele Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8179,7 +8383,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Helsinki.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Helsinki.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8520,7 +8724,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Hydrogen Type.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Hydrogen Type.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8561,7 +8765,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/ICBM SS-20.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/ICBM SS-20.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8584,7 +8788,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/ICBM SS-25.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/ICBM SS-25.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9005,7 +9209,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_A J Paglia Fonts/Iron Sans.ttf",
+			"path":"_A J Paglia Fonts/Free Fonts/Iron Sans.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9600,7 +9804,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Karmatic Arcade.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Karmatic Arcade.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9932,7 +10136,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Know Your Product.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Know Your Product.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10049,7 +10253,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Kremlin.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Kremlin.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11256,7 +11460,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Major Snafu.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Major Snafu.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11396,7 +11600,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Maritime Flags.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Maritime Flags.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11476,7 +11680,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Maxine Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Maxine Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11508,6 +11712,27 @@ function getCustomFonts() {
 		"Symbols Only",
 		"Faces",
 		"Meme"
+	]
+},
+{
+	"name":"Mighty Mighty Friars",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Mighty Mighty Friars.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Partial Symbol Set",
+		"Plain",
+		"Thick Stroke"
 	]
 },
 {
@@ -12631,7 +12856,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Nuku Nuku.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Nuku Nuku.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12717,7 +12942,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Nyamomobile.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Nyamomobile.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13165,7 +13390,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Osaka Sans Serif.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Osaka Sans Serif.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13955,6 +14180,25 @@ function getCustomFonts() {
 		"Narrow Chars",
 		"Stencil",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Providence",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Providence.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -16745,7 +16989,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Quick End Jerk.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Quick End Jerk.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -16866,7 +17110,9 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Dashed",
 		"Decorated",
+		"Dotted",
 		"Morse Code",
 		"Partial Symbol Set"
 	]
@@ -16886,6 +17132,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Symbols Only",
+		"Dashed",
+		"Dotted",
 		"Morse Code"
 	]
 },
@@ -17544,7 +17792,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_A J Paglia Fonts/Roses Are FF0000.ttf",
+			"path":"_A J Paglia Fonts/Free Fonts/Roses Are FF0000.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -17650,7 +17898,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Ruth Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Ruth Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -17800,6 +18048,27 @@ function getCustomFonts() {
 		"Negative Space",
 		"Outline",
 		"Playful"
+	]
+},
+{
+	"name":"Sarabelle",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Sarabelle.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Handwriting",
+		"Partial Symbol Set",
+		"Playful",
+		"Uneven Chars"
 	]
 },
 {
@@ -18105,7 +18374,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Siamese Katsong.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Siamese Katsong.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18166,7 +18435,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Single Sleeve.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Single Sleeve.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19548,7 +19817,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Terry Script.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Terry Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20062,7 +20331,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Umbrage.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Umbrage.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20216,7 +20485,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Underwood Champion.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Underwood Champion.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20860,7 +21129,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/virgo.01.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/virgo.01.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20919,6 +21188,29 @@ function getCustomFonts() {
 		"No Lowercase",
 		"Pixelated",
 		"Retro"
+	]
+},
+{
+	"name":"Vive la Rivoluzione",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Vive la Rivoluzione.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"No Lowercase",
+		"Partial Symbol Set",
+		"Plain",
+		"Thick Stroke",
+		"Uneven Chars"
 	]
 },
 {
@@ -21422,7 +21714,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Whitehall.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Whitehall.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21464,7 +21756,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_A J Paglia Fonts/Wicked Grit.ttf",
+			"path":"_A J Paglia Fonts/Free Fonts/Wicked Grit.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21478,6 +21770,28 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Wicked Scary Movie",
+	"authors":[
+		"A J Paglia"
+	],
+	"variants":[
+		{
+			"path":"_A J Paglia Fonts/Free Fonts/Wicked Scary Movie.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Distressed",
+		"Halloween",
+		"Partial Symbol Set",
+		"Playful",
+		"Uneven Chars"
 	]
 },
 {
@@ -21704,7 +22018,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Xenophone.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Xenophone.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22204,7 +22518,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Yukarimobile.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Yukarimobile.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22401,7 +22715,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Vic Fieger Fonts/Zero & Zero Is.ttf",
+			"path":"_Vic Fieger Fonts/Freeware Fonts/Zero & Zero Is.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
