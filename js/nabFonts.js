@@ -52,16 +52,15 @@ SOFTWARE.
 	***   THIS FILE MUST BE THE VERY LAST ONE INCLUDED IN THE PAGE HEADER, OR THINGS MAY CONFLICT!   ***
 
 
-	ALL FONTS FOUND IN FUNCTION:
-		getCustomFonts()
-	BELOW WILL BE AUTOMATICALLY PARSED WHEN THE WEB PAGE LOADS. IF YOU ADD NEW FONTS, YOU MUST SPECIFY THEM THERE!
+	ALL FONTS FOUND IN FUNCTION getCustomFonts() BELOW WILL BE AUTOMATICALLY PARSED
+	WHEN THE WEB PAGE LOADS. IF YOU ADD NEW FONTS, YOU MUST SPECIFY THEM THERE!
 
 		PARSED FONTS WILL BE STORED IN THE FOLLOWING OBJECT:
 			customFonts = {
 				paths : [],			// This is array of paths to the custom fonts (A single font can have many files)
 				tags : [],			// This array contains all the unique tags found in the entire fonts list, with no duplicates
 				authors : [],		// This array contains all the unique artists found in the entire fonts list, with no duplicates
-				license : [],		// This string is the name of the license for the font
+				license : '',		// This string is the name of the license for the font
 				names : [],			// This array contains all the unique font names found in the entire fonts list, with no duplicates
 				fontData : [],		// This is an array of objects, sorted by font name, each object corresponding to a single font's attributes
 				errors : []			// This array contains an entry for every font that fails to parse
@@ -131,9 +130,9 @@ nabFontsLibPresent = true
 if(typeof(customFontPath) === 'undefined') {
 	customFontPath = 'fonts'	//This is the subdirectory the custom fonts are found in, relative to the HTML file loading this library
 	// DO NOT change this value if it has already been declared!
-} else {
-	console.log('nabFontsLib: \'customFontPath\' has already been declared. Skipping.')
 }
+
+
 
 // If they have not already been set, let's set the default fonts here
 // USE AN EMPTY STRING FOR NONE
@@ -24638,7 +24637,7 @@ function getFontIndex(inputFontName) {
 	}
 
 	if(test != inputFontName) {
-		console.log('getFontIndex Error: Could not find font \'' + inputFontName +  '\'!')
+		printWarning('nabFonts.js: getFontIndex: Could not find font \'' + inputFontName +  '\'!')
 		return false
 	}
 	return mid
@@ -24662,7 +24661,7 @@ function getFontData(inputFontName) {
 
 	fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[fontIndex])
 
-	newFontObject.authors.sort()
+	newFontObject.authors.sort(sortFontDataByName)
 	newFontObject.styles.sort()
 	newFontObject.weights.sort()
 	newFontObject.tags.sort(fontsLibSortTags)
@@ -24998,8 +24997,16 @@ function fontsLibAddDataToObject(inputData, outputObject, key, duplicate = false
 				outputObject[key].push({ name : inputData[metadata][i], count : 1 })
 			}
 		}
-	if(metadata == 'license') break		// Stop executing if this is licenses - we'll just end up looping over every character in the string
+		if(metadata == 'license') break		// Stop executing if this is licenses - we'll just end up looping over every character in the string
 	}
+}
+
+function sortFontDataByName(a, b) {
+	let x = a.name.toLowerCase().trim()
+	let y = b.name.toLowerCase().trim()
+	if (x < y) return -1
+	if (x > y) return 1
+	return 0
 }
 
 function fontsLibParseCustomFonts() {
@@ -25033,13 +25040,7 @@ function fontsLibParseCustomFonts() {
 
 	customFonts.path = customFontPath
 
-	customFontData.sort((a, b)=>{
-		let aTest = a.name.toLowerCase().trim()
-		let bTest = b.name.toLowerCase().trim()
-		if (aTest < bTest) return -1
-		if (aTest > bTest) return 1
-		return 0
-	})
+	customFontData.sort(sortFontDataByName)
 
 	for(let i = 0; i < customFontData.length; i++) {
 		// BEFORE sorting tags, make sure there's an instructions tag on the ones that need it!
@@ -25048,7 +25049,7 @@ function fontsLibParseCustomFonts() {
 		}
 		if(customFontData[i].name != '' && customFontData[i].path != '') {
 			customFontData[i].tags.sort(fontsLibSortTags)
-			customFontData[i].authors.sort()
+			customFontData[i].authors.sort(sortFontDataByName)
 			for(let j = 0; j < customFontData[i].variants.length; j++) {
 				if(!customFontData[i].variants[j].hasOwnProperty('style')) {
 					customFontData[i].variants[j].style = 'normal'
@@ -25087,21 +25088,9 @@ function fontsLibParseCustomFonts() {
 		}
 		previousName = customFonts.fontData[i].name.toLowerCase()
 	}
-	customFonts.authors.sort( function(a, b) {
-	if(a.name > b.name) return 1
-	if(a.name < b.name) return -1
-	return 0
-	})
-	customFonts.tags.sort( function(a, b) {
-	if(a.name > b.name) return 1
-	if(a.name < b.name) return -1
-	return 0
-	})
-	customFonts.licenses.sort( function(a, b) {
-	if(a.name > b.name) return 1
-	if(a.name < b.name) return -1
-	return 0
-	})
+	customFonts.authors.sort(sortFontDataByName)
+	customFonts.tags.sort(sortFontDataByName)
+	customFonts.licenses.sort(sortFontDataByName)
 
 
 	createFontCSS(customFonts.fontData)
@@ -25213,5 +25202,9 @@ function fontsLibCreateFontElement(inputValues) {
 	document.head.appendChild(new_element)
 }
 
-
-fontsLibParseCustomFonts()	// DO NOT wait for the page to load, or we create a race condition!!
+if(!(typeof(nabLibPresent) === 'undefined') && nabLibPresent === true) {
+	console.log('nabFontsLib: Parsing fonts, using path: ' + customFontPath)
+	fontsLibParseCustomFonts()	// DO NOT wait for the page to load, or we create a race condition!!
+} else {
+	console.log('nabLib.js not found! nabLib.js is required to use nabFonts.js, and nabLib.js MUST be loaded first.')
+}

@@ -22,10 +22,28 @@ SOFTWARE.
 
 
 
+
 This library contains only fonts that are free to use in a commercial capacity. All licenses have been included with the fonts to make things simple.
-
-To open the interface, open the file: "OPEN ME TO USE.html" in your web browser.
-
+If a text file with a license is not available, I have included a link to the author's web page stating the license.
 
 
-For any further instructions, open the same file in a text editor. Instructions for everything you should need are right at the top.
+
+To open the interface and browse the fonts on your computer, open the file: "OPEN ME TO USE.html" in your web browser.
+
+
+
+To integrate this library into a web page, add both nabLib.js and nabFonts.js to your HTML page header. (nabLib.js MUST be included BEFORE nabFonts.js)
+If you are changing the path of the fonts, you will need to change the variable:
+	"customFontPath"
+
+nabFonts.js will parse the fonts immediately upon it's inclusion on the web page, so MAKE SURE you change "customFontPath" in JavaScript BEFORE nabFonts.js is added.
+In this configuration, when the web page is loaded, nabFonts.js will automatically declare every font in the page header every time your web page is loaded.
+Then, to use a font, all you have to do is use the CSS font-family property to reference it by name.
+
+
+
+If anything is misbehaving, check the JavaScript console, it should give some useful debug info.
+
+
+
+For more in-depth instructions on how to use advanced features, open nabFonts.js in a text editor. There are complete instructions near the top of the file.

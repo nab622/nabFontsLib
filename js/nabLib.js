@@ -129,7 +129,7 @@ nabLibStyle.appendChild(document.createTextNode(`
 }
 
 .nabLibHoverHighlight:hover {
-	filter: brightness(125%);
+	filter: brightness(110%);
 }
 
 `))
@@ -219,6 +219,8 @@ function convertIntToRomanNumerals(inputInt) {
 // -------------------- TIME --------------------
 
 function secondsToTime(inputSeconds, minFields = 2) {
+	if(isNaN(inputSeconds)) printError('secondsToTime: inputSeconds is not a number!', inputSeconds)
+
 	let output = []
 
 	let divisors = [ 60, 60, 24, 7 ]
@@ -238,19 +240,22 @@ function secondsToTime(inputSeconds, minFields = 2) {
 // -------------------- DATES --------------------
 
 function dateToString(inputTimestamp, fullMonthName = true) {
+	if(isNaN(inputTimestamp)) printError('dateToString: inputTimestamp is not a number!', inputTimestamp)
 
-	inputTimestamp *= 1000
+	// Fix dates that are out of range (Remember to account for milliseconds!)
+	if(inputTimestamp < 2000000000) inputTimestamp *= 1000
+
 	let offset = new Date().getTimezoneOffset() * 60 * 1000
 	let date = new Date(inputTimestamp - offset)
 
-	let year = parseInt(date.toISOString().substr(0, 4))
-	let month = nabLibMonths[parseInt(date.toISOString().substr(5, 2)) - 1]
+	let year = date.getFullYear()
+	let month = nabLibMonths[date.getMonth()]
 	if(fullMonthName == true) {
 		month = month.name
 	} else {
 		month = month.abbr
 	}
-	let day = parseInt(date.toISOString().substr(8, 2))
+	let day = date.getDate()
 
 	// If we need to output the date in a specific order, determine that here
 
@@ -448,6 +453,7 @@ function invertColor(color, invertAlpha = false) {
 // -------------------- MESSAGES --------------------
 
 function consoleLog() {
+	// This is primarily used in debugging
 	for(let i = 0; i < arguments.length; i++) {
 		arguments[i] = JSON.parse(JSON.stringify(arguments[i]))
 	}
@@ -1977,7 +1983,7 @@ function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, 
 	return starfield.toDataURL()
 }
 
-function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundColor = '000', starColor = 'FFF', scrollLeftOrRight = 1, scrollUpOrDown = 0, scrollSpeed = 20) {
+function renderStarscape(renderElement = null, starCount = 300, layers = 5, backgroundColor = '000', starColor = 'FFF', scrollLeftOrRight = 1, scrollUpOrDown = 0, scrollSpeed = 20) {
 	let outputChild = { elementType : 'div', style : { display : 'grid', width : '100%', height : '100%', margin : '0px' }, children : [] }
 	let defaultStyle = { gridArea : '1 / 1', width : '100%', height : '100%', margin : '0px' }
 
@@ -1985,8 +1991,6 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 
 	backgroundColor = readColor(backgroundColor)
 	starColor = readColor(starColor)
-
-	renderElement.style.backgroundColor = '#' + backgroundColor
 
 	defaultStyle.padding = '0px'
 
@@ -2057,7 +2061,20 @@ function renderStarscape(renderElement, starCount = 300, layers = 5, backgroundC
 			outputChild.children.push({ elementType : 'style', text : '@keyframes ' + animationName + ' {0% { background-position: 0px 0px; } 100% { background-position: ' + horizontalScroll + ' ' + verticalScroll + ' } }' })
 		}
 	}
-	renderElement.appendChild(createElement(outputChild))
+
+	outputChild = { elementType : 'div', style : { backgroundColor : '#' + readColor(backgroundColor), display : 'grid', width : '100%', height : '100%', position : 'inherit' }, children : [ outputChild ] }
+
+	if(typeof(renderElement) === 'string') {
+		// If we were given a string, check for an ID
+		renderElement = document.getElementById(renderElement)
+	}
+	if(typeof(renderElement) === 'object') {
+		renderElement.appendChild(createElement(outputChild))
+		return
+	}
+
+	// If there was no valid output element, just output the object data
+	return outputChild
 }
 
 
@@ -2136,7 +2153,7 @@ function createModalForm(data) {
 	let modalInputs = []
 	let modalContent = { elementType : 'div', id : modalFocusID, tabIndex : (-1 * modalFormCount).toString(), style : { flex : '1 1', display : 'flex', padding : '0.5em', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'auto' }, children : modalInputs }
 	let modal = { elementType : 'div', className : 'modalForm', onclick : (evt)=>{ evt.stopPropagation() }, style : { minWidth : '15em', maxHeight : '90%', display : 'flex', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'hidden', fontFamily : '\'nabfonts sans-serif\', sans-serif', backgroundImage : generateBackgroundGradientLines(90, '999', 500, 0.5) }, children : [ modalContent ] }
-	let modalBackground = { elementType : 'div', id : modalID, style : { backgroundColor : '#111B', display : 'flex', alignItems : 'center', justifyContent : 'center', position: 'fixed', top : '0px', left : '0px', width : '100%', height : '100%', userSelect : 'none' }, children : [ modal ] }
+	let modalBackground = { elementType : 'div', id : modalID, style : { backgroundColor : '#111B', display : 'flex', alignItems : 'center', justifyContent : 'center', position: 'fixed', top : '0px', left : '0px', width : '100%', height : '100%', zIndex : '99999999999999999999', userSelect : 'none' }, children : [ modal ] }
 
 	if(data.hasOwnProperty('style')) modal.style = combineObjects(getValue(data, 'style', {}), modal.style)
 
@@ -2976,6 +2993,7 @@ for(category in superTextMarkupData.categories) {
 	}
 }
 
+
 // This array *MUST* be sorted and then reversed, or tags can get incorrectly matched
 // Also this must happen AFTER the parsing step above, or the category order will be messed up
 superTextMarkupData.markup.sort((a, b)=>{
@@ -3184,6 +3202,10 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 						let newFont = variables[key].toLowerCase()
 						if(typeof(customFonts) !== 'undefined') {
 							switch(newFont) {
+								case 'adobe blank':
+									// Prevent users from activating this
+									newFont = 'nabfonts sans-serif'
+									break
 								case 'serif':
 								case 'sans-serif':
 								case 'cursive':
@@ -3192,6 +3214,7 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 									newFont = '\'nabfonts ' + newFont + '\', ' + newFont
 									break
 								default:
+									// This is here to ensure that *NOTHING* falls back to system fonts. It's my fonts library or the highway!
 									if(getFontData(newFont) === false) newFont = 'nabfonts sans-serif'
 							}
 						}
@@ -3430,7 +3453,8 @@ function superTextMarkupGetTagData(tag) {
 
 function superTextMarkupGetSmileyData(tag) {
 	for(let i = 0; i < superTextMarkupData.smileyFaces.length; i++) {
-		if(tag == superTextMarkupData.smileyFaces[i].text) return superTextMarkupData.smileyFaces[i]
+		// DO NOT CHANGE THE LOWER CASE CHECK HERE. It breaks things. I know it's inefficient, but too bad.
+		if(tag == superTextMarkupData.smileyFaces[i].text.toLowerCase()) return superTextMarkupData.smileyFaces[i]
 	}
 	return false
 }
@@ -3488,6 +3512,7 @@ function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklis
 		loc = inputText.indexOf('[', loc)
 		if(loc < 0) break
 		let result = superTextMarkupProcessTagInfo(loc, inputText, tagBlacklist, activeMarkups, nomarkup, addSmilies)
+
 		if(result === false) {
 			continue	// No tag here. Keep going
 		}
@@ -3912,7 +3937,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 	// If that ever changes, change this to true and spell check will work again
 	let allowSpellCheck = false
 
-	renderElement.style.whiteSpace = 'pre'
+	renderElement.style.whiteSpace = 'break-spaces'
 
 	superTextMarkupEditorCount++
 
