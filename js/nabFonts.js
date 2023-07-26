@@ -480,6 +480,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Aaargh",
+	"authors":[
+		"Tup Wanders"
+	],
+	"variants":[
+		{
+			"path":"_Tup Wanders/Free Fonts/Aaargh.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Thin Stroke",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Abberancy",
 	"authors":[
 		"Typodermic Fonts"
@@ -711,13 +732,101 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Alegreya",
+	"authors":[
+		"Juan Pablo del Peral"
+	],
+	"variants":[
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya Black.otf",
+			"style":"normal",
+			"weight":"900"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya Black Italic.otf",
+			"style":"italic",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Alegreya SC",
+	"authors":[
+		"Juan Pablo del Peral"
+	],
+	"variants":[
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC Black.otf",
+			"style":"normal",
+			"weight":"900"
+		},
+		{
+			"path":"Alegreya - by Juan Pablo del Peral/Alegreya SC Black Italic.otf",
+			"style":"italic",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Alex Brush",
 	"authors":[
 		"TypeSETit"
 	],
 	"variants":[
 		{
-			"path":"Alex Brush - by TypeSETit/AlexBrush-Regular.ttf",
+			"path":"Alex Brush - by TypeSETit/Alex Brush.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -758,7 +867,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Allura - by TypeSETit/Allura-Regular.ttf",
+			"path":"Allura - by TypeSETit/Allura.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -992,7 +1101,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Arizonia - by TypeSETit/Arizonia-Regular.ttf",
+			"path":"Arizonia - by TypeSETit/Arizonia.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1826,7 +1935,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Bilbo - by Robert Leuschke/Bilbo-Regular.ttf",
+			"path":"Bilbo - by Robert Leuschke/Bilbo.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1846,7 +1955,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Bilbo Swash Caps - by TypeSETit/BilboSwashCaps-Regular.ttf",
+			"path":"Bilbo Swash Caps - by TypeSETit/Bilbo Swash Caps.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2778,40 +2887,16 @@ function getCustomFonts() {
 			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Sans-Serif",
-		"Formal",
-		"Plain"
-	]
-},
-{
-	"name":"Canada 1500 Light",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
+		},
 		{
 			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light.otf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"300"
 		},
 		{
 			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light Italic.otf",
 			"style":"italic",
-			"weight":"normal"
-		},
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500.otf",
-			"style":"normal",
-			"weight":"bold"
-		},
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Italic.otf",
-			"style":"italic",
-			"weight":"bold"
+			"weight":"300"
 		}
 	],
 	"license":"Public Domain",
@@ -2912,9 +2997,24 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Caveat - by Impallari Type/Caveat-VariableFont_wght.ttf",
+			"path":"_Impallari Type/Caveat - by Impallari Type/static/Caveat.ttf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Caveat - by Impallari Type/static/Caveat Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Caveat - by Impallari Type/static/Caveat Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Caveat - by Impallari Type/static/Caveat Bold.ttf",
+			"style":"normal",
+			"weight":"700"
 		}
 	],
 	"license":"SIL Open Font License",
@@ -4356,7 +4456,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Dancing Script - by Impallari Type/DancingScript-VariableFontWeight.ttf",
+			"path":"_Impallari Type/Dancing Script - by Impallari Type/static/Dancing Script.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Dancing Script - by Impallari Type/static/Dancing Script Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Dancing Script - by Impallari Type/static/Dancing Script Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Dancing Script - by Impallari Type/static/Dancing Script Bold.ttf",
 			"style":"normal",
 			"weight":"700"
 		}
@@ -5002,7 +5117,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Dynalight - by Astigmatic One Eye Typographic Institute/Dynalight-Regular.ttf",
+			"path":"Dynalight - by Astigmatic One Eye Typographic Institute/Dynalight.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6587,6 +6702,25 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Forque",
+	"authors":[
+		"Tup Wanders"
+	],
+	"variants":[
+		{
+			"path":"_Tup Wanders/Free Fonts/Forque.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Partial Symbol Set",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Fragile Bombers",
 	"authors":[
 		"Typodermic Fonts"
@@ -7265,6 +7399,26 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Gladifilthefte",
+	"authors":[
+		"Tup Wanders"
+	],
+	"variants":[
+		{
+			"path":"_Tup Wanders/Free Fonts/Gladifilthefte.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Partial Symbol Set",
+		"Plain",
+		"Slanted"
+	]
+},
+{
 	"name":"Glazkrak",
 	"authors":[
 		"Typodermic Fonts"
@@ -7504,7 +7658,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Grand Hotel - by Astigmatic One Eye Typographic Institute/GrandHotel-Regular.ttf",
+			"path":"Grand Hotel - by Astigmatic One Eye Typographic Institute/Grand Hotel.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7707,7 +7861,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Great Vibes - by TypeSETit/GreatVibes-Regular.ttf",
+			"path":"Great Vibes - by TypeSETit/Great Vibes.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9872,7 +10026,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Kaushan Script - by Impallari Type/KaushanScript-Regular.ttf",
+			"path":"_Impallari Type/Kaushan Script - by Impallari Type/Kaushan Script.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10946,7 +11100,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Lobster - by Impallari Type/Lobster-Regular.ttf",
+			"path":"_Impallari Type/Lobster - by Impallari Type/Lobster.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10970,22 +11124,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Lobster Two - by Impallari Type/LobsterTwo-Regular.ttf",
+			"path":"_Impallari Type/Lobster Two - by Impallari Type/Lobster Two.ttf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Impallari Type/Lobster Two - by Impallari Type/LobsterTwo-Italic.ttf",
+			"path":"_Impallari Type/Lobster Two - by Impallari Type/Lobster Two Italic.ttf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Impallari Type/Lobster Two - by Impallari Type/LobsterTwo-Bold.ttf",
+			"path":"_Impallari Type/Lobster Two - by Impallari Type/Lobster Two Bold.ttf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Impallari Type/Lobster Two - by Impallari Type/LobsterTwo-BoldItalic.ttf",
+			"path":"_Impallari Type/Lobster Two - by Impallari Type/Lobster Two Bold Italic.ttf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -11661,7 +11815,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Material Design Icons - by Google/MaterialIconsRound-Regular.otf",
+			"path":"Material Design Icons - by Google/Material Design Icons Round.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11711,6 +11865,80 @@ function getCustomFonts() {
 		"Symbols Only",
 		"Faces",
 		"Meme"
+	]
+},
+{
+	"name":"Merriweather Sans",
+	"authors":[
+		"Sorkin Type"
+	],
+	"variants":[
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"Merriweather Sans - by Sorkin Type/static/Merriweather Sans Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -13167,6 +13395,35 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"OldStandard TT",
+	"authors":[
+		"Alexey Kryukov"
+	],
+	"variants":[
+		{
+			"path":"OldStandard TT - by Alexey Kryukov/OldStandard.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"OldStandard TT - by Alexey Kryukov/OldStandard Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"OldStandard TT - by Alexey Kryukov/OldStandard Bold.ttf",
+			"style":"normal",
+			"weight":"bold"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Oneworldonefuture",
 	"authors":[
 		"Dieter Schumacher"
@@ -13199,14 +13456,212 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Open Sans - by Steve Matteson/Open Sans Variable Font width, weight.ttf",
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Light.ttf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"300"
 		},
 		{
-			"path":"Open Sans - by Steve Matteson/Open Sans Italic Variable Font width, weight.ttf",
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Light Italic.ttf",
 			"style":"italic",
-			"weight":"normal"
+			"weight":"300"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans/Open Sans Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Open Sans Condensed",
+	"authors":[
+		"Steve Matteson"
+	],
+	"variants":[
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Condensed/Open Sans Condensed Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Open Sans Semi Condensed",
+	"authors":[
+		"Steve Matteson"
+	],
+	"variants":[
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"Open Sans - by Steve Matteson/static/Open Sans Semi Condensed/Open Sans Semi Condensed Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
 		}
 	],
 	"license":"SIL Open Font License",
@@ -13223,7 +13678,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"OpenDyslexic - by Abelardo Gonzalez/OpenDyslexic Regular.otf",
+			"path":"OpenDyslexic - by Abelardo Gonzalez/OpenDyslexic.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
@@ -13405,6 +13860,54 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Oswald",
+	"authors":[
+		"Cyreal",
+		"Kalapi Gajjar",
+		"Vernon Adams"
+	],
+	"variants":[
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Oswald - by Vernon Adams, Kalapi Gajjar, Cyreal/static/Oswald Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Outer Sider",
 	"authors":[
 		"Aenigma Fonts"
@@ -13535,7 +14038,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Pacifico - by Vernon Adams/Pacifico-Regular.ttf",
+			"path":"Pacifico - by Vernon Adams/Pacifico.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15132,14 +15635,19 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
+			"path":"_QualiType - by John Colletti/opentype/QTDoghausLight.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
 			"path":"_QualiType - by John Colletti/opentype/QTDoghaus.otf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"400"
 		},
 		{
 			"path":"_QualiType - by John Colletti/opentype/QTDoghausHeavy.otf",
 			"style":"normal",
-			"weight":"bold"
+			"weight":"700"
 		}
 	],
 	"license":"SIL Open Font License",
@@ -15148,53 +15656,6 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Plain",
 		"Rounded Chars"
-	]
-},
-{
-	"name":"QTDoghausHeavy",
-	"authors":[
-		"John Colletti"
-	],
-	"variants":[
-		{
-			"path":"_QualiType - by John Colletti/opentype/QTDoghausHeavy.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Sans-Serif",
-		"Broken Letters",
-		"Plain",
-		"Rounded Chars",
-		"Thick Stroke"
-	]
-},
-{
-	"name":"QTDoghausLight",
-	"authors":[
-		"John Colletti"
-	],
-	"variants":[
-		{
-			"path":"_QualiType - by John Colletti/opentype/QTDoghausLight.otf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"_QualiType - by John Colletti/opentype/QTDoghaus.otf",
-			"style":"normal",
-			"weight":"bold"
-		}
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Sans-Serif",
-		"Broken Letters",
-		"Plain",
-		"Rounded Chars",
-		"Thin Stroke"
 	]
 },
 {
@@ -15647,53 +16108,19 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_QualiType - by John Colletti/opentype/QTHelvetCondensed.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Serif",
-		"Formal",
-		"Plain"
-	]
-},
-{
-	"name":"QTHelvetCondensed Black",
-	"authors":[
-		"John Colletti"
-	],
-	"variants":[
-		{
-			"path":"_QualiType - by John Colletti/opentype/QTHelvetCondensed Black.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Serif",
-		"Formal",
-		"Plain",
-		"Thick Stroke"
-	]
-},
-{
-	"name":"QTHelvetCondensedLight",
-	"authors":[
-		"John Colletti"
-	],
-	"variants":[
-		{
 			"path":"_QualiType - by John Colletti/opentype/QTHelvetCondensedLight.otf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"300"
 		},
 		{
 			"path":"_QualiType - by John Colletti/opentype/QTHelvetCondensed.otf",
 			"style":"normal",
-			"weight":"bold"
+			"weight":"400"
+		},
+		{
+			"path":"_QualiType - by John Colletti/opentype/QTHelvetCondensed Black.otf",
+			"style":"normal",
+			"weight":"900"
 		}
 	],
 	"license":"SIL Open Font License",
@@ -16242,33 +16669,14 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_QualiType - by John Colletti/opentype/QTPeignoir.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Sans-Serif",
-		"Plain",
-		"Uneven Chars"
-	]
-},
-{
-	"name":"QTPeignoir Lite",
-	"authors":[
-		"John Colletti"
-	],
-	"variants":[
-		{
 			"path":"_QualiType - by John Colletti/opentype/QTPeignoir Lite.otf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"300"
 		},
 		{
 			"path":"_QualiType - by John Colletti/opentype/QTPeignoir.otf",
 			"style":"normal",
-			"weight":"bold"
+			"weight":"400"
 		}
 	],
 	"license":"SIL Open Font License",
@@ -17134,6 +17542,112 @@ function getCustomFonts() {
 		"Dashed",
 		"Dotted",
 		"Morse Code"
+	]
+},
+{
+	"name":"Raleway",
+	"authors":[
+		"Impallari Type",
+		"Matt McInerney",
+		"Rodrigo Fuenzalida"
+	],
+	"variants":[
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Thin Italic.ttf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Light Italic.ttf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		},
+		{
+			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Black Italic.ttf",
+			"style":"italic",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -18690,6 +19204,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Snickles",
+	"authors":[
+		"Tup Wanders"
+	],
+	"variants":[
+		{
+			"path":"_Tup Wanders/Free Fonts/Snickles.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Marker",
+		"Playful",
+		"Slanted",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Snidely",
 	"authors":[
 		"Typodermic Fonts"
@@ -18743,7 +19278,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Sofia - by LatinoType/Sofia-Regular.ttf",
+			"path":"Sofia - by LatinoType/Sofia.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18889,40 +19424,19 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/Square Unique Thin.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
 			"path":"_Dieter Schumacher Fonts/Free Fonts/Square Unique.ttf",
 			"style":"normal",
-			"weight":"normal"
+			"weight":"400"
 		},
 		{
 			"path":"_Dieter Schumacher Fonts/Free Fonts/Square Unique Extra Bold.ttf",
 			"style":"normal",
-			"weight":"bold"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Sans-Serif",
-		"Angular",
-		"Block Shaped",
-		"Partial Symbol Set",
-		"Wide Chars"
-	]
-},
-{
-	"name":"Square Unique Thin",
-	"authors":[
-		"Dieter Schumacher"
-	],
-	"variants":[
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/Square Unique Thin.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/Square Unique.ttf",
-			"style":"normal",
-			"weight":"bold"
+			"weight":"600"
 		}
 	],
 	"license":"Freeware",
@@ -20324,6 +20838,81 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Ubuntu",
+	"authors":[
+		"Dalton Maag"
+	],
+	"variants":[
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Ubuntu - by Dalton Maag/Ubuntu Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		}
+	],
+	"license":"Ubuntu Font Licence",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Ubuntu Condensed",
+	"authors":[
+		"Dalton Maag"
+	],
+	"variants":[
+		{
+			"path":"Ubuntu Condensed - by Dalton Maag/Ubuntu Condensed.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Ubuntu Font Licence",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
 	"name":"Umbrage",
 	"authors":[
 		"Vic Fieger"
@@ -21494,7 +22083,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Web Symbols - by Just Be Nice Studio/WebSymbols-Regular.otf",
+			"path":"Web Symbols - by Just Be Nice Studio/Web Symbols.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23218,10 +23807,20 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	font-family: 'nabfonts monospace';
 }
 
+.fontsLibFontPathsLabel {
+	text-align: center;
+	font-size: 0.8em;
+	font-family: 'nabfonts monospace';
+}
+
 #fontsLibFontPaths {
 	text-align: center;
 	font-size: 0.8em;
 	font-family: 'nabfonts monospace';
+	max-height: 4.8em;
+	overflow-y: scroll;
+	background-color: #0004;
+	border: 0.1em inset #3336;
 }
 
 .fontsLibFontAuthor {
@@ -23810,7 +24409,6 @@ function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 		fontsLibFontTags.appendChild(createElement(newElement))
 	}
 
-	fontsLibFontPaths.appendChild(createElement({ elementType: 'span', text: 'File Paths (Click to download):' }))
 	fontPathColors = [ '#4F4', '#4FF', '#44F', '#F4F', '#F44', '#FF4' ]
 	let count = 0
 	for(let i = 0; i < tempFont.paths.length; i++) {
@@ -23819,15 +24417,15 @@ function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 			if(tempFont.paths[i] == tempFont.paths[h]) match = true
 		}
 		if(match == true) continue
-		fontsLibFontPaths.appendChild(createElement({ elementType: 'br' }))
 		fontsLibFontPaths.appendChild(createElement({ elementType: 'a', href : tempFont.paths[i], download : 'true', className : 'fontsLibFontPaths fontsLibClickable', style : { color : fontPathColors[count % fontPathColors.length] }, text: tempFont.paths[i] }))
+		if(i < tempFont.paths.length - 1) fontsLibFontPaths.appendChild(createElement({ elementType: 'br' }))
 		count++
 	}
 }
 
 function fontsLibBoldFont(inputElement, boldFont = true) {
 	if(boldFont) {
-		boldFont = 'bold'
+		boldFont = 'bolder'
 	} else {
 		boldFont = 'normal'
 	}
@@ -24501,6 +25099,7 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 				{ elementType : 'div', id : 'fontsLibFontLicense' },
 				{ elementType : 'div', id : 'fontsLibFontTags' },
 				{ elementType : 'br' },
+				{ elementType: 'div', className : 'fontsLibFontPathsLabel', text: 'File Paths (Click to download):' },
 				{ elementType : 'div', id : 'fontsLibFontPaths' },
 			]},
 			{ elementType : 'div', id : 'fontsLibFontSampleArea', children : [
@@ -24661,7 +25260,7 @@ function getFontData(inputFontName) {
 
 	fontsLibParseFontDataIntoNewObject(newFontObject, customFonts.fontData[fontIndex])
 
-	newFontObject.authors.sort(sortFontDataByName)
+	newFontObject.authors.sort(fontsLibSortTags)	// This line HAS to use the tag sort! Authors don't have a .name property
 	newFontObject.styles.sort()
 	newFontObject.weights.sort()
 	newFontObject.tags.sort(fontsLibSortTags)
@@ -25049,7 +25648,7 @@ function fontsLibParseCustomFonts() {
 		}
 		if(customFontData[i].name != '' && customFontData[i].path != '') {
 			customFontData[i].tags.sort(fontsLibSortTags)
-			customFontData[i].authors.sort(sortFontDataByName)
+			customFontData[i].authors.sort(fontsLibSortTags)	// This line HAS to use the tag sort! Authors don't have a .name property
 			for(let j = 0; j < customFontData[i].variants.length; j++) {
 				if(!customFontData[i].variants[j].hasOwnProperty('style')) {
 					customFontData[i].variants[j].style = 'normal'
@@ -25088,6 +25687,7 @@ function fontsLibParseCustomFonts() {
 		}
 		previousName = customFonts.fontData[i].name.toLowerCase()
 	}
+
 	customFonts.authors.sort(sortFontDataByName)
 	customFonts.tags.sort(sortFontDataByName)
 	customFonts.licenses.sort(sortFontDataByName)

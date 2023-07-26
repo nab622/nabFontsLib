@@ -2122,7 +2122,7 @@ function createModalForm(data) {
 }
 */
 
-	let modalBlacklist = superTextConvertWhitelistToBlacklist([ 'b', 'i', 'u', 's', 'size', 'color', 'sub', 'sup', 'ol', 'ul', 'li', 'br' ])
+	let modalBlacklist = superTextConvertWhitelistToBlacklist([ 'l', 'b', 'i', 'u', 's', 'size', 'color', 'sub', 'sup', 'ol', 'ul', 'li', 'br' ])
 
 	if(data.hasOwnProperty('elementToFocusOnAfterClose')) {
 		if(typeof(data.elementToFocusOnAfterClose) === 'string') data.elementToFocusOnAfterClose = document.getElementById(data.elementToFocusOnAfterClose)
@@ -2567,28 +2567,36 @@ superTextMarkupData = {
 		//		ignoreLineBreaks	=	Ignore all line breaks immediately nested inside this element. This option MUST be used with 'nest'
 
 
-		{ tag : 'b',
-							description: 'Bold',
-							symbol : { character : '', font : 'webhostinghub glyphs' },
+		{ tag : 'l',
+							description: 'Lighter text',
+							symbol : { character : 'l', font : 'webhostinghub glyphs' },
+							nest : true,
 							category : { name : 'Formatting', index : 1 },
-							parameters : { style : { fontWeight : 'bold' } },
+							parameters : { style : { fontWeight : 'lighter' } },
+		},
+		{ tag : 'b',
+							description: 'Bolder text',
+							symbol : { character : '', font : 'webhostinghub glyphs' },
+							nest : true,
+							category : { name : 'Formatting', index : 2 },
+							parameters : { style : { fontWeight : 'bolder' } },
 		},
 		{ tag : 'i',
 							description: 'Italic',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 2 },
+							category : { name : 'Formatting', index : 3 },
 							parameters : { style : { fontStyle : 'italic' } },
 		},
 		{ tag : 'u',
 							description: 'Underline',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 3 },
+							category : { name : 'Formatting', index : 4 },
 							parameters : { style : { textDecoration : 'underline' } },
 		},
 		{ tag : 's',
 							description: 'Strikethrough',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 4 },
+							category : { name : 'Formatting', index : 5 },
 							parameters : { style : { textDecoration : 'line-through' } },
 		},
 		{ tag : 'br',
@@ -2605,7 +2613,7 @@ superTextMarkupData = {
 							noClosingTag : true,
 							block : true,
 							noText : true,
-							category : { name : 'Separators', index : 1 },
+							category : { name : 'Inserts', index : 2 },
 							parameters : { elementType : 'hr' },
 							variables : { width : 'width' },
 		},
@@ -2650,7 +2658,7 @@ superTextMarkupData = {
 							ignoreLineBreaks : true,
 							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-grid', gap : '0.5em', border : '0.1em #9994 solid' } },
 		},
-		{ tag : 'l',
+		{ tag : 'left',
 							description: 'Block text and left align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
 							block : true,
@@ -2658,7 +2666,7 @@ superTextMarkupData = {
 							category : { name : 'Alignment', index : 1 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'left', marginTop : '0px', marginBottom : '0px' } },
 		},
-		{ tag : 'c',
+		{ tag : 'center',
 							description: 'Block text and center align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
 							block : true,
@@ -2666,7 +2674,7 @@ superTextMarkupData = {
 							category : { name : 'Alignment', index : 2 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'center', marginTop : '0px', marginBottom : '0px' } },
 		},
-		{ tag : 'r',
+		{ tag : 'right',
 							description: 'Block text and right align',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
 							block : true,
@@ -2674,7 +2682,7 @@ superTextMarkupData = {
 							category : { name : 'Alignment', index : 3 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'right', marginTop : '0px', marginBottom : '0px' } },
 		},
-		{ tag : 'j',
+		{ tag : 'justify',
 							description: 'Block text and justify',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '829' },
 							block : true,
@@ -2682,44 +2690,6 @@ superTextMarkupData = {
 							category : { name : 'Alignment', index : 4 },
 							parameters : { elementType : 'p', style : { width: '100%', textAlign : 'justify', marginTop : '0px', marginBottom : '0px' } },
 		},
-/*
-		{ tag : 'h1',
-							description: 'Heading 1',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'DC2' },
-							category : { name : 'Heading', index : 1 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 6).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-		{ tag : 'h2',
-							description: 'Heading 2',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'CB3' },
-							category : { name : 'Heading', index : 2 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 5).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-		{ tag : 'h3',
-							description: 'Heading 3',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'BA4' },
-							category : { name : 'Heading', index : 3 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 4).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-		{ tag : 'h4',
-							description: 'Heading 4',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'A95' },
-							category : { name : 'Heading', index : 4 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 3).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-		{ tag : 'h5',
-							description: 'Heading 5',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : '986' },
-							category : { name : 'Heading', index : 5 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 2).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-		{ tag : 'h6',
-							description: 'Heading 6',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : '877' },
-							category : { name : 'Heading', index : 6 },
-							parameters : { elementType : 'span', style : { fontSize : 'min(6rem, ' + (1 + 0.5 * 1).toString() + 'em)', marginTop : '0px', marginBottom : '0px' } },
-		},
-*/
 		{ tag : 'ol',
 							description: 'Ordered list',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
@@ -2747,29 +2717,29 @@ superTextMarkupData = {
 		{ tag : 'sup',
 							description: 'Superscript',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
-							category : { name : 'Formatting', index : 8 },
+							category : { name : 'Formatting', index : 7 },
 							parameters : { style : { verticalAlign : 'super', fontSize : '0.75em' } },
 		},
 		{ tag : 'sub',
 							description: 'Subscript',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '33B' },
-							category : { name : 'Formatting', index : 9 },
+							category : { name : 'Formatting', index : 8 },
 							parameters : { style : { verticalAlign : 'sub', fontSize : '0.75em' } },
 		},
 		{ tag : 'color',
 							description: 'Text/background color',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F33' },
-							category : { name : 'Formatting', index : 7 },
+							category : { name : 'Formatting', index : 10 },
 		},
 		{ tag : 'font',
 							description: 'Change typeface',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 6 },
+							category : { name : 'Formatting', index : 9 },
 		},
 		{ tag : 'size',
 							description: 'Font size (Percent, 25 to 500)',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							category : { name : 'Formatting', index : 5 },
+							category : { name : 'Formatting', index : 6 },
 		},
 		{ tag : 'quote',
 							description: 'Block quote, include markup',
@@ -2861,7 +2831,7 @@ superTextMarkupData = {
 		character : '',
 		color : '09B',
 		font : 'webhostinghub glyphs',
-		text : `[c][size size=300]SuperText Markup Help[/size]
+		text : `[center][size size=300]SuperText Markup Help[/size]
 SuperText Markup is similar to BBCode, with a few important differences.
 
 Just like BBCode, tags are used to format text. These tags can change the color, size, font, alignment, and more.
@@ -2887,15 +2857,15 @@ Becomes:
 [iquote][u]Sa[s]mple [i]T[/u]e[/s]xt[/i][/iquote]
 
 The only tags that require correct nesting are the [b fg=08b]block[/b] tags:
-[c][iquote font='nabfonts monospace']:_-ADDBLOCKTAGSHERE-_:[/iquote][/c]
+[center][iquote font='nabfonts monospace']:_-ADDBLOCKTAGSHERE-_:[/iquote][/center]
 All buttons for [b fg=08b]block[/b] tags have a [b fg=08b]colored outline[/b] around them.
 
 The [b fg=F40]hbox[/b], [b fg=F40]vbox[/b] and [b fg=F40]grid[/b] tags can be used to organize and group things in place:
-[c][grid cols=3]Test 1
+[center][grid cols=3]Test 1
 Test 2
 Test 3
 Test 4
-Test 5[/grid][/c]
+Test 5[/grid][/center]
 All buttons for [b fg=F40]grouping[/b] tags have a [b fg=F40]colored outline[/b] around them as well. They will also suppress all line breaks inside them (Except for those inside a nested tag).
 
 [hr width=75% fg=00f]
@@ -2953,7 +2923,7 @@ Finally, all tags and parameters in SuperText Markup are case-insensitive.
 
 Happy formatting!
 
-[/c]`,
+[/center]`,
 	}
 }
 
@@ -2977,7 +2947,9 @@ for(let i = 0; i < superTextMarkupData.markup.length; i++) {
 	}
 }
 
-superTextMarkupData.categories.smileyFaces = [{ tag : 'smiley', description : 'Add a smiley face', noClosingTag : true, symbol : { character : superTextMarkupData.smileyFaces[0].character, font : superTextMarkupData.smileyFaces[0].font, color : superTextMarkupData.smileyFaces[0].color } }]
+// Add the smiley face button (The splice position determines the button order where it appears)
+if(!superTextMarkupData.categories.hasOwnProperty('inserts')) superTextMarkupData.categories.inserts = []
+superTextMarkupData.categories.inserts.splice(0, 0, { tag : 'smiley', description : 'Add a smiley face', noClosingTag : true, symbol : { character : superTextMarkupData.smileyFaces[0].character, font : superTextMarkupData.smileyFaces[0].font, color : superTextMarkupData.smileyFaces[0].color } })
 if(!superTextMarkupData.categories.hasOwnProperty('meta')) superTextMarkupData.categories.meta = []
 superTextMarkupData.categories.meta.push({ tag : 'cleanup', description : 'Remove tags from selection', symbol : { character : '', font : superTextMarkupData.instructions.font, color : '444' } })
 superTextMarkupData.categories.meta.push({ tag : 'help', description : 'Help', symbol : { character : superTextMarkupData.instructions.character, font : superTextMarkupData.instructions.font, color : superTextMarkupData.instructions.color } })
@@ -3953,17 +3925,17 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 	clearElement(editorElement)
 
 	let categoryOrder = [	// This array configures the arrangement of the buttons. Each array is a row, and it's contents are the categories it will contain
-		[ 'formatting', 'separators' ],
+		[ 'formatting' ],
 		[ 'alignment', 'organization', 'visibility' ],
 		[ 'quote', 'embed' ],
-		[ 'grouping', 'smileyFaces', 'meta' ],
+		[ 'grouping', 'inserts', 'meta' ],
 	]
 
 	// Let's grab any categories that were missed...
 	let addedCategories = []
 	for(let i = 0; i < categoryOrder.length; i++) {
 		for(let h = 0; h < categoryOrder[i].length; h++) {
-			if(categoryOrder[i][h] == 'smileyFaces' && addSmilies !== true) {
+			if(categoryOrder[i][h] == 'inserts' && addSmilies !== true) {
 				categoryOrder[i].splice(h, 1)
 				h--
 				continue

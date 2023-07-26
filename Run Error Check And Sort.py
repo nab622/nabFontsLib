@@ -16,11 +16,7 @@ ignoreList = [
 	'/adobeblank.otf',		# This must NEVER be displayed, it is used as a debug thing only
 	'/license.pdf',			# This will ignore the license for the Typodermic fonts
 	'/opendyslexic.otf',	# This is a variable weight font. It is good to have handy, but it is pointless when defining fonts for use on the web or in a collection
-	'Dancing Script - by Impallari Type/static',	# Ignore the static fonts
-	'Caveat - by Impallari Type/static',			# Ignore the static fonts
 	'WebHostingHub Glyphs Index',		# WebHostingHub Glyphs has it's own interface included that indexes all of the symbols. It is included in a subfolder within the webHostinHub Glyphs folder
-
-	'_Dieter Schumacher Fonts/Free Fonts/Square Unique.ttf',		# This is used in two locations
 
 	'_Aenigma Fonts/Unused/',		# A bunch of these are old versions that don't matter. Be sure to exclude them
 
@@ -31,14 +27,10 @@ ignoreList = [
 	'Star Jedi Logo/logomonoline samples.jpg',			# Star Jedi has a bunch of sample images that are not instructions files
 	'Star Jedi Outline/Star Jedi Outline sample.jpg',			# Star Jedi has a bunch of sample images that are not instructions files
 	'Star Jedi Special Edition/stjedise sample.jpg',			# Star Jedi has a bunch of sample images that are not instructions files
-	'Free Fonts/Square Unique.ttf',					# This one is reused for usability's sake. Ignore it
-	'opentype fonts/Canada 1500',				# This one is reused for usability's sake. Ignore it
-	'opentype/QTDoghaus',				# This one is reused for usability's sake. Ignore it
-	'opentype/QTPeignoir',				# This one is reused for usability's sake. Ignore it
-	'opentype/QTHelvetCondensed',				# This one is reused for usability's sake. Ignore it
-	'Steve Matteson/static/Open Sans',			# This stops Open Sans' static fonts from triggering a message
 
 	'libre barcode',			# Libre barcode generates a bunch of stuff. Fix that
+
+	' Variable ',			# Disregard variable font weights (Make sure there's a space around the word so it doesn't match everything)
 
 
 	# The following items apply to instruction files only
