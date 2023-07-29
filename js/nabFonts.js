@@ -7192,6 +7192,16 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
+			"path":"_Aenigma Fonts/Gesture - by Aenigma Fonts/Gesture Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Aenigma Fonts/Gesture - by Aenigma Fonts/Gesture Thin Slant.ttf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
 			"path":"_Aenigma Fonts/Gesture - by Aenigma Fonts/Gesture.ttf",
 			"style":"normal",
 			"weight":"normal"
@@ -7209,31 +7219,6 @@ function getCustomFonts() {
 		"Elegant",
 		"No Lowercase",
 		"Thick Stroke"
-	]
-},
-{
-	"name":"Gesture Thin",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/Gesture - by Aenigma Fonts/Gesture Thin.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"_Aenigma Fonts/Gesture - by Aenigma Fonts/Gesture Thin Slant.ttf",
-			"style":"italic",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Serif",
-		"Calligraphy",
-		"Elegant",
-		"No Lowercase"
 	]
 },
 {
@@ -8192,6 +8177,16 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/Hammerhead Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/Hammerhead Thin Italic.ttf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
 			"path":"_Dieter Schumacher Fonts/Free Fonts/Hammerhead.ttf",
 			"style":"normal",
 			"weight":"normal"
@@ -8243,33 +8238,6 @@ function getCustomFonts() {
 		"Outline",
 		"Partial Symbol Set",
 		"Thick Stroke"
-	]
-},
-{
-	"name":"Hammerhead Thin",
-	"authors":[
-		"Dieter Schumacher"
-	],
-	"variants":[
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/Hammerhead Thin.ttf",
-			"style":"normal",
-			"weight":"200"
-		},
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/Hammerhead Thin Italic.ttf",
-			"style":"italic",
-			"weight":"200"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Sans-Serif",
-		"Angular",
-		"Broken Letters",
-		"Logo",
-		"No Lowercase",
-		"Partial Symbol Set"
 	]
 },
 {
@@ -17308,11 +17276,16 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Quarterly Thick",
+	"name":"Quarterly",
 	"authors":[
 		"Aenigma Fonts"
 	],
 	"variants":[
+		{
+			"path":"_Aenigma Fonts/Quarterly - by Aenigma Fonts/Quarterly Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
 		{
 			"path":"_Aenigma Fonts/Quarterly - by Aenigma Fonts/Quarterly Thick.ttf",
 			"style":"normal",
@@ -17323,26 +17296,6 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Curvy Letters",
-		"Wide Chars"
-	]
-},
-{
-	"name":"Quarterly Thin",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/Quarterly - by Aenigma Fonts/Quarterly Thin.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Sans-Serif",
-		"Curvy Letters",
-		"Thin Stroke",
 		"Wide Chars"
 	]
 },
@@ -24352,7 +24305,7 @@ function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 	document.getElementById('fontsLibInstructions').style.display = 'block'	// If the user pressed the show/hide button, MAKE SURE the instructions are shown anyway when the font is changed
 	// This next part determines if the entire instructions block should be shown at all
 	if(tempFont.hasOwnProperty('instructions')) {
-		let tagBlacklist = superTextConvertWhitelistToBlacklist([ 'b', 'i', 'u', 's', 'hbox', 'vbox', 'grid', 'color', 'font', 'img', 'br', 'hr', 'url', 'l', 'c', 'r', 'j', 'ol', 'ul', 'li', 'sup', 'sub', 'size', 'quote', 'code', 'iquote', 'icode', 'nomarkup' ])
+		let tagBlacklist = superTextConvertWhitelistToBlacklist([ 'weight', 'b', 'i', 'u', 's', 'hbox', 'vbox', 'grid', 'color', 'font', 'img', 'br', 'hr', 'url', 'left', 'center', 'right', 'justify', 'ol', 'ul', 'li', 'sup', 'sub', 'size', 'quote', 'code', 'iquote', 'icode', 'nomarkup' ])
 		removeClassName(fontsLibInstructionsContainer, 'fontsLibHidden')
 		let instructions = { elementType : 'div', className : 'fontsLibCharacterBoxes', style : { fontWeight : 'normal' }, children : [] }
 		for(let i = 0; i < tempFont.instructions.length; i++) {
@@ -25102,7 +25055,7 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 			]},
 			{ elementType : 'div', className : 'fontsLibFontSelectionColor', children : [
 				{ elementType : 'span', id : 'fontsLibFontCount', className : 'fontsLibTagHeader' },
-				{ elementType : 'select', id : 'fontsLibFontSelection',  size : '15', className : 'fontsLibFontSelectionColor fontsLibFocusHighlight',
+				{ elementType : 'select', id : 'fontsLibFontSelection',  size : '2', className : 'fontsLibFontSelectionColor fontsLibFocusHighlight',
 					onchange : ()=>{ fontsLibCurrentFont = fontsLibFontSelection.value; fontsLibChangeAllSampleFonts(fontsLibCurrentFont); },
 					onfocus : ()=>{ document.getElementById('fontsLibFontSelection').blur() },
 				},
