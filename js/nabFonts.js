@@ -29,8 +29,8 @@ SOFTWARE.
 
 	TO THE BEST OF MY KNOWLEDGE, THESE FONTS ARE ALL OFL LICENSED, ARE
 	FREEWARE OR ARE PUBLIC DOMAIN. SOME OF THEM MAY NOT HAVE LICENSES
-	ATTACHED TO THEM - MY SOURCES INDICATED THESE WERE PUBLIC DOMAIN.
-	IF THEY ARE NOT, AND YOU WOULD LIKE THEM REMOVED FROM THIS
+	ATTACHED TO THEM - MY SOURCES INDICATED THESE WERE PUBLIC DOMAIN OR
+	FREEWARE. IF THEY ARE NOT, AND YOU WOULD LIKE THEM REMOVED FROM THIS
 	PROJECT, PLEASE	SPEAK UP AND I WILL BE HAPPY TO DO SO!
 
 	I'M JUST A HOBBYIST TRYING TO MAKE SOMETHING NEAT, NO HARM IS
@@ -144,6 +144,23 @@ if(typeof(monospaceFont) === 'undefined') 		monospaceFont	=	'Cutive Mono'
 
 
 
+nabFontsFontWeights = {
+	min : 100,
+	max : 900,
+	'default' : 400,
+
+	'100' : 'Thin',
+	'200' : 'Extra Light',
+	'300' : 'Light',
+	'400' : 'Normal',
+	'500' : 'Medium',
+	'600' : 'Semi Bold',
+	'700' : 'Bold',
+	'800' : 'Extra Bold',
+	'900' : 'Black',
+}
+
+
 function getCustomFonts() {
 	return [	//	IF YOU ADD ANY ADDITIONAL FONTS, YOU MUST DEFINE THEM AS OBJECTS IN THIS ARRAY.
 // DO NOT MODIFY THIS LINE			/* PYTHON START READ POINT */
@@ -212,33 +229,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"309",
-	"authors":[
-		"Dieter Schumacher"
-	],
-	"variants":[
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/309.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/309 Italic.ttf",
-			"style":"italic",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Serif",
-		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set",
-		"Rounded Edges",
-		"Thick Stroke"
-	]
-},
-{
 	"name":"36 Days Ago",
 	"authors":[
 		"Aenigma Fonts"
@@ -303,6 +293,51 @@ function getCustomFonts() {
 		"Ornamental",
 		"Partial Symbol Set",
 		"Rounded Chars",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"90 Stars",
+	"authors":[
+		"Aenigma Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Aenigma Fonts/90 Stars - by Aenigma Fonts/90 Stars.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Symbols Only",
+		"Stars"
+	]
+},
+{
+	"name":"309",
+	"authors":[
+		"Dieter Schumacher"
+	],
+	"variants":[
+		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/309.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/309 Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Ornamental",
+		"Partial Symbol Set",
+		"Rounded Edges",
 		"Thick Stroke"
 	]
 },
@@ -436,24 +471,6 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Pixelated",
 		"Retro"
-	]
-},
-{
-	"name":"90 Stars",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/90 Stars - by Aenigma Fonts/90 Stars.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Symbols Only",
-		"Stars"
 	]
 },
 {
@@ -960,6 +977,37 @@ function getCustomFonts() {
 		"Negative Space",
 		"Outline",
 		"Striped"
+	]
+},
+{
+	"name":"Amiko",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Amiko - by Impallari Type/Amiko.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Amiko - by Impallari Type/Amiko Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Amiko - by Impallari Type/Amiko Bold.ttf",
+			"style":"normal",
+			"weight":"Bold"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"Plain",
+		"Playful",
+		"Thick Stroke"
 	]
 },
 {
@@ -2834,6 +2882,172 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Cabin",
+	"authors":[
+		"Impallari Type",
+		"Rodrigo Fuenzalida"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Bold.ttf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Bold Italic.ttf",
+			"style":"italic",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Cabin Condensed",
+	"authors":[
+		"Impallari Type",
+		"Rodrigo Fuenzalida"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Bold Italic.ttf",
+			"style":"italic",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Condensed Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Cabin Semi Condensed",
+	"authors":[
+		"Impallari Type",
+		"Rodrigo Fuenzalida"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Bold Italic.ttf",
+			"style":"italic",
+			"weight":"bold"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Cabin - by Impallari Type, Rodrigo Fuenzalida/static/Cabin Semi Condensed Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Cabin Sketch",
 	"authors":[
 		"Impallari Type"
@@ -2851,7 +3065,7 @@ function getCustomFonts() {
 		}
 	],
 	"instructions":[
-		"Try this font in bold, it looks even better."
+		"This font looks best in bold."
 	],
 	"license":"SIL Open Font License",
 	"tags":[
@@ -2925,6 +3139,26 @@ function getCustomFonts() {
 		"Ornamental",
 		"Partial Symbol Set",
 		"Striped"
+	]
+},
+{
+	"name":"Cantora One",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Cantora One - by Impallari Type/Cantora One.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Thick Stroke"
 	]
 },
 {
@@ -3023,6 +3257,28 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Handwriting",
 		"Slanted"
+	]
+},
+{
+	"name":"Caveat Brush",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Caveat Brush - by Impallari Type/Caveat Brush.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Handwriting",
+		"Marker",
+		"Playful",
+		"Uneven Chars"
 	]
 },
 {
@@ -4861,6 +5117,40 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Domine",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Domine - by Impallari Type/static/Domine.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Domine - by Impallari Type/static/Domine Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Domine - by Impallari Type/static/Domine Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Domine - by Impallari Type/static/Domine Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"DomoAregato",
 	"authors":[
 		"Dieter Schumacher"
@@ -4909,6 +5199,56 @@ function getCustomFonts() {
 		"No Symbols",
 		"Ornamental",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Dosis",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Dosis - by Impallari Type/static/Dosis Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Rounded Edges"
 	]
 },
 {
@@ -5598,6 +5938,619 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Narrow Chars",
 		"Ornamental",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans Condensed",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Condensed Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans Semi Condensed",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Condensed Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans Semi Expanded",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Semi Expanded Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans Expanded",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans Expanded Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Encode Sans SC",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans SC Condensed",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Condensed Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans SC Semi Condensed",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Condensed Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans SC Semi Expanded",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Semi Expanded Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Encode Sans SC Expanded",
+	"authors":[
+		"Andres Torresi",
+		"Impallari Type",
+		"Jacques Le Bailly"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Encode Sans SC - by Impallari Type, Andres Torresi, Jacques Le Bailly/static/Encode Sans SC Expanded Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
 		"Plain"
 	]
 },
@@ -10645,6 +11598,30 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Letter Set - C",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/opentype fonts/Letter Set - C.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
+		"No Lowercase",
+		"Ornamental",
+		"Partial Symbol Set",
+		"Snow",
+		"Thick Stroke",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Letter Set - A",
 	"authors":[
 		"Typodermic Fonts"
@@ -10695,30 +11672,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Letter Set - C",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Letter Set - C.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Sans-Serif",
-		"Decorated",
-		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set",
-		"Snow",
-		"Thick Stroke",
-		"Uneven Chars"
-	]
-},
-{
 	"name":"Lewinsky",
 	"authors":[
 		"Typodermic Fonts"
@@ -10741,58 +11694,6 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Slanted",
 		"Wide Chars"
-	]
-},
-{
-	"name":"Libre Barcode 128",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128.ttf",
-			"style":"normal",
-			"weight":"bold"
-		}
-	],
-	"instructions":[
-		"Go to this link for full instructions on how to use this font, and a free generator:[br][br][color fg=39f]https://graphicore.github.io/librebarcode/documentation/code128.html[/color]"
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Symbols Only",
-		"Bar Code"
-	]
-},
-{
-	"name":"Libre Barcode 128 Text",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128 Text.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128 Text.ttf",
-			"style":"normal",
-			"weight":"bold"
-		}
-	],
-	"instructions":[
-		"Go to this link for full instructions on how to use this font, and a free generator:[br][br][color fg=39f]https://graphicore.github.io/librebarcode/documentation/code128.html[/color]"
-	],
-	"license":"SIL Open Font License",
-	"tags":[
-		"Symbols Only",
-		"Bar Code"
 	]
 },
 {
@@ -10900,6 +11801,58 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Libre Barcode 128",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128.ttf",
+			"style":"normal",
+			"weight":"bold"
+		}
+	],
+	"instructions":[
+		"Go to this link for full instructions on how to use this font, and a free generator:[br][br][color fg=39f]https://graphicore.github.io/librebarcode/documentation/code128.html[/color]"
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Symbols Only",
+		"Bar Code"
+	]
+},
+{
+	"name":"Libre Barcode 128 Text",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128 Text.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"Libre Barcode - by Lasse Fister/Libre Barcode 128 Text.ttf",
+			"style":"normal",
+			"weight":"bold"
+		}
+	],
+	"instructions":[
+		"Go to this link for full instructions on how to use this font, and a free generator:[br][br][color fg=39f]https://graphicore.github.io/librebarcode/documentation/code128.html[/color]"
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Symbols Only",
+		"Bar Code"
+	]
+},
+{
 	"name":"Libre Barcode EAN13 Text",
 	"authors":[
 		"Typodermic Fonts"
@@ -10955,6 +11908,212 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Libre Bodoni",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Libre Bodoni - by Impallari Type, Rodrigo Fuenzalida/static/Libre Bodoni Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Libre Caslon Display",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Libre Caslon Display - by Impallary Type/Libre Caslon Display.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Libre Caslon Text",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Libre Caslon Text - by Impallary Type/Libre Caslon Text.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Caslon Text - by Impallary Type/Libre Caslon Text Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Caslon Text - by Impallary Type/Libre Caslon Text Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Libre Franklin",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Thin Italic.ttf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Extra Light Italic.ttf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		},
+		{
+			"path":"_Impallari Type/Libre Franklin - by Impallari Type/static/Libre Franklin Black Italic.ttf",
+			"style":"italic",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Licorice Strings",
 	"authors":[
 		"Aenigma Fonts"
@@ -10972,6 +12131,36 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Ornamental",
 		"Swirl"
+	]
+},
+{
+	"name":"Life Savers",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Life Savers - by Impallari Type/Life Savers.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Life Savers - by Impallari Type/Life Savers Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Life Savers - by Impallari Type/Life Savers Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Plain",
+		"Typewriter",
+		"Uneven Chars"
 	]
 },
 {
@@ -11068,7 +12257,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Impallari Type/Lobster - by Impallari Type/Lobster.ttf",
+			"path":"_Impallari Type/Lobster - by Impallari Type, Cyreal/Lobster.ttf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11931,6 +13120,71 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Milonga",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Milonga - by Impallari Type/Milonga.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Broken Letters",
+		"Curvy Letters",
+		"Fangs",
+		"Leading Left Hook"
+	]
+},
+{
+	"name":"Miltonian",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Miltonian - by Impallari Type/Miltonian.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Negative Space",
+		"Ornamental",
+		"Outline",
+		"Playful",
+		"Thick Stroke",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Miltonian Tattoo",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Miltonian Tattoo - by Impallari Type/Miltonian Tattoo.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Ornamental",
+		"Playful",
+		"Thick Stroke",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Mincer",
 	"authors":[
 		"Aenigma Fonts"
@@ -12370,44 +13624,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Moja A",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja A.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Symbols Only",
-		"Composite Font",
-		"Frame"
-	]
-},
-{
-	"name":"Moja B",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja B.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Symbols Only",
-		"Composite Font",
-		"Frame"
-	]
-},
-{
 	"name":"Moja C",
 	"authors":[
 		"Typodermic Fonts"
@@ -12449,6 +13665,44 @@ function getCustomFonts() {
 		"Ornamental",
 		"Partial Symbol Set",
 		"Texture"
+	]
+},
+{
+	"name":"Moja A",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja A.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Frame"
+	]
+},
+{
+	"name":"Moja B",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja B.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Frame"
 	]
 },
 {
@@ -12840,6 +14094,27 @@ function getCustomFonts() {
 		"Ornamental",
 		"Partial Symbol Set",
 		"Wide Chars"
+	]
+},
+{
+	"name":"New Rocker",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/New Rocker - by Impallari Type/New Rocker.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Angular",
+		"Gothic",
+		"Halloween",
+		"Thick Stroke"
 	]
 },
 {
@@ -13785,7 +15060,7 @@ function getCustomFonts() {
 		{
 			"path":"Orbitron - by Matt McInerney/Orbitron Medium.ttf",
 			"style":"normal",
-			"weight":"550"
+			"weight":"500"
 		},
 		{
 			"path":"Orbitron - by Matt McInerney/Orbitron Bold.ttf",
@@ -14179,6 +15454,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Petit Formal Script",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Petit Formal Script - by Impallari Type/Petit Formal Script.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Handwriting",
+		"Script",
+		"Slanted"
+	]
+},
+{
 	"name":"Phorfeit",
 	"authors":[
 		"Aenigma Fonts"
@@ -14254,30 +15550,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Pindown Plain",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/Pindown - by Aenigma Fonts/Pindown Plain.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"instructions":[
-		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
-	],
-	"license":"Freeware",
-	"tags":[
-		"Sans-Serif",
-		"Decorated",
-		"Dotted",
-		"Ornamental",
-		"Rounded Chars"
-	]
-},
-{
 	"name":"Pindown X",
 	"authors":[
 		"Aenigma Fonts"
@@ -14314,6 +15586,30 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Dotted",
+		"Ornamental",
+		"Rounded Chars"
+	]
+},
+{
+	"name":"Pindown Plain",
+	"authors":[
+		"Aenigma Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Aenigma Fonts/Pindown - by Aenigma Fonts/Pindown Plain.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"instructions":[
+		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
 		"Dotted",
 		"Ornamental",
 		"Rounded Chars"
@@ -14693,6 +15989,113 @@ function getCustomFonts() {
 		"Partial Symbol Set",
 		"Striped",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Public Sans",
+	"authors":[
+		"Dan Williams",
+		"Impallari Type",
+		"Rodrigo Fuenzalida",
+		"USWDS"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Thin.ttf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Thin Italic.ttf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Extra Light Italic.ttf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Light Italic.ttf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Medium.ttf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Medium Italic.ttf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Semi Bold Italic.ttf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Extra Bold.ttf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Extra Bold Italic.ttf",
+			"style":"italic",
+			"weight":"800"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Black.ttf",
+			"style":"normal",
+			"weight":"900"
+		},
+		{
+			"path":"_Impallari Type/Public Sans - by USWDS, Dan Williams, Impallari Type, Rodrigo Fuenzalida/static/Public Sans Black Italic.ttf",
+			"style":"italic",
+			"weight":"900"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -17300,6 +18703,64 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Quattrocento",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Quattrocento - by Impallari Type/Quattrocento.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Quattrocento - by Impallari Type/Quattrocento Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Quattrocento Sans",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Quattrocento Sans - by Impallari Type/Quattrocento Sans.ttf",
+			"style":"normal",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Quattrocento Sans - by Impallari Type/Quattrocento Sans Italic.ttf",
+			"style":"italic",
+			"weight":"400"
+		},
+		{
+			"path":"_Impallari Type/Quattrocento Sans - by Impallari Type/Quattrocento Sans Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Impallari Type/Quattrocento Sans - by Impallari Type/Quattrocento Sans Bold Italic.ttf",
+			"style":"italic",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Queasy",
 	"authors":[
 		"Aenigma Fonts"
@@ -17457,6 +18918,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Racing Sans One",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Racing Sans One - by Impallari Type/Racing Sans One.ttf",
+			"style":"normal",
+			"weight":"400"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Radios in Motion",
 	"authors":[
 		"Typodermic Fonts"
@@ -17507,92 +18989,92 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Thin.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Thin.ttf",
 			"style":"normal",
 			"weight":"100"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Thin Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Thin Italic.ttf",
 			"style":"italic",
 			"weight":"100"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Light.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Extra Light.ttf",
 			"style":"normal",
 			"weight":"200"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Light Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Extra Light Italic.ttf",
 			"style":"italic",
 			"weight":"200"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Light.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Light.ttf",
 			"style":"normal",
 			"weight":"300"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Light Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Light Italic.ttf",
 			"style":"italic",
 			"weight":"300"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway.ttf",
 			"style":"normal",
 			"weight":"400"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Italic.ttf",
 			"style":"italic",
 			"weight":"400"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Medium.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Medium.ttf",
 			"style":"normal",
 			"weight":"500"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Medium Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Medium Italic.ttf",
 			"style":"italic",
 			"weight":"500"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Semi Bold.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Semi Bold.ttf",
 			"style":"normal",
 			"weight":"600"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Semi Bold Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Semi Bold Italic.ttf",
 			"style":"italic",
 			"weight":"600"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Bold.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Bold.ttf",
 			"style":"normal",
 			"weight":"700"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Bold Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Bold Italic.ttf",
 			"style":"italic",
 			"weight":"700"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Bold.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Extra Bold.ttf",
 			"style":"normal",
 			"weight":"800"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Extra Bold Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Extra Bold Italic.ttf",
 			"style":"italic",
 			"weight":"800"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Black.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Black.ttf",
 			"style":"normal",
 			"weight":"900"
 		},
 		{
-			"path":"Raleway - by Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida/static/Raleway Black Italic.ttf",
+			"path":"_Impallari Type/Raleway - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida/static/Raleway Black Italic.ttf",
 			"style":"italic",
 			"weight":"900"
 		}
@@ -17602,6 +19084,30 @@ function getCustomFonts() {
 		"Serif",
 		"Formal",
 		"Plain"
+	]
+},
+{
+	"name":"Raleway Dots",
+	"authors":[
+		"Brenda Gallo",
+		"Impallari Type",
+		"Matt McInerney",
+		"Rodrigo Fuenzalida"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Raleway Dots - by Matt McInerney, Impallari Type, Rodrigo Fuenzalida, Brenda Gallo/Raleway Dots.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Dotted",
+		"Ornamental",
+		"Thin Stroke"
 	]
 },
 {
@@ -17625,6 +19131,27 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Plain",
 		"Rounded Edges"
+	]
+},
+{
+	"name":"Ranchers",
+	"authors":[
+		"Impallari Type"
+	],
+	"variants":[
+		{
+			"path":"_Impallari Type/Ranchers - by Impallari Type/Ranchers.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"Plain",
+		"Playful",
+		"Thick Stroke"
 	]
 },
 {
@@ -18722,6 +20249,45 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Hard To Read",
 		"Ornamental"
+	]
+},
+{
+	"name":"Selawik",
+	"authors":[
+		"Microsoft"
+	],
+	"variants":[
+		{
+			"path":"Selawik - by Microsoft/Selawik Extra Light.ttf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"Selawik - by Microsoft/Selawik Light.ttf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"Selawik - by Microsoft/Selawik.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"Selawik - by Microsoft/Selawik Semi Bold.ttf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"Selawik - by Microsoft/Selawik Bold.ttf",
+			"style":"normal",
+			"weight":"700"
+		}
+	],
+	"license":"SIL Open Font License",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -23651,6 +25217,10 @@ fontsLibStyle.appendChild(document.createTextNode(`
 	text-shadow: 0.05rem 0.05rem #333, -0.05rem 0.05rem #333, 0.05rem -0.05rem #333, -0.05rem -0.05rem #333, 0.05rem 0rem #333, -0.05rem 0rem #333, 0rem 0.05rem #333, 0rem -0.05rem #333;
 }
 
+.fontsLibSlidecontainer {
+	display: grid;
+}
+
 .fontsLibContainer {
     margin: 0px;
     padding: 0px;
@@ -24408,15 +25978,14 @@ function fontsLibSetButtonState(button, activeState = true) {
 
 function fontsLibParseWeight(weight) {
 	try {
-		weight = parseInt(clamp(weight, 100, 900) / 100) * 100
+		weight = parseInt(clamp(weight, nabFontsFontWeights.min, nabFontsFontWeights.max) / 100) * 100
 	} catch(e) {
 		printWarning('fontsLib: fontsLibParseWeight: Error while parsing weight value!', e)
 		weight = 400
 	}
 
-	let weightNames = [ 'Thin', 'Extra light', 'Light', 'Normal', 'Medium', 'Semi Bold', 'Bold', 'Extra Bold', 'Black' ]
 	clearElement(fontsLibFontWeightText)
-	fontsLibFontWeightText.appendChild(createElement({ elementType : 'span', text : weight.toString() + ' (' + weightNames[(weight / 100) - 1] + ')' }))
+	fontsLibFontWeightText.appendChild(createElement({ elementType : 'span', text : weight.toString() + ' (' + nabFontsFontWeights[clamp((parseInt(weight / 100) * 100), nabFontsFontWeights.min, nabFontsFontWeights.max)] + ')' }))
 
 	return weight
 }
@@ -24977,8 +26546,9 @@ function fontsLibClearSampleText() {
 	fontsLibSampleTextText.focus()
 }
 
-function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
+function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true, sampleText = null) {
 	let tempHashData = fontsLibGetHashData()
+
 	if(tempHashData.hasOwnProperty('displayTime')) fontsLibDisplayTime = tempHashData.displayTime
 
 	renderElement.appendChild(createElement({ elementType : 'div', className : 'fontsLibContainer', children : [
@@ -24993,14 +26563,24 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 				{ elementType : 'br' },
 				{ elementType : 'span', text : 'Size: ' },
 				{ elementType : 'span', id : 'fontsLibFontSizeText' },
-				{ elementType : 'div', className : 'slidecontainer', children : [
-					{ elementType : 'input', type : 'range', min : '8', max : '300', value : '4', step : '4', className : 'fontsLibFocusHighlight', id : 'fontsLibFontSize', oninput : ()=>{ fontsLibChangeAllSampleFontSizes(document.getElementById('fontsLibFontSize').value, false) }, onchange : ()=>{ document.getElementById('fontsLibFontSize').blur(); fontsLibChangeAllSampleFontSizes(document.getElementById('fontsLibFontSize').value) } },
+				{ elementType : 'div', className : 'fontsLibSlidecontainer', children : [
+					{ elementType : 'input', type : 'range', min : '8', max : '400', value : '4', step : '4', className : 'fontsLibFocusHighlight', id : 'fontsLibFontSize', oninput : ()=>{ fontsLibChangeAllSampleFontSizes(document.getElementById('fontsLibFontSize').value, false) }, onchange : ()=>{ document.getElementById('fontsLibFontSize').blur(); fontsLibChangeAllSampleFontSizes(document.getElementById('fontsLibFontSize').value) } },
 				] },
 				{ elementType : 'br' },
 				{ elementType : 'span', text : 'Weight: ' },
 				{ elementType : 'span', id : 'fontsLibFontWeightText' },
-				{ elementType : 'div', className : 'slidecontainer', children : [
-					{ elementType : 'input', type : 'range', min : '100', max : '900', value : '400', step : '100', className : 'fontsLibFocusHighlight', id : 'fontsLibFontWeight', oninput : ()=>{ fontsLibChangeElementWeights(document.getElementById('fontsLibFontWeight').value, false) }, onchange : ()=>{ document.getElementById('fontsLibFontWeight').blur(); fontsLibSetWeight(document.getElementById('fontsLibFontWeight').value) } },
+				{ elementType : 'div', className : 'fontsLibSlidecontainer', children : [
+					{ elementType : 'div', style : { padding : '0em 0.25em 0em 0.5em', gridArea : '1/1', display : 'flex', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.2em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.1em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+						{ elementType : 'div', style : { flex : '1 1', height : '100%', borderRight : '0.2em solid #FF05', borderLeft : '0.1em solid #FF05', }, },
+					] },
+					{ elementType : 'input', type : 'range', min : nabFontsFontWeights.min, max : nabFontsFontWeights.max, value : nabFontsFontWeights['default'], step : '100', style : { gridArea : '1/1' }, className : 'fontsLibFocusHighlight', id : 'fontsLibFontWeight', oninput : ()=>{ fontsLibChangeElementWeights(document.getElementById('fontsLibFontWeight').value, false) }, onchange : ()=>{ document.getElementById('fontsLibFontWeight').blur(); fontsLibSetWeight(document.getElementById('fontsLibFontWeight').value) } },
 				] },
 				{ elementType : 'div', className : 'fontsLibFormatButtons', children : [
 					{ elementType : 'div', className : 'fontsLibFormatButtonsContainer', children : [
@@ -25141,6 +26721,11 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true) {
 	// This is declared up above, but it has to be set here, after the font data is parsed
 	fontsLibDefaultFont = customFonts.fontData[0].name
 
+	if(sampleText !== null) {
+		tempHashData.sampleText = sampleText
+		fontsLibChangeSampleText(sampleText)
+	}
+
 	fontsLibUpdatePage()
 
 	fontsLibSampleTextText.oninput = ()=>{ fontsLibChangeSampleText(fontsLibSampleTextText.value, false) }
@@ -25188,6 +26773,16 @@ function getFontIndex(inputFontName) {
 	if(inputFontName == 'nabfonts fantasy') inputFontName = fantasyFont.toLowerCase()
 	if(inputFontName == 'nabfonts monospace') inputFontName = monospaceFont.toLowerCase()
 
+	for(let i = 0; i < customFonts.fontData.length; i++) {
+		if(customFonts.fontData[i].name.toLowerCase() == inputFontName) return i
+	}
+
+	printWarning('nabFonts.js: getFontIndex: Could not find font \'' + inputFontName +  '\'!')
+	return false
+
+/*
+	// This method used to work until font alphabetization was changed...
+
 	let min = 0
 	let max = customFonts.fontData.length
 	let mid = 0
@@ -25209,6 +26804,7 @@ function getFontIndex(inputFontName) {
 		return false
 	}
 	return mid
+*/
 }
 
 function getFontData(inputFontName) {
@@ -25569,12 +27165,137 @@ function fontsLibAddDataToObject(inputData, outputObject, key, duplicate = false
 	}
 }
 
+function sortFontsByName(a, b) {
+	let x = a.name.trim().split(' ')
+	let y = b.name.trim().split(' ')
+
+	let temp = ''
+
+	let i = 0
+	for(; i < x.length && i < y.length; i++) {
+		// Check both for roman numerals
+		temp = convertRomanNumeralsToInt(x[i])
+		if(temp !== false) x[i] = temp
+
+		temp = convertRomanNumeralsToInt(y[i])
+		if(temp !== false) y[i] = temp
+
+		if(!isNaN(x[i]) && !isNaN(y[i])) {
+			// If both are numbers, check to see which one is larger
+			x[i] = parseFloat(x[i])
+			y[i] = parseFloat(y[i])
+			if(x[i] > y[i]) return 1
+			if(x[i] < y[i]) return -1
+		}
+
+		// One might be a number and the other not. Check that
+		if(typeof(x[i]) == 'number') return 1
+		if(typeof(y[i]) == 'number') return -1
+
+		// Both are strings. Compare accordingly
+		x[i] = x[i].toLowerCase()
+		y[i] = y[i].toLowerCase()
+		let stringX = x[i]
+		let stringY = y[i]
+
+		// Detect semi condensed and semi expanded
+		if(stringX == 'semi' && x.length > i + 1) {
+			temp = x[i + 1].toLowerCase()
+			if(temp == 'condensed' || temp == 'expanded') {
+				stringX = stringX + ' ' + temp
+			}
+		}
+		if(stringY == 'semi' && y.length > i + 1) {
+			temp = y[i + 1].toLowerCase()
+			if(temp == 'condensed' || temp == 'expanded') {
+				stringY = stringY + ' ' + temp
+			}
+		}
+
+		let widths = [ 'condensed', 'semi condensed', 'semi expanded', 'expanded' ]
+		if(widths.includes(stringX) && !widths.includes(stringY)) return -1
+		if(!widths.includes(stringX) && widths.includes(stringY)) return 1
+
+		if(stringX == 'condensed' && stringY != 'condensed') return -1
+		if(stringX == 'semi condensed' && stringY != 'semi condensed') {
+			if(stringY != 'condensed') {
+				return -1
+			} else {
+				return 1
+			}
+		}
+		if(stringY == 'condensed') return 1
+		if(stringY == 'semi condensed') return 1
+
+		if(stringY == 'semi expanded' && stringX != 'semi expanded') {
+			if(stringY != 'expanded') {
+				return 1
+			} else {
+				return -1
+			}
+		}
+		if(stringY == 'expanded' && stringX != 'expanded') return -1
+		if(stringX == 'semi expanded') return 1
+		if(stringX == 'expanded') return 1
+
+		if(stringX == stringY) continue
+
+		if(stringX < stringY) return -1
+		if(stringX > stringY) return 1
+	}
+
+	// Detect a regular font vs condensed, semi condensed, semi expanded and expanded
+	let stringX = x.slice(i).join(' ').toLowerCase()
+	let stringY = y.slice(i).join(' ').toLowerCase()
+
+	if(stringX == '') {
+		switch (stringY) {
+			case 'condensed':
+			case 'semi condensed':
+				return -1
+				break
+			case 'semi expanded':
+			case 'expanded':
+				return 1
+				break
+		}
+	}
+	if(stringY == '') {
+		switch (stringX) {
+			case 'condensed':
+			case 'semi condensed':
+				return -1
+				break
+			case 'semi expanded':
+			case 'expanded':
+				return 1
+				break
+		}
+	}
+
+	if(x.length > y.length) return 1
+	if(x.length < y.length) return -1
+
+	return 0
+}
+
 function sortFontDataByName(a, b) {
 	let x = a.name.toLowerCase().trim()
 	let y = b.name.toLowerCase().trim()
 	if (x < y) return -1
 	if (x > y) return 1
 	return 0
+}
+
+function fontsLibAddTag(tagArray, newTag) {
+	// This function adds a tag to a font, with no duplicates
+	let temp = newTag.toLowerCase()
+	let index = 0
+	for(let i = 0; i < tagArray.length; i++) {
+		if(tagArray[i].toLowerCase() == temp) return
+	}
+
+	tagArray.push(newTag)
 }
 
 function fontsLibParseCustomFonts() {
@@ -25608,20 +27329,28 @@ function fontsLibParseCustomFonts() {
 
 	customFonts.path = customFontPath
 
-	customFontData.sort(sortFontDataByName)
+	customFontData.sort(sortFontsByName)
 
 	for(let i = 0; i < customFontData.length; i++) {
 		// BEFORE sorting tags, make sure there's an instructions tag on the ones that need it!
 		if(customFontData[i].hasOwnProperty('instructions')) {
 			customFontData[i].tags.push('Has Instructions')
 		}
+
 		if(customFontData[i].name != '' && customFontData[i].path != '') {
 			customFontData[i].tags.sort(fontsLibSortTags)
 			customFontData[i].authors.sort(fontsLibSortTags)	// This line HAS to use the tag sort! Authors don't have a .name property
+
+			let weights = []
+
 			for(let j = 0; j < customFontData[i].variants.length; j++) {
+
+				fontsLibAddTag(customFontData[i].tags, 'File Format: ' + fontsLibGetFileExtension(customFontData[i].variants[j].path.toUpperCase()))
+
 				if(!customFontData[i].variants[j].hasOwnProperty('style')) {
 					customFontData[i].variants[j].style = 'normal'
 				} else {
+					if(customFontData[i].variants[j].style.toLowerCase() == 'italic') fontsLibAddTag(customFontData[i].tags, 'Variant: Italic')
 					if(customFontData[i].variants[j].style == '') {
 						customFontData[i].variants[j].style = 'normal'
 					}
@@ -25633,7 +27362,30 @@ function fontsLibParseCustomFonts() {
 						customFontData[i].variants[j].weight = 'normal'
 					}
 				}
+
+				fontsLibAddTag(weights, customFontData[i].variants[j].weight.toLowerCase())	// Abuse fontsLibAddTag on the weights array to get no duplicates
 			}
+
+			if(weights.length > 1) fontsLibAddTag(customFontData[i].tags, 'Weight: Multiple')
+/*
+// This got reeeeeally annoying, made too many tags
+			for(let k = 0; k < weights.length; k++) {
+				if(weights[k] != 'normal') {
+					// Excluding normal weight, tag for it
+					if(isNaN(weights[k])) {
+						for(weightKey in nabFontsFontWeights) {
+							if(nabFontsFontWeights[weightKey].toLowerCase() == weights[k]) {
+								weights[k] = weightKey
+								break
+							}
+						}
+					}
+					fontsLibAddTag(customFontData[i].tags, 'Weight: ' + weights[k].toString() + ' (' + nabFontsFontWeights[weights[k]] + ')')
+				}
+			}
+*/
+			customFontData[i].tags.sort(fontsLibSortTags)	// Sort the tags before finalizing!
+
 			customFonts.fontData.push(customFontData[i])
 		} else {
 			customFonts.errors.push(customFontData[i])
@@ -25704,6 +27456,13 @@ function createDefaultFont(fontName, defaultFamily) {
 	createFontCSS([ fontObject ])
 }
 
+function fontsLibGetFileExtension(inputPath) {
+	inputPath = inputPath.split('.').pop()
+	inputPath = inputPath.split('?').shift()
+	inputPath = inputPath.split('#').shift()
+	return inputPath
+}
+
 function createFontCSS(inputFonts) {
 	let cutPoint = 10
 	var newStyle = ''
@@ -25716,10 +27475,7 @@ function createFontCSS(inputFonts) {
 		}
 		for(j = 0; j < inputFonts[i].variants.length; j++) {
 			// Figure out what format the font is
-			let fontFormat = inputFonts[i].variants[j].path.split('.')
-			fontFormat = fontFormat.pop()
-			fontFormat = fontFormat.split('?').shift()
-			fontFormat = fontFormat.split('#').shift()
+			let fontFormat = fontsLibGetFileExtension(inputFonts[i].variants[j].path).toLowerCase()
 			switch(fontFormat) {
 				case 'otf':
 					fontFormat = 'opentype'
@@ -25772,7 +27528,7 @@ function fontsLibCreateFontElement(inputValues) {
 }
 
 if(!(typeof(nabLibPresent) === 'undefined') && nabLibPresent === true) {
-	console.log('nabFontsLib: Parsing fonts, using path: ' + customFontPath)
+	console.log('nabFontsLib: Parsing fonts, using path: "' + customFontPath + '"')
 	fontsLibParseCustomFonts()	// DO NOT wait for the page to load, or we create a race condition!!
 } else {
 	console.log('nabLib.js not found! nabLib.js is required to use nabFonts.js, and nabLib.js MUST be loaded first.')

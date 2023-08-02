@@ -2262,21 +2262,44 @@ function createModalForm(data) {
 
 					switch(inputsData[j].type.toLowerCase()) {
 
-	//	Types are: text/radio/checkbox/color/date/dropdown/font/login
-	//	inputItem is the element that will contain the output for each type of input
+//	Types are: text/radio/checkbox/color/date/dropdown/font/login
+//	inputItem is the element that will contain the output for each type of input
 
-	/*
+/*
 						case 'login':
 							break
 
-						case 'date':
+*/
+
+						case 'time':
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'time', style : { textAlign : 'center' } },
+							] })
+							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
+							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = new Date(inputPrompts[l].min).toISOString().substring(0, 10)
+							if(inputPrompts[l].hasOwnProperty('max')) inputElementToAdd.children[0].max = new Date(inputPrompts[l].max).toISOString().substring(0, 10)
+							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
 
-	*/
+
+						case 'date':
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'date', style : { textAlign : 'center' } },
+							] })
+							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
+							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = new Date(inputPrompts[l].min).toISOString().substring(0, 10)
+							if(inputPrompts[l].hasOwnProperty('max')) inputElementToAdd.children[0].max = new Date(inputPrompts[l].max).toISOString().substring(0, 10)
+							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
+							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
+							break
+
 
 						case 'font':
 							if(typeof(fontsLibRenderPage) === 'undefined') {
-								printWarning('nabFontsLib is not installed! Font selection impossible.')
+								printWarning('fontsLib.js is not installed! Font selection impossible.')
+								l = inputPrompts.length
+								j = inputsData.length
 								continue
 							}
 
@@ -2296,12 +2319,13 @@ function createModalForm(data) {
 
 							// Change the input IDs to reference the correct elements in the fonts library page
 							inputLists.returnInputs[0].ids[0] = 'fontsLibFontSelection'
-//							inputLists.returnInputs[1].ids[0] = 'fontsLibSampleTextText'
 							inputLists.returnInputs.push({ name : 'sampleText', ids : [ 'fontsLibSampleTextText' ] })
 							focusElement = 'fontsLibSampleTextText'		// Set the focus to the sample text field
 
-							j = inputsData.length	// Terminate the iteration here. Fonts must be chosen alone.
+							l = inputsData[j].length	// Terminate the iteration here. Fonts must be chosen alone.
+							j = inputsData.length		// Terminate the iteration here. Fonts must be chosen alone.
 							break
+
 
 						case 'button':
 							inputItem.style = combineObjects(inputItem.style, { display : 'flex', flex : '1 1', width : '100%' })
@@ -2326,6 +2350,7 @@ function createModalForm(data) {
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
 
+
 						case 'number':
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
 								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' } },
@@ -2336,6 +2361,7 @@ function createModalForm(data) {
 							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
+
 
 						case 'dropdown':
 							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'select' })
@@ -2349,6 +2375,7 @@ function createModalForm(data) {
 							}
 							break
 
+
 						case 'checkbox':
 							let selected = false
 							if(inputPrompts[l].hasOwnProperty('default') && typeof(inputPrompts[l].default) === 'string') {
@@ -2357,23 +2384,25 @@ function createModalForm(data) {
 							} else if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default === true) {
 								selected = true
 							}
-							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', children : [
-								{ elementType : 'input', type : 'checkbox', id : inputID, disabled : startDisabled, checked : selected },
-								{ elementType : 'label', 'for' : inputID, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { cursor : 'pointer' }, className : 'nabLibHoverHighlight', onclick : ()=>{ document.getElementById(inputID).checked = true }, children : [
+								{ elementType : 'input', type : 'checkbox', style : { cursor : 'pointer' }, id : inputID, disabled : startDisabled, checked : selected },
+								{ elementType : 'label', 'for' : inputID, style : { cursor : 'pointer' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
 							] })
 
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
 
+
 						case 'radio':
 							let radioSelected = false
 							inputItem.style.width = '100%'
 							if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default !== false) radioSelected = true
-							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { width : '100%', display : 'grid', gridTemplateColumns : '1.35em auto' }, children : [
-								{ elementType : 'input', type : 'radio', id : inputID, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : (inputPrompts[l].hasOwnProperty('value') ? inputPrompts[l].value : inputPrompts[l].label) },
-								{ elementType : 'label', 'for' : inputID, style : { paddingLeft : '0.3em', textAlign: 'left', cursor : 'pointer' }, onclick : ()=>{ document.getElementById(inputID).checked = true }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', className : 'nabLibHoverHighlight', style : { cursor : 'pointer', width : '100%', display : 'grid', gridTemplateColumns : '1.35em auto' }, onclick : ()=>{ document.getElementById(inputID).checked = true }, children : [
+								{ elementType : 'input', type : 'radio', id : inputID, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : (inputPrompts[l].hasOwnProperty('value') ? inputPrompts[l].value : inputPrompts[l].label), style : { cursor : 'pointer' }, },
+								{ elementType : 'label', 'for' : inputID, style : { cursor : 'pointer', paddingLeft : '0.3em', textAlign: 'left' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
 							] })
 							break
+
 
 						case 'text':
 							inputItem.style = combineObjects(inputItem.style, { display : 'flex', gap : '0.5em' })
@@ -2385,6 +2414,7 @@ function createModalForm(data) {
 							inputElementToAdd.onfocus = ()=>{ document.getElementById(inputID).select(); }
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
+
 
 						default:
 							printError('createModalForm(): No modal input type \'' + inputsData[j].type + '\'!')
@@ -2486,16 +2516,24 @@ function getModalInputValue(inputElement) {
 				return clamp(inputElement.value, min, max).toString()
 				break
 
-			case 'text':
-				return inputElement.value
+			case 'date':
+			case 'time':
+				// min and max can be given as date objects or timestamps
+				let tempDate = Math.floor((new Date(inputElement.value)).getTime() / 1000)
+				let dateMin = inputElement.value
+				let dateMax = inputElement.value
+				if(inputElement.hasAttribute('min')) dateMin = Math.floor((new Date(inputElement.min)).getTime() / 1000)
+				if(inputElement.hasAttribute('max')) dateMax = Math.floor((new Date(inputElement.max)).getTime() / 1000)
+				return new Date(clamp(tempDate, dateMin, dateMax))
 				break
 
+			case 'text':
 			case 'textarea':
 				return inputElement.value
 				break
 
 			default:
-				inputElement.value
+				return inputElement.value
 		}
 	} catch(error) {
 		printWarning('nabLib: getModalInputValue: ' + error, 'Returning null', inputElement)
@@ -2586,22 +2624,22 @@ superTextMarkupData = {
 		{ tag : 'l',
 							description: 'Lighter text (Alias of "weight=lighter")',
 							symbol : { character : 'l', font : 'webhostinghub glyphs' },
-							nest : true,
 							category : { name : 'Formatting', index : 1 },
+							nest : true,
 							parameters : { style : { fontWeight : 'lighter' } },
 		},
 		{ tag : 'b',
 							description: 'Bolder text (Alias of "weight=bolder")',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							nest : true,
 							category : { name : 'Formatting', index : 2 },
+							nest : true,
 							parameters : { style : { fontWeight : 'bolder' } },
 		},
 		{ tag : 'weight',
 							description: 'Specify the weight of the font',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
-							nest : true,
 							category : { name : 'Formatting', index : 3 },
+							nest : true,
 							variables : { fontWeight : 'weight' },
 		},
 		{ tag : 'i',
@@ -2854,47 +2892,50 @@ superTextMarkupData = {
 		character : '',
 		color : '09B',
 		font : 'webhostinghub glyphs',
-		text : `[center][size size=300]SuperText Markup Help[/size]
+		text : `[center size=125][size size=300]SuperText Markup Help[/size]
 SuperText Markup is similar to BBCode, with a few important differences.
 
-Just like BBCode, tags are used to format text. These tags can change the color, size, font, alignment, and more.
+Just like BBCode, tags are used to format text. These tags can change the color, size, font, alignment, arrangement, and more.
 
 [hr width=75% fg=f00]
 
-Tags are created by putting brackets around the tag name. For example, to create a [b fg=0bb]b[/b] tag for bolder text:
-[iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
+Tags are created by putting brackets around the tag name. For example, to create a [b fg=0bb size=150]s[/b] tag for strikethrough text:
+[iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]s[/color][b fg=f55 nomarkup]][/b][/iquote]
 
-To terminate the bolder formatting, add another tag with a slash in it:
-[iquote][b fg=f55 nomarkup][/[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
+To terminate the strikethrough formatting, add another tag with a slash in it:
+[iquote size=130][b fg=f55 nomarkup][/[/b][color fg=0bb]s[/color][b fg=f55 nomarkup]][/b][/iquote]
 
 When put together:
-[iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b]Sample Text[b fg=f55 nomarkup][/[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote]
+[hbox][iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]s[/color][b fg=f55 nomarkup]][/b][l]Sample Text[/l][b fg=f55 nomarkup][/[/b][color fg=0bb]s[/color][b fg=f55 nomarkup]][/b][/iquote]
 Becomes:
-[iquote][b]Sample Text[/b][/iquote]
+[iquote size=130][s]Sample Text[/s][/iquote]
+[/hbox]
 
 [hr width=75% fg=0f0]
 
-Unlike BBCode, SuperText Markup features a [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]L[/color][b fg=f55 nomarkup]][/b][/iquote] tag and a [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]weight[/color][b fg=f55 nomarkup]][/b][/iquote] tag, and the [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote] tag behaves slightly differently.
-The [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]L[/color][b fg=f55 nomarkup]][/b][/iquote] and [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote] tags will cause the font weight to become lighter or bolder, respectively, as long as the font being used supports different weights.
-Keep in mind that most fonts only support 'normal' weight (400) and 'bold' weight (700).
+Similar to BBCode, tags must be ended in the reverse order they are started in (nested).
 
-The [iquote][b fg=f55 nomarkup][[/b][color fg=0bb]weight[/color][b fg=f55 nomarkup]][/b][/iquote] tag is for manually setting a numeric weight, from 100 to 900. You can also set this value to "Normal", "Bold", "Bolder", and "Lighter"
+Unlike BBCode, SuperText Markup features a [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]L[/color][b fg=f55 nomarkup]][/b][/iquote] tag and a [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]weight[/color][b fg=f55 nomarkup]][/b][/iquote] tag, and the [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote] tag behaves slightly differently.
+The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]L[/color][b fg=f55 nomarkup]][/b][/iquote] and [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]b[/color][b fg=f55 nomarkup]][/b][/iquote] tags will cause the font weight to become lighter or bolder, respectively, as long as the font being used supports different weights.
+[nomarkup](Keep in mind that most fonts only support 'normal' weight [400] and 'bold' weight [700].)[/nomarkup]
 
-Also, unlike BBCode, many tags do not have to be correctly nested to work properly:
-[iquote][b nomarkup fg=f55][u][/b]Sa[b nomarkup fg=5f5][s][/b]mple [b nomarkup fg=33f][i][/b]T[b nomarkup fg=f55][/u][/b]e[b nomarkup fg=5f5][/s][/b]xt[b nomarkup fg=33f][/i][/b][/iquote]
+The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]weight[/color][b fg=f55 nomarkup]][/b][/iquote] tag is for manually setting a numeric weight, from 100 to 900. You can also set this value to [color fg=0f0]normal[/color], [color fg=0f0]bold[/color], [color fg=0f0]bolder[/color], or [color fg=0f0]lighter[/color].
+
+The [b fg=F40]hbox[/b], [b fg=F40]vbox[/b] and [b fg=F40]grid[/b] tags can be used to organize and group things in place. Each new line or new tag generates a new element, which is positioned in the grid or box:
+[iquote][iquote size=130][nomarkup][grid cols=3 fg=9999]
+Test 1
+[/nomarkup][nomarkup]Test 2
+[/nomarkup][nomarkup]Test 3
+[/nomarkup][nomarkup]Test 4
+[/nomarkup][nomarkup]Test 5
+[/grid][/nomarkup][/iquote][/iquote]
+
 Becomes:
-[iquote][u]Sa[s]mple [i]T[/u]e[/s]xt[/i][/iquote]
-
-The only tags that require correct nesting are the [b fg=08b]block[/b] tags:
-[center][iquote font='nabfonts monospace']:_-ADDBLOCKTAGSHERE-_:[/iquote][/center]
-All buttons for [b fg=08b]block[/b] tags have a [b fg=08b]colored outline[/b] around them.
-
-The [b fg=F40]hbox[/b], [b fg=F40]vbox[/b] and [b fg=F40]grid[/b] tags can be used to organize and group things in place:
-[center][grid cols=3 fg=9999]Test 1
+[iquote size=130][grid cols=3 fg=9999]Test 1
 Test 2
 Test 3
 Test 4
-Test 5[/grid][/center]
+Test 5[/grid][/iquote]
 
 All buttons for [b fg=F40]grouping[/b] tags have a [b fg=F40]colored outline[/b] around them as well. They will also suppress all line breaks inside them (Except for those inside a nested tag).
 
@@ -2905,6 +2946,7 @@ Some tags, like [b fg=F55 nomarkup][hr][/b], [b fg=F55 nomarkup][img][/b], and [
 [hr width=75% fg=ff0]
 
 SuperText also features global options that can be applied to any tag. These include:
+
 [l]
 [ul]
 [li][b fg=f55]font[/b] (Typeface [sub]Can be the name of a specific font, or a generic CSS font-family. Put the name in quotes if there is a space in it![/sub])[/li]
@@ -2930,9 +2972,9 @@ Hexadecimal colors can be given in the following formats:
 [/l]
 
 So, for example:
-[iquote][b nomarkup][b [/b][b nomarkup fg=c44]font='nabfonts monospace' fg=2d2 bg=22c[/b][b nomarkup]]Sam[i [/b][b nomarkup fg=c44]fg=e44 nomarkup[/b][b nomarkup]]pl[u]e T[/u]e[/i]xt[/b][/b][/iquote]
+[iquote font='nabfonts monospace' size=130][nomarkup][b font='nabfonts monospace' [/nomarkup][color fg=c44]fg=2d2 bg=22c[/color][nomarkup]]Sam[i [/nomarkup][color fg=c44]fg=e44[/color][nomarkup] nomarkup]pl[u]e T[/u]e[/i]xt[/b][/nomarkup][/iquote]
 Becomes:
-[iquote][b font='nabfonts monospace' fg=2d2 bg=22c]Sam[i fg=e44 nomarkup]pl[u]e T[/u]e[/i]xt[/b][/iquote]
+[iquote size=130][b font='nabfonts monospace' fg=2d2 bg=22c]Sam[i fg=e44 nomarkup]pl[u]e T[/u]e[/i]xt[/b][/iquote]
 
 [hr width=75% fg=0ff]
 
@@ -2942,13 +2984,13 @@ Becomes:
 
 You can also change the text on the button, like this:
 
-[iquote][nomarkup][hide [/nomarkup][nomarkup fg=c44]text='Zeeky Boogy Doog!'[/nomarkup][nomarkup]]BOOM[/hide][/nomarkup][/iquote]
+[iquote size=130][nomarkup][hide [/nomarkup][nomarkup fg=c44]text='Zeeky Boogy Doog!'[/nomarkup][nomarkup]]BOOM[/hide][/nomarkup][/iquote]
 
 [hide text='Zeeky Boogy Doog!']BOOM[/hide]
 
 [hr width=75% fg=a0f]
 
-Finally, all tags and parameters in SuperText Markup are case-insensitive.
+Finally, all tags and global parameters in SuperText Markup are case-insensitive.
 
 [hr width=75% fg=777]
 
@@ -3005,6 +3047,7 @@ superTextMarkupData.markup.sort((a, b)=>{
 	return 0
 })
 
+/*
 // Automatically add all block tags to the help screen
 superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.split(':_-ADDBLOCKTAGSHERE-_:')
 for(let i = superTextMarkupData.markup.length - 1; i >= 0; i--) {
@@ -3014,6 +3057,15 @@ for(let i = superTextMarkupData.markup.length - 1; i >= 0; i--) {
 superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2] = superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2].replace(', ', ', and ')
 superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.join('')
 
+// Automatically add all nested tags to the help screen
+superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.split(':_-ADDNESTEDTAGSHERE-_:')
+for(let i = superTextMarkupData.markup.length - 1; i >= 0; i--) {
+	if(!superTextMarkupData.markup[i].hasOwnProperty('nest') || superTextMarkupData.markup[i].nest !== true) continue
+	superTextMarkupData.instructions.text.splice(superTextMarkupData.instructions.text.length - 1, 0, (superTextMarkupData.instructions.text.length == 2 ? '' : ', ') + '[b fg=f55 nomarkup][[/b][b fg=0bb nomarkup]' + superTextMarkupData.markup[i].tag + '[/b][b fg=f55 nomarkup]][/b]')
+}
+superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2] = superTextMarkupData.instructions.text[superTextMarkupData.instructions.text.length - 2].replace(', ', ', and ')
+superTextMarkupData.instructions.text = superTextMarkupData.instructions.text.join('')
+*/
 
 function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlacklist = []) {
 	let output = { elementType : 'span', style : {} }
@@ -3037,6 +3089,8 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 			hideTag = true
 		}
 	}
+
+let fontWeightDynamic = false
 
 	for(i = 0; i < parameters.length; i++) {
 		if(parameters[i].parameters.hasOwnProperty('noText') && parameters[i].parameters.noText === true) {
@@ -3067,8 +3121,24 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 						if(parameter.toLowerCase() == 'style') {
 							// Apply styles here without overwriting anything
 							for(styleKey in parameters[i].parameters.parameters.style) {
+/*
+if(styleKey == 'fontWeight') {
+	let check = parameters[i].parameters.parameters.style[styleKey].toLowerCase()
+	if(check == 'bolder' || check == 'lighter') {
+		fontWeightDynamic = true
+		output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
+	} else {
+		fontWeightDynamic = false
+	}
+	if(fontWeightDynamic == true) {
+		console.log('SKIPPING FONT WEIGHT: ' + styleKey, i)
+		continue
+	}
+}
+*/
 								if(output.style.hasOwnProperty(styleKey)) {
-									output.style[styleKey] += ' ' + parameters[i].parameters.parameters.style[styleKey]
+//									output.style[styleKey] += ' ' + parameters[i].parameters.parameters.style[styleKey]		// I have no idea what property this was initially intended for...
+									output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
 								} else {
 									output.style[styleKey] = parameters[i].parameters.parameters.style[styleKey]
 								}
@@ -3079,6 +3149,7 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 					}
 				}
 			}
+
 
 			if(parameters[i].parameters.hasOwnProperty('variables')) {
 				for(variable in parameters[i].parameters.variables) {
@@ -3152,6 +3223,7 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 				}
 			}
 
+
 			// Handle global options here, like colors and fonts, since they can apply to any tag
 			for(key in variables) {
 				let temp = key.toLowerCase()
@@ -3175,6 +3247,19 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 
 					case 'weight':
 						if(tagBlacklist.includes('weight')) continue
+/*
+let check = variables[key].toLowerCase()
+if(check == 'bolder' || check == 'lighter') {
+	fontWeightDynamic = true
+	output.style.fontWeight = variables[key]
+} else {
+	fontWeightDynamic = false
+}
+if(fontWeightDynamic == true) {
+	console.log('SKIPPING FONT WEIGHT: ' + styleKey, i)
+	continue
+}
+*/
 						if(typeof(variables[key]) === 'string' && isNaN(variables[key])) {
 							let tempWeight = variables[key].toLowerCase()
 							if(tempWeight == 'normal' || tempWeight == 'bold' || tempWeight == 'bolder' || tempWeight == 'lighter') {
@@ -3598,7 +3683,9 @@ function superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklis
 				if(result.tagInfo.parameters.hasOwnProperty('ignoreLineBreaks') && result.tagInfo.parameters.ignoreLineBreaks === true) {
 					ignoreLineBreaksOnChildren = true
 				}
-				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, activeMarkups, nomarkup, recursions + 1, ignoreLineBreaksOnChildren)
+// This old line was what allowed improper nesting of tags. It was disabled because [b], [l] and [weight weight=bolder, weight=lighter] do not work correctly with this active.
+//				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, activeMarkups, nomarkup, recursions + 1, ignoreLineBreaksOnChildren)
+				preprocessor[preprocessor.length - 1].children = superTextMarkupGenerateElements(inputText, defaultFontSize, tagBlacklist, addSmilies, loc + 1, [activeMarkups.pop()], nomarkup, recursions + 1, ignoreLineBreaksOnChildren)
 				nomarkup = false
 				let nestedChildren = preprocessor[preprocessor.length - 1].children
 
@@ -4135,10 +4222,8 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 							case 'font':
 								let fontPrompts = []
-								for(let x = 0; x < customFonts.fontNames.length; x++) {
-									fontPrompts.push({ label : customFonts.fontNames[x], value : customFonts.fontNames[x] })
-								}
 								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
 									createModalForm({
 										elementToFocusOnAfterClose : textAreaID,
 										callback : superTextMarkupPickFont,
@@ -4153,7 +4238,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														name : 'font',
 														prompts : [
 															{
-																default : superTextMarkupEditorGetSelectedText(textAreaID),
+																default : selectedText,
 															},
 														],
 													},
@@ -4209,7 +4294,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 												startDisabled : true,
 												inputs : [
 													{
-														label : 'Select font weight[br][weight weight=normal size=80]Keep in mind that most fonts only[br]support [b]normal[/b] and [b]bold[/b] weight[/weight]',
+														label : 'Select font weight[br][size size=80]Keep in mind that most fonts only support[br][b]normal[/b] and [b]bold[/b] weights[/size]',
 														type : 'radio',
 														name : 'weight',
 														required : true,
@@ -4220,40 +4305,40 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 															},
 															{
 																value : 100,
-																label : '[b font="nabfonts monospace"]100[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=100](Thin)[/weight]',
+																label : '[b font="nabfonts monospace"]100[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=100]Thin[/weight]',
 															},
 															{
 																value : 200,
-																label : '[b font="nabfonts monospace"]200[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=200](Extra light)[/weight]',
+																label : '[b font="nabfonts monospace"]200[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=200]Extra light[/weight]',
 															},
 															{
 																value : 300,
-																label : '[b font="nabfonts monospace"]300[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=300](Light)[/weight]',
+																label : '[b font="nabfonts monospace"]300[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=300]Light[/weight]',
 															},
 															{
 																value : 400,
-																label : '[b font="nabfonts monospace"]400[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=400](Normal)[/weight]',
+																label : '[b font="nabfonts monospace"]400[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=400]Normal[/weight]',
 																default : true,
 															},
 															{
 																value : 500,
-																label : '[b font="nabfonts monospace"]500[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=500](Medium)[/weight]',
+																label : '[b font="nabfonts monospace"]500[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=500]Medium[/weight]',
 															},
 															{
 																value : 600,
-																label : '[b font="nabfonts monospace"]600[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=600](Semi bold)[/weight]',
+																label : '[b font="nabfonts monospace"]600[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=600]Semi bold[/weight]',
 															},
 															{
 																value : 700,
-																label : '[b font="nabfonts monospace"]700[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=700](Bold)[/weight]',
+																label : '[b font="nabfonts monospace"]700[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=700]Bold[/weight]',
 															},
 															{
 																value : 800,
-																label : '[b font="nabfonts monospace"]800[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=800](Extra bold)[/weight]',
+																label : '[b font="nabfonts monospace"]800[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=800]Extra bold[/weight]',
 															},
 															{
 																value : 900,
-																label : '[b font="nabfonts monospace"]900[/b] [weight font="\'raleway\', \'nabfonts monospace\'" weight=900](Black)[/weight]',
+																label : '[b font="nabfonts monospace"]900[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=900]Black[/weight]',
 															},
 															{
 																value : 'bolder',
@@ -4302,6 +4387,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 							case 'img':
 								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
 									createModalForm({
 										elementToFocusOnAfterClose : textAreaID,
 										callback : superTextMarkupAddImage,
@@ -4318,7 +4404,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														required : true,
 														prompts : [
 															{
-																default : (superTextMarkupEditorGetSelectedText(textAreaID) == '' ? 'https://' : superTextMarkupEditorGetSelectedText(textAreaID)),
+																default : (selectedText == '' ? 'https://' : selectedText),
 																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
 															},
 														],
@@ -4332,6 +4418,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 							case 'url':
 								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
 									createModalForm({
 										elementToFocusOnAfterClose : textAreaID,
 										callback : superTextMarkupAddURL,
@@ -4357,7 +4444,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 											},
 											{
 												allowDisable : true,
-												startDisabled : (superTextMarkupEditorGetSelectedText(textAreaID) == '' ? true : false),
+												startDisabled : (selectedText == '' ? true : false),
 												inputs : [
 													{
 														label : 'Link Text',
@@ -4365,7 +4452,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														name : 'text',
 														prompts : [
 															{
-																default : (superTextMarkupEditorGetSelectedText(textAreaID) == '' ? 'Link text here' : superTextMarkupEditorGetSelectedText(textAreaID)),
+																default : (selectedText == '' ? 'Link text here' : selectedText),
 																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
 															},
 														],
@@ -4379,6 +4466,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 							case 'youtube':
 								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
 									createModalForm({
 										elementToFocusOnAfterClose : textAreaID,
 										callback : superTextMarkupAddYouTube,
@@ -4395,7 +4483,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														required : true,
 														prompts : [
 															{
-																default : (superTextMarkupEditorGetSelectedText(textAreaID) == '' ? 'https://' : superTextMarkupEditorGetSelectedText(textAreaID)),
+																default : (selectedText == '' ? 'https://' : selectedText),
 																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
 															},
 														],
@@ -4409,6 +4497,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 
 							case 'soundcloud':
 								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
 									createModalForm({
 										callback : superTextMarkupAddSoundCloud,
 										callbackDataArray : [ textAreaID, tagInfo ],
@@ -4424,7 +4513,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														required : true,
 														prompts : [
 															{
-																default : (superTextMarkupEditorGetSelectedText(textAreaID) == '' ? 'https://' : superTextMarkupEditorGetSelectedText(textAreaID)),
+																default : (selectedText == '' ? 'https://' : selectedText),
 																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
 															},
 														],

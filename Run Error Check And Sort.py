@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, json
+import os, math, json
 
 
 fontsLibFile = 'js/nabFonts.js'
@@ -70,6 +70,23 @@ class colors:
 
 pathColors = [ colors.yellow, colors.purple, colors.darkGreen, colors.pink ]
 fontColor = colors.darkBlue
+
+
+romanNumerals = [
+	{ 'digit' : 'M',	'value' : 1000 },
+	{ 'digit' : 'CM',	'value' : 900 },
+	{ 'digit' : 'D',	'value' : 500 },
+	{ 'digit' : 'CD',	'value' : 400 },
+	{ 'digit' : 'C',	'value' : 100 },
+	{ 'digit' : 'XC',	'value' : 90 },
+	{ 'digit' : 'L',	'value' : 50 },
+	{ 'digit' : 'XL',	'value' : 40 },
+	{ 'digit' : 'X',	'value' : 10 },
+	{ 'digit' : 'IX',	'value' : 9 },
+	{ 'digit' : 'V',	'value' : 5 },
+	{ 'digit' : 'IV',	'value' : 4 },
+	{ 'digit' : 'I',	'value' : 1 }
+]
 
 
 i = 0
@@ -276,17 +293,25 @@ fontsLibFileContents = fontsLibFileContents.replace('[,', '[')	# Fix missing com
 '''
 
 
-# ==========================================
-# This bit is used for debugging
-start = 0
-end = 0
-output = ''
-if end > 0:
-	while start < len(fontsLibFileContents) and start <= end:
-		output += fontsLibFileContents[start]
-		start += 1
-	print('Total characters: ' + str(len(fontsLibFileContents)) + '\n\n' + output + '\n\n')
-# ==========================================
+def printDataForDebug(start, end, errorPoint):
+	# ==========================================
+	# This bit is used for debugging
+#	start = 0
+#	end = 0
+	output = ''
+	if end > 0:
+		while start < len(fontsLibFileContents) and start <= end:
+			if start + 15 > errorPoint and start - 15 < errorPoint:
+				if start + 5 > errorPoint and start - 5 < errorPoint:
+					output += colors.red
+				else:
+					output += colors.yellow
+			else:
+				output += colors.none
+			output += fontsLibFileContents[start]
+			start += 1
+		print('Total characters: ' + str(len(fontsLibFileContents)) + '\n\n' + output + '\n\n')
+	# ==========================================
 
 
 
@@ -336,9 +361,175 @@ def compareNamesInLowercase(a, b):
 		return 1
 	return 0
 
-data = json.loads(fontsLibFileContents)
+def convertRomanNumeralsToInt(inputString):
+	# This function parses a string of Roman Numerals into an integer
+	# If the string is not a valid Roman numeral, it will return False
 
-data.sort(key=cmp_to_key(compareNamesInLowercase))
+	inputString = inputString.strip()
+	value = 0
+
+	if not isinstance(inputString, str):
+		return False
+
+	if not inputString.isupper():
+		# Roman numerals must be upper case!
+		return False
+
+	i = 0	# Index of romanNumerals
+	j = 0	# Index of inputString
+	while i < len(romanNumerals) and j < len(inputString):
+		digitRepeats = 0
+		digitLength = len(romanNumerals[i]['digit'])
+		while j + digitLength <= len(inputString) and romanNumerals[i]['digit'] == inputString[j:j + digitLength]:
+			digitRepeats += 1
+			if digitRepeats > 3:
+				return False
+			value += romanNumerals[i]['value']
+			j += digitLength
+		i += 1
+
+	if j < len(inputString):
+		return False
+
+	return value
+
+def sortFontsByName(a, b):
+	x = a['name'].strip().split(' ')
+	y = b['name'].strip().split(' ')
+
+	temp = ''
+
+	i = -1
+
+	while i + 1 < len(x) and i + 1 < len(y):
+		i += 1
+
+		# Check both for roman numerals
+		temp = convertRomanNumeralsToInt(x[i])
+		if temp != False:
+			x[i] = temp
+
+		temp = convertRomanNumeralsToInt(y[i])
+		if temp != False:
+			y[i] = temp
+
+		x[i] = str(x[i])
+		y[i] = str(y[i])
+
+		if x[i].isnumeric() and y[i].isnumeric():
+			# If both are numbers, check to see which one is larger
+			x[i] = float(x[i])
+			y[i] = float(y[i])
+			if x[i] > y[i]:
+				return 1
+			if x[i] < y[i]:
+				return -1
+
+		# One might be a number and the other not. Check that
+		if isinstance(x[i], float):
+			return 1
+		if isinstance(y[i], float):
+			return -1
+
+		# Both are strings. Compare accordingly
+		x[i] = x[i].lower()
+		y[i] = y[i].lower()
+		stringX = x[i]
+		stringY = y[i]
+
+		#/ Detect semi condensed and semi expanded
+		if stringX == 'semi' and len(x) > i + 1:
+			temp = x[i + 1].lower()
+			if temp == 'condensed' or temp == 'expanded':
+				stringX = stringX + ' ' + temp
+		if stringY == 'semi' and len(y) > i + 1:
+			temp = y[i + 1].lower()
+			if temp == 'condensed' or temp == 'expanded':
+				stringY = stringY + ' ' + temp
+
+		widths = [ 'condensed', 'semi condensed', 'semi expanded', 'expanded' ]
+		if stringX in widths and not stringY in widths: return -1
+		if not stringX in widths and stringY in widths: return 1
+
+		if stringX == 'condensed' and stringY != 'condensed':
+			return -1
+		if stringX == 'semi condensed' and stringY != 'semi condensed':
+			if stringY != 'condensed':
+				return -1
+			else:
+				return 1
+		if stringY == 'condensed':
+			return 1
+		if stringY == 'semi condensed':
+			return 1
+
+		if stringY == 'semi expanded' and stringX != 'semi expanded':
+			if stringY != 'expanded':
+				return 1
+			else:
+				return -1
+		if stringY == 'expanded' and stringX != 'expanded':
+			return -1
+		if stringX == 'semi expanded':
+			return 1
+		if stringX == 'expanded':
+			return 1
+
+		if stringX == stringY:
+			continue
+
+		if stringX < stringY:
+			return -1
+		if stringX > stringY:
+			return 1
+
+	# Detect a regular font vs condensed, semi condensed, semi expanded and expanded
+	stringX = ' '.join(x[i:len(x)]).lower()
+	stringY = ' '.join(y[i:len(y)]).lower()
+
+	if stringX == '':
+		if stringY == 'condensed' or stringY == 'semi condensed':
+			return -1
+		if stringY == 'semi expanded' or stringY == 'expanded':
+				return 1
+
+	if stringY == '':
+		if stringX == 'condensed' or stringX == 'semi condensed':
+			return -1
+		if stringX == 'semi expanded' or stringX == 'expanded':
+				return 1
+
+	if len(x) > len(y):
+		return 1
+	if len(x) < len(y):
+		return -1
+
+	return 0
+
+
+def clamp(number, minValue, maxValue):
+	if number < minValue:
+		return minValue
+	if number > maxValue:
+		return maxValue
+	return number
+
+try:
+	data = json.loads(fontsLibFileContents)
+except Exception as e:
+	print('Error parsing JSON data:' + colors.red)
+	print(e)
+	print(colors.none)
+	errorPoint = str(e).split('(char ')[1]
+	errorPoint = errorPoint.split(')')[0]
+	errorPoint = int(errorPoint)
+	start = clamp(errorPoint - 450, 0, errorPoint)
+	end = errorPoint + 50
+	printDataForDebug(start, end, errorPoint)
+	exit()
+
+
+data.sort(key=cmp_to_key(sortFontsByName))
 
 for fontData in data:
 	fontData['tags'].sort(key=cmp_to_key(compareFontTags))
