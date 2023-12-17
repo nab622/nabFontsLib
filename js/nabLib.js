@@ -244,7 +244,6 @@ function dateToString(inputTimestamp, fullMonthName = true) {
 
 	// Fix dates that are out of range (Remember to account for milliseconds!)
 	if(inputTimestamp < 2000000000) inputTimestamp *= 1000
-
 	let offset = new Date().getTimezoneOffset() * 60 * 1000
 	let date = new Date(inputTimestamp - offset)
 
@@ -606,22 +605,45 @@ function getHashData() {
 	return unpackData(decodeURI(window.location.hash.substring(1)))
 }
 
-function setHashData(inputObject) {
+function clearHashData() {
+	window.location.hash = ''
+}
+
+function setHashData(inputObject, sortHash = true) {
+	// null is used to remove something from the hash
+
 	let hashData = getHashData()
 
 	// Add the new data to the hash data
 	for(key in inputObject) {
 		if(key == '' || typeof(key) == 'undefined') continue
 		hashData[key] = inputObject[key]
+
+		if(hashData[key] === null) {
+			delete(hashData[key]) // This MUST be done before packData is run
+		}
 	}
 
 	hashData = packData(hashData)
-	let output = ''
+	let outputArray = []
 	for(key in hashData) {
-		output += key + '=' + hashData[key].dataType + ':' + encodeURI(hashData[key].value) + ';'
+		outputArray.push({ key : key, dataType : hashData[key].dataType, value : hashData[key].value })
 	}
 
-	window.location.hash = encodeURI(output)
+	if(sortHash === true) {
+		outputArray.sort((a, b)=>{
+			if (a.key.toLowerCase() < b.key.toLowerCase()) return -1
+			if (a.key.toLowerCase() > b.key.toLowerCase()) return 1
+			return 0
+		})
+	}
+
+	let output = ''
+	for(let i = 0; i < outputArray.length; i++) {
+		output += outputArray[i].key + '=' + outputArray[i].dataType + ':' + encodeURI(outputArray[i].value) + ';'
+	}
+
+	window.location.hash = output
 }
 
 
@@ -2352,12 +2374,49 @@ function createModalForm(data) {
 
 
 						case 'number':
+							let inputScript = ()=>{}
+							if(inputPrompts[l].hasOwnProperty('min')) {
+								let min = parseFloat(inputPrompts[l].min)
+								if(inputPrompts[l].hasOwnProperty('max')) {
+									let max = parseFloat(inputPrompts[l].max)
+									// Both min and max
+									inputScript = ()=>{
+										console.log(inputID)
+										console.log(document.getElementById(inputID).value)
+										let value = document.getElementById(inputID).value
+										if(isNaN(document.getElementById(inputID).value)) return
+										value = parseFloat(value)
+										document.getElementById(inputID).value = clamp(value, min, max)
+									}
+								} else {
+									// Just min
+									inputScript = ()=>{
+										console.log(document.getElementById(inputID).value)
+										let value = document.getElementById(inputID).value
+										if(isNaN(document.getElementById(inputID).value)) return
+										value = parseFloat(value)
+										document.getElementById(inputID).value = clamp(value, min, value)
+									}
+								}
+							} else {
+								// Just max
+								let max = parseFloat(inputPrompts[l].max)
+								inputScript = ()=>{
+									console.log(document.getElementById(inputID).value)
+									let value = document.getElementById(inputID).value
+									if(isNaN(document.getElementById(inputID).value)) return
+									value = parseFloat(value)
+									document.getElementById(inputID).value = clamp(value, value, max)
+								}
+							}
+
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' } },
+								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' }, onchange : inputScript },
 							] })
 							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
 							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = inputPrompts[l].min
 							if(inputPrompts[l].hasOwnProperty('max')) inputElementToAdd.children[0].max = inputPrompts[l].max
+
 							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
 							break
@@ -2601,6 +2660,8 @@ function closeModalForm(id) {
 
 superTextMarkupData = {
 	hideTags : 0,
+	maxFontSize : 700,
+	minFontSize : 25,
 	markup : [
 		// Anything in the parameters object will be SuperImposed on the created element. Even elementType is okay to change.
 		// 'parameters' are automatically applied styles
@@ -2615,7 +2676,7 @@ superTextMarkupData = {
 		//		bg					=	background color
 		//		font				=	Typeface
 		//		block				= 	If the next tag after this is a line break, ignore that line break (Helps with formatting). Also, in the editor this will have a colored border
-		//		size				=	Font size (Percent, range from 25-500%)
+		//		size				=	Font size (Percent, range from minFontSize to maxFontSize [in percent])
 		//		nomarkup			= 	No other tags inside this tag will be parsed
 		//		ignoreNomarkup		= 	Even when nomarkup is active, this tag will still apply
 		//		ignoreLineBreaks	=	Ignore all line breaks immediately nested inside this element. This option MUST be used with 'nest'
@@ -2661,7 +2722,7 @@ superTextMarkupData = {
 							parameters : { style : { textDecoration : 'line-through' } },
 		},
 		{ tag : 'size',
-							description: 'Font size (Percent, 25 to 500)',
+							description: 'Font size',
 							symbol : { character : '', font : 'webhostinghub glyphs' },
 							category : { name : 'Formatting', index : 7 },
 		},
@@ -2684,7 +2745,7 @@ superTextMarkupData = {
 		},
 		{ tag : 'color',
 							description: 'Text/background color',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F33' },
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F55' },
 							category : { name : 'Formatting', index : 11 },
 		},
 		{ tag : 'br',
@@ -2850,7 +2911,7 @@ superTextMarkupData = {
 		},
 		{ tag : 'youtube',
 							description: 'Embed a YouTube video',
-							symbol : { character : '', font : 'webhostinghub glyphs', color : 'FF2209' },
+							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F00' },
 							category : { name : 'embed', index : 3 },
 							noClosingTag : true,
 							block : true,
@@ -3346,9 +3407,9 @@ if(fontWeightDynamic == true) {
 						if((parameters[i].hasOwnProperty('doNotRender')) && parameters[i].doNotRender === true) break	// If this is a nested tag, DO NOT apply a fontSize - it is already applied!
 						temp = 'fontSize'
 						if(typeof(baseFontSize) === 'number') {
-							output.style[temp] = 'min(calc(6rem * ' + baseFontSize + '), ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100)).toString() + 'rem)'	// This HAS to use rem, not em, or nested sizes will break while interacting with other tags
+							output.style[temp] = 'min(calc(' + parseInt(superTextMarkupData.maxFontSize / 100) + 'rem * ' + baseFontSize + '), ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), superTextMarkupData.minFontSize, superTextMarkupData.maxFontSize) / 100)).toString() + 'rem)'	// This HAS to use rem, not em, or nested sizes will break while interacting with other tags
 						} else {
-							output.style[temp] = 'min(6rem, ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), 25, 500) / 100)).toString() + 'rem)'	// This HAS to use rem, not em, or nested sizes will break while interacting with other tags
+							output.style[temp] = 'min(' + parseInt(superTextMarkupData.maxFontSize / 100) + 'rem, ' + ((clamp(parseInt(variables[key].replace(/\D/g, '')), superTextMarkupData.minFontSize, superTextMarkupData.maxFontSize) / 100)).toString() + 'rem)'	// This HAS to use rem, not em, or nested sizes will break while interacting with other tags
 						}
 						break
 				}
@@ -4255,22 +4316,22 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 										elementToFocusOnAfterClose : textAreaID,
 										callback : superTextMarkupAddSize,
 										callbackDataArray : [ textAreaID, tagInfo ],
-										label : 'Choose Font Size',
+										 label : 'Choose Font Size',
 										categories : [
 											{
 												allowDisable : false,
 												startDisabled : true,
 												inputs : [
 													{
-														label : 'Percentage',
+														label : 'Percentage[br][size size=85] Minimum: [font font="nabfonts monospace" weight=bold]' + superTextMarkupData.minFontSize.toString() + '[/font], Maximum: [font font="nabfonts monospace" weight=bold]' + superTextMarkupData.maxFontSize.toString() + '[/font][/size]',
 														type : 'number',
 														required : true,
 														name : 'size',
 														prompts : [
 															{
 																default : '100',
-																min : '25',
-																max : '500',
+																min : superTextMarkupData.minFontSize,
+																max : superTextMarkupData.maxFontSize,
 															},
 														],
 													},
@@ -4677,6 +4738,10 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 						if(superTextMarkupData.categories[category][j].hasOwnProperty('ignoreLineBreaks') && superTextMarkupData.categories[category][j].ignoreLineBreaks === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #F40'
 
 						let tooltip = { elementType : 'div', id : editorID + tagInfo.tag.toLowerCase() + 'Tooltip', style : { zIndex : '999999999', display : 'inline-block', position : 'absolute', transform : 'translateY(calc(-50% + 4.5rem))', pointerEvents : 'none', userSelect : 'none', textAlign : 'center', border : 'outset 0.125em #555', opacity : 0, padding : '0.25em', margin : '0', backgroundColor: '#335', backgroundImage : 'linear-gradient(180deg, #fff0 0%, #fff2 100%)', borderRadius : '.4em', transition : 'opacity 0.25s', fontSize : '1rem', fontFamily : '"nabfonts sans-serif", "sans-serif"' }, text : superTextMarkupData.categories[category][j].description }
+						if(tagInfo.tag.toLowerCase() == 'size') {
+							// Add extra text for font size
+							tooltip.text = tooltip.text + ' (Percent, from ' + superTextMarkupData.minFontSize.toString() + ' to ' + superTextMarkupData.maxFontSize.toString() + ')'
+						}
 						newCategoryEntry.onmouseover = ()=>{ document.getElementById(editorID + tagInfo.tag.toLowerCase() + 'Tooltip').style.opacity = 1 }
 						newCategoryEntry.onmouseout = ()=>{ document.getElementById(editorID + tagInfo.tag.toLowerCase() + 'Tooltip').style.opacity = 0 }
 

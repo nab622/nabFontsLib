@@ -11699,7 +11699,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 39",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11725,7 +11725,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 39 Extended",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11751,7 +11751,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 39 Extended Text",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11777,7 +11777,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 39 Text",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11803,7 +11803,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 128",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11829,7 +11829,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode 128 Text",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
@@ -11855,7 +11855,7 @@ function getCustomFonts() {
 {
 	"name":"Libre Barcode EAN13 Text",
 	"authors":[
-		"Typodermic Fonts"
+		"Lasse Fister"
 	],
 	"variants":[
 		{
