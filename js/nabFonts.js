@@ -4539,7 +4539,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
-		"Monospace"
+		"Monospace",
 		"Partial Symbol Set",
 		"Pixelated"
 	]
