@@ -181,8 +181,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"3D",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -201,8 +201,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"3D",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -289,55 +289,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
-		"Thick Stroke"
-	]
-},
-{
-	"name":"90 Stars",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/90 Stars - by Aenigma Fonts/90 Stars.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Symbols Only",
-		"Stars"
-	]
-},
-{
-	"name":"309",
-	"authors":[
-		"Dieter Schumacher"
-	],
-	"variants":[
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/309.ttf",
-			"style":"normal",
-			"weight":"normal"
-		},
-		{
-			"path":"_Dieter Schumacher Fonts/Free Fonts/309 Italic.ttf",
-			"style":"italic",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Serif",
-		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set",
-		"Rounded Edges",
 		"Thick Stroke"
 	]
 },
@@ -366,28 +321,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"6809 Chargen",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/6809 Chargen.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Sans-Serif",
-		"Broken Letters",
-		"Dotted",
-		"Ornamental",
-		"Rounded Edges",
-		"Thick Stroke"
-	]
-},
-{
 	"name":"8-Bit Limit",
 	"authors":[
 		"Aenigma Fonts"
@@ -403,29 +336,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
-		"Pixelated",
-		"Retro"
-	]
-},
-{
-	"name":"8-Bit Limit Outline",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/8-Bit Limit - by Aenigma Fonts/8-Bit Limit Outline.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Freeware",
-	"tags":[
-		"Serif",
-		"Broken Letters",
-		"Negative Space",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Pixelated",
 		"Retro"
 	]
@@ -446,7 +357,144 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
+		"Pixelated",
+		"Retro"
+	]
+},
+{
+	"name":"90 Stars",
+	"authors":[
+		"Aenigma Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Aenigma Fonts/90 Stars - by Aenigma Fonts/90 Stars.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Symbols Only",
+		"Stars"
+	]
+},
+{
+	"name":"256 Bytes",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/256 Bytes.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Ornamental",
+		"Playful",
+		"Retro",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"309",
+	"authors":[
+		"Dieter Schumacher"
+	],
+	"variants":[
+		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/309.ttf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Dieter Schumacher Fonts/Free Fonts/309 Italic.ttf",
+			"style":"italic",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Rounded Edges",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"1980 Portable",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/1980 Portable.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
+		"Kitchen",
+		"Narrow Chars",
+		"Ornamental",
+		"Playful",
+		"Retro",
+		"Thick Stroke",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"6809 Chargen",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/6809 Chargen.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Dotted",
+		"Marquee",
+		"Ornamental",
+		"Rounded Edges",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"8-Bit Limit Outline",
+	"authors":[
+		"Aenigma Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Aenigma Fonts/8-Bit Limit - by Aenigma Fonts/8-Bit Limit Outline.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Freeware",
+	"tags":[
+		"Serif",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Negative Space",
 		"Pixelated",
 		"Retro"
 	]
@@ -467,8 +515,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro"
 	]
@@ -524,7 +572,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Abberancy.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Abberancy.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -554,9 +602,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -574,7 +622,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Star Wars",
 		"Thick Stroke"
@@ -608,7 +656,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Adriator.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Adriator.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -681,8 +729,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Distressed",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -703,9 +751,104 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Calligraphy",
 		"Elegant",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke",
 		"Uneven Chars"
+	]
+},
+{
+	"name":"Airmole",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Airmole.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Playful",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Airmole - Antique",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Airmole - Antique.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Decay",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Playful",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Airmole - Shaded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Airmole - Shaded.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Negative Space",
+		"Ornamental",
+		"Outline",
+		"Playful",
+		"Shadow",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Airmole - Stripe",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Airmole - Stripe.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Decay",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Playful",
+		"Striped",
+		"Thick Stroke"
 	]
 },
 {
@@ -723,8 +866,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Rounded Edges"
 	]
@@ -744,7 +887,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -898,6 +1041,72 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Almonte",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Almonte.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Missing Common Symbols",
+		"Narrow Chars",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Almonte - Snow",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Almonte - Snow.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Halloween",
+		"Missing Common Symbols",
+		"Narrow Chars",
+		"Negative Space",
+		"No Lowercase",
+		"Thick Stroke",
+		"Winter"
+	]
+},
+{
+	"name":"Almonte - Woodgrain",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Almonte - Woodgrain.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Decay",
+		"Missing Common Symbols",
+		"Narrow Chars",
+		"Striped",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Alpha Beta",
 	"authors":[
 		"Aenigma Fonts"
@@ -932,8 +1141,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -1047,8 +1256,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -1095,8 +1304,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -1120,6 +1329,49 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Angerpoise Lampshade",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Angerpoise Lampshade.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Block Shaped",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Anklepants",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Anklepants.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Decay",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Archipelago",
 	"authors":[
 		"Vic Fieger"
@@ -1136,8 +1388,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Sideways",
 		"Uneven Chars"
 	]
@@ -1180,7 +1432,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Formal",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Thick Stroke"
 	]
@@ -1202,9 +1454,29 @@ function getCustomFonts() {
 		"Serif",
 		"Broken Letters",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Arnprior",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Arnprior.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Ornamental",
 		"Thick Stroke"
 	]
 },
@@ -1224,10 +1496,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Bones",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -1257,14 +1529,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Alpha.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Alpha.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1274,14 +1547,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Beta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Beta.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1291,14 +1565,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Delta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Delta.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1308,14 +1583,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Epsilon.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Epsilon.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1325,14 +1601,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Eta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Eta.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1342,14 +1619,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Gamma.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Gamma.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1359,14 +1637,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Iota.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Iota.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1376,14 +1655,15 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Theta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Theta.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
 	]
 },
 {
@@ -1393,14 +1673,87 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Asterisp Zeta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Asterisp Zeta.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
 	],
 	"license":"Public Domain",
 	"tags":[
-		"Symbols Only"
+		"Symbols Only",
+		"Winter"
+	]
+},
+{
+	"name":"Astron Boy",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Astron Boy.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Astron Boy Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Retro"
+	]
+},
+{
+	"name":"Astron Boy - Video",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Astron Boy - Video.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Retro",
+		"Striped"
+	]
+},
+{
+	"name":"Astron Boy - Wonder",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Astron Boy - Wonder.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Missing Common Symbols",
+		"Negative Space",
+		"Ornamental",
+		"Outline",
+		"Retro",
+		"Shadow"
 	]
 },
 {
@@ -1419,7 +1772,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -1439,10 +1792,227 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Athabasca",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Extra Light Italic.otf",
+			"style":"Italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Light Italic.otf",
+			"style":"Italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Book Italic.otf",
+			"style":"Italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Italic.otf",
+			"style":"Italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Bold.otf",
+			"style":"normal",
+			"weight":"Bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Bold Italic.otf",
+			"style":"Italic",
+			"weight":"Bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Athabasca Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Extra Light Italic.otf",
+			"style":"Italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Light Italic.otf",
+			"style":"Italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Book Italic.otf",
+			"style":"Italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Italic.otf",
+			"style":"Italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Bold.otf",
+			"style":"normal",
+			"weight":"Bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Bold Italic.otf",
+			"style":"Italic",
+			"weight":"Bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Condensed Extra Bold Italic.otf",
+			"style":"Italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Athabasca Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Extra Light Italic.otf",
+			"style":"Italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Light Italic.otf",
+			"style":"Italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Book Italic.otf",
+			"style":"Italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Italic.otf",
+			"style":"Italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Bold.otf",
+			"style":"normal",
+			"weight":"Bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Bold Italic.otf",
+			"style":"Italic",
+			"weight":"Bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Athabasca Expanded Extra Bold Italic.otf",
+			"style":"Italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Formal",
+		"Plain",
+		"Wide Chars"
 	]
 },
 {
@@ -1580,7 +2150,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Bailey's Car.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Bailey's Car.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1589,10 +2159,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Fire",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -1611,8 +2181,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Dotted",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -1623,7 +2193,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Baltar.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Baltar.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1708,7 +2278,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Barbatrick.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Barbatrick.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1721,6 +2291,53 @@ function getCustomFonts() {
 		"Ornamental",
 		"Slanted",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Baveuse",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Baveuse.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"No Uppercase",
+		"Ornamental",
+		"Playful",
+		"Thick Stroke",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Baveuse 3D",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Baveuse 3D.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Negative Space",
+		"No Uppercase",
+		"Ornamental",
+		"Outline",
+		"Playful",
+		"Thick Stroke",
+		"Uneven Chars"
 	]
 },
 {
@@ -1751,7 +2368,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Beat My Guest.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Beat My Guest.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1849,13 +2466,48 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Berylium",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Berylium.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Berylium Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Berylium Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Berylium Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Angular",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Betsy Flanagan",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Betsy Flanagan.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Betsy Flanagan.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1876,7 +2528,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Betsy Flanagan 2.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Betsy Flanagan 2.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -1945,10 +2597,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -1968,10 +2620,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Sideways",
 		"Thick Stroke"
 	]
@@ -2091,7 +2743,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Biometric Joe.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Biometric Joe.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2111,12 +2763,12 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Birdland Aeroplane.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Birdland Aeroplane Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Birdland Aeroplane Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		}
@@ -2156,7 +2808,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Biting My Nails.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2176,7 +2828,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Biting My Nails - Outline.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Biting My Nails - Outline.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2307,8 +2959,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Blocks",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted"
 	]
 },
@@ -2333,6 +2985,89 @@ function getCustomFonts() {
 		"No Lowercase",
 		"No Symbols",
 		"Ornamental"
+	]
+},
+{
+	"name":"Blue Highway",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Blue Highway.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Blue Highway Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Blue Highway Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Blue Highway Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Blue Highway - Linocut",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Blue Highway - Linocut.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Decorated"
+	]
+},
+{
+	"name":"Blue Highway D",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Blue Highway D.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"No Lowercase",
+		"Plain"
 	]
 },
 {
@@ -2497,7 +3232,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Bomr.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Bomr.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2519,7 +3254,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Borg 9.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Borg 9.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2527,8 +3262,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped",
 		"Thick Stroke"
 	]
@@ -2540,7 +3275,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Boron.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Boron.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2550,9 +3285,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Circuit",
 		"Decorated",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -2571,9 +3306,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil"
 	]
 },
@@ -2584,7 +3319,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Braeside - Lumberboy.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Braeside - Lumberboy.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2593,8 +3328,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
 	]
@@ -2606,7 +3341,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Braeside - Outline.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Braeside - Outline.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2615,10 +3350,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
 	]
@@ -2649,7 +3384,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Bramalea Beauty.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Bramalea Beauty.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2658,10 +3393,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"Negative Space",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -2809,8 +3544,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Slanted"
 	]
@@ -2839,13 +3574,13 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Butterbelly",
+	"name":"Burnstown Dam",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Butterbelly.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Burnstown Dam.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2853,7 +3588,95 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Composite Font",
+		"Negative Space",
+		"Ornamental",
+		"Uneven Chars",
+		"Wood"
+	]
+},
+{
+	"name":"Burnstown Dam - Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Burnstown Dam - Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Hard To Read",
+		"Ornamental",
+		"Thick Stroke",
+		"Uneven Chars",
+		"Wood"
+	]
+},
+{
+	"name":"Burnstown Dam - Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Burnstown Dam - Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Composite Font",
+		"Ornamental",
+		"Uneven Chars",
+		"Wood"
+	]
+},
+{
+	"name":"Burnstown Dam - Nails",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Burnstown Dam - Nails.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Hard To Read",
+		"Ornamental",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Butterbelly",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Butterbelly.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Missing Common Symbols",
 		"Plain",
 		"Uneven Chars"
 	]
@@ -2865,7 +3688,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Buxotic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Buxotic.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -2875,9 +3698,9 @@ function getCustomFonts() {
 		"Serif",
 		"Cosmic",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -3083,32 +3906,32 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500 Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500 Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500 Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500 Light.otf",
 			"style":"normal",
 			"weight":"300"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Canada 1500 Light Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/Canada 1500/Canada 1500 Light Italic.otf",
 			"style":"italic",
 			"weight":"300"
 		}
@@ -3136,8 +3959,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Holiday",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped"
 	]
 },
@@ -3168,7 +3991,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Capacitor.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Capacitor.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -3199,8 +4022,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"Monospace",
-		"Partial Symbol Set",
 		"Smudged",
 		"Typewriter"
 	]
@@ -3301,7 +4124,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain"
 	]
 },
@@ -3312,7 +4135,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Charles In Charge.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Charles In Charge.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -3378,8 +4201,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Retro",
 		"Thick Stroke"
 	]
@@ -3399,10 +4222,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Retro",
 		"Shadow",
 		"Thick Stroke"
@@ -3610,8 +4433,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Decay",
-		"Narrow Chars",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Narrow Chars"
 	]
 },
 {
@@ -3636,9 +4459,9 @@ function getCustomFonts() {
 		"Decorated",
 		"DNA",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -3721,10 +4544,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -3745,8 +4568,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -3768,8 +4591,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -3790,10 +4613,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -3804,7 +4627,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Color Basic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Color Basic.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -3827,12 +4650,12 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Colourbars.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Colourbars.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Colourbars Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Colourbars Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		}
@@ -4014,7 +4837,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain"
 	]
 },
@@ -4153,7 +4976,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -4178,7 +5001,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -4190,7 +5013,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Contour Generator.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Contour Generator.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4220,7 +5043,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Thick Stroke"
 	]
@@ -4274,7 +5097,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Counterscraps.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Counterscraps.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4292,7 +5115,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Crack Man.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Crack Man.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4300,6 +5123,7 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"3D",
 		"Angular",
 		"Composite Font",
 		"Negative Space",
@@ -4315,7 +5139,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Crack Man - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Crack Man - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4337,7 +5161,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Crack Man - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Crack Man - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4442,7 +5266,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Cranberry Gin.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Cranberry Gin.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4453,7 +5277,60 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"Broken Letters",
-		"Partial Symbol Set"
+		"Missing Common Symbols"
+	]
+},
+{
+	"name":"Credit River",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Credit River.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Credit Valley",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Credit Valley.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Credit Valley Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Credit Valley Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Credit Valley Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -4463,7 +5340,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Cretino.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Cretino.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4474,8 +5351,8 @@ function getCustomFonts() {
 		"Distressed",
 		"Elegant",
 		"Gothic",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -4523,6 +5400,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Crystal Radio Kit",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Crystal Radio Kit.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Ornamental",
+		"Playful",
+		"Rounded Chars",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Cubic Core Mono",
 	"authors":[
 		"marCOmics"
@@ -4539,8 +5437,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Monospace",
-		"Partial Symbol Set",
 		"Pixelated"
 	]
 },
@@ -4551,7 +5449,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Cuomotype.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Cuomotype.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4588,7 +5486,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Cutiful.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Cutiful.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4649,7 +5547,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Cyclopentane.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Cyclopentane.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4658,6 +5556,29 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Angular",
+		"Hard To Read",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Dacquoise",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dacquoise.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Broken Letters",
+		"Decay",
 		"Hard To Read",
 		"No Lowercase",
 		"Ornamental",
@@ -4680,7 +5601,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Handwriting",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Script",
 		"Slanted"
 	]
@@ -4700,9 +5621,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -4757,9 +5678,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke"
 	]
@@ -4780,9 +5701,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Halloween",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -4853,8 +5774,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -4865,7 +5786,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dazzle Ships.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dazzle Ships.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4896,8 +5817,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Smudged",
 		"Uneven Chars"
 	]
@@ -4924,13 +5845,107 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Deftone Stylus",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Deftone Stylus.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Calligraphy",
+		"Handwriting",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Degrassi",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Degrassi.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"3D",
+		"Broken Letters",
+		"Graffiti",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Outline"
+	]
+},
+{
+	"name":"Degrassi - Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Degrassi - Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Broken Letters",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Degrassi - Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Degrassi - Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Broken Letters",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
 	"name":"Delta Hey Max Nine",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Delta Hey Max Nine.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Delta Hey Max Nine.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4939,7 +5954,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Curvy Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Swirl",
 		"Vintage"
@@ -4952,7 +5967,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Deluxe Ducks.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Deluxe Ducks.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -4975,7 +5990,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dendritic Voltage.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dendritic Voltage.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5040,7 +6055,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Deportees.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Deportees.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5062,7 +6077,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Desard.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Desard.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5093,6 +6108,49 @@ function getCustomFonts() {
 		"Plain",
 		"Rounded Edges",
 		"Slanted"
+	]
+},
+{
+	"name":"Die Nasty",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Die Nasty.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Curvy Letters",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Dignity of Labour",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dignity of Labour.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
+		"Hard To Read",
+		"No Lowercase",
+		"Ornamental"
 	]
 },
 {
@@ -5174,8 +6232,8 @@ function getCustomFonts() {
 		"Anime",
 		"Broken Letters",
 		"Curvy Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -5391,7 +6449,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Playful"
 	]
@@ -5411,7 +6469,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Playful"
 	]
@@ -5423,22 +6481,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dream Orphans.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dream Orphans.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dream Orphans Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dream Orphans Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dream Orphans Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dream Orphans Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dream Orphans Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dream Orphans Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -5448,6 +6506,26 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Formal",
 		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Droid 1997",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Droid 1997.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"No Uppercase",
 		"Plain"
 	]
 },
@@ -5524,7 +6602,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Dyspepsia.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Dyspepsia.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5559,6 +6637,31 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Echelon",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Echelon.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Echelon Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Gothic",
+		"Halloween",
+		"Plain"
+	]
+},
+{
 	"name":"Ecliptic",
 	"authors":[
 		"Aenigma Fonts"
@@ -5574,7 +6677,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars"
 	]
 },
@@ -5585,22 +6688,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Eden Mills.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Eden Mills.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Eden Mills Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Eden Mills Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Eden Mills Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Eden Mills Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Eden Mills Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Eden Mills Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -5620,7 +6723,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Edgewater.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Edgewater.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5631,8 +6734,8 @@ function getCustomFonts() {
 		"Block Shaped",
 		"Broken Letters",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -5673,6 +6776,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Dotted",
+		"Marquee",
 		"No Lowercase",
 		"Pixelated",
 		"Retro",
@@ -5708,7 +6812,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Edmunds.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Edmunds.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5727,7 +6831,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Edmunds - Distressed.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Edmunds - Distressed.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5759,9 +6863,65 @@ function getCustomFonts() {
 		"Distressed",
 		"Handwriting",
 		"Marker",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
+	]
+},
+{
+	"name":"Effloresce",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Effloresce.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Effloresce Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Effloresce Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Effloresce Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Missing Common Symbols",
+		"Plain"
+	]
+},
+{
+	"name":"Effloresce - Antique",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Effloresce - Antique.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Decay",
+		"Formal",
+		"Missing Common Symbols",
+		"Plain"
 	]
 },
 {
@@ -5771,7 +6931,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Electorate Boogaloo 3.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Electorate Boogaloo 3.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -5780,10 +6940,34 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Electroharmonix",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Electroharmonix.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Anime",
+		"Block Shaped",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke",
+		"Uneven Chars"
 	]
 },
 {
@@ -5842,9 +7026,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -5865,9 +7049,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Shadow",
 		"Slanted"
 	]
@@ -5888,9 +7072,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -5913,9 +7097,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Striped"
 	]
 },
@@ -6571,11 +7755,84 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"3D",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Offset",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
+	]
+},
+{
+	"name":"Engebrechtre",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Calligraphy",
+		"Formal",
+		"Narrow Chars",
+		"No Lowercase",
+		"Plain"
+	]
+},
+{
+	"name":"Engebrechtre Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Expanded Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Expanded Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Engebrechtre Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Calligraphy",
+		"Formal",
+		"No Lowercase",
+		"Plain"
 	]
 },
 {
@@ -6594,10 +7851,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Slanted"
 	]
 },
@@ -6608,7 +7865,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Ennobled Pet.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Ennobled Pet.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6831,6 +8088,25 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Euphorigenic",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Euphorigenic.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Eurocentric",
 	"authors":[
 		"Vic Fieger"
@@ -6845,8 +8121,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Soviet",
 		"Thick Stroke"
 	]
@@ -6888,7 +8164,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Calligraphy",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -6907,8 +8183,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Uneven Chars"
 	]
@@ -6942,7 +8218,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fabian.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fabian.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6952,8 +8228,8 @@ function getCustomFonts() {
 		"Serif",
 		"Angular",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Slanted"
 	]
 },
@@ -6964,7 +8240,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fadgod.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fadgod.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6987,7 +8263,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Failed Attempt.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Failed Attempt.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -6997,9 +8273,33 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Dotted",
+		"Marquee",
 		"Ornamental",
 		"Retro",
 		"Slanted"
+	]
+},
+{
+	"name":"Fake Receipt",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fake Receipt.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Dotted",
+		"Marquee",
+		"Monospace",
+		"No Lowercase",
+		"Ornamental"
 	]
 },
 {
@@ -7202,7 +8502,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Handwriting",
 		"Marker",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -7246,7 +8546,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Symbols Only",
-		"Snow"
+		"Winter"
 	]
 },
 {
@@ -7266,7 +8566,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Handwriting",
 		"Marker",
-		"Partial Symbol Set"
+		"Missing Common Symbols"
 	]
 },
 {
@@ -7297,7 +8597,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Filepile.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Filepile.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7306,10 +8606,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Logo",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -7320,7 +8620,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/First Blind 2.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/First Blind 2.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7363,7 +8663,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fluoride Beings.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fluoride Beings.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7373,8 +8673,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Angular",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -7395,7 +8695,7 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"College",
-		"Partial Symbol Set"
+		"Missing Common Symbols"
 	]
 },
 {
@@ -7416,9 +8716,9 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"College",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -7439,10 +8739,10 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"College",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -7462,10 +8762,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"College",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -7485,9 +8785,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Angular",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thin Stroke"
 	]
 },
@@ -7507,9 +8807,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -7531,9 +8831,9 @@ function getCustomFonts() {
 		"Serif",
 		"3D",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -7555,9 +8855,9 @@ function getCustomFonts() {
 		"Serif",
 		"3D",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -7578,12 +8878,31 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Uppercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Foo",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Foo.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Playful",
 		"Thick Stroke"
 	]
 },
@@ -7602,7 +8921,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -7670,7 +8989,7 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -7681,7 +9000,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fragile Bombers.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fragile Bombers.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7701,7 +9020,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fragile Bombers - Attack.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fragile Bombers - Attack.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7722,7 +9041,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Fragile Bombers - Down.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Fragile Bombers - Down.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7743,7 +9062,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Frak.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Frak.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7753,7 +9072,7 @@ function getCustomFonts() {
 		"Serif",
 		"Broken Letters",
 		"Distressed",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Slanted"
 	]
 },
@@ -7793,9 +9112,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped"
 	]
 },
@@ -7826,7 +9145,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Frozdotre.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Frozdotre.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -7921,9 +9240,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -7942,8 +9261,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro",
 		"Striped",
@@ -7966,9 +9285,116 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Pixelated",
 		"Retro",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Gargle",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Handwriting",
+		"Playful",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Gargle Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Condensed Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Condensed Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Handwriting",
+		"Narrow Chars",
+		"Playful",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Gargle Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Expanded Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Expanded Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gargle Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Handwriting",
+		"Playful",
+		"Uneven Chars",
 		"Wide Chars"
 	]
 },
@@ -8182,7 +9608,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Ghostmeat.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Ghostmeat.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8192,11 +9618,12 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Composite Font",
 		"Graffiti",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
+		"Rounded Chars",
 		"Thick Stroke"
 	]
 },
@@ -8207,7 +9634,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Ghostmeat - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Ghostmeat - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8217,9 +9644,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Composite Font",
 		"Graffiti",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
+		"Rounded Chars",
 		"Thick Stroke"
 	]
 },
@@ -8230,7 +9658,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Ghostmeat - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Ghostmeat - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8240,9 +9668,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Composite Font",
 		"Graffiti",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set"
+		"Rounded Chars"
 	]
 },
 {
@@ -8252,7 +9681,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Giant Tigers.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8261,11 +9690,11 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped"
 	]
 },
@@ -8276,7 +9705,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Giant Tigers - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8285,9 +9714,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain"
 	]
 },
@@ -8298,7 +9727,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Giant Tigers - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Giant Tigers - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8308,10 +9737,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped"
 	]
 },
@@ -8332,7 +9761,7 @@ function getCustomFonts() {
 		"Serif",
 		"Curvy Letters",
 		"Handwriting",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Script",
 		"Uneven Chars"
 	]
@@ -8352,7 +9781,7 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Slanted"
 	]
@@ -8364,7 +9793,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Glazkrak.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Glazkrak.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8376,9 +9805,9 @@ function getCustomFonts() {
 		"Decay",
 		"Decorated",
 		"Glass",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -8388,7 +9817,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Golden Girdle.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Golden Girdle.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8403,6 +9832,61 @@ function getCustomFonts() {
 		"Ornamental",
 		"Thick Stroke",
 		"Uneven Chars"
+	]
+},
+{
+	"name":"Goldsaber",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Goldsaber.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Goodfish",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Goodfish.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Goodfish Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Goodfish Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Goodfish Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Calligraphy",
+		"Formal",
+		"Plain"
 	]
 },
 {
@@ -8453,7 +9937,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Got No Heart.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8464,10 +9948,10 @@ function getCustomFonts() {
 		"Composite Font",
 		"Hard To Read",
 		"Heart",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8478,7 +9962,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Got No Heart - Solid.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Got No Heart - Solid.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8489,8 +9973,8 @@ function getCustomFonts() {
 		"Composite Font",
 		"Hard To Read",
 		"Heart",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8522,7 +10006,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Graffiti Treat.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8534,11 +10018,11 @@ function getCustomFonts() {
 		"Composite Font",
 		"Graffiti",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -8548,7 +10032,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Graffiti Treat - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8560,9 +10044,9 @@ function getCustomFonts() {
 		"Composite Font",
 		"Graffiti",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8573,7 +10057,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Graffiti Treat - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Graffiti Treat - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8585,9 +10069,9 @@ function getCustomFonts() {
 		"Composite Font",
 		"Graffiti",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -8671,8 +10155,8 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Gothic",
 		"Leading Left Hook",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -8815,13 +10299,36 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Green Fuz",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Green Fuz.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Distorted",
+		"Halloween",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Groovy Ghosties",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Groovy Ghosties.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8833,11 +10340,11 @@ function getCustomFonts() {
 		"Decorated",
 		"Halloween",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8848,7 +10355,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Groovy Ghosties - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8859,10 +10366,9 @@ function getCustomFonts() {
 		"Composite Font",
 		"Halloween",
 		"Hard To Read",
-		"Negative Space",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8873,7 +10379,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Groovy Ghosties - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Groovy Ghosties - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8885,9 +10391,9 @@ function getCustomFonts() {
 		"Decorated",
 		"Halloween",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -8956,13 +10462,32 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Guanine",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Guanine.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Plain",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Gumtuckey",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Gumtuckey.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Gumtuckey.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -8971,8 +10496,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Distorted",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -9111,7 +10636,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hamma Mamma Jamma.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hamma Mamma Jamma.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9119,8 +10644,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -9158,8 +10683,8 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Composite Font",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -9187,10 +10712,10 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Composite Font",
 		"Logo",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -9257,10 +10782,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -9270,7 +10795,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hawkeye.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9295,7 +10820,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hawkeye - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9318,7 +10843,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hawkeye - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hawkeye - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9361,7 +10886,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Heart Sweet Heart.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Heart Sweet Heart.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9371,8 +10896,8 @@ function getCustomFonts() {
 		"Serif",
 		"Dotted",
 		"Heart",
-		"No Lowercase",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"No Lowercase"
 	]
 },
 {
@@ -9395,12 +10920,12 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Heart",
+		"Missing Common Symbols",
 		"Monospace",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -9421,9 +10946,9 @@ function getCustomFonts() {
 		"Angular",
 		"Bevel",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Retro",
 		"Thick Stroke"
 	]
@@ -9435,7 +10960,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hello Larry.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hello Larry.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9445,8 +10970,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Uneven Chars"
 	]
@@ -9466,8 +10991,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Thick Stroke"
 	]
@@ -9513,7 +11038,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Highway To Heck.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Highway To Heck.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9542,8 +11067,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Offset",
-		"Partial Symbol Set",
 		"Rounded Edges",
 		"Shadow",
 		"Thick Stroke"
@@ -9556,7 +11081,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Holy Smokes.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Holy Smokes.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9598,7 +11123,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Home Sweet Home.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Home Sweet Home.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9607,10 +11132,10 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Dotted",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Stitch"
 	]
 },
@@ -9621,7 +11146,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Home Sweet Home - Outline.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Home Sweet Home - Outline.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9630,10 +11155,10 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Dotted",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Stitch"
 	]
 },
@@ -9666,7 +11191,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hooked Up 101.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hooked Up 101.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9676,7 +11201,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Angular",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain",
 		"Slanted"
 	]
@@ -9688,7 +11213,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Horsepower.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Horsepower.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9698,8 +11223,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
-		"Narrow Chars",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Narrow Chars"
 	]
 },
 {
@@ -9722,8 +11247,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro"
 	]
@@ -9735,7 +11260,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Hurontario.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hurontario.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9744,11 +11269,34 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Handwriting",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Script",
 		"Slanted",
 		"Thin Stroke"
+	]
+},
+{
+	"name":"Hurry Up",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hurry Up.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Block Shaped",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Playful",
+		"Thick Stroke",
+		"Uneven Chars"
 	]
 },
 {
@@ -9758,7 +11306,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Husky Stash.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Husky Stash.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9766,8 +11314,28 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
+		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Huxtable",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Huxtable.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Plain",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -9808,9 +11376,32 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Dotted",
+		"Marquee",
+		"Missing Common Symbols",
 		"Monospace",
+		"Ornamental"
+	]
+},
+{
+	"name":"Hydrogen Whiskey",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Hydrogen Whiskey.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Narrow Chars",
+		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set"
+		"Rounded Edges"
 	]
 },
 {
@@ -9850,8 +11441,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
 	]
@@ -9874,8 +11465,8 @@ function getCustomFonts() {
 		"Angular",
 		"Broken Letters",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
 	]
@@ -9887,7 +11478,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Icicle Country 2.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Icicle Country 2.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9897,7 +11488,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Angular",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -9918,7 +11509,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Formal",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -9929,7 +11520,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Induction.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Induction.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -9984,8 +11575,29 @@ function getCustomFonts() {
 		"Block Shaped",
 		"Calligraphy",
 		"Distorted",
+		"Missing Common Symbols",
+		"Narrow Chars"
+	]
+},
+{
+	"name":"Inflammable Age",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Inflammable Age.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Block Shaped",
 		"Narrow Chars",
-		"Partial Symbol Set"
+		"Thick Stroke"
 	]
 },
 {
@@ -9995,22 +11607,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Injekuta Light.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Injekuta Light.otf",
 			"style":"normal",
 			"weight":"300"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Injekuta.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Injekuta.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Injekuta Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Injekuta Bold.otf",
 			"style":"normal",
 			"weight":"700"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Injekuta Black.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Injekuta Black.otf",
 			"style":"normal",
 			"weight":"900"
 		}
@@ -10062,9 +11674,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Decay",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -10074,7 +11686,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Instant Tunes.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Instant Tunes.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10096,7 +11708,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Interplanetary Crap.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Interplanetary Crap.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10189,7 +11801,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Iomanoid.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Iomanoid.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10201,10 +11813,10 @@ function getCustomFonts() {
 		"Bevel",
 		"Chiseled",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -10214,7 +11826,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Iomanoid - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Iomanoid - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10225,9 +11837,9 @@ function getCustomFonts() {
 		"Angular",
 		"Chiseled",
 		"Composite Font",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -10237,7 +11849,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Iomanoid - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Iomanoid - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10248,9 +11860,9 @@ function getCustomFonts() {
 		"Angular",
 		"Chiseled",
 		"Composite Font",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -10260,7 +11872,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Iomanoid - Shine.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Iomanoid - Shine.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10272,9 +11884,9 @@ function getCustomFonts() {
 		"Chiseled",
 		"Composite Font",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -10293,10 +11905,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Angular",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -10358,9 +11970,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -10371,7 +11983,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Jandles.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Jandles.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10442,10 +12054,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Curvy Letters",
 		"Distorted",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -10466,8 +12078,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Curvy Letters",
 		"Distorted",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -10641,7 +12253,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Jigsaw Trouserdrop.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Jigsaw Trouserdrop.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10663,7 +12275,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Jingopop.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Jingopop.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10671,11 +12283,33 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Serif",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Playful",
 		"Script",
 		"Uneven Chars"
+	]
+},
+{
+	"name":"Johnny Fever",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Johnny Fever.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
 	]
 },
 {
@@ -10727,7 +12361,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Joy Circuit.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Joy Circuit.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10778,7 +12412,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars",
 		"Slanted",
 		"Thick Stroke"
@@ -10801,7 +12435,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -10822,7 +12456,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Alien",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Slanted",
 		"Thick Stroke"
@@ -10835,7 +12469,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Karma - Future.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Karma - Future.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -10843,6 +12477,7 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"3D",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
@@ -10859,10 +12494,34 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Karma - Suture.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Karma - Suture.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Pixelated",
+		"Retro",
+		"VCR"
+	]
+},
+{
+	"name":"Karma Caption",
+	"authors":[
+		"NAB622",
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"NAB622/Karma Caption.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"instructions":[
+		"This font is a modified version of [color fg=f00]Karma - Suture[/color], by [color fg=0bf]Typodermic Fonts[/color].[br][br]I modified it to look more like the closed captions on my old VCR, hence the name change."
 	],
 	"license":"Public Domain",
 	"tags":[
@@ -10887,10 +12546,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Offset",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro",
 		"Shadow"
@@ -10911,10 +12570,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke"
 	]
@@ -10935,8 +12594,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke"
 	]
@@ -11038,6 +12697,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Dotted",
+		"Marquee",
 		"Monospace",
 		"No Lowercase"
 	]
@@ -11061,8 +12721,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distressed",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -11073,7 +12733,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Kicking Limos.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kicking Limos.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11083,10 +12743,31 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Curvy Letters",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted"
+	]
+},
+{
+	"name":"Kilsonburg",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kilsonburg.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"No Lowercase",
+		"Ornamental",
+		"Thin Stroke"
 	]
 },
 {
@@ -11105,7 +12786,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -11117,12 +12798,12 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/King Richard.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/King Richard.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/King Richard Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/King Richard - Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		}
@@ -11133,6 +12814,309 @@ function getCustomFonts() {
 		"Formal",
 		"Leading Left Hook",
 		"Plain"
+	]
+},
+{
+	"name":"Kingsbridge",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Kingsbridge Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Kingsbridge Semi Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Semi Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Kingsbridge Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Extra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kingsbridge Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Plain",
+		"Wide Chars"
 	]
 },
 {
@@ -11174,7 +13158,7 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Handwriting",
 		"Marker",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Rounded Edges",
 		"Uneven Chars"
@@ -11221,10 +13205,30 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Distorted",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Stencil",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Knuckle Down",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Knuckle Down.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Curvy Letters",
+		"Ornamental",
 		"Thick Stroke"
 	]
 },
@@ -11322,6 +13326,162 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Krait - Fill",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Krait - Fill.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Hard To Read",
+		"Ornamental"
+	]
+},
+{
+	"name":"Krait - Hollow",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Krait - Hollow.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Hard To Read",
+		"Ornamental"
+	]
+},
+{
+	"name":"Krait - Solid",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Krait - Solid.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Hard To Read",
+		"Ornamental"
+	]
+},
+{
+	"name":"Kredit",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kredit.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Bevel",
+		"Composite Font",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Rounded Edges"
+	]
+},
+{
+	"name":"Kredit - Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kredit - Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Bevel",
+		"Composite Font",
+		"Marker",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Rounded Edges"
+	]
+},
+{
+	"name":"Kredit - Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kredit - Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Plain",
+		"Thin Stroke"
+	]
+},
+{
+	"name":"Kredit - Shine",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kredit - Shine.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Bevel",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Rounded Edges"
+	]
+},
+{
 	"name":"Kremlin",
 	"authors":[
 		"Vic Fieger"
@@ -11339,9 +13499,9 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Soviet"
 	]
 },
@@ -11373,7 +13533,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Kwokwi.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kwokwi.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11395,7 +13555,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Kwokwi - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kwokwi - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11418,7 +13578,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Kwokwi - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kwokwi - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11439,7 +13599,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Kwokwi - Stripes.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Kwokwi - Stripes.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11452,6 +13612,27 @@ function getCustomFonts() {
 		"Decay",
 		"Playful",
 		"Striped"
+	]
+},
+{
+	"name":"Lady Starlight",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lady Starlight.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Hard To Read",
+		"Ornamental",
+		"Thick Stroke"
 	]
 },
 {
@@ -11511,7 +13692,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Curvy Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Wide Chars"
 	]
 },
@@ -11522,7 +13703,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lesser Concern.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11531,7 +13712,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Curvy Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain"
 	]
 },
@@ -11542,7 +13723,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lesser Concern - Shadow.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lesser Concern - Shadow.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11551,8 +13732,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Curvy Letters",
+		"Missing Common Symbols",
 		"Negative Space",
-		"Partial Symbol Set",
+		"Outline",
 		"Plain",
 		"Shadow"
 	]
@@ -11564,7 +13746,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Let's Eat.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Let's Eat.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11573,8 +13755,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
-		"Narrow Chars",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Narrow Chars"
 	]
 },
 {
@@ -11594,7 +13776,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decay",
 		"Distorted",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Wide Chars"
 	]
 },
@@ -11605,7 +13787,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Letter Set - C.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Letter Set - C.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11614,12 +13796,12 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
-		"Snow",
 		"Thick Stroke",
-		"Uneven Chars"
+		"Uneven Chars",
+		"Winter"
 	]
 },
 {
@@ -11629,7 +13811,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Letter Set - A.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Letter Set - A.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11638,13 +13820,13 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
-		"Snow",
 		"Thick Stroke",
-		"Uneven Chars"
+		"Uneven Chars",
+		"Winter"
 	]
 },
 {
@@ -11654,7 +13836,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Letter Set - B.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Letter Set - B.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11663,11 +13845,11 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"3D",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Uneven Chars"
 	]
@@ -11679,7 +13861,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lewinsky.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lewinsky.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -11689,10 +13871,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Multi-Stroke",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Wide Chars"
 	]
@@ -12193,7 +14375,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lilliput Steps.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lilliput Steps.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12202,10 +14384,11 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Monospace",
-		"Partial Symbol Set",
 		"Pixelated",
-		"Retro"
+		"Retro",
+		"Wide Chars"
 	]
 },
 {
@@ -12236,7 +14419,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Living by Numbers.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Living by Numbers.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12245,7 +14428,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Angular",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Slanted",
 		"Uneven Chars"
@@ -12319,7 +14502,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lockergnome.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lockergnome.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12350,8 +14533,8 @@ function getCustomFonts() {
 		"Elegant",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Script",
 		"Slanted"
 	]
@@ -12495,7 +14678,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lucky Ape.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lucky Ape.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12505,9 +14688,9 @@ function getCustomFonts() {
 		"Serif",
 		"Decorated",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slot Machine"
 	]
 },
@@ -12518,7 +14701,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lunasol.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lunasol.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12530,10 +14713,10 @@ function getCustomFonts() {
 		"Block Shaped",
 		"Broken Letters",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Multi-Stroke",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -12543,7 +14726,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lunasol - Aurora.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lunasol - Aurora.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12555,12 +14738,12 @@ function getCustomFonts() {
 		"Block Shaped",
 		"Broken Letters",
 		"Composite Font",
+		"Missing Common Symbols",
 		"Multi-Stroke",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -12570,7 +14753,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lunasol - Eclipse.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lunasol - Eclipse.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12581,9 +14764,9 @@ function getCustomFonts() {
 		"Angular",
 		"Block Shaped",
 		"Composite Font",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -12593,7 +14776,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Lunasol - Sequence.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Lunasol - Sequence.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12605,9 +14788,9 @@ function getCustomFonts() {
 		"Block Shaped",
 		"Broken Letters",
 		"Composite Font",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -12693,7 +14876,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -12735,8 +14918,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro",
 		"Thick Stroke"
@@ -12749,7 +14932,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mai Tai.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mai Tai.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12758,10 +14941,31 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Angular",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Uneven Chars"
+	]
+},
+{
+	"name":"Mail Ray Stuff",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mail Ray Stuff.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"No Lowercase",
+		"Ornamental",
+		"Playful",
+		"Thick Stroke"
 	]
 },
 {
@@ -12780,8 +14984,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Stencil",
 		"Thick Stroke"
 	]
@@ -12793,7 +14997,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Malache Crunch.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Malache Crunch.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12809,13 +15013,195 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Manbow - Clear",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Clear.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Hard To Read",
+		"Negative Space",
+		"Ornamental"
+	]
+},
+{
+	"name":"Manbow - Dots",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Dots.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Dotted",
+		"Ornamental"
+	]
+},
+{
+	"name":"Manbow - Fill",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Fill.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Ornamental"
+	]
+},
+{
+	"name":"Manbow - Lines",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Lines.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Ornamental",
+		"Striped"
+	]
+},
+{
+	"name":"Manbow - Screen",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Screen.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Dotted",
+		"Ornamental"
+	]
+},
+{
+	"name":"Manbow - Solid",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Solid.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Ornamental",
+		"Striped"
+	]
+},
+{
+	"name":"Manbow - Spots",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Spots.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Dotted",
+		"Negative Space",
+		"Ornamental"
+	]
+},
+{
+	"name":"Manbow - Stripe",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Stripe.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Ornamental",
+		"Striped"
+	]
+},
+{
+	"name":"Manbow - Tone",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Manbow - Tone.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Dotted",
+		"Negative Space",
+		"Ornamental"
+	]
+},
+{
 	"name":"Mango",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mango.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mango.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12825,9 +15211,9 @@ function getCustomFonts() {
 		"Serif",
 		"Composite Font",
 		"Curvy Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Playful",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -12840,7 +15226,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mango - Fill.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mango - Fill.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12850,7 +15236,7 @@ function getCustomFonts() {
 		"Serif",
 		"Composite Font",
 		"Curvy Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -12863,7 +15249,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mango - Scribble.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mango - Scribble.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12875,7 +15261,7 @@ function getCustomFonts() {
 		"Curvy Letters",
 		"Decay",
 		"Distorted",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -12888,7 +15274,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Map Of You.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Map Of You.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12899,8 +15285,8 @@ function getCustomFonts() {
 		"Alien",
 		"Broken Letters",
 		"Decorated",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Rounded Chars"
 	]
 },
@@ -12930,7 +15316,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Marquee Moon.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Marquee Moon.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12952,7 +15338,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Massive Retaliation.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Massive Retaliation.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -12960,8 +15346,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -13001,7 +15387,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Handwriting",
 		"Marker",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Script",
 		"Uneven Chars"
 	]
@@ -13100,6 +15486,467 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Mesmerize",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Mesmerize Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Condensed Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Mesmerize Semi Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Condensed Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
+	"name":"Mesmerize Semi Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Semi Expanded Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Mesmerize Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Ultra Light.otf",
+			"style":"normal",
+			"weight":"100"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Extra Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Extra Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Book.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Book Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded.otf",
+			"style":"normal",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Italic.otf",
+			"style":"italic",
+			"weight":"500"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mesmerize Expanded Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Metal Lord",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Metal Lord.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Angular",
+		"Anime",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Chars"
+	]
+},
+{
 	"name":"Mighty Mighty Friars",
 	"authors":[
 		"A J Paglia"
@@ -13114,8 +15961,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Thick Stroke"
 	]
@@ -13250,13 +16097,37 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Minisystem",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minisystem.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Dotted",
+		"Marquee",
+		"Missing Common Symbols",
+		"Monospace",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
 	"name":"Minya",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Minya.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minya.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13265,6 +16136,42 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Handwriting",
+		"Plain",
+		"Playful",
+		"Typewriter",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Minya Nouvelle",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minya Nouvelle.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minya Nouvelle Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minya Nouvelle Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Minya Nouvelle Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
 		"Plain",
 		"Playful",
 		"Typewriter",
@@ -13414,7 +16321,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Misirlou.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Misirlou.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13423,9 +16330,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -13436,7 +16343,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Misirlou - Day.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Misirlou - Day.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13445,11 +16352,12 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Uppercase",
 		"Offset",
 		"Ornamental",
-		"Partial Symbol Set",
+		"Outline",
 		"Thick Stroke"
 	]
 },
@@ -13460,7 +16368,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mississauga.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mississauga.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13470,8 +16378,8 @@ function getCustomFonts() {
 		"Serif",
 		"Broken Letters",
 		"Formal",
-		"Narrow Chars",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Narrow Chars"
 	]
 },
 {
@@ -13481,7 +16389,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mister Firley.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mister Firley.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13489,8 +16397,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Uneven Chars"
 	]
@@ -13502,7 +16410,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mlurmlry.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mlurmlry.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13512,11 +16420,11 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Decay",
+		"Missing Common Symbols",
 		"Multi-Stroke",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -13526,7 +16434,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mob Concrete.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mob Concrete.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13535,8 +16443,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -13567,7 +16475,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Model Worker.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Model Worker.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13578,9 +16486,9 @@ function getCustomFonts() {
 		"Decay",
 		"Distressed",
 		"Halloween",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -13607,7 +16515,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13617,54 +16525,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Frame",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
-		"Texture"
-	]
-},
-{
-	"name":"Moja C",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja C.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Symbols Only",
-		"Composite Font",
-		"Frame"
-	]
-},
-{
-	"name":"Moja D",
-	"authors":[
-		"Typodermic Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja D.otf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"license":"Public Domain",
-	"tags":[
-		"Sans-Serif",
-		"Decorated",
-		"Frame",
-		"Hard To Read",
-		"Negative Space",
-		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set",
 		"Texture"
 	]
 },
@@ -13675,7 +16539,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja A.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja A.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13694,7 +16558,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja B.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja B.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13707,13 +16571,57 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Moja C",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja C.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Frame"
+	]
+},
+{
+	"name":"Moja D",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja D.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
+		"Frame",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Texture"
+	]
+},
+{
 	"name":"Moja E",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Moja E.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Moja E.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13722,8 +16630,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Formal",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain"
 	]
 },
@@ -13734,7 +16642,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Mold Papa.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Mold Papa.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13742,9 +16650,9 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
-		"Distressed",
+		"Distorted",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Playful",
 		"Thick Stroke"
 	]
@@ -13785,7 +16693,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges"
 	]
 },
@@ -13796,7 +16704,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Motorcade.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Motorcade.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13806,11 +16714,11 @@ function getCustomFonts() {
 		"Serif",
 		"3D",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Offset",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -13868,7 +16776,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Naftalene.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Naftalene.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13877,9 +16785,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Angular",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -13899,10 +16807,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Nails",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -13971,7 +16879,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Nasal.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Nasal.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -13981,8 +16889,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -14003,7 +16911,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Bones",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars",
 		"Rounded Edges"
 	]
@@ -14057,7 +16965,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Neurochrome.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Neurochrome.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14067,11 +16975,32 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Slanted",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Neuropol",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Neuropol.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Hard To Read",
+		"Ornamental",
 		"Wide Chars"
 	]
 },
@@ -14082,7 +17011,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/New Brilliant.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/New Brilliant.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14091,9 +17020,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Wide Chars"
 	]
 },
@@ -14125,7 +17054,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Night Court.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Night Court.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14133,7 +17062,7 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -14146,7 +17075,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Nightporter.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Nightporter.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14160,13 +17089,397 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"NK57 Monospace",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Monospace",
+		"Plain",
+		"Typewriter"
+	]
+},
+{
+	"name":"NK57 Monospace Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Condensed Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Monospace",
+		"Narrow Chars",
+		"Plain",
+		"Typewriter"
+	]
+},
+{
+	"name":"NK57 Monospace Semi Condensed",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Condensed Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Monospace",
+		"Narrow Chars",
+		"Plain",
+		"Typewriter"
+	]
+},
+{
+	"name":"NK57 Monospace Semi Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Semi Expanded Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Monospace",
+		"Plain",
+		"Typewriter",
+		"Wide Chars"
+	]
+},
+{
+	"name":"NK57 Monospace Expanded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Light.otf",
+			"style":"normal",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Light Italic.otf",
+			"style":"italic",
+			"weight":"200"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Book.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Book Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Semi Bold.otf",
+			"style":"normal",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Semi Bold Italic.otf",
+			"style":"italic",
+			"weight":"600"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Bold.otf",
+			"style":"normal",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Bold Italic.otf",
+			"style":"italic",
+			"weight":"700"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Extra Bold.otf",
+			"style":"normal",
+			"weight":"800"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/NK57 Monospace Expanded Extra Bold Italic.otf",
+			"style":"italic",
+			"weight":"800"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Monospace",
+		"Plain",
+		"Typewriter",
+		"Wide Chars"
+	]
+},
+{
 	"name":"No Clocks",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/No Clocks.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/No Clocks.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14240,7 +17553,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Distressed",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke",
 		"Uneven Chars"
 	]
@@ -14338,9 +17651,9 @@ function getCustomFonts() {
 		"Anime",
 		"Broken Letters",
 		"Curvy Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -14351,7 +17664,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Numberpile.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Numberpile.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14371,7 +17684,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Numberpile - Reversed.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Numberpile - Reversed.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14400,8 +17713,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Distressed",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -14423,8 +17736,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Anime",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Slanted",
 		"Stencil",
 		"Thick Stroke"
@@ -14468,9 +17781,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Rounded Edges",
 		"Thick Stroke",
@@ -14492,7 +17805,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars",
 		"Rounded Edges",
 		"Thick Stroke",
@@ -14546,7 +17859,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Octoville.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Octoville.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14576,7 +17889,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -14597,7 +17910,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -14609,7 +17922,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis - A.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Oil Crisis - A.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14627,7 +17940,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Oil Crisis - B.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Oil Crisis - B.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -14668,6 +17981,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Oliver's Barney",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Oliver's Barney.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Oneworldonefuture",
 	"authors":[
 		"Dieter Schumacher"
@@ -14688,9 +18022,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"No Lowercase",
-		"Partial Symbol Set"
+		"No Lowercase"
 	]
 },
 {
@@ -14992,7 +18326,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Operational Amplifier.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Operational Amplifier.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15002,8 +18336,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Slanted"
 	]
 },
@@ -15023,8 +18357,28 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
+	]
+},
+{
+	"name":"Orange Kid",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Orange Kid.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Pixelated",
+		"Retro",
+		"VCR"
 	]
 },
 {
@@ -15042,8 +18396,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -15099,8 +18453,8 @@ function getCustomFonts() {
 		"Serif",
 		"Anime",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -15197,7 +18551,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Outright.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Outright.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15207,9 +18561,9 @@ function getCustomFonts() {
 		"Serif",
 		"Hard To Read",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -15241,7 +18595,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Overload.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Overload.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15261,7 +18615,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Overload - Burn.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Overload - Burn.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15305,7 +18659,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Paint Boy.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Paint Boy.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15313,11 +18667,11 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Paintbrushes",
-		"Partial Symbol Set"
+		"Paintbrushes"
 	]
 },
 {
@@ -15335,9 +18689,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Tree"
 	]
 },
@@ -15348,7 +18702,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Pantspatrol.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Pantspatrol.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15357,10 +18711,31 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Paraaminobenzoic",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Paraaminobenzoic.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"No Lowercase",
+		"Ornamental",
+		"Rounded Edges",
+		"Thick Chars"
 	]
 },
 {
@@ -15370,7 +18745,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Peatloaf.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Peatloaf.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15381,9 +18756,9 @@ function getCustomFonts() {
 		"Decay",
 		"Gothic",
 		"Halloween",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -15407,9 +18782,9 @@ function getCustomFonts() {
 		"Angular",
 		"Broken Letters",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Retro",
 		"Thick Stroke"
 	]
@@ -15430,9 +18805,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Dotted",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -15551,6 +18926,30 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Pindown Plain",
+	"authors":[
+		"Aenigma Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Aenigma Fonts/Pindown - by Aenigma Fonts/Pindown Plain.ttf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"instructions":[
+		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
+	],
+	"license":"Freeware",
+	"tags":[
+		"Sans-Serif",
+		"Decorated",
+		"Dotted",
+		"Ornamental",
+		"Rounded Chars"
+	]
+},
+{
 	"name":"Pindown X",
 	"authors":[
 		"Aenigma Fonts"
@@ -15593,30 +18992,6 @@ function getCustomFonts() {
 	]
 },
 {
-	"name":"Pindown Plain",
-	"authors":[
-		"Aenigma Fonts"
-	],
-	"variants":[
-		{
-			"path":"_Aenigma Fonts/Pindown - by Aenigma Fonts/Pindown Plain.ttf",
-			"style":"normal",
-			"weight":"normal"
-		}
-	],
-	"instructions":[
-		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
-	],
-	"license":"Freeware",
-	"tags":[
-		"Sans-Serif",
-		"Decorated",
-		"Dotted",
-		"Ornamental",
-		"Rounded Chars"
-	]
-},
-{
 	"name":"Pixel Krud",
 	"authors":[
 		"Aenigma Fonts"
@@ -15633,9 +19008,31 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Distorted",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Pixelated"
+	]
+},
+{
+	"name":"PixelCaption",
+	"authors":[
+		"NAB622"
+	],
+	"variants":[
+		{
+			"path":"NAB622/PixelCaption.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"instructions":[
+		"This font can be used to make pixel graphics.[br]Each character corresponds to a series of pixels or spaces, from 1 pixel/space to 40 pixels/spaces.[br][br][size size=95]The intended use of this font is to aid in the conversion of VobSub subtitles to[br]SubStation Alpha, but it can be used outside of that purpose as well.[/size][br][br][grid cols=3 rows=5][hbox]\u2193 Character Quantity \u2193[/hbox][hbox]Pixels[/hbox][hbox]Spaces[/hbox][hbox]1 - 10[/hbox][hbox][b][b fg=f55]1[/b], [b fg=f55]2[/b], [b fg=f55]3[/b], [b fg=f55]4[/b], [b fg=f55]5[/b], [b fg=f55]6[/b], [b fg=f55]7[/b], [b fg=f55]8[/b], [b fg=f55]9[/b], [b fg=f55]0[/b][/b][/hbox][hbox][b][b fg=f55]q[/b], [b fg=f55]w[/b], [b fg=f55]e[/b], [b fg=f55]r[/b], [b fg=f55]t[/b], [b fg=f55]y[/b], [b fg=f55]u[/b], [b fg=f55]i[/b], [b fg=f55]o[/b], [b fg=f55]p[/b][/b][/hbox][hbox]11 - 20[/hbox][hbox][b][b fg=f55]![/b], [b fg=f55]@[/b], [b fg=f55]#[/b], [b fg=f55]$[/b], [b fg=f55]%[/b], [b fg=f55]^[/b], [b fg=f55]&[/b], [b fg=f55]*[/b], [b fg=f55]([/b], [b fg=f55]0[/b][/b][/hbox][hbox][b][b fg=f55]Q[/b], [b fg=f55]W[/b], [b fg=f55]E[/b], [b fg=f55]R[/b], [b fg=f55]T[/b], [b fg=f55]Y[/b], [b fg=f55]U[/b], [b fg=f55]I[/b], [b fg=f55]O[/b], [b fg=f55]P[/b][/b][/hbox][hbox]21 - 30[/hbox][hbox][b][b fg=f55]a[/b], [b fg=f55]s[/b], [b fg=f55]d[/b], [b fg=f55]f[/b], [b fg=f55]g[/b], [b fg=f55]h[/b], [b fg=f55]j[/b], [b fg=f55]k[/b], [b fg=f55]l[/b], [b fg=f55];[/b][/b][/hbox][hbox][b][b fg=f55]z[/b], [b fg=f55]x[/b], [b fg=f55]c[/b], [b fg=f55]v[/b], [b fg=f55]b[/b], [b fg=f55]n[/b], [b fg=f55]m[/b], [b fg=f55],[/b], [b fg=f55].[/b], [b fg=f55]/[/b][/b][/hbox][hbox]31 - 40[/hbox][hbox][b][b fg=f55]A[/b], [b fg=f55]S[/b], [b fg=f55]D[/b], [b fg=f55]F[/b], [b fg=f55]G[/b], [b fg=f55]H[/b], [b fg=f55]J[/b], [b fg=f55]K[/b], [b fg=f55]L[/b], [b fg=f55]:[/b][/b][/hbox][hbox][b][b fg=f55]Z[/b], [b fg=f55]X[/b], [b fg=f55]C[/b], [b fg=f55]V[/b], [b fg=f55]B[/b], [b fg=f55]N[/b], [b fg=f55]M[/b], [b fg=f55]<[/b], [b fg=f55]>[/b], [b fg=f55] ?[/b][/b][/hbox][/grid][br][br]Sample 1:[br][size size=95]This sample uses one character for each pixel. This makes things easy to read and edit.[/size][br][vbox font='nabfonts monospace'][b fg=f77]1[color fg=555]q[/color]1[color fg=555]q[/color]111[color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]11[color fg=555]q[/color][/b][br][b fg=ff7]1[color fg=555]q[/color]1[color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color]1[/b][br][b fg=7f7]111[color fg=555]q[/color]11[color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color]1[/b][br][b fg=7ff]1[color fg=555]q[/color]1[color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color][color fg=555]q[/color]1[color fg=555]q[/color][color fg=555]q[/color]1[/b][br][b fg=77f]1[color fg=555]q[/color]1[color fg=555]q[/color]111[color fg=555]q[/color]111[color fg=555]q[/color]111[color fg=555]q[/color][color fg=555]q[/color]11[color fg=555]q[/color][/b][/vbox][br][br][font size=125 font=pixelcaption][b fg=f77]1q1q111q1qqq1qqqq11q[/b][br][b fg=ff7]1q1q1qqq1qqq1qqq1qq1[/b][br][b fg=7f7]111q11qq1qqq1qqq1qq1[/b][br][b fg=7ff]1q1q1qqq1qqq1qqq1qq1[/b][br][b fg=77f]1q1q111q111q111qq11q[/b][/font][br][br][br]Sample 2:[br][size size=95]This sample combines multiple pixels into a single character where possible, saving space.[/size][br][vbox font='nabfonts monospace'][b fg=f77]1[color fg=555]q[/color]1[color fg=555]q[/color]3[color fg=555]q[/color]1[color fg=555]e[/color]1[color fg=555]r[/color]2[color fg=555]q[/color][/b][br][b fg=ff7]1[color fg=555]q[/color]1[color fg=555]q[/color]1[color fg=555]e[/color]1[color fg=555]e[/color]1[color fg=555]e[/color]1[color fg=555]w[/color]1[/b][br][b fg=7f7]3[color fg=555]q[/color]2[color fg=555]w[/color]1[color fg=555]e[/color]1[color fg=555]e[/color]1[color fg=555]w[/color]1[/b][br][b fg=7ff]1[color fg=555]q[/color]1[color fg=555]q[/color]1[color fg=555]e[/color]1[color fg=555]e[/color]1[color fg=555]e[/color]1[color fg=555]w[/color]1[/b][br][b fg=77f]1[color fg=555]q[/color]1[color fg=555]q[/color]3[color fg=555]q[/color]3[color fg=555]q[/color]3[color fg=555]w[/color]2[color fg=555]q[/color][/b][/vbox][br][br][font size=125 font=pixelcaption][b fg=f77]1q1q3q1e1r2q[/b][br][b fg=ff7]1q1q1e1e1e1w1[/b][br][b fg=7f7]3q2w1e1e1w1[/b][br][b fg=7ff]1q1q1e1e1e1w1[/b][br][b fg=77f]1q1q3q3q3w2q[/b][/font]"
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Blocks",
+		"Pixel Art"
 	]
 },
 {
@@ -15645,7 +19042,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Plain Cred 1978.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Plain Cred 1978.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15653,11 +19050,110 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Thin Stroke"
+	]
+},
+{
+	"name":"Planet Benson 2",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Planet Benson 2.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"3D",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Playful",
+		"Shadow"
+	]
+},
+{
+	"name":"Planet Benson 2 - Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Planet Benson 2 - Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"No Lowercase",
+		"Ornamental",
+		"Playful"
+	]
+},
+{
+	"name":"Planet Benson 2 - Stripes",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Planet Benson 2 - Stripes.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"No Lowercase",
+		"Ornamental",
+		"Playful",
+		"Shadow",
+		"Striped"
+	]
+},
+{
+	"name":"Planet Benson 2 - Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Planet Benson 2 - Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Composite Font",
+		"Graffiti",
+		"Hard To Read",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Playful",
+		"Shadow"
 	]
 },
 {
@@ -15711,7 +19207,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Plasmatic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Plasmatic.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15730,7 +19226,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Plastic Bag.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Plastic Bag.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15740,9 +19236,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -15823,7 +19319,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Po Beef.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Po Beef.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15833,8 +19329,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -15846,7 +19342,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Poke.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Poke.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15856,8 +19352,8 @@ function getCustomFonts() {
 		"Serif",
 		"Decorated",
 		"Halloween",
-		"No Lowercase",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"No Lowercase"
 	]
 },
 {
@@ -15867,7 +19363,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Pop Up Fontio.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Pop Up Fontio.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15879,9 +19375,9 @@ function getCustomFonts() {
 		"Decorated",
 		"Hard To Read",
 		"Jack-in-the-box",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -15893,7 +19389,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Port Credit.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Port Credit.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15935,7 +19431,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/President Gas.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/President Gas.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -15948,6 +19444,93 @@ function getCustomFonts() {
 		"Narrow Chars",
 		"Stencil",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Pretender",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Pretender.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Curvy Letters",
+		"Narrow Chars",
+		"No Lowercase",
+		"Plain"
+	]
+},
+{
+	"name":"Prime Minister of Canada",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Prime Minister of Canada.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Handwriting",
+		"Marker",
+		"No Lowercase"
+	]
+},
+{
+	"name":"Primer Print",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Primer Print.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Primer Print Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
+	"name":"Propaniac",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Propaniac.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Broken Letters",
+		"Narrow Chars",
+		"No Lowercase",
+		"Ornamental"
 	]
 },
 {
@@ -15986,8 +19569,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped",
 		"Thick Stroke"
 	]
@@ -16106,7 +19689,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Pulse State.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Pulse State.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -16128,7 +19711,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Pyrite.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Pyrite.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -16997,8 +20580,8 @@ function getCustomFonts() {
 	"license":"SIL Open Font License",
 	"tags":[
 		"Symbols Only",
-		"Snow",
-		"Stars"
+		"Stars",
+		"Winter"
 	]
 },
 {
@@ -18225,7 +21808,7 @@ function getCustomFonts() {
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Snow"
+		"Winter"
 	]
 },
 {
@@ -18461,13 +22044,34 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Quadaptor",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Quadaptor.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"No Lowercase",
+		"Ornamental",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Quadrangle",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Quadrangle.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Quadrangle.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18534,7 +22138,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -18555,8 +22159,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -18577,10 +22181,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -18601,8 +22205,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke",
 		"Wide Chars"
@@ -18624,10 +22228,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke",
 		"Wide Chars"
@@ -18649,8 +22253,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke",
 		"Wide Chars"
@@ -18776,7 +22380,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Rounded Chars",
 		"Rounded Edges"
@@ -18797,9 +22401,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Playful",
 		"Rounded Chars",
 		"Rounded Edges"
@@ -18822,8 +22426,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decay",
 		"Decorated",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -18846,9 +22450,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Halloween",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -18869,7 +22473,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Halloween",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Uneven Chars"
 	]
 },
@@ -18880,7 +22484,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Quinine.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Quinine.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18889,9 +22493,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -18902,7 +22506,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Quixotic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Quixotic.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18940,13 +22544,35 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Radio Stars",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Radio Stars.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Rounded Edges",
+		"Thick Stroke"
+	]
+},
+{
 	"name":"Radios in Motion",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Radios in Motion.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Radios in Motion.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18957,8 +22583,8 @@ function getCustomFonts() {
 		"Dashed",
 		"Decorated",
 		"Dotted",
-		"Morse Code",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Morse Code"
 	]
 },
 {
@@ -18968,7 +22594,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Radios in Motion - Hard.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Radios in Motion - Hard.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -18979,6 +22605,30 @@ function getCustomFonts() {
 		"Dashed",
 		"Dotted",
 		"Morse Code"
+	]
+},
+{
+	"name":"Rafika",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Rafika.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental",
+		"Playful",
+		"Stencil",
+		"Thick Stroke",
+		"Uneven Chars"
 	]
 },
 {
@@ -19171,10 +22821,10 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distressed",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -19193,8 +22843,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Wide Chars"
 	]
 },
@@ -19247,7 +22897,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Razor Keen.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Razor Keen.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19257,7 +22907,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Distressed",
 		"Halloween",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Slanted",
 		"Uneven Chars"
 	]
@@ -19441,10 +23091,30 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distressed",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
+	]
+},
+{
+	"name":"Relish Gargler",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Relish Gargler.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Ornamental",
+		"Thick Stroke"
 	]
 },
 {
@@ -19462,8 +23132,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -19482,9 +23152,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"No Uppercase",
-		"Partial Symbol Set"
+		"No Uppercase"
 	]
 },
 {
@@ -19502,8 +23172,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -19515,7 +23185,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Renju.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Renju.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19596,7 +23266,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Rina.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Rina.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19617,7 +23287,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Riot Act 2 - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19628,10 +23298,10 @@ function getCustomFonts() {
 		"Composite Font",
 		"Distressed",
 		"Halloween",
+		"Missing Common Symbols",
 		"Monsters",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -19641,7 +23311,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Riot Act 2 - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19652,10 +23322,10 @@ function getCustomFonts() {
 		"Composite Font",
 		"Distressed",
 		"Halloween",
+		"Missing Common Symbols",
 		"Monsters",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -19665,7 +23335,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 - Glop.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Riot Act 2 - Glop.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19684,7 +23354,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Riot Act 2 - Outline.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Riot Act 2 - Outline.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19695,12 +23365,12 @@ function getCustomFonts() {
 		"Composite Font",
 		"Distressed",
 		"Halloween",
+		"Missing Common Symbols",
 		"Monsters",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -19710,7 +23380,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Robokoz.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Robokoz.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19740,9 +23410,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -19800,6 +23470,47 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Rothwell",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Rothwell.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Narrow Chars",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Rothwell Army",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Rothwell Army.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Narrow Chars",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
 	"name":"Rotund",
 	"authors":[
 		"Aenigma Fonts"
@@ -19814,8 +23525,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -19835,10 +23546,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -19870,7 +23581,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Rustproof Body.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Rustproof Body.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19880,8 +23591,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -19904,7 +23615,7 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Elegant",
 		"Handwriting",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Script",
 		"Slanted"
 	]
@@ -19938,7 +23649,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sad Films.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sad Films.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19948,7 +23659,7 @@ function getCustomFonts() {
 		"Serif",
 		"Broken Letters",
 		"Leading Left Hook",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Slanted",
 		"Thick Stroke"
 	]
@@ -19969,8 +23680,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -19981,7 +23692,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sandoval.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sandoval.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -19991,8 +23702,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Striped",
 		"Thick Stroke"
@@ -20005,7 +23716,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sandoval - Speed.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sandoval - Speed.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20015,8 +23726,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
 		"Striped",
 		"Thick Stroke",
@@ -20030,7 +23741,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sappy Mugs.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sappy Mugs.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20061,7 +23772,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Handwriting",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -20106,13 +23817,35 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Saved by Zero",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Saved by Zero.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental",
+		"Wide Chars"
+	]
+},
+{
 	"name":"Sayso Chic",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sayso Chic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sayso Chic.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20121,8 +23854,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Dotted",
+		"Marquee",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Retro"
 	]
 },
@@ -20178,7 +23912,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Screengem.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Screengem.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20186,8 +23920,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Playful",
 		"Thick Stroke",
@@ -20201,7 +23935,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Scritzy X.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Scritzy X.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20211,9 +23945,9 @@ function getCustomFonts() {
 		"Serif",
 		"Angular",
 		"Distressed",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -20298,7 +24032,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Send Cash.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Send Cash.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20308,9 +24042,32 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Distressed",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars"
+	]
+},
+{
+	"name":"Senior Service",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Senior Service.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"Ornamental",
+		"Rounded Edges",
+		"Thick Stroke",
+		"Wide Chars"
 	]
 },
 {
@@ -20359,13 +24116,33 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Sexsmith",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sexsmith.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Formal",
+		"Narrow Chars",
+		"Plain"
+	]
+},
+{
 	"name":"Shifty Chica 2",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Shifty Chica 2.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Shifty Chica 2.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20375,8 +24152,52 @@ function getCustomFonts() {
 		"Serif",
 		"Curvy Letters",
 		"Elegant",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Should've Known",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Should've Known.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Ornamental",
+		"Wide Chars"
+	]
+},
+{
+	"name":"Should've Known - Shaded",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Should've Known - Shaded.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Outline",
+		"Shadow",
+		"Wide Chars"
 	]
 },
 {
@@ -20395,9 +24216,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -20417,8 +24238,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -20477,9 +24298,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Uneven Chars"
 	]
@@ -20491,7 +24312,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Skeletor Stance.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Skeletor Stance.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20500,9 +24321,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distressed",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -20512,7 +24333,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Skraype.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Skraype.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20535,7 +24356,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Skrybylr.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Skrybylr.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20662,7 +24483,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sloe Gin Rickey.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sloe Gin Rickey.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20692,7 +24513,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Handwriting",
 		"Hard To Read",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -20752,7 +24573,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Snidely.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Snidely.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20761,9 +24582,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Curvy Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -20775,7 +24596,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/So Run Down.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/So Run Down.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20786,9 +24607,9 @@ function getCustomFonts() {
 		"Decay",
 		"Distressed",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -20872,8 +24693,31 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decay",
 		"Distorted",
+		"Missing Common Symbols",
+		"Ornamental"
+	]
+},
+{
+	"name":"Spectrashell",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Spectrashell.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Angular",
+		"Broken Letters",
+		"Narrow Chars",
+		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set"
+		"Thick Stroke"
 	]
 },
 {
@@ -20904,7 +24748,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Spongy.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Spongy.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20913,7 +24757,7 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Broken Letters",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thin Stroke"
 	]
 },
@@ -20933,7 +24777,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -20965,7 +24809,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Wide Chars"
 	]
 },
@@ -20976,7 +24820,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Squealer.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Squealer.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -20987,7 +24831,7 @@ function getCustomFonts() {
 		"Angular",
 		"Chiseled",
 		"Formal",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Thick Stroke"
 	]
 },
@@ -20998,7 +24842,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Squealer - Embossed.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Squealer - Embossed.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21009,9 +24853,9 @@ function getCustomFonts() {
 		"Angular",
 		"Bevel",
 		"Chiseled",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -21054,9 +24898,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21078,11 +24922,11 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Logo",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21104,9 +24948,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21128,9 +24972,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21152,9 +24996,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21176,10 +25020,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21202,9 +25046,9 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Leading Left Hook",
 		"Logo",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Star Wars",
 		"Thick Stroke"
 	]
@@ -21303,13 +25147,78 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Stentiga",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Stentiga.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"No Lowercase",
+		"Ornamental",
+		"Plain"
+	]
+},
+{
+	"name":"Stereofidelic",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Stereofidelic.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Narrow Chars",
+		"Ornamental",
+		"Playful",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Still Time",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Still Time.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Distressed",
+		"Halloween",
+		"Handwriting",
+		"Missing Common Symbols",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Stitch & Bitch",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Stitch & Bitch.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Stitch & Bitch.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21343,10 +25252,32 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decay",
 		"Distorted",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Slanted",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Stormfaze",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Stormfaze.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental",
 		"Thick Stroke"
 	]
 },
@@ -21372,6 +25303,47 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Strasua",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Strasua.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Street Cred",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Street Cred.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Multi-Stroke",
+		"Ornamental"
+	]
+},
+{
 	"name":"STRIPES & STARS",
 	"authors":[
 		"Dieter Schumacher"
@@ -21388,9 +25360,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Dotted",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Stars",
 		"Striped",
 		"U.S.A."
@@ -21403,7 +25375,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Stupefaction.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Stupefaction.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21413,9 +25385,9 @@ function getCustomFonts() {
 		"Serif",
 		"Angular",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -21425,7 +25397,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Styrofoam Feelings.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Styrofoam Feelings.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21435,8 +25407,8 @@ function getCustomFonts() {
 		"Serif",
 		"Angular",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars",
 		"Wide Chars"
 	]
@@ -21448,7 +25420,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Subpear.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Subpear.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21467,7 +25439,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sudbury Basin.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sudbury Basin.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21477,8 +25449,8 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -21489,7 +25461,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Sudbury Basin - 3D.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sudbury Basin - 3D.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21499,11 +25471,11 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Offset",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -21514,7 +25486,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Superglue.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Superglue.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21537,7 +25509,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Superheterodyne.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Superheterodyne.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21548,9 +25520,9 @@ function getCustomFonts() {
 		"Angular",
 		"Leading Left Hook",
 		"Lightning",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -21623,7 +25595,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Switching & Effects.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Switching & Effects.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21634,9 +25606,30 @@ function getCustomFonts() {
 		"Distressed",
 		"Halloween",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thin Stroke",
+		"Uneven Chars"
+	]
+},
+{
+	"name":"Sybil Green",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Sybil Green.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Halloween",
+		"Ornamental",
+		"Swirl",
 		"Uneven Chars"
 	]
 },
@@ -21824,6 +25817,50 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Teen",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen Light.otf",
+			"style":"normal",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen Light Italic.otf",
+			"style":"italic",
+			"weight":"300"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Teen Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Formal",
+		"Plain"
+	]
+},
+{
 	"name":"Telephasic",
 	"authors":[
 		"Aenigma Fonts"
@@ -21861,8 +25898,8 @@ function getCustomFonts() {
 		"Serif",
 		"Broken Letters",
 		"Handwriting",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Slanted",
 		"Uneven Chars"
 	]
@@ -21874,7 +25911,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Terylene Top.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Terylene Top.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21886,8 +25923,8 @@ function getCustomFonts() {
 		"Decorated",
 		"Diamond",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful"
 	]
 },
@@ -21906,9 +25943,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Pixelated",
 		"Retro"
 	]
@@ -21920,7 +25957,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/That Secret Feeling.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/That Secret Feeling.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21929,9 +25966,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Shadow",
 		"Striped"
@@ -21944,7 +25981,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Thiamine.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Thiamine.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21952,10 +25989,10 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Uppercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -21986,7 +26023,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tinsnips.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tinsnips.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -21996,10 +26033,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Broken Letters",
 		"Decorated",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Stencil",
 		"Uneven Chars"
 	]
@@ -22011,7 +26048,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tobin Tax.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tobin Tax.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22023,8 +26060,8 @@ function getCustomFonts() {
 		"Decorated",
 		"Hard To Read",
 		"Leading Left Hook",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars"
 	]
 },
@@ -22035,7 +26072,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tommy Gun.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tommy Gun.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22044,7 +26081,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Rounded Edges",
 		"Uneven Chars"
@@ -22079,7 +26116,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Top Bond.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Top Bond.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22089,9 +26126,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Curvy Letters",
 		"Distressed",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -22103,22 +26140,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tork.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tork.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tork Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tork Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tork Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Tork Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Tork Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -22157,7 +26194,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Trapper John.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Trapper John.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22178,7 +26215,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Triac 71.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Triac 71.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22206,7 +26243,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -22218,7 +26255,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Troll Bait.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Troll Bait.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22228,10 +26265,10 @@ function getCustomFonts() {
 		"Serif",
 		"Decorated",
 		"Gothic",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Uppercase",
 		"Outline",
-		"Partial Symbol Set",
 		"Uneven Chars"
 	]
 },
@@ -22242,7 +26279,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/TRS Million.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/TRS Million.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22253,6 +26290,7 @@ function getCustomFonts() {
 		"Broken Letters",
 		"Composite Font",
 		"Dotted",
+		"Marquee",
 		"No Lowercase",
 		"Ornamental",
 		"Retro"
@@ -22265,7 +26303,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/TRS Million - Twinkle.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/TRS Million - Twinkle.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22273,7 +26311,8 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Symbols Only",
-		"Composite Font"
+		"Composite Font",
+		"Marquee"
 	]
 },
 {
@@ -22292,7 +26331,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distorted",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Slanted",
 		"Uneven Chars"
@@ -22336,6 +26375,26 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Rounded Edges",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Typodermic",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Typodermic.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Thick Stroke",
+		"Vintage",
+		"Western"
 	]
 },
 {
@@ -22434,6 +26493,27 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Uchiyama",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Uchiyama.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"No Lowercase",
+		"Ornamental",
+		"Swirl",
+		"Uneven Chars"
+	]
+},
+{
 	"name":"Umbrage",
 	"authors":[
 		"Vic Fieger"
@@ -22449,9 +26529,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -22559,7 +26639,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -22580,9 +26660,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Outline",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -22603,9 +26683,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Monospace",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Typewriter"
 	]
 },
@@ -22700,7 +26780,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Union City Blue.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Union City Blue.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22711,6 +26791,41 @@ function getCustomFonts() {
 		"No Lowercase",
 		"Ornamental",
 		"Rounded Chars"
+	]
+},
+{
+	"name":"Unispace",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Unispace.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Unispace Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Unispace Bold.otf",
+			"style":"normal",
+			"weight":"bold"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Unispace Bold Italic.otf",
+			"style":"italic",
+			"weight":"bold"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Monospace",
+		"Plain",
+		"Typewriter"
 	]
 },
 {
@@ -22731,10 +26846,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke",
 		"U.S.A."
@@ -22747,7 +26862,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Univox.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Univox.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22826,6 +26941,29 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Unsteady Oversteer",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Unsteady Oversteer.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Angular",
+		"Block Shaped",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"Ornamental"
+	]
+},
+{
 	"name":"Upheaval",
 	"authors":[
 		"Aenigma Fonts"
@@ -22877,7 +27015,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Ur Ur Ma.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Ur Ur Ma.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22887,10 +27025,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Calligraphy",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Uppercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -22900,7 +27038,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Urkelian.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Urkelian.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -22910,6 +27048,28 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Narrow Chars",
+		"Ornamental"
+	]
+},
+{
+	"name":"V Dub",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/V Dub.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"Decay",
+		"No Lowercase",
 		"Ornamental"
 	]
 },
@@ -22928,11 +27088,35 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Playful"
+	]
+},
+{
+	"name":"Vademecum",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vademecum.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Decay",
+		"Decorated",
+		"Distressed",
+		"Leading Left Hook",
+		"Missing Common Symbols",
+		"Ornamental",
+		"Uneven Chars"
 	]
 },
 {
@@ -22942,22 +27126,22 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vahika.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vahika.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vahika Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vahika Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vahika Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vahika Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vahika Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vahika Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -22967,6 +27151,349 @@ function getCustomFonts() {
 		"Serif",
 		"Formal",
 		"Plain"
+	]
+},
+{
+	"name":"Vanchrome Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Clear",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Clear.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Decay",
+		"Halftone",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Down",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Down.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Bevel",
+		"Composite Font",
+		"Decay",
+		"Halftone",
+		"Ornamental"
+	]
+},
+{
+	"name":"Vanchrome Edge",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Edge.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Outline"
+	]
+},
+{
+	"name":"Vanchrome Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Grid",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Grid.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Decay",
+		"Missing Common Symbols",
+		"Ornamental"
+	]
+},
+{
+	"name":"Vanchrome Ground",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Ground.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Decay",
+		"Halftone",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Horizon",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Horizon.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Decay",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Left",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Left.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Vanchrome Outline",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Outline.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental",
+		"Outline"
+	]
+},
+{
+	"name":"Vanchrome Right",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Right.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Vanchrome Sky",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Sky.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Composite Font",
+		"Decay",
+		"Halftone",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Vanchrome Sparkle",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Sparkle.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Composite Font",
+		"Ornamental",
+		"Stars"
+	]
+},
+{
+	"name":"Vanchrome Up",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanchrome Up.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
+	"name":"Vanilla Whale",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vanilla Whale.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"Decorated",
+		"Ornamental",
+		"Western"
 	]
 },
 {
@@ -22985,8 +27512,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Distressed",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -23030,7 +27557,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Angular",
 		"Block Shaped",
-		"Partial Symbol Set"
+		"Missing Common Symbols"
 	]
 },
 {
@@ -23040,7 +27567,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vectroid.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vectroid.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23052,6 +27579,70 @@ function getCustomFonts() {
 		"Hard To Read",
 		"Ornamental",
 		"Playful",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Velvenda Chill",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Velvenda Chill.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"3D",
+		"Narrow Chars",
+		"Negative Space",
+		"Ornamental",
+		"Outline",
+		"Shadow"
+	]
+},
+{
+	"name":"Velvenda Cooler",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Velvenda Cooler.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Hard To Read",
+		"Narrow Chars",
+		"Ornamental"
+	]
+},
+{
+	"name":"Velvenda Megablack",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Velvenda Megablack.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Hard To Read",
+		"Narrow Chars",
+		"Ornamental",
 		"Thick Stroke"
 	]
 },
@@ -23152,28 +27743,47 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Vexler Slip",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vexler Slip.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Serif",
+		"No Lowercase",
+		"Swirl"
+	]
+},
+{
 	"name":"Vibrocentric",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vibrocentric.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vibrocentric.otf",
 			"style":"normal",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vibrocentric Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vibrocentric Italic.otf",
 			"style":"italic",
 			"weight":"normal"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vibrocentric Bold.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vibrocentric Bold.otf",
 			"style":"normal",
 			"weight":"bold"
 		},
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Vibrocentric Bold Italic.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Vibrocentric Bold Italic.otf",
 			"style":"italic",
 			"weight":"bold"
 		}
@@ -23248,9 +27858,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Block Shaped",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Rounded Chars",
 		"Thick Stroke"
 	]
@@ -23314,9 +27924,9 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Narrow Chars",
 		"No Lowercase",
-		"Partial Symbol Set",
 		"Plain",
 		"Thick Stroke",
 		"Uneven Chars"
@@ -23434,7 +28044,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Waker.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Waker.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23444,8 +28054,8 @@ function getCustomFonts() {
 		"Serif",
 		"Curvy Letters",
 		"Decorated",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Playful",
 		"Swirl",
 		"Uneven Chars"
@@ -23458,7 +28068,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Walshes.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Walshes.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23468,7 +28078,7 @@ function getCustomFonts() {
 		"Serif",
 		"Angular",
 		"Halloween",
-		"Partial Symbol Set"
+		"Missing Common Symbols"
 	]
 },
 {
@@ -23639,7 +28249,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Webster World.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Webster World.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23648,11 +28258,11 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -23663,7 +28273,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Wee Bairn.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Wee Bairn.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23684,7 +28294,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Welfare Brat.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Welfare Brat.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23694,11 +28304,11 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Monospace",
 		"Negative Space",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -23708,7 +28318,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Wet Pet.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Wet Pet.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23717,9 +28327,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decay",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -23767,8 +28377,8 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Striped",
 		"Thick Stroke"
 	]
@@ -23801,7 +28411,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/White Lake.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/White Lake.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23811,9 +28421,9 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Curvy Letters",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -23832,7 +28442,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Handwriting",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Plain"
 	]
 },
@@ -23843,7 +28453,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Whiterock.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Whiterock.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23873,10 +28483,10 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Texture",
 		"Thick Stroke"
 	]
@@ -23898,7 +28508,7 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Distressed",
 		"Halloween",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -23919,9 +28529,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Distorted",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -23931,7 +28541,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Wild Sewerage.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Wild Sewerage.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23942,9 +28552,9 @@ function getCustomFonts() {
 		"Decay",
 		"Decorated",
 		"Distorted",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -23975,7 +28585,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Windpower.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Windpower.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -23996,7 +28606,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Wintermute.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Wintermute.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24052,13 +28662,32 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"World of Water",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/World of Water.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Curvy Letters",
+		"Plain"
+	]
+},
+{
 	"name":"Worthless",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Worthless.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Worthless.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24149,7 +28778,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Xenowort.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xenowort.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24159,9 +28788,9 @@ function getCustomFonts() {
 		"Serif",
 		"Decorated",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24183,8 +28812,8 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Decorated",
+		"Missing Common Symbols",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Smudged",
 		"Thick Stroke"
 	]
@@ -24205,7 +28834,7 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Rounded Edges",
 		"Thick Stroke"
 	]
@@ -24228,6 +28857,27 @@ function getCustomFonts() {
 		"Rounded Edges",
 		"Typewriter",
 		"Wide Chars"
+	]
+},
+{
+	"name":"Xirod",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xirod.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Broken Letters",
+		"No Lowercase",
+		"Ornamental"
 	]
 },
 {
@@ -24262,7 +28912,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Xolto.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xolto.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24272,8 +28922,8 @@ function getCustomFonts() {
 		"Serif",
 		"Block Shaped",
 		"Hard To Read",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Missing Common Symbols",
+		"Ornamental"
 	]
 },
 {
@@ -24283,7 +28933,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Xtraflexidisc.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xtraflexidisc.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24292,8 +28942,8 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Handwriting",
+		"Missing Common Symbols",
 		"Narrow Chars",
-		"Partial Symbol Set",
 		"Playful",
 		"Uneven Chars"
 	]
@@ -24315,10 +28965,243 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"3D",
 		"Decorated",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Ornamental",
-		"Partial Symbol Set",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Back",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Back.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Down",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Down.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Symbols Only",
+		"Bevel",
+		"Block Shaped",
+		"Composite Font",
+		"Missing Common Symbols",
+		"No Lowercase"
+	]
+},
+{
+	"name":"Xylitol Front",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Front.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Composite Font",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Hollow",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Hollow.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Block Shaped",
+		"Chiseled",
+		"Composite Font",
+		"Missing Common Symbols",
+		"Negative Space",
+		"No Lowercase",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Left",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Left.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Block Shaped",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase"
+	]
+},
+{
+	"name":"Xylitol Outline",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Outline.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Block Shaped",
+		"Chiseled",
+		"Composite Font",
+		"Missing Common Symbols",
+		"Multi-Stroke",
+		"Negative Space",
+		"No Lowercase",
+		"Outline",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Right",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Right.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Block Shaped",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase"
+	]
+},
+{
+	"name":"Xylitol Solo",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Solo.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Stripe",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Stripe.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Block Shaped",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Striped",
+		"Thick Stroke"
+	]
+},
+{
+	"name":"Xylitol Up",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Xylitol Up.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Bevel",
+		"Block Shaped",
+		"Composite Font",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase"
 	]
 },
 {
@@ -24328,7 +29211,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Y-Band Tuner.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Y-Band Tuner.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24337,9 +29220,9 @@ function getCustomFonts() {
 	"tags":[
 		"Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24349,7 +29232,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Y2Kbug.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Y2Kbug.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24371,7 +29254,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yadou.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yadou.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24379,10 +29262,10 @@ function getCustomFonts() {
 	"license":"Public Domain",
 	"tags":[
 		"Sans-Serif",
+		"Missing Common Symbols",
 		"Negative Space",
 		"Offset",
 		"Outline",
-		"Partial Symbol Set",
 		"Thick Stroke",
 		"Wide Chars"
 	]
@@ -24394,7 +29277,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yawnovision.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yawnovision.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24404,9 +29287,9 @@ function getCustomFonts() {
 		"Serif",
 		"Gothic",
 		"Halloween",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24438,7 +29321,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yellow Pills.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yellow Pills.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24506,7 +29389,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Rounded Chars"
 	]
@@ -24518,7 +29401,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yonder Recoil.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yonder Recoil.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24551,9 +29434,34 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Distorted",
 		"Logo",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Thick Stroke"
+	]
+},
+{
+	"name":"You're Gone",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/You're Gone.otf",
+			"style":"normal",
+			"weight":"normal"
+		},
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/You're Gone Italic.otf",
+			"style":"italic",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"No Lowercase",
+		"Rounded Edges"
 	]
 },
 {
@@ -24639,8 +29547,8 @@ function getCustomFonts() {
 		"Anime",
 		"Block Shaped",
 		"Broken Letters",
+		"Missing Common Symbols",
 		"No Uppercase",
-		"Partial Symbol Set",
 		"Thick Stroke"
 	]
 },
@@ -24651,7 +29559,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yytrium.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yytrium.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24661,11 +29569,11 @@ function getCustomFonts() {
 		"Serif",
 		"Composite Font",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -24676,7 +29584,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yytrium - Back.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yytrium - Back.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24686,9 +29594,9 @@ function getCustomFonts() {
 		"Serif",
 		"Composite Font",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24698,7 +29606,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Yytrium - Front.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Yytrium - Front.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24708,9 +29616,9 @@ function getCustomFonts() {
 		"Serif",
 		"Composite Font",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24730,10 +29638,10 @@ function getCustomFonts() {
 		"Sans-Serif",
 		"Decorated",
 		"Distorted",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 },
 {
@@ -24758,6 +29666,28 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Zelega Zenega",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zelega Zenega.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"Hard To Read",
+		"Missing Common Symbols",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
 	"name":"Zenith",
 	"authors":[
 		"Aenigma Fonts"
@@ -24772,7 +29702,7 @@ function getCustomFonts() {
 	"license":"Freeware",
 	"tags":[
 		"Sans-Serif",
-		"Partial Symbol Set",
+		"Missing Common Symbols",
 		"Playful",
 		"Rounded Edges",
 		"Uneven Chars"
@@ -24841,6 +29771,26 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Zero Hour",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zero Hour.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Hard To Read",
+		"No Lowercase",
+		"Ornamental"
+	]
+},
+{
 	"name":"Zero Velocity",
 	"authors":[
 		"Aenigma Fonts"
@@ -24856,9 +29806,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Block Shaped",
+		"Missing Common Symbols",
 		"Ornamental",
 		"Outline",
-		"Partial Symbol Set",
 		"Shadow"
 	]
 },
@@ -24869,7 +29819,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Zeroes 1.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zeroes 1.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24888,7 +29838,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Zeroes 2.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zeroes 2.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24907,7 +29857,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Zeroes 3.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zeroes 3.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -24974,7 +29924,7 @@ function getCustomFonts() {
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Zodillin.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zodillin.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -25035,13 +29985,33 @@ function getCustomFonts() {
 	]
 },
 {
+	"name":"Zorque",
+	"authors":[
+		"Typodermic Fonts"
+	],
+	"variants":[
+		{
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zorque.otf",
+			"style":"normal",
+			"weight":"normal"
+		}
+	],
+	"license":"Public Domain",
+	"tags":[
+		"Sans-Serif",
+		"Broken Letters",
+		"No Lowercase",
+		"Rounded Edges"
+	]
+},
+{
 	"name":"Zupiter",
 	"authors":[
 		"Typodermic Fonts"
 	],
 	"variants":[
 		{
-			"path":"_Typodermic Public Domain Fonts/opentype fonts/Zupiter.otf",
+			"path":"_Typodermic Public Domain Fonts/OpenType Fonts/Zupiter.otf",
 			"style":"normal",
 			"weight":"normal"
 		}
@@ -25071,11 +30041,11 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"Negative Space",
 		"No Lowercase",
 		"Ornamental",
-		"Outline",
-		"Partial Symbol Set"
+		"Outline"
 	]
 },
 {
@@ -25094,9 +30064,9 @@ function getCustomFonts() {
 	"tags":[
 		"Sans-Serif",
 		"Hard To Read",
+		"Missing Common Symbols",
 		"No Lowercase",
-		"Ornamental",
-		"Partial Symbol Set"
+		"Ornamental"
 	]
 }
 
@@ -25832,6 +30802,34 @@ function fontsLibDrawCharacters(characters, element, sampleChars = true) {
 	element.appendChild(newCharacters)
 }
 
+function setSelectedFont() {
+	for(let i = 0; i < fontsLibFontSelection.children.length; i++) {
+		let temp = 'font ' + fontsLibCurrentFont
+		if(fontsLibFontSelection.children[i].id.toLowerCase() == temp.toLowerCase()) {
+			fontsLibFontSelection.children[i].selected = true
+			if(fontsLibFontSelection.children.length > 1) {
+				// Height of each element
+				listElementHeight = fontsLibFontSelection.children[0].offsetHeight
+
+				// Height of the list element
+				containerHeight = fontsLibFontSelection.offsetHeight
+
+				// Scroll position of the list element
+				containerScrollTop = fontsLibFontSelection.scrollTop
+
+				// Number of elements visible
+				elementsVisible = Math.floor(containerHeight / listElementHeight)
+
+				newHeight = clamp(Math.ceil(elementsVisible / 2) + i + 1 - elementsVisible, 0, containerHeight) * listElementHeight
+				fontsLibFontSelection.scrollTop = newHeight
+			}
+
+			break
+		}
+	}
+
+}
+
 function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 	fontsLibStop()
 
@@ -25853,24 +30851,7 @@ function fontsLibChangeAllSampleFonts(inputFont, updateHash = true) {
 
 	if(updateHash) fontsLibSetHashData({ fontName : fontsLibCurrentFont })
 
-	for(let i = 0; i < fontsLibFontSelection.children.length; i++) {
-		let temp = 'font ' + fontsLibCurrentFont
-		if(fontsLibFontSelection.children[i].id.toLowerCase() == temp.toLowerCase()) {
-			fontsLibFontSelection.children[i].selected = true
-
-// Trying to get the font selection to scroll a bit when changed...
-
-//			fontsLibFontSelection.scrollTop += 5 * (authorsDropdown.clientHeight)	// Attempt 1
-
-/*
-// Attempt 2
-			fontsLibFontSelection.children[clamp(0, fontsLibFontSelection.children.length - 1, i + 5)].scrollIntoView()
-			fontsLibFontSelection.children[clamp(0, fontsLibFontSelection.children.length - 1, i - 5)].scrollIntoView()
-//			fontsLibFontSelection.children[i].scrollIntoView()
-*/
-			break
-		}
-	}
+	setSelectedFont()
 
 	clearElement(fontsLibInstructions)
 	document.getElementById('fontsLibInstructions').style.display = 'block'	// If the user pressed the show/hide button, MAKE SURE the instructions are shown anyway when the font is changed
@@ -26134,11 +31115,15 @@ function fontsLibRenderFontSelectionList(fontList) {
 			{ elementType: 'span', style: { fontFamily: 'nabFonts monospace' }, text: fontList[i].name },
 		] }
 
+/*	// This is now handled by setSelectedFont() below
 		if(test == temp) {
 			newOption.selected = true
 		}
+*/
 		fontsLibFontSelection.appendChild(createElement(newOption))
 	}
+
+	setSelectedFont()
 }
 
 function fontsLibUpdatePage() {
@@ -26741,6 +31726,8 @@ function fontsLibRenderPage(renderElement, fontsLibShowDownloadAndCSS = true, sa
 	} else if(fontsLibUsePageHash != true) {
 		fontsLibChangeAllSampleFonts(fontsLibFontSelection.value)
 	}
+
+	setSelectedFont()
 }
 
 function fontsLibPickRandomFont() {
@@ -27174,12 +32161,14 @@ function sortFontsByName(a, b) {
 
 	let i = 0
 	for(; i < x.length && i < y.length; i++) {
-		// Check both for roman numerals
-		temp = convertRomanNumeralsToInt(x[i])
-		if(temp !== false) x[i] = temp
+		if(i >= 1) {
+			// Check both for roman numerals
+			temp = convertRomanNumeralsToInt(x[i])
+			if(temp !== false) x[i] = temp
 
-		temp = convertRomanNumeralsToInt(y[i])
-		if(temp !== false) y[i] = temp
+			temp = convertRomanNumeralsToInt(y[i])
+			if(temp !== false) y[i] = temp
+		}
 
 		if(!isNaN(x[i]) && !isNaN(y[i])) {
 			// If both are numbers, check to see which one is larger

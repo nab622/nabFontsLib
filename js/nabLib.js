@@ -38,6 +38,9 @@ errorCount = 0
 fileSizeDenominations = [ 'byt', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB' ]
 fileSizeColors = [ '33B', '3BB', '3B3', 'BB3', 'B33', 'B3B', '999', 'FFF' ]
 
+nabLibTransparencyGrid = 'linear-gradient(45deg, #666 0%, #666 25%, #6660 25%, #6660 75%, #666 75%, #666 100%), linear-gradient(315deg, #666 0%, #666 25%, #6660 25%, #6660 75%, #666 75%, #666 100%), linear-gradient(0deg, #444 0%, #444 100%)'
+nabLibTransparencyGridSize = '0.75rem 0.75rem'
+
 nabLibMonths = [
 {	name : 'January',
 	abbr : 'Jan',
@@ -106,35 +109,59 @@ romanNumerals = [
 ]
 
 
+
 // -------------------- STYLES --------------------
 // -------------------- STYLES --------------------
 // THESE ARE *ONLY* TO BE USED IF ABSOLUTELY NECESSARY.
 
-nabLibStyle = document.createElement('style')
-nabLibStyle.appendChild(document.createTextNode(`
-/* This animation will blink an element red to get the user's attention */
-.nabLibFlashRed {
-	animation-name: nabLibFlashRedKeyframes;
-	animation-duration: 1s;
-	animation-direction: normal;
-	animation-timing-function: ease-in-out;
+if(typeof(document) !== 'undefined') {	// Undefined check allows web workers to use this file
+	nabLibStyle = document.createElement('style')
+	nabLibStyle.appendChild(document.createTextNode(`
+	/* This animation will blink an element red to get the user's attention */
+	.nabLibFlashRed {
+		animation-name: nabLibFlashRedKeyframes;
+		animation-duration: 1s;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
+	}
+
+	@keyframes nabLibFlashRedKeyframes {
+		0%		{ box-shadow: 0px 0px 0.7em 0.2em #44F, inset 0px 0px 3em #44F; }
+		8%		{ box-shadow: 0px 0px 0.7em 0.2em #F44, inset 0px 0px 3em #F44; color: #444; }
+		20%		{ box-shadow: 0px 0px 0.7em 0.2em #F00, inset 0px 0px 3em #F00; color: #FFF; }
+		85%		{ box-shadow: 0px 0px 0.7em 0.2em #F44, inset 0px 0px 3em #F44; color: #444; }
+		100%	{ box-shadow: 0px 0px 0.7em 0.2em #44F, inset 0px 0px 3em #44F; }
+	}
+
+	.nabLibHoverHighlight:hover {
+		filter: brightness(110%);
+	}
+
+	`))
+	document.head.appendChild(nabLibStyle)
 }
 
-@keyframes nabLibFlashRedKeyframes {
-	0%		{ box-shadow: 0px 0px 0.7em 0.2em #44F, inset 0px 0px 3em #44F; }
-	8%		{ box-shadow: 0px 0px 0.7em 0.2em #F44, inset 0px 0px 3em #F44; color: #444; }
-	20%		{ box-shadow: 0px 0px 0.7em 0.2em #F00, inset 0px 0px 3em #F00; color: #FFF; }
-	85%		{ box-shadow: 0px 0px 0.7em 0.2em #F44, inset 0px 0px 3em #F44; color: #444; }
-	100%	{ box-shadow: 0px 0px 0.7em 0.2em #44F, inset 0px 0px 3em #44F; }
+function flashElementRed(inputID, alsoFlashBackground = true, focusOnElement = true) {
+	// This function can accept an element or a string ID
+	let element = inputID
+	if(typeof(inputID) === 'string') element = document.getElementById(inputID)
+
+	if(element === null) return
+	if(element.hasOwnProperty('flashing') && element.flashing === true) return	// We're already flashing, stop now to prevent bugs
+
+	element.flashing = true
+	removeClassName(element, 'nabLibFlashRed')
+	setTimeout(()=>{
+		if(focusOnElement) element.focus()
+		addClassName(element, 'nabLibFlashRed')
+		let savedColor = element.style.backgroundColor
+		if(alsoFlashBackground) element.style.backgroundColor = '#F00'
+		setTimeout(()=>{
+			if(alsoFlashBackground) element.style.backgroundColor = savedColor
+			element.flashing = false
+		}, 500)
+	}, 100)
 }
-
-.nabLibHoverHighlight:hover {
-	filter: brightness(110%);
-}
-
-`))
-document.head.appendChild(nabLibStyle)
-
 
 
 // -------------------- CSS --------------------
@@ -147,6 +174,10 @@ function getCSSVar(variableName) {
 
 function setCSSVar(variableName, newValue) {
 	// This is used to set CSS variable values in :root
+	if(typeof(newValue) !== 'string') newValue = newValue.toString()
+	if(newValue.includes(' ')) {
+		newValue = "'" + newValue.replace("'", '\\\'') + "'"
+	}
 	document.querySelector(':root').style.setProperty('--' + variableName, newValue)
 }
 
@@ -239,11 +270,11 @@ function secondsToTime(inputSeconds, minFields = 2) {
 // -------------------- DATES --------------------
 // -------------------- DATES --------------------
 
-function dateToString(inputTimestamp, fullMonthName = true) {
+function dateToString(inputTimestamp, fullMonthName = true, allowCorrectionForBadDates = true) {
 	if(isNaN(inputTimestamp)) printError('dateToString: inputTimestamp is not a number!', inputTimestamp)
 
 	// Fix dates that are out of range (Remember to account for milliseconds!)
-	if(inputTimestamp < 2000000000) inputTimestamp *= 1000
+	if(allowCorrectionForBadDates == true && inputTimestamp < 2000000000) inputTimestamp *= 1000
 	let offset = new Date().getTimezoneOffset() * 60 * 1000
 	let date = new Date(inputTimestamp - offset)
 
@@ -265,6 +296,163 @@ function dateToString(inputTimestamp, fullMonthName = true) {
 
 // -------------------- COLORS --------------------
 // -------------------- COLORS --------------------
+
+function checkValidHexColor(inputColor) {
+	testColor = inputColor.replace(/[^A-F0-9]/ig, '')
+	if(inputColor == testColor) return true
+	return false
+}
+
+function hexToRgb(colorValue) {
+	let output = []
+	colorValue = readColor(colorValue)
+	output.push(parseInt(colorValue.substring(0, 2), 16))
+	output.push(parseInt(colorValue.substring(2, 4), 16))
+	output.push(parseInt(colorValue.substring(4, 6), 16))
+
+	if(colorValue.length > 6) output.push(parseInt(colorValue.substring(6, 8), 16))
+
+	return output
+}
+
+function rgbToHex(r = null, g = null, b = null, a = 255) {
+	// This function takes in three integers and returns a hex value
+	// For compatibility, the parameters can also be given as an array
+
+	if(Array.isArray(r) && r.length >= 3) {
+		if(r.length > 3) a = r[3]
+		b = r[2]
+		g = r[1]
+		r = r[0]
+	}
+
+	if(isNaN(r)) {
+		printError('rgbToHex: Invalid red value: ', r, g, b, a)
+	}
+	if(isNaN(g)) {
+		printError('rgbToHex: Invalid green value: ', r, g, b, a)
+	}
+	if(isNaN(b)) {
+		printError('rgbToHex: Invalid blue value: ', r, g, b, a)
+	}
+	if(isNaN(a)) {
+		printError('rgbToHex: Invalid alpha value: ', r, g, b, a)
+	}
+
+	r = clamp(parseInt(r), 0, 255)
+	g = clamp(parseInt(g), 0, 255)
+	b = clamp(parseInt(b), 0, 255)
+	a = clamp(parseInt(a), 0, 255)
+
+	return leadingString(r.toString(16), 2, '0') + leadingString(g.toString(16), 2, '0') + leadingString(b.toString(16), 2, '0') + (a >= 255 ? '' : leadingString(a.toString(16), 2, '0'))
+}
+
+function rgbToHsl(r, g, b) {
+	// r, g, and b must be between 0 and 255
+
+	r /= 255; g /= 255; b /= 255
+	let max = Math.max(r, g, b)
+	let min = Math.min(r, g, b)
+	let d = max - min
+	let h
+	if (d === 0) h = 0
+	else if (max === r) h = (g - b) / d % 6
+	else if (max === g) h = (b - r) / d + 2
+	else if (max === b) h = (r - g) / d + 4
+	let l = (min + max) / 2
+	let s = d === 0 ? 0 : d / (1 - Math.abs(2 * l - 1))
+	return [h * 60, s, l]
+}
+
+function hslToRgb(h, s, l) {
+	let c = (1 - Math.abs(2 * l - 1)) * s
+	let hp = h / 60.0
+	let x = c * (1 - Math.abs((hp % 2) - 1))
+	let rgb1
+	if (isNaN(h)) rgb1 = [0, 0, 0]
+	else if (hp <= 1) rgb1 = [c, x, 0]
+	else if (hp <= 2) rgb1 = [x, c, 0]
+	else if (hp <= 3) rgb1 = [0, c, x]
+	else if (hp <= 4) rgb1 = [0, x, c]
+	else if (hp <= 5) rgb1 = [x, 0, c]
+	else if (hp <= 6) rgb1 = [c, 0, x]
+	let m = l - c * 0.5
+	return [
+		Math.round(255 * (rgb1[0] + m)),
+		Math.round(255 * (rgb1[1] + m)),
+		Math.round(255 * (rgb1[2] + m))
+	]
+}
+
+function hsvToRgb(h, s, v) {
+/*	accepts parameters:
+
+	h  Object = {h:x, s:y, v:z}
+	OR 
+	h, s, v
+*/
+	var r, g, b, i, f, p, q, t;
+	if (arguments.length === 1) {
+		s = h.s, v = h.v, h = h.h;
+	}
+	i = Math.floor(h * 6);
+	f = h * 6 - i;
+	p = v * (1 - s);
+	q = v * (1 - f * s);
+	t = v * (1 - (1 - f) * s);
+	switch (i % 6) {
+		case 0: r = v, g = t, b = p; break;
+		case 1: r = q, g = v, b = p; break;
+		case 2: r = p, g = v, b = t; break;
+		case 3: r = p, g = q, b = v; break;
+		case 4: r = t, g = p, b = v; break;
+		case 5: r = v, g = p, b = q; break;
+	}
+
+	r = Math.round(r * 255)
+	g = Math.round(g * 255)
+	b = Math.round(b * 255)
+
+	return [ r, g, b ]
+}
+
+function rgbToHsv(r, g, b) {
+	let rabs, gabs, babs, rr, gg, bb, h, s, v, diff, diffc, percentRoundFn
+	rabs = r / 255
+	gabs = g / 255
+	babs = b / 255
+	v = Math.max(rabs, gabs, babs),
+	diff = v - Math.min(rabs, gabs, babs)
+	diffc = c => (v - c) / 6 / diff + 1 / 2
+	percentRoundFn = num => Math.round(num * 100) / 100
+	if (diff == 0) {
+		h = s = 0
+	} else {
+		s = diff / v
+		rr = diffc(rabs)
+		gg = diffc(gabs)
+		bb = diffc(babs)
+
+		if (rabs === v) {
+			h = bb - gg
+		} else if (gabs === v) {
+			h = (1 / 3) + rr - bb
+		} else if (babs === v) {
+			h = (2 / 3) + gg - rr
+		}
+		if (h < 0) {
+			h += 1
+		}else if (h > 1) {
+			h -= 1
+		}
+	}
+
+	h = Math.round(h * 360),
+	s = percentRoundFn(s * 100),
+	v = percentRoundFn(v * 100)
+
+	return [ h, s, v ]
+}
 
 function interpolateHexColors(inputColor, changeColor, balance = 0.5) {
 	inputColor = readColor(inputColor)
@@ -349,7 +537,7 @@ function readColor(color, multiplier = 1, additional = 0) {
 
 			r = leadingString(r, 2, '0')
 
-			return r.repeat(3)
+			return (r.repeat(3)).toUpperCase()
 			break
 
 		case 2:
@@ -359,7 +547,7 @@ function readColor(color, multiplier = 1, additional = 0) {
 			r = leadingString(r, 2, '0')
 			a = leadingString(a, 2, '0')
 
-			return r.repeat(3) + a
+			return (r.repeat(3) + a).toUpperCase()
 			break
 
 		case 3:
@@ -371,7 +559,7 @@ function readColor(color, multiplier = 1, additional = 0) {
 			g = leadingString(g, 2, '0')
 			b = leadingString(b, 2, '0')
 
-			return r + g + b
+			return (r + g + b).toUpperCase()
 			break
 
 		case 4:
@@ -385,7 +573,7 @@ function readColor(color, multiplier = 1, additional = 0) {
 			b = leadingString(b, 2, '0')
 			a = leadingString(a, 2, '0')
 
-			return r + g + b + a
+			return (r + g + b + a).toUpperCase()
 			break
 
 		case 6:
@@ -397,21 +585,21 @@ function readColor(color, multiplier = 1, additional = 0) {
 			g = leadingString(g, 2, '0')
 			b = leadingString(b, 2, '0')
 
-			return r + g + b
+			return (r + g + b).toUpperCase()
 			break
 
 		case 8:
 			r = clamp(Math.round(parseInt(color.substring(0, 2), 16) * multiplier + additional), 0, 255).toString(16)
 			g = clamp(Math.round(parseInt(color.substring(2, 4), 16) * multiplier + additional), 0, 255).toString(16)
 			b = clamp(Math.round(parseInt(color.substring(4, 6), 16) * multiplier + additional), 0, 255).toString(16)
-			a = clamp(parseInt(color.substring(6, 8), 16), 0, 255).toString(16)
+			a = clamp(Math.round(parseInt(color.substring(6, 8), 16)), 0, 255).toString(16)
 
 			r = leadingString(r, 2, '0')
 			g = leadingString(g, 2, '0')
 			b = leadingString(b, 2, '0')
 			a = leadingString(a, 2, '0')
 
-			return r + g + b + a
+			return (r + g + b + a).toUpperCase()
 			break
 	}
 
@@ -602,7 +790,8 @@ function inputsAreIdentical() {
 // -------------------- PAGE HASH --------------------
 
 function getHashData() {
-	return unpackData(decodeURI(window.location.hash.substring(1)))
+	return unpackData(window.location.hash.substring(1))
+//	return unpackData(decodeURI(window.location.hash.substring(1)))		// This breaks stuff.....
 }
 
 function clearHashData() {
@@ -745,16 +934,23 @@ function unpackData(inputData) {
 // -------------------- MATH --------------------
 // -------------------- MATH --------------------
 
-function clamp(value, min, max) {
+function clamp(value, min = null, max = null) {
 	if(typeof(value) !== 'number') value = parseFloat(value)
-	if(typeof(min) !== 'number') min = parseFloat(min)
-	if(typeof(max) !== 'number') max = parseFloat(max)
 
-	// If min and max are backwards, swap them!
-	if(min > max) [ min, max ] = [ max, min ]
+	if(min !== null) {
+		if(typeof(min) !== 'number') min = parseFloat(min)
+	}
+	if(max !== null) {
+		if(typeof(max) !== 'number') max = parseFloat(max)
+	}
 
-	if(value < min) return min
-	if(value > max) return max
+	if(min !== null && max !== null) {
+		// If min and max are backwards, swap them!
+		if(min > max) [ min, max ] = [ max, min ]
+	}
+
+	if(min !== null && value < min) return min
+	if(max !== null && value > max) return max
 	return value
 }
 
@@ -1419,7 +1615,7 @@ function createElement(inputValues) {
 				case 'text':
 					let test = typeof(inputValues[key])
 					if(test !== "string" && test !== "number") {
-						printError('\'text\' is not a string:', inputValues[key])
+						printError('\'text\' is not a string', inputValues[key])
 						continue
 					}
 					if(inputValues.elementType == 'div') {
@@ -1497,41 +1693,6 @@ function clearElement(e) {
 		let c = e.children[i]
 		e.removeChild(c)
 	}
-}
-
-function hslToRgb(h, s, l, o = 1) {
-	// ALL inputs to this function should be between 0 and 1
-
-	var r, g, b
-
-	if (s == 0) {
-		r = g = b = l	// achromatic
-	} else {
-		function hue2rgb(p, q, t) {
-			if (t < 0) t += 1
-			if (t > 1) t -= 1
-			if (t < 1/6) return p + (q - p) * 6 * t
-			if (t < 1/2) return q
-			if (t < 2/3) return p + (q - p) * (2/3 - t) * 6
-			return p
-		}
-
-		var q = l < 0.5 ? l * (1 + s) : l + s - l * s
-		var p = 2 * l - q
-
-		r = hue2rgb(p, q, h + 1/3)
-		g = hue2rgb(p, q, h)
-		b = hue2rgb(p, q, h - 1/3)
-	}
-
-	r *= 255
-	g *= 255
-	b *= 255
-
-	o = clamp(o, 0, 1)
-
-	if(o == 1) return 'rgba(' + r + ',' + g + ',' + b + ',' + o + ')'
-	return 'rgb(' + r + ',' + g + ',' + b + ')'
 }
 
 
@@ -1742,7 +1903,7 @@ function sevenSegCounter(inputObject, increment, delay) {
 	// Enforce a minimum value here so we don't lag
 	if(delay < 10) delay = 10
 
-	sevenSegStatic(inputObject)
+	if(sevenSegStatic(inputObject) === false) return
 	inputObject.value += increment
 	inputObject.animationTimer = setTimeout(()=>{ sevenSegCounter(inputObject, increment, delay) }, delay)
 }
@@ -1760,7 +1921,7 @@ function sevenSegAnimate(inputObject, animation, delay, count = 0) {
 
 	inputObject = Object.assign(inputObject, animation[count])
 
-	sevenSegStatic(inputObject)
+	if(sevenSegStatic(inputObject) === false) return
 	inputObject.animationTimer = setTimeout(()=>{ sevenSegAnimate(inputObject, animation, delay, count + 1) }, delay)
 }
 
@@ -1771,7 +1932,7 @@ function sevenSegMarquee(inputObject, delay, reverse = false) {
 	// Enforce a minimum value here so we don't lag
 	if(delay < 10) delay = 10
 
-	sevenSegStatic(inputObject)
+	if(sevenSegStatic(inputObject) === false) return
 	if(inputObject.value.length > 0) {
 		temp = sevenSegSplitString(inputObject.value)
 		if(reverse == true) {
@@ -1799,6 +1960,11 @@ function sevenSegStatic(displayObject) {
 	if(displayObject.hasOwnProperty('units')) units = displayObject.units
 
 	element = displayObject.parentElementID
+	if(typeof(element) === 'string') element = document.getElementById(element)
+	if(element === null) {
+		if(debug) printWarning('7seg: Invalid element or element ID! Cannot render.', element)
+		return false
+	}
 	clearElement(element)
 
 	// These values are all percentages, based off of the COLUMN SIZE.
@@ -1974,14 +2140,18 @@ function sevenSegStatic(displayObject) {
 // -------------------- STARSCAPE --------------------
 
 nabLibStarscapes = 0
-function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, starIntensityMin, starIntensityMax) {
+async function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, starIntensityMin, starIntensityMax) {
 	// There is a bug in Chrome that randomly causes the canvas to have a black background
 
-	let starfield = document.createElement('canvas');
 	if(starCount < 1) starCount = 1
+
+/*
+	let starfield = document.createElement('canvas');
 
 	starfield.width = canvasWidth
 	starfield.height = canvasHeight
+*/
+	let starfield = new OffscreenCanvas(canvasWidth, canvasHeight)
 
 	let ctx = starfield.getContext('2d')
 
@@ -2002,16 +2172,35 @@ function generateStarCanvasURL(canvasWidth, canvasHeight, starCount, starColor, 
 		ctx.fillRect(0, 0, canvasWidth, canvasHeight)
 	}
 
-	return starfield.toDataURL()
+let imagePromise = new Promise(function(resolve, reject) {
+	let output = starfield.convertToBlob({type: "image/png"})
+	resolve(output)
+}).then( (output)=>{
+	return URL.createObjectURL(output)
+})
+
+
+// The output below needs to be the output of the promise above...
+	return await imagePromise
 }
 
-function renderStarscape(renderElement = null, starCount = 300, layers = 5, backgroundColor = '000', starColor = 'FFF', scrollLeftOrRight = 1, scrollUpOrDown = 0, scrollSpeed = 20) {
+async function renderStarscape(renderElement = null, starCount = 300, layers = 5, backgroundColor = '000', starColor = 'FFF', scrollLeftOrRight = 1, scrollUpOrDown = 0, scrollSpeed = 20) {
 	let outputChild = { elementType : 'div', style : { display : 'grid', width : '100%', height : '100%', margin : '0px' }, children : [] }
 	let defaultStyle = { gridArea : '1 / 1', width : '100%', height : '100%', margin : '0px' }
 
+	// Chromium randomly renders starscapes with a black background! For chromium only, add a blend mode
+	// This is very intense on the GPU so ONLY do it on Chrome!
+	let userAgentString = (navigator.userAgent).toLowerCase()
+	if(userAgentString.includes('chrom')) defaultStyle.mixBlendMode = 'lighten'
+
 	layers = parseInt(layers)
 
-	backgroundColor = readColor(backgroundColor)
+	if(!checkValidHexColor(backgroundColor)) {
+		// User may have given us a CSS variable. If so, accomodate it
+		backgroundColor = 'var(--' + backgroundColor + ')'
+	} else {
+		backgroundColor = readColor(backgroundColor)
+	}
 	starColor = readColor(starColor)
 
 	defaultStyle.padding = '0px'
@@ -2019,7 +2208,6 @@ function renderStarscape(renderElement = null, starCount = 300, layers = 5, back
 	scrollSpeed = clamp(scrollSpeed, 1, 50000)	// Prevent division by 0 below and restrict this to it's max value
 
 	// Colors
-	backgroundColor = readColor(backgroundColor)
 	starColor = readColor(starColor)
 
 	let starIntensityMin = 0.25
@@ -2048,55 +2236,77 @@ function renderStarscape(renderElement = null, starCount = 300, layers = 5, back
 
 	nabLibStarscapes++
 
-	for(let currentLayer = 1; currentLayer <= layers; currentLayer++) {
-		let newElement = { elementType : 'div', style : defaultStyle }
-		newElement.style.zIndex = currentLayer * -1
+	let starfieldElements = new Promise(async function(resolve, reject) {
+		let outputElements = []
+		for(let currentLayer = 1; currentLayer <= layers; currentLayer++) {
+			let newElement = { elementType : 'div', style : defaultStyle }
+			newElement.style.zIndex = currentLayer * -1
 
-		canvasSizeXMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
-		canvasSizeXMin = canvasSizeXMax
-		canvasSizeYMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
-		canvasSizeYMin = canvasSizeYMax
+			canvasSizeXMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
+			canvasSizeXMin = canvasSizeXMax
+			canvasSizeYMax = (layers - currentLayer + 1) * layerSizeMultiplier + layerBaseSize
+			canvasSizeYMin = canvasSizeYMax
 
-		layerMultiplier = 1 / layers * currentLayer * 0.5 + 0.5
-		animationName = 'nabLibStarscape-' + nabLibStarscapes.toString() + '-layer-' + currentLayer.toString() + '-of-' + layers.toString()
+			layerMultiplier = 1 / layers * currentLayer * 0.5 + 0.5
+			animationName = 'nabLibStarscape-' + nabLibStarscapes.toString() + '-layer-' + currentLayer.toString() + '-of-' + layers.toString()
 
-		canvasSize = { 'x' : randFloatRange(canvasSizeXMin, canvasSizeXMax), 'y' : randFloatRange(canvasSizeYMin, canvasSizeYMax) }
-		newElement.style.backgroundImage = 'url(' + generateStarCanvasURL(canvasSize.x, canvasSize.y, Math.floor(starCount / layers), starColor, starIntensity - starIntensityVariance, starIntensity + starIntensityVariance) + ')'
-		newElement.style.animation = animationName + ' ' + 500 / scrollSpeed * layerMultiplier + 's linear infinite'
+			canvasSize = { 'x' : randFloatRange(canvasSizeXMin, canvasSizeXMax), 'y' : randFloatRange(canvasSizeYMin, canvasSizeYMax) }
 
-		starIntensity = clamp(((starIntensityMax - starIntensityMin) / layers * currentLayer) + starIntensityMin, starIntensityVariance + 0.001, 1 - starIntensityVariance - 0.001)
-		outputChild.children.push(deepCopy(newElement))
+			let starfield = await generateStarCanvasURL(canvasSize.x, canvasSize.y, Math.floor(starCount / layers), starColor, starIntensity - starIntensityVariance, starIntensity + starIntensityVariance)
+			newElement.style.backgroundImage = 'url(\'' + starfield + '\')'
 
-		if(scrollLeftOrRight != 0 || scrollUpOrDown != 0) {
-			let horizontalScroll = '0%'
-			let verticalScroll = '0%'
-			if(scrollLeftOrRight < 0) {
-				horizontalScroll = canvasSize.x + 'px'
-			} else if(scrollLeftOrRight > 0) {
-				horizontalScroll = '-' + canvasSize.x + 'px'
+			newElement.style.animation = animationName + ' ' + (500 / scrollSpeed * layerMultiplier).toString() + 's linear infinite'
+
+			starIntensity = clamp(((starIntensityMax - starIntensityMin) / layers * currentLayer) + starIntensityMin, starIntensityVariance + 0.001, 1 - starIntensityVariance - 0.001)
+			outputElements.push(deepCopy(newElement))
+
+			if(scrollLeftOrRight != 0 || scrollUpOrDown != 0) {
+				let horizontalScroll = '0%'
+				let verticalScroll = '0%'
+				if(scrollLeftOrRight < 0) {
+					horizontalScroll = canvasSize.x + 'px'
+				} else if(scrollLeftOrRight > 0) {
+					horizontalScroll = '-' + canvasSize.x + 'px'
+				}
+				if(scrollUpOrDown < 0) {
+					verticalScroll = canvasSize.y + 'px'
+				} else if(scrollUpOrDown > 0) {
+					verticalScroll = '-' + canvasSize.y + 'px'
+				}
+				outputElements.push({ elementType : 'style', text : '@keyframes ' + animationName + ' {0% { background-position: 0px 0px; } 100% { background-position: ' + horizontalScroll + ' ' + verticalScroll + ' } }' })
 			}
-			if(scrollUpOrDown < 0) {
-				verticalScroll = canvasSize.y + 'px'
-			} else if(scrollUpOrDown > 0) {
-				verticalScroll = '-' + canvasSize.y + 'px'
-			}
-			outputChild.children.push({ elementType : 'style', text : '@keyframes ' + animationName + ' {0% { background-position: 0px 0px; } 100% { background-position: ' + horizontalScroll + ' ' + verticalScroll + ' } }' })
 		}
+		resolve(outputElements)
+	}).then( (starfieldElements)=>{
+
+		outputChild.children = outputChild.children.concat(starfieldElements)
+		outputChild = { elementType : 'div', style : { backgroundColor : backgroundColor, display : 'grid', width : '100%', height : '100%', position : 'inherit' }, children : [ outputChild ] }
+
+	})
+
+	starfieldElements = await starfieldElements
+
+	if(renderElement === null) {
+		// If there was no valid output element, just output the object data
+		return outputChild
 	}
 
-	outputChild = { elementType : 'div', style : { backgroundColor : '#' + readColor(backgroundColor), display : 'grid', width : '100%', height : '100%', position : 'inherit' }, children : [ outputChild ] }
-
-	if(typeof(renderElement) === 'string') {
+	if(typeof(renderElement) === 'string' && renderElement != '') {
 		// If we were given a string, check for an ID
 		renderElement = document.getElementById(renderElement)
-	}
-	if(typeof(renderElement) === 'object') {
+		if(renderElement !== null) {
+			renderElement.appendChild(createElement(outputChild))
+			return
+		}
+		
+	} else if(typeof(renderElement) === 'object') {
 		renderElement.appendChild(createElement(outputChild))
 		return
 	}
 
 	// If there was no valid output element, just output the object data
 	return outputChild
+
 }
 
 
@@ -2131,10 +2341,13 @@ function createModalForm(data) {
 					style : { <Styles to apply to the element> },
 					prompts : [
 						{
+							spacerBefore : true,	// This will add a hr element above the prompt
+							spacerAfter : true,		// This will add a hr element below the prompt
 							label : 'Question',
 							readOnly : false,
 							default : 'true/placeholderText',
 							style : { <Styles to apply to the element> },
+							validateFunction : functionName		// This function is called on the value of the input to validate. If it returns false, flashRed is triggered. NOT COMPATIBLE with font, button or color!
 						},
 					],
 				},
@@ -2175,7 +2388,7 @@ function createModalForm(data) {
 	let modalInputs = []
 	let modalContent = { elementType : 'div', id : modalFocusID, tabIndex : (-1 * modalFormCount).toString(), style : { flex : '1 1', display : 'flex', padding : '0.5em', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'auto' }, children : modalInputs }
 	let modal = { elementType : 'div', className : 'modalForm', onclick : (evt)=>{ evt.stopPropagation() }, style : { minWidth : '15em', maxHeight : '90%', display : 'flex', flexDirection : 'column', textAlign : 'center', cursor : 'auto', overflow: 'hidden', fontFamily : '\'nabfonts sans-serif\', sans-serif', backgroundImage : generateBackgroundGradientLines(90, '999', 500, 0.5) }, children : [ modalContent ] }
-	let modalBackground = { elementType : 'div', id : modalID, style : { backgroundColor : '#111B', display : 'flex', alignItems : 'center', justifyContent : 'center', position: 'fixed', top : '0px', left : '0px', width : '100%', height : '100%', zIndex : '99999999999999999999', userSelect : 'none' }, children : [ modal ] }
+	let modalBackground = { elementType : 'div', id : modalID, style : { backgroundColor : '#111B', display : 'flex', alignItems : 'center', justifyContent : 'center', position: 'fixed', top : '0px', left : '0px', width : '100%', height : '100%', zIndex : '214748360', userSelect : 'none' }, children : [ modal ] }
 
 	if(data.hasOwnProperty('style')) modal.style = combineObjects(getValue(data, 'style', {}), modal.style)
 
@@ -2185,6 +2398,8 @@ function createModalForm(data) {
 		modalBackground.style.cursor = 'pointer'
 		modalBackground.onclick = ()=>{ closeModalForm(modalID) }
 	}
+
+	let validateFunctions = []
 
 	let inputLists = { forceInputs : [], returnInputs : [] }
 
@@ -2260,6 +2475,7 @@ function createModalForm(data) {
 
 				inputLists.returnInputs.push({ name : inputsData[j].name, ids : [] })
 
+				let spacerAfter = false
 				for(let l = 0; l < inputPrompts.length; l++) {
 					let inputID = modalID + 'input' + inputCount.toString()
 					inputLists.returnInputs[inputLists.returnInputs.length - 1].ids.push(inputID)
@@ -2277,9 +2493,32 @@ function createModalForm(data) {
 
 					if(focusElement === null && startDisabled === false) focusElement = inputID		// Mark the first active element for automatic focus
 
+					let onchangeFunction = null
+					if(inputPrompts[l].hasOwnProperty('validateFunction')) {
+						let validateFunction = inputPrompts[l].validateFunction
+						onchangeFunction = ()=>{
+							let element = document.getElementById(inputID)
+							let result = validateFunction(element.value)
+							if(result == false) flashElementRed(element)
+							return result
+						}
+					}
+					validateFunctions.push({ id : inputID, function : onchangeFunction, originalFunction : inputPrompts[l].validateFunction })
+
 					if(inputPrompts[l].hasOwnProperty('readOnly') && inputPrompts[l].readOnly === true) {
 						inputElementToAdd.readOnly = true
 //						inputElementToAdd.style.userSelect = 'all'		// This doesn't seem to work on text inputs...
+					}
+
+					if(inputPrompts[l].hasOwnProperty('spacerBefore') && inputPrompts[l].spacerBefore == true) {
+						// This item needs a spacer before it! Add a horizontal rule.
+						inputElements = inputElements.concat([ { elementType : 'hr', style : { width : '80%' } } ])
+					}
+
+					spacerAfter = false
+					if(inputPrompts[l].hasOwnProperty('spacerAfter') && inputPrompts[l].spacerAfter == true) {
+						// This item needs a spacer after it
+						spacerAfter = true
 					}
 
 					switch(inputsData[j].type.toLowerCase()) {
@@ -2295,7 +2534,7 @@ function createModalForm(data) {
 
 						case 'time':
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'time', style : { textAlign : 'center' } },
+								{ elementType : 'input', id : inputID, onchange : onchangeFunction, disabled : startDisabled, type : 'time', style : { textAlign : 'center' } },
 							] })
 							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
 							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = new Date(inputPrompts[l].min).toISOString().substring(0, 10)
@@ -2307,7 +2546,7 @@ function createModalForm(data) {
 
 						case 'date':
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'date', style : { textAlign : 'center' } },
+								{ elementType : 'input', id : inputID, onchange : onchangeFunction, disabled : startDisabled, type : 'date', style : { textAlign : 'center' } },
 							] })
 							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
 							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = new Date(inputPrompts[l].min).toISOString().substring(0, 10)
@@ -2318,6 +2557,7 @@ function createModalForm(data) {
 
 
 						case 'font':
+							// Font is not compatible with validateFunction
 							if(typeof(fontsLibRenderPage) === 'undefined') {
 								printWarning('fontsLib.js is not installed! Font selection impossible.')
 								l = inputPrompts.length
@@ -2330,13 +2570,19 @@ function createModalForm(data) {
 							categories[categories.length - 1].style.padding = '0px'
 							let fontSelectionText = ''
 							try {
-								fontSelectionText = inputPrompts[l].default
+								fontSelectionText = inputPrompts[l].text
 							} catch {
 							}
+
+							let promptData = inputsData[j].prompts[l]	// This is needed because the iterators change before post-execution
 							postRenderExecution.push(()=>{
 								let fontsLibRenderElement = document.getElementById(fontsLibID)
 								fontsLibRenderPage(fontsLibRenderElement, false, fontSelectionText);
 								fontsLibRenderElement.children[0].style.flex = '1 1'
+
+								if(promptData.hasOwnProperty('font')) {
+									setTimeout(()=>{ fontsLibChangeAllSampleFonts(promptData.font) }, 75)
+								}
 							})
 
 							// Change the input IDs to reference the correct elements in the fonts library page
@@ -2350,6 +2596,7 @@ function createModalForm(data) {
 
 
 						case 'button':
+							// Button is not compatible with validateFunction
 							inputItem.style = combineObjects(inputItem.style, { display : 'flex', flex : '1 1', width : '100%' })
 							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'div', style : { display : 'flex', gap : '0.75em', textAlign : 'left', alignItems : 'center', justifyContent : 'center' }, children : [
 									{ elementType : 'button', style : combineObjects(inputPrompts[l].style, { cursor : 'pointer', borderRadius : '20%' }), text : inputPrompts[l].value, onclick : ()=>{ inputPrompts[l].onclick } },
@@ -2364,9 +2611,31 @@ function createModalForm(data) {
 
 
 						case 'color':
-							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'color', style : { cursor : 'pointer', width : '12rem', height : '3rem' } },
-							] })
+							// Color is not compatible with validateFunction
+							// Check/apply default color
+							if(!inputPrompts[l].hasOwnProperty('default')) inputPrompts[l].default = ''
+							inputPrompts[l].default = readColor(inputPrompts[l].default)
+
+							// Check for alpha allowed
+							if(!inputPrompts[l].hasOwnProperty('allowAlpha') || inputPrompts[l].allowAlpha !== true) {
+								inputPrompts[l].allowAlpha = false
+								inputPrompts[l].default = inputPrompts[l].default.substring(0, 6)
+							} else {
+								inputPrompts[l].allowAlpha = true
+							}
+
+							// Check for see through alpha, or checkerboard alpha
+							if(inputPrompts[l].allowAlpha === false || !inputPrompts[l].hasOwnProperty('seeThroughAlpha') || inputPrompts[l].seeThroughAlpha !== true) {
+								inputPrompts[l].seeThroughAlpha = false
+							} else {
+								inputPrompts[l].seeThroughAlpha = true
+							}
+
+							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', minWidth : '34rem', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
+								{ elementType : 'div', style : { display : 'flex', flexDirection : 'row', gap : '1em', alignItems : 'center', justifyContent : 'center' }, children : [
+									renderColorPickerInputElement(inputPrompts[l].default, inputPrompts[l].allowAlpha, inputPrompts[l].seeThroughAlpha, null, inputID, true)
+								]},
+							]})
 							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = '#' + readColor(inputPrompts[l].default)
 							if(inputPrompts[l].hasOwnProperty('label')) inputElementToAdd.children.unshift({ elementType : 'span', children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
@@ -2411,7 +2680,7 @@ function createModalForm(data) {
 							}
 
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { display : 'flex', gap : '0.5em', flexDirection : 'row', alignItems : 'center', justifyContent : 'center' }, children : [
-								{ elementType : 'input', id : inputID, disabled : startDisabled, type : 'number', style : { textAlign : 'center' }, onchange : inputScript },
+								{ elementType : 'input', id : inputID, onchange : onchangeFunction, disabled : startDisabled, type : 'number', style : { textAlign : 'center' }, onchange : inputScript },
 							] })
 							if(inputPrompts[l].hasOwnProperty('default')) inputElementToAdd.children[0].value = inputPrompts[l].default
 							if(inputPrompts[l].hasOwnProperty('min')) inputElementToAdd.children[0].min = inputPrompts[l].min
@@ -2423,7 +2692,7 @@ function createModalForm(data) {
 
 
 						case 'dropdown':
-							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'select' })
+							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'select', onchange : onchangeFunction })
 							if(!inputElementToAdd.hasOwnProperty('children')) inputElementToAdd.children = []
 							// Prevent other iterations from taking place. Iterate here and do everything now.
 							while(l < inputPrompts.length) {
@@ -2445,7 +2714,7 @@ function createModalForm(data) {
 							}
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', style : { cursor : 'pointer' }, className : 'nabLibHoverHighlight', onclick : ()=>{ document.getElementById(inputID).checked = true }, children : [
 								{ elementType : 'input', type : 'checkbox', style : { cursor : 'pointer' }, id : inputID, disabled : startDisabled, checked : selected },
-								{ elementType : 'label', 'for' : inputID, style : { cursor : 'pointer' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
+								{ elementType : 'label', 'for' : inputID, onchange : onchangeFunction, style : { cursor : 'pointer' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
 							] })
 
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
@@ -2457,7 +2726,7 @@ function createModalForm(data) {
 							inputItem.style.width = '100%'
 							if(inputPrompts[l].hasOwnProperty('default') && inputPrompts[l].default !== false) radioSelected = true
 							inputElementToAdd = combineObjects(inputElementToAdd, { id : '', className : 'nabLibHoverHighlight', style : { cursor : 'pointer', width : '100%', display : 'grid', gridTemplateColumns : '1.35em auto' }, onclick : ()=>{ document.getElementById(inputID).checked = true }, children : [
-								{ elementType : 'input', type : 'radio', id : inputID, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : (inputPrompts[l].hasOwnProperty('value') ? inputPrompts[l].value : inputPrompts[l].label), style : { cursor : 'pointer' }, },
+								{ elementType : 'input', type : 'radio', id : inputID, onchange : onchangeFunction, name : modalID + 'Input' + j.toString() + 'RadioButtons', checked : radioSelected, disabled : startDisabled, value : (inputPrompts[l].hasOwnProperty('value') ? inputPrompts[l].value : inputPrompts[l].label), style : { cursor : 'pointer' }, },
 								{ elementType : 'label', 'for' : inputID, style : { cursor : 'pointer', paddingLeft : '0.3em', textAlign: 'left' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) },
 							] })
 							break
@@ -2468,7 +2737,7 @@ function createModalForm(data) {
 							if(inputPrompts[l].hasOwnProperty('label') && inputPrompts[l].label != '') inputItem.children.push({ elementType : 'span', style : { textAlign : 'right' }, children : superTextMarkup(inputPrompts[l].label, modalBlacklist, null, null, false) })
 							let defaultValue = ''
 							if(inputPrompts[l].hasOwnProperty('default')) defaultValue = inputPrompts[l].default
-							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'input', disabled : startDisabled, type : 'text', id : inputID, style : {}, placeholder : defaultValue, value : defaultValue })
+							inputElementToAdd = combineObjects(inputElementToAdd, { elementType : 'input', disabled : startDisabled, type : 'text', id : inputID, onchange : onchangeFunction, style : {}, placeholder : defaultValue, value : defaultValue })
 							if(inputPrompts[l].hasOwnProperty('style')) inputElementToAdd.style = combineObjects(inputPrompts[l].style, inputElementToAdd.style)
 							inputElementToAdd.onfocus = ()=>{ document.getElementById(inputID).select(); }
 							l = inputPrompts.length		// Terminate the loop, we can only have one prompt
@@ -2482,6 +2751,11 @@ function createModalForm(data) {
 					inputItem.children.push(inputElementToAdd)
 					inputElements = inputElements.concat([ inputItem ])
 					inputCount++
+
+					if(spacerAfter == true) {
+						// This item needs a spacer after it! Add a horizontal rule.
+						inputElements = inputElements.concat([ { elementType : 'hr', style : { width : '80%' } } ])
+					}
 				}
 			}
 		}
@@ -2516,7 +2790,17 @@ function createModalForm(data) {
 	if(data.okayButton === true) {
 		// Okay button
 		okayCancelButtons.push(
-		{ elementType : 'div', className : 'modalFormButton modalFormOkayButton', onclick : ()=>{ data.elementToFocusOnAfterClose.focus(); returnModalInputs(modalID, data.callback, data.callbackDataArray, inputLists.returnInputs, inputLists.forceInputs); }, style : modalButtonStyle, children : [
+		{ elementType : 'div', className : 'modalFormButton modalFormOkayButton', onclick : ()=>{
+			// Before continuing, check all of the validating inputs. If any of them fail, do not continue and flash them red!
+			for(let i = 0; i < validateFunctions.length; i++) {
+				if(validateFunctions[i]['function'] === null) continue
+				let element = document.getElementById(validateFunctions[i].id)
+				if(element === null) continue
+				if(validateFunctions[i]['function'](element.value) !== true) return
+			}
+			data.elementToFocusOnAfterClose.focus()
+			returnModalInputs(modalID, data.callback, data.callbackDataArray, inputLists.returnInputs, inputLists.forceInputs)
+		}, style : modalButtonStyle, children : [
 			{ elementType : 'div', style : { lineHeight : '2em' }, text : 'Okay' }
 		]})
 	}
@@ -2614,10 +2898,8 @@ function returnModalInputs(id, callback, callbackDataArray, inputsList, forceInp
 
 		iterationMatch = match = true
 		forceElement.focus()
-		removeClassName(forceElement, 'nabLibFlashRed')
-		setTimeout(()=>{
-			addClassName(forceElement, 'nabLibFlashRed')
-		}, 100)
+
+		flashElementRed(forceElement)
 	}
 	if(match === true) return
 
@@ -2651,6 +2933,846 @@ function returnModalInputs(id, callback, callbackDataArray, inputsList, forceInp
 function closeModalForm(id) {
 	let element = document.getElementById(id)
 	element.parentElement.removeChild(element)
+}
+
+
+
+// -------------------- COLOR PICKER --------------------
+// -------------------- COLOR PICKER --------------------
+
+nabLibColorPickerCount = 0
+nabLibColorPickerEditElement = null
+function renderColorPickerInputElement(startingValue = '999', allowAlpha = false, seeThroughAlpha = false, putTextElement = null, inputID = '', startDisabled = false) {
+	let radius = 0.25
+	let buttonHeight = 3
+
+	nabLibColorPickerCount++
+	if(inputID == '') inputID = 'nabLibColorPickerInput-' + nabLibColorPickerCount.toString()
+
+	let CSSVar = false
+	if(getCSSVar(startingValue) != '') {
+		CSSVar = true
+	}
+
+	let inputColorID = inputID + '-Color'
+	let inputContainerID = inputID + '-Container'
+	let inputModalID = inputID + '-Modal'
+
+	if(typeof(putTextElement) === 'string') putTextElement = document.getElementById(putTextElement)
+	if(putTextElement === null) putTextElement = inputColorID
+
+	function nabLibColorPickerClickOutside(event) {
+
+		let inputModal = document.getElementById(inputModalID)
+		let boundingBox = inputModal.children[inputModal.children.length - 1].getBoundingClientRect()
+
+		if(	event.clientX < boundingBox.left || event.clientX > boundingBox.right ||
+			event.clientY < boundingBox.top || event.clientY > boundingBox.bottom) {
+				nabLibColorPickerClose()
+		}
+
+//		event.stopPropagation()
+	}
+
+	function nabLibColorPickerClose() {
+		window.removeEventListener('click', nabLibColorPickerClickOutside)
+		document.getElementById(inputModalID).remove()
+	}
+
+	return 	{ elementType : 'div', id : inputContainerID, type : 'color', style : { cursor : 'auto', backgroundColor : '', display : 'grid', gridTemplateColumns : radius.toString() + 'rem 1fr ' + radius.toString() + 'rem', gridTemplateRows : radius.toString() + 'rem ' + (buttonHeight - (radius * 2)).toString() + 'rem ' + radius.toString() + 'rem 1fr', width : '12rem' },
+		onclick : ()=>{
+
+			if(document.getElementById(inputModalID) !== null) {
+				return	// If this is already open, stop it from reopening
+			}
+
+			document.getElementById(inputContainerID).appendChild(createElement({ elementType : 'div', id : inputModalID, style : { gridArea : '4 / 1 / 4 / 4', zIndex : '2147483647' }, }))
+
+			let x = document.getElementById(inputContainerID)
+			let scrollHeights = []
+			while(x.tagName != 'BODY') {
+				scrollHeights.push({ element : x, scroll : x.scrollTop })
+				x = x.parentElement
+			}
+
+			let inputElement = document.getElementById(inputID)
+			renderColorPicker(inputModalID, inputID, putTextElement, (CSSVar == true ? startingValue : inputElement.value), allowAlpha, seeThroughAlpha, nabLibColorPickerClose)
+
+			x = document.getElementById(inputContainerID)
+			for(let i = 0; i < scrollHeights.length; i++) {
+				scrollHeights[i].element.scrollTop = scrollHeights[i].scroll
+			}
+
+			setTimeout( ()=>{ window.addEventListener('click', nabLibColorPickerClickOutside) }, 25 )
+		},
+		children : [
+			{ elementType : 'div', style : { borderRadius : radius.toString() + 'em 0 0 ' + radius.toString() + 'em', gridArea : '1 / 1 / 4 / 1', backgroundColor : '#555' }, },	// Left
+			{ elementType : 'div', style : { borderRadius : '0 ' + radius.toString() + 'em ' + radius.toString() + 'em 0', gridArea : '1 / 3 / 4 / 4', backgroundColor : '#555' }, },	// Right
+			{ elementType : 'div', style : { gridArea : '1 / 2 / 2 / 3', backgroundColor : '#555' }, },	// Top
+			{ elementType : 'div', style : { gridArea : '3 / 2 / 4 / 3', backgroundColor : '#555' }, },	// Bottom
+			{ elementType : 'div', style : { gridArea : '2 / 2 / 2 / 2', display : 'grid', border : '0.075em solid #AAA', backgroundImage : nabLibTransparencyGrid, backgroundSize : nabLibTransparencyGridSize }, children : [
+				{ elementType : 'input', type : 'hidden', disabled : startDisabled, id : inputID, value : (getCSSVar(startingValue) == '' ? startingValue : readColor(getCSSVar(startingValue))), style : { display : 'none', gridArea : '1 / 1' },
+					oninput : ()=>{
+						let inputElement = document.getElementById(inputID)
+						let outputElement = document.getElementById(inputColorID)
+						outputElement.style.backgroundColor = '#' + readColor(inputElement.value)
+					},
+				},
+				{ elementType : 'div', id : inputColorID, style : { gridArea : '1 / 1', fontWeight : 'bold', display : 'flex', alignItems : 'center', justifyContent : 'center', cursor : 'pointer', backgroundColor : (getCSSVar(startingValue) == '' ? '#' + startingValue : '#' + readColor(getCSSVar(startingValue))) },
+					children : (putTextElement === inputColorID ? [ nabLibColorPickerAddColorText(startingValue) ] : []) },
+			]},
+	]}
+}
+
+// USE renderColorPicker IF YOU WANT THE USER TO INPUT A COLOR
+// This function is only intended to render a color picker directly into an element
+function renderColorPicker(renderElement, inputFormElement, putTextElement = null, defaultValue = '999', allowAlpha = false, seeThroughAlpha = false, closeFormFunction = null) {
+	// inputID and inputModalID are used to integrate the color picker properly with the input element
+
+	if(allowAlpha !== true) seeThroughAlpha = false // Bug prevention
+
+	if(typeof(renderElement) === 'string') renderElement = document.getElementById(renderElement)
+	if(typeof(inputFormElement) === 'string') inputFormElement = document.getElementById(inputFormElement)
+	if(typeof(putTextElement) === 'string') putTextElement = document.getElementById(putTextElement)
+
+	nabLibColorPickerCount++
+	let colorPickerNumber = nabLibColorPickerCount
+
+	let colorPickerId = 'nabLibColorPicker' + colorPickerNumber.toString()
+	let colorPickerScrubberId = colorPickerId + '-Scrubber'
+	let colorPickerDragId = colorPickerId + '-Drag'
+	let colorPickerValueId = colorPickerId + '-Value'
+
+	let colorPickerFieldColorId = colorPickerId + '-FieldColor'
+	let colorPickerFieldSaturationId = colorPickerId + '-FieldSaturation'
+	let colorPickerFieldValueId = colorPickerId + '-FieldValue'
+	let colorPickerFieldAlphaId = colorPickerId + '-FieldAlpha'
+
+	let colorPickerRId = colorPickerId + '-RSlider'
+	let colorPickerGId = colorPickerId + '-GSlider'
+	let colorPickerBId = colorPickerId + '-BSlider'
+	let colorPickerRTextId = colorPickerId + '-RText'
+	let colorPickerGTextId = colorPickerId + '-GText'
+	let colorPickerBTextId = colorPickerId + '-BText'
+
+	let colorPickerHId = colorPickerId + '-HSlider'
+	let colorPickerSId = colorPickerId + '-SSlider'
+	let colorPickerVId = colorPickerId + '-LSlider'
+	let colorPickerHTextId = colorPickerId + '-HText'
+	let colorPickerSTextId = colorPickerId + '-SText'
+	let colorPickerVTextId = colorPickerId + '-LText'
+
+	let colorPickerVBackgroundId = colorPickerId + '-LColor'
+	let colorPickerSBackgroundId = colorPickerId + '-SColor'
+
+	let colorPickerAId = colorPickerId + '-ASlider'
+	let colorPickerATextId = colorPickerId + '-AText'
+
+	let colorPickerSwatchId = colorPickerId + '-Swatch'
+
+	let startingValue
+	let CSSVar = false
+	if(getCSSVar(defaultValue) == '') {
+		startingValue = defaultValue
+	} else {
+		CSSVar = true
+		startingValue = getCSSVar(defaultValue)
+	}
+	startingValue = readColor(startingValue)
+	if(allowAlpha !== true) startingValue = startingValue.substring(0, 6)
+
+	let r = parseInt(startingValue.substring(0, 2), 16)
+	let g = parseInt(startingValue.substring(2, 4), 16)
+	let b = parseInt(startingValue.substring(4, 6), 16)
+
+	let hsv = rgbToHsv(r, g, b)
+	let h = round(hsv[0])
+	let s = round(hsv[1])
+	let v = round(hsv[2])
+
+	let a = 255
+	if(allowAlpha === true && startingValue.length > 6) a = parseInt(startingValue.substring(6, 8), 16)
+
+	let mouseMoveFunction = null
+
+	let borderSpace = 0.75
+	let backgroundColor1 = '2a2a2a'	// Top color
+	let backgroundColor2 = '333333'	// Alpha color
+	let backgroundColor3 = '444444'	// Bottom color
+
+	let adjustmentSizeLong = 7.5
+	let adjustmentSizeShort = 1.5
+
+	let shadowBorderRadius = 0.2
+
+	let colorPickerCSS = document.createElement('style')
+	colorPickerCSS.appendChild(document.createTextNode('.nabLibColorPickerText {text-align: center; font-family: \'nabfonts sans-serif\', sans-serif; font-size: 0.75rem; font-weight: bold; } .nabLibColorPickerBoxShadow:hover { box-shadow: 0 0 0 ' + (shadowBorderRadius * 0.75).toString() + 'rem #000, 0 0 0 ' + shadowBorderRadius.toString() + 'rem #FFFF } .nabLibColorPickerBoxShadow { border-radius: ' + shadowBorderRadius + 'rem; box-shadow: 0 0 0 ' + (shadowBorderRadius * 0.75).toString() + 'rem #000, 0 0 0 ' + shadowBorderRadius.toString() + 'rem #FFFA } .nabLibColorPickerGrid > div { width: 100%; height: 100% }'))
+	document.head.appendChild(colorPickerCSS)
+
+
+	let upperRows = borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeLong.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem '
+	let alphaRows = ''
+	if(allowAlpha === true) alphaRows = adjustmentSizeShort.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem '
+	let lowerRows =  adjustmentSizeShort.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem'
+
+
+	let columns = borderSpace.toString() + 'rem ' + (adjustmentSizeShort + borderSpace).toString() + 'rem ' + ((shadowBorderRadius * 2) + 1).toString() + 'rem 14rem ' + borderSpace.toString() + 'rem ' + adjustmentSizeShort.toString() + 'rem ' + borderSpace.toString() + 'rem'
+	let rows = upperRows + alphaRows + lowerRows
+
+	let tempHeight = rows.split('rem ')
+	let tempWidth = columns.split('rem ')
+	let totalHeight = 0
+	for(let c = 0; c < tempHeight.length; c++) {
+		totalHeight += parseFloat(tempHeight[c])
+	}
+	let totalWidth = 0
+	for(let c = 0; c < tempWidth.length; c++) {
+		totalWidth += parseFloat(tempWidth[c])
+	}
+
+
+	let gridBackground = ''
+	if(seeThroughAlpha !== true) gridBackground = nabLibTransparencyGrid
+
+	renderElement.appendChild(createElement({ elementType : 'div', onclick : ()=>{ event.stopPropagation() }, className : 'nabLibColorPickerText nabLibColorPickerGrid', id : colorPickerId, style : { width : totalWidth.toString() + 'rem', height : totalHeight.toString() + 'rem', color : '#EEE', border : '1px solid #F00', borderRadius : borderSpace.toString() + 'rem', overflow : 'hidden', display : 'grid', alignItems : 'center', justifyItems : 'center',
+		gridTemplateColumns : columns,
+		gridTemplateRows : rows,
+	}, children : [
+
+
+		// Background color
+		{ elementType : 'div', style : { gridArea : '1 / 1 / 4 / -1', backgroundColor : '#' + backgroundColor1, }, },		// Top
+		{ elementType : 'div', style : { gridArea : '4 / 1 / 4 / 1', backgroundColor : '#' + backgroundColor1 }, },			// Upper middle left side
+		{ elementType : 'div', style : { gridArea : '4 / 3 / 4 / 3', backgroundColor : '#' + backgroundColor1 }, },			// Upper middle middle bar
+		{ elementType : 'div', style : { gridArea : '4 / 5 / 4 / -1', backgroundColor : '#' + backgroundColor1 }, },		// Upper middle right side
+		{ elementType : 'div', style : { gridArea : '5 / 1 / 8 / -1', backgroundColor : '#' + backgroundColor1,
+			backgroundImage : (allowAlpha == true ? 'linear-gradient(0deg, #' + backgroundColor3 + ' 0.75em, #' + backgroundColor1 + ' 1.5em)' : ''),
+		}, },		// Middle spacer bar
+		{ elementType : 'div', style : { gridArea : '8 / 1 / 8 / 4', backgroundColor : '#' + backgroundColor3 }, },			// Middle left
+		{ elementType : 'div', style : { gridArea : '8 / -2 / 8 / -1', backgroundColor : '#' + backgroundColor3 }, },		// Middle right
+		{ elementType : 'div', style : { gridArea : '-12 / 1 / -1 / -1', 
+			backgroundImage : 'linear-gradient(180deg, #' + (allowAlpha == true ? backgroundColor3 : backgroundColor1) + ' 0.75em, #' + (allowAlpha == true ? backgroundColor3 : backgroundColor1) + '00 1.5em)',
+		backgroundColor : '#' + backgroundColor2 }, },		// Bottom
+
+
+		// Hue
+		{ elementType : 'input', spellcheck : 'false', id : colorPickerHTextId, style : { gridArea : '2 / 2 / 2 / 3', fontFamily : '\'nabfonts monospace\', monospace', textAlign : 'center', fontWeight : 'bold' }, size : 3, min : 0, max : 360, value : h,
+			oninput : ()=>{ hsvChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerHText) },
+		},
+		{ elementType : 'span', style : { gridArea : '2 / 3 / 2 / 4' }, text : 'H' },
+		{ elementType : 'div', style : { gridArea : '2 / 4 / 2 / 4', display : 'flex', flexDirection : 'row', alignItems : 'center', justifyContent : 'center', gap : shadowBorderRadius.toString() + 'rem', }, children : [
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { display : 'flex', flex : '1 1', padding : '0.25rem 0rem', backgroundImage : 'linear-gradient(90deg, #F00, #FF0, #0F0, #0FF, #00F, #F0F, #F00)' }, children : [
+				{ elementType : 'input', id : colorPickerHId, tabIndex : '-1', type : 'range', min : 0, max : 360, step : 1, value : h, style : { cursor : 'pointer', flex : '1 1', background : 'linear-gradient(180deg, #FFF0 0%, #FFF9 40%, #000 50%, #FFF9 60%, #FFF0 100%)', margin : 0, padding : 0 },
+					oninput : ()=>{
+						colorPickerHText.value = colorPickerH.value
+						hsvChanged()
+					},
+				},
+			]},
+		]},
+
+
+		// Swatch
+		{ elementType : 'div', style : { gridArea : '4 / 2 / 4 / 2', display : 'grid', gap : '0.225em', gridTemplateRows : '1.5em 1fr 1.5em', gridTemplateColumns : '1fr' }, children : [
+			{ elementType : 'div', style : { gridArea : '1 / 1 / 1 / 1', backgroundColor : '#' + backgroundColor1 }, },
+			{ elementType : 'div', style : { gridArea : '3 / 1 / 3 / 1', backgroundColor : '#' + backgroundColor1 }, },
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { gridArea : '2 / 1 / 2 / 1', backgroundImage : gridBackground, backgroundSize : nabLibTransparencyGridSize, display : 'flex', overflow : 'hidden' }, children : [
+				{ elementType : 'div', id : colorPickerSwatchId, style : { backgroundColor : '#' + startingValue, flex : '1 1' } },
+			]},
+		]},
+
+
+		// Color Field
+		{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { gridArea : '4 / 4 / 4 / 5', overflow : 'hidden', display : 'grid', userSelect : 'none', cursor : 'pointer', backgroundImage : gridBackground, backgroundSize : nabLibTransparencyGridSize, textShadow : '#000 0.0rem 0.075rem, #000 0rem -0.075rem, #000 0.075rem 0rem, #000 -0.075rem 0rem, #000 0.075rem 0.075rem, #000 0.075rem -0.075rem, #000 -0.075rem 0.075rem, #000 -0.075rem -0.075rem' }, children : [
+			{ elementType : 'div', id : colorPickerFieldAlphaId, style : { gridArea : '1 / 1', display : 'grid', opacity : 1 }, children : [		// Alpha
+				{ elementType : 'div', id : colorPickerFieldColorId, style : { gridArea : '1 / 1', backgroundColor : '#04F' }, },					// Color
+				{ elementType : 'div', id : colorPickerFieldSaturationId, style : { gridArea : '1 / 1', backgroundImage : 'linear-gradient(90deg, #FFFF 0%, #FFF0 100%)' }, },		// Saturation
+				{ elementType : 'div', id : colorPickerFieldValueId, style : { gridArea : '1 / 1', backgroundImage : 'linear-gradient(0deg, #000F 0%, #0000 100%)' }, },		// Value
+				{ elementType : 'div', id : colorPickerDragId, style : { gridArea : '1 / 1', display : 'flex', alignItems : 'center', justifyContent : 'center' },
+					onmousedown : ()=>{
+						nabLibColorPickerEditElement = nabLibColorPickerCount
+						mouseMoveFunction = nabLibColorPickerMouseMoved
+						nabLibColorPickerStartDrag(event)
+					},
+				},
+			]},
+
+			// Scrubber
+			{ elementType : 'div', id : colorPickerScrubberId, style : { zIndex : '999', gridArea : '1 / 1', fontSize : '2rem', fontFamily : '"nabfonts sans-serif", sans-serif', pointerEvents : 'none', position : 'relative', display : 'grid', alignItems : 'center', justifyContent : 'center' }, children : [
+				{ elementType : 'div', style : { gridArea : '1 / 1', display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+					{ elementType : 'span', text : '+'},
+				]}
+			]},
+
+		]},
+
+
+		// Value
+		{ elementType : 'span', style : { gridArea : '2 / -3 / 4 / -3' }, text : 'V' },
+		{ elementType : 'input', id : colorPickerVTextId, style : { gridArea : '5 / -3 / 7 / -2', fontFamily : '\'nabfonts monospace\', monospace', textAlign : 'center', fontWeight : 'bold' }, size : 3, min : 0, max : 100, value : v,
+			oninput : ()=>{ hsvChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerVText) },
+		},
+		{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { gridArea : '4 / -3 / 4 / -2', backgroundImage : 'linear-gradient(0deg, #000 0%, #FFF 100%)', display : 'grid' }, children : [
+			{ elementType : 'div', id : colorPickerVBackgroundId, style : { borderRadius : shadowBorderRadius.toString() + 'em', gridArea : '1 / 1', backgroundColor : '#' + hsvToRgb(h, 1, 1) } },
+			{ elementType : 'div', style : { borderRadius : shadowBorderRadius.toString() + 'em', gridArea : '1 / 1', backgroundImage : 'linear-gradient(0deg, #000 0%, #0000 100%)' } },
+			{ elementType : 'div', style : { width : '1.5rem', gridArea : '1 / 1', display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+				// Firefox has a *STUPID* bug with vertical orientation of sliders, so this will have to do.
+				{ elementType : 'input', id : colorPickerVId, alt : 'Value', tabIndex : '-1', type : 'range', id : colorPickerVId, min : 0, max : 100, step : 1, value : v, /* orient : 'vertical', */ style : { transform : 'rotateZ(-90deg)', height : '1rem', cursor : 'pointer', width : adjustmentSizeLong.toString() + 'rem', /* writingMode: 'bt-lr', WebkitAppearance : 'slider-vertical', */ margin : 0, padding : 0 },
+					oninput : ()=>{
+						colorPickerVText.value = colorPickerV.value
+						hsvChanged()
+					},
+				},
+			]},
+		]},
+
+
+		// Saturation
+		{ elementType : 'input', id : colorPickerSTextId, style : { gridArea : '6 / 2 / 6 / 2', fontFamily : '\'nabfonts monospace\', monospace', textAlign : 'center', fontWeight : 'bold' }, size : 3, min : 0, max : 100, value : s,
+			oninput : ()=>{ hsvChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerSText) },
+		},
+		{ elementType : 'span', style : { gridArea : '6 / 3 / 6 / 3' }, text : 'S' },
+		{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { gridArea : '6 / 4 / 6 / 4', display : 'grid' }, children : [
+			{ elementType : 'div', id : colorPickerSBackgroundId, style : { borderRadius : shadowBorderRadius.toString() + 'em', gridArea : '1 / 1', backgroundImage : 'linear-gradient(90deg, #' + rgbToHex(hsvToRgb(h, 0, v)) + ' 0%, #' + rgbToHex(hsvToRgb(h, 1, v)) + ' 100%)', } },
+			{ elementType : 'input', tabIndex : '-1', type : 'range', id : colorPickerSId, min : 0, max : 100, step : 1, value : s, style : { gridArea : '1 / 1', cursor : 'pointer', margin : 0, padding : 0 },
+				oninput : ()=>{
+					colorPickerSText.value = colorPickerS.value
+					hsvChanged()
+				},
+			},
+		]},
+
+
+		// Spacer
+		{ elementType : 'div', style : { gridArea : '7 / 1 / 7 / -1', height : '0.05rem', display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+			{ elementType : 'hr', style : { width : '85%', opacity : '0.5' }, },
+		]},
+
+
+		// Alpha
+		{ elementType : 'input', id : colorPickerATextId, style : { gridArea : '8 / 2 / 8 / 3', fontFamily : '\'nabfonts monospace\', monospace', textAlign : 'center', fontWeight : 'bold', display : (allowAlpha === true ? 'grid' : 'none') }, size : 3, min : 0, max : 255, value : a,
+			oninput : ()=>{ alphaChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerAText) },
+		},
+		{ elementType : 'span', style : { gridArea : '8 / 3 / 8 / 4', display : (allowAlpha === true ? 'grid' : 'none') }, text : 'A' },
+		{ elementType : 'div', style : { display : (allowAlpha === true ? 'grid' : 'none'), alignItems : 'center', gap : shadowBorderRadius.toString() + 'rem', gridArea : '8 / 4 / 8 / -2' }, children : [
+
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { gridArea : '1 / 1', height : '100%', width : '100%', backgroundImage : gridBackground, backgroundSize : nabLibTransparencyGridSize }, },
+			{ elementType : 'div', style : { gridArea : '1 / 1', height : '100%', width : '100%', backgroundImage : 'linear-gradient(90deg, #' + backgroundColor1 + '00, #' + backgroundColor1 + ')' }, },
+			{ elementType : 'input', tabIndex : '-1', type : 'range', id : colorPickerAId, min : 0, max : 255, step : 1, value : a, style : { gridArea : '1 / 1', cursor : 'pointer', background : 'linear-gradient(180deg, #FFF0 0%, #FFF9 40%, #000 50%, #FFF9 60%, #FFF0 100%)', margin : 0, padding : 0 },
+				oninput : ()=>{
+					colorPickerAText.value = colorPickerA.value
+					alphaChanged()
+				},
+			},
+		]},
+
+
+		// Spacer
+		{ elementType : 'div', style : { gridArea : '-12 / 1 / -12 / -1', height : '0.05rem', display : 'flex', alignItems : 'center', justifyContent : 'center' }, children : [
+			{ elementType : 'hr', style : { width : '85%', opacity : '0.5' }, },
+		]},
+
+
+		// Red
+		{ elementType : 'input', id : colorPickerRTextId, style : { gridArea : '-11 / 2 / -11 / 2', fontFamily : '\'nabfonts monospace\', monospace', fontWeight : 'bold' }, size : 3, value : r,
+			oninput : ()=>{ rgbChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerRText) },
+		},
+		{ elementType : 'div', style : { gridArea : '-11 / 3 / -11 / 3', display : 'flex', alignItems : 'center', justifyContent : 'center', width : '1rem' }, text : 'R' },
+		{ elementType : 'div', style : { gridArea : '-11 / 4 / -11 / -2', display : 'flex', flexDirection : 'row', alignItems : 'center', justifyContent : 'center', }, children : [
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { flex : '1 1', display : 'flex', padding : '0.25rem 0rem', backgroundImage : 'linear-gradient(90deg, #000, #F00)' }, children : [
+				{ elementType : 'input', tabIndex : '-1', type : 'range', id : colorPickerRId, min : 0, max : 255, step : 1, value : r, style : { cursor : 'pointer', flex : '1 1', background : 'linear-gradient(180deg, #FFF0 0%, #FFF9 40%, #000 50%, #FFF9 60%, #FFF0 100%)', margin : 0, padding : 0 },
+					oninput : ()=>{
+						colorPickerRText.value = colorPickerR.value
+						rgbChanged()
+					},
+				},
+			]},
+		]},
+
+
+		// Green
+		{ elementType : 'input', id : colorPickerGTextId, style : { gridArea : '-9 / 2 / -9 / 2', fontFamily : '\'nabfonts monospace\', monospace', fontWeight : 'bold' }, size : 3, value : g,
+			oninput : ()=>{ rgbChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerGText) },
+		},
+		{ elementType : 'div', style : { gridArea : '-9 / 3 / -9 / 3', display : 'flex', alignItems : 'center', justifyContent : 'center', width : '1rem' }, text : 'G' },
+		{ elementType : 'div', style : { gridArea : '-9 / 4 / -9 / -2', display : 'flex', flexDirection : 'row', alignItems : 'center', justifyContent : 'center', }, children : [
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { flex : '1 1', display : 'flex', padding : '0.25rem 0rem', backgroundImage : 'linear-gradient(90deg, #000, #0F0)' }, children : [
+				{ elementType : 'input', tabIndex : '-1', type : 'range', id : colorPickerGId, min : 0, max : 255, step : 1, value : g, style : { cursor : 'pointer', flex : '1 1', background : 'linear-gradient(180deg, #FFF0 0%, #FFF9 40%, #000 50%, #FFF9 60%, #FFF0 100%)', margin : 0, padding : 0 },
+					oninput : ()=>{
+						colorPickerGText.value = colorPickerG.value
+						rgbChanged()
+					},
+				},
+			]},
+		]},
+
+
+		// Blue
+		{ elementType : 'input', id : colorPickerBTextId, style : { gridArea : '-7 / 2 / -7 / 2', fontFamily : '\'nabfonts monospace\', monospace', fontWeight : 'bold' }, size : 3, value : b,
+			oninput : ()=>{ rgbChanged() },
+			onfocus : ()=>{ selectAllInputText(colorPickerBText) },
+		},
+		{ elementType : 'div', style : { gridArea : '-7 / 3 / -7 / 3', display : 'flex', alignItems : 'center', justifyContent : 'center', width : '1rem' }, text : 'B' },
+		{ elementType : 'div', style : { gridArea : '-7 / 4 / -7 / -2', display : 'flex', flexDirection : 'row', alignItems : 'center', justifyContent : 'center', }, children : [
+			{ elementType : 'div', className : 'nabLibColorPickerBoxShadow', style : { flex : '1 1', display : 'flex', padding : '0.25rem 0rem', backgroundImage : 'linear-gradient(90deg, #000, #00F)' }, children : [
+				{ elementType : 'input', tabIndex : '-1', type : 'range', id : colorPickerBId, min : 0, max : 255, step : 1, value : b, style : { cursor : 'pointer', flex : '1 1', background : 'linear-gradient(180deg, #FFF0 0%, #FFF9 40%, #000 50%, #FFF9 60%, #FFF0 100%)', margin : 0, padding : 0 },
+					oninput : ()=>{
+						colorPickerBText.value = colorPickerB.value
+						rgbChanged()
+					},
+				},
+			]},
+		]},
+
+
+		// Value
+		{ elementType : 'div', style : { gridArea : '-5 / 2 / -5 / 4', display : 'flex', alignItems : 'center', justifyContent : 'end', }, text : 'Hex value:' },
+		{ elementType : 'div', style : { gridArea : '-5 / 4 / -5 / 4', display : 'flex', alignItems : 'center', justifyContent : 'start', paddingLeft : '1.5em', }, text : '#' },
+		{ elementType : 'input', id : colorPickerValueId, style : { userSelect : 'all', margin : '0em 6em 0em 1em', width : '8em', gridArea : '-5 / 4 / -5 / 4' }, value : readColor(startingValue), maxLength : 8,
+			oninput : ()=>{
+				let temp = colorPickerValueElement.value
+				updateColorPicker()
+				colorPickerValueElement.value = temp
+			},
+			onchange : ()=>{
+				updateColorPicker()
+			},
+			onfocus : ()=>{ selectAllInputText(colorPickerValueElement) },
+		},
+
+
+		// Buttons
+		{ elementType : 'div', style : { gridArea : '-3 / 2 / -3 / -2', userSelect : 'none', display : 'flex', alignItems : 'center', justifyContent : 'center', gap : shadowBorderRadius.toString() + 'rem' }, children : [
+			{ elementType : 'div', className : 'nabLibColorPickerButtonHover nabLibHoverHighlight', style : { backgroundColor : '#700', flex : '1 1', padding : '0.3rem', borderRadius : '0.5rem' },
+				children : [{ elementType : 'div', text : 'Cancel' }],
+				onclick : ()=>{
+					colorPickerValueElement.value = startingValue
+					colorPickerValueElement.oninput()
+					closeModal()
+				},
+			},
+			{ elementType : 'div', className : 'nabLibColorPickerButtonHover nabLibHoverHighlight', style : { backgroundColor : '#770', flex : '1 1', padding : '0.3rem', borderRadius : '0.5rem' },
+				children : [{ elementType : 'div', text : 'Revert' }],
+				onclick : ()=>{
+					colorPickerValueElement.value = startingValue
+					colorPickerValueElement.oninput()
+				},
+			},
+			{ elementType : 'div', className : 'nabLibColorPickerButtonHover nabLibHoverHighlight', style : { backgroundColor : '#070', flex : '1 1', padding : '0.3rem', borderRadius : '0.5rem' },
+				children : [{ elementType : 'div', text : 'Okay' }],
+				onclick : ()=>{
+					closeModal()
+				},
+			},
+		]},
+
+
+	]}))
+
+	function closeModal() {
+		if(typeof(closeFormFunction) === 'function') {
+			closeFormFunction()
+		} else {
+			colorPickerElement.remove()
+		}
+	}
+
+	let colorPickerElement = document.getElementById(colorPickerId)
+
+	// Button hover
+	let colorPickerStyle = document.createElement('style')
+	colorPickerStyle.appendChild(document.createTextNode(`
+	.nabLibColorPickerButtonHover:active {
+		border-style: inset;
+	}
+
+	.nabLibColorPickerButtonHover:active * {
+		transform: translate(0.1em, 0.1em);
+	}
+
+	.nabLibColorPickerButtonHover {
+		border: 0.1rem outset #555;
+	}
+	`))
+	colorPickerElement.appendChild(colorPickerStyle)
+
+	let colorPickerScrubberElement = document.getElementById(colorPickerScrubberId)
+	let colorPickerDragElement = document.getElementById(colorPickerDragId)
+	let colorPickerValueElement = document.getElementById(colorPickerValueId)
+
+	let colorPickerFieldColorElement = document.getElementById(colorPickerFieldColorId)
+	let colorPickerFieldSaturationElement = document.getElementById(colorPickerFieldSaturationId)
+	let colorPickerFieldValueElement = document.getElementById(colorPickerFieldValueId)
+	let colorPickerFieldAlphaElement = document.getElementById(colorPickerFieldAlphaId)
+
+	let colorPickerSwatchElement = document.getElementById(colorPickerSwatchId)
+
+	let colorPickerR = document.getElementById(colorPickerRId)
+	let colorPickerG = document.getElementById(colorPickerGId)
+	let colorPickerB = document.getElementById(colorPickerBId)
+
+	let colorPickerRText = document.getElementById(colorPickerRTextId)
+	let colorPickerGText = document.getElementById(colorPickerGTextId)
+	let colorPickerBText = document.getElementById(colorPickerBTextId)
+
+	let colorPickerA = document.getElementById(colorPickerAId)
+	let colorPickerAText = document.getElementById(colorPickerATextId)
+
+	let colorPickerH = document.getElementById(colorPickerHId)
+	let colorPickerS = document.getElementById(colorPickerSId)
+	let colorPickerV = document.getElementById(colorPickerVId)
+
+	let colorPickerHText = document.getElementById(colorPickerHTextId)
+	let colorPickerSText = document.getElementById(colorPickerSTextId)
+	let colorPickerVText = document.getElementById(colorPickerVTextId)
+
+	let colorPickerVBackground = document.getElementById(colorPickerVBackgroundId)
+	let colorPickerSBackground = document.getElementById(colorPickerSBackgroundId)
+
+
+	colorPickerRText.onchange = colorPickerRText.oninput
+	colorPickerGText.onchange = colorPickerGText.oninput
+	colorPickerBText.onchange = colorPickerBText.oninput
+
+	colorPickerAText.onchange = colorPickerAText.oninput
+
+	colorPickerHText.onchange = colorPickerHText.oninput
+	colorPickerSText.onchange = colorPickerSText.oninput
+	colorPickerVText.onchange = colorPickerVText.oninput
+
+
+	colorPickerValueElement.focus()
+
+
+	function selectAllInputText(inputElement) {
+		inputElement.selectionStart = 0
+		inputElement.selectionEnd = inputElement.value.length + 1
+	}
+
+	function hsvChanged() {
+		let temp = 0
+
+		let savedValue = null
+		let selectionStart = 0
+		let selectionEnd = 0
+		switch(document.activeElement.id) {
+			case colorPickerHText.id:
+				savedValue = clamp(colorPickerHText.value, 0, 360)
+				selectionStart = colorPickerHText.selectionStart
+				selectionEnd = colorPickerHText.selectionEnd
+				break
+			case colorPickerSText.id:
+				savedValue = clamp(colorPickerSText.value, 0, 255)
+				selectionStart = colorPickerSText.selectionStart
+				selectionEnd = colorPickerSText.selectionEnd
+				break
+			case colorPickerVText.id:
+				savedValue = clamp(colorPickerVText.value, 0, 255)
+				selectionStart = colorPickerVText.selectionStart
+				selectionEnd = colorPickerVText.selectionEnd
+				break
+		}
+
+		temp = parseInt(colorPickerHText.value)
+		if(isNaN(temp)) return
+		h = colorPickerH.value = colorPickerHText.value = clamp(temp, 0, 360) / 360
+
+		temp = parseInt(colorPickerSText.value)
+		if(isNaN(temp)) return
+		s = colorPickerS.value = colorPickerSText.value = clamp(temp, 0, 255) / 100
+
+		temp = parseInt(colorPickerVText.value)
+		if(isNaN(temp)) return
+		v = colorPickerV.value = colorPickerVText.value = clamp(temp, 0, 255) / 100
+
+		let tempRGB = hsvToRgb(h, s, v)
+		for(let i = 0; i < tempRGB.length; i++) {
+			tempRGB[i] = leadingString(Math.round(tempRGB[i]).toString(16), 2, '0')
+		}
+
+		let tempA = ''
+		if(a != 255) tempA = leadingString(clamp(Math.round(parseInt(a)), 0, 255).toString(16), 2, '0')
+		tempRGB = tempRGB.join('') + tempA
+
+		colorPickerValueElement.value = readColor(tempRGB)
+
+		updateColorPicker()
+
+		if(savedValue !== null) {
+			switch(document.activeElement.id) {
+				case colorPickerHText.id:
+					colorPickerHText.value = savedValue
+					colorPickerHText.selectionStart = selectionStart
+					colorPickerHText.selectionEnd = selectionEnd
+					break
+				case colorPickerSText.id:
+					colorPickerSText.value = savedValue
+					colorPickerSText.selectionStart = selectionStart
+					colorPickerSText.selectionEnd = selectionEnd
+					break
+				case colorPickerVText.id:
+					colorPickerVText.value = savedValue
+					colorPickerVText.selectionStart = selectionStart
+					colorPickerVText.selectionEnd = selectionEnd
+					break
+			}
+		}
+	}
+
+	function rgbChanged() {
+		let temp = 0
+
+		let savedValue = null
+		let selectionStart = 0
+		let selectionEnd = 0
+		switch(document.activeElement.id) {
+			case colorPickerRText.id:
+				savedValue = clamp(colorPickerRText.value, 0, 255)
+				selectionStart = colorPickerRText.selectionStart
+				selectionEnd = colorPickerRText.selectionEnd
+				break
+			case colorPickerGText.id:
+				savedValue = clamp(colorPickerGText.value, 0, 255)
+				selectionStart = colorPickerGText.selectionStart
+				selectionEnd = colorPickerGText.selectionEnd
+				break
+			case colorPickerBText.id:
+				savedValue = clamp(colorPickerBText.value, 0, 255)
+				selectionStart = colorPickerBText.selectionStart
+				selectionEnd = colorPickerBText.selectionEnd
+				break
+		}
+
+		temp = parseInt(colorPickerRText.value)
+		if(isNaN(temp)) return
+		r = colorPickerR.value = colorPickerRText.value = clamp(temp, 0, 255)
+
+		temp = parseInt(colorPickerGText.value)
+		if(isNaN(temp)) return
+		g = colorPickerG.value = colorPickerGText.value = clamp(temp, 0, 255)
+
+		temp = parseInt(colorPickerBText.value)
+		if(isNaN(temp)) return
+		b = colorPickerB.value = colorPickerBText.value = clamp(temp, 0, 255)
+
+
+		let tempR = leadingString(clamp(Math.round(parseInt(r)), 0, 255).toString(16), 2, '0')
+		let tempG = leadingString(clamp(Math.round(parseInt(g)), 0, 255).toString(16), 2, '0')
+		let tempB = leadingString(clamp(Math.round(parseInt(b)), 0, 255).toString(16), 2, '0')
+
+		let tempA = ''
+		if(a != 255) tempA = leadingString(clamp(Math.round(parseInt(a)), 0, 255).toString(16), 2, '0')
+
+		colorPickerValueElement.value = readColor(tempR + tempG + tempB + tempA)
+
+		updateColorPicker()
+
+		if(savedValue !== null) {
+			switch(document.activeElement.id) {
+				case colorPickerRText.id:
+					colorPickerRText.value = savedValue
+					colorPickerRText.selectionStart = selectionStart
+					colorPickerRText.selectionEnd = selectionEnd
+					break
+				case colorPickerGText.id:
+					colorPickerGText.value = savedValue
+					colorPickerGText.selectionStart = selectionStart
+					colorPickerGText.selectionEnd = selectionEnd
+					break
+				case colorPickerBText.id:
+					colorPickerBText.value = savedValue
+					colorPickerBText.selectionStart = selectionStart
+					colorPickerBText.selectionEnd = selectionEnd
+					break
+			}
+		}
+	}
+
+	function alphaChanged() {
+		let temp = parseInt(colorPickerAText.value)
+		if(isNaN(temp)) return
+		a = colorPickerA.value = colorPickerAText.value = clamp(temp, 0, 255)
+
+
+		temp = colorPickerValueElement.value = colorPickerValueElement.value.substring(0, 6)
+		if(a < 255) {
+			temp = temp + leadingString(a.toString(16), 2, '0')
+		}
+
+		colorPickerValueElement.value = temp
+
+		updateColorPicker()
+	}
+
+	function updateColorPicker() {
+		// This function updates the sliders and values on the color picker based on the hex value given at the bottom
+
+		let colorValue = readColor(colorPickerValueElement.value)
+
+		if(allowAlpha !== true) colorValue = colorValue.substring(0, 6)
+
+		colorPickerValueElement.value = colorValue
+
+		r = clamp(Math.round(parseInt(colorValue.substring(0, 2), 16)), 0, 255)
+		g = clamp(Math.round(parseInt(colorValue.substring(2, 4), 16)), 0, 255)
+		b = clamp(Math.round(parseInt(colorValue.substring(4, 6), 16)), 0, 255)
+
+		if(isNaN(r)) r = 255
+		if(isNaN(g)) g = 255
+		if(isNaN(b)) b = 255
+
+		hsv = rgbToHsv(r, g, b)
+		h = round(hsv[0])
+		s = round(hsv[1])
+		v = round(hsv[2])
+
+		colorPickerR.value = r
+		colorPickerG.value = g
+		colorPickerB.value = b
+
+		colorPickerRText.value = r
+		colorPickerGText.value = g
+		colorPickerBText.value = b
+
+		colorPickerH.value = h
+		colorPickerS.value = s
+		colorPickerV.value = v
+
+		colorPickerHText.value = h
+		colorPickerSText.value = s
+		colorPickerVText.value = v
+
+		a = 255
+		if(allowAlpha === true) {
+			a = clamp(Math.round(parseInt(colorValue.substring(6, 8), 16)), 0, 255)
+			if(isNaN(a)) a = 255
+			colorPickerA.value = colorPickerAText.value = a
+		}
+
+		// Update swatch, field and scrubber
+		colorPickerSwatchElement.style.backgroundColor = '#' + colorValue.substring(0, 6)
+
+		colorPickerScrubberElement.style.left = (s - 50).toString() + '%'
+		colorPickerScrubberElement.style.top = (-1 * v + 50).toString() + '%'
+		colorPickerFieldAlphaElement.style.backgroundColor = '#' + colorValue.substring(0, 6)
+
+		let fieldBackground = rgbToHex(hsvToRgb(h / 360, 1, 1))
+		colorPickerFieldColorElement.style.backgroundColor = '#' + fieldBackground
+
+		if(a == 255) {
+			colorPickerSwatchElement.style.opacity = 1
+			colorPickerFieldAlphaElement.style.opacity = 1
+		} else {
+			colorPickerSwatchElement.style.opacity = 1 / 255 * a
+			colorPickerFieldAlphaElement.style.opacity = 1 / 255 * a
+		}
+
+		// Update saturation slider
+		colorPickerSBackground.style.backgroundImage = 'linear-gradient(90deg, #' + rgbToHex(hsvToRgb(h / 360, 0, v / 100)) + ' 0%, #' + fieldBackground + ' 100%)'
+
+		// Update value slider
+		colorPickerVBackground.style.backgroundColor = '#' + fieldBackground
+
+		if(inputFormElement !== null) {
+			inputFormElement.value = colorValue
+			try {
+				inputFormElement.oninput()
+			} catch(err) {
+				inputFormElement.onchange()
+			}
+		}
+
+		if(CSSVar == true) {
+			setCSSVar(defaultValue, '#' + colorValue)
+		}
+
+		if(putTextElement !== null && putTextElement.hasChildNodes()) {
+			clearElement(putTextElement)
+			putTextElement.appendChild(createElement(nabLibColorPickerAddColorText(colorValue)))
+		}
+		
+	}
+
+	function clearSelection()
+	{
+		// Copied from StackOverflow
+		if (window.getSelection) {window.getSelection().removeAllRanges();}
+		else if (document.selection) {document.selection.empty();}
+	}
+
+	function nabLibColorPickerStartDrag(event) {
+		if(mouseMoveFunction === null) return // mouseMoveFunction is what determines how this works, if it is null just quit here
+
+		clearSelection()
+		window.addEventListener('mouseup', nabLibColorPickerEndDrag)
+		window.addEventListener('mousemove', mouseMoveFunction)
+		mouseMoveFunction(event)
+	}
+
+	function nabLibColorPickerEndDrag(event) {
+		nabLibColorPickerEditElement = null
+
+		window.removeEventListener('mouseup', nabLibColorPickerEndDrag)
+		window.removeEventListener('mousemove', mouseMoveFunction)
+	}
+
+	function nabLibColorPickerMouseMoved(event) {
+		let boundingBox = colorPickerDragElement.getBoundingClientRect()
+
+		let xMin = boundingBox.x
+		let yMin = boundingBox.y
+		let xMax = boundingBox.width + boundingBox.x
+		let yMax = boundingBox.height + boundingBox.y
+
+		let xPos = event.clientX - xMin
+		let yPos = event.clientY - yMin
+
+		xPos = clamp((xPos / boundingBox.width) * 100, 0, 100)
+		yPos = clamp(100 - ((yPos / boundingBox.height) * 100), 0, 100)
+
+		s = colorPickerS.value = colorPickerSText.value = xPos
+		v = colorPickerV.value = colorPickerVText.value = yPos
+
+		hsvChanged()
+	}
+
+	updateColorPicker()
+}
+
+function nabLibColorPickerAddColorText(colorValue) {
+	if(!checkValidHexColor(colorValue)) {
+		colorValue = getCSSVar(colorValue)
+	}
+	colorValue = readColor(colorValue)
+	let rgb = hexToRgb(colorValue)
+	let r = rgb[0]
+	let g = rgb[1]
+	let b = rgb[2]
+
+	let hsl = rgbToHsl(r, g, b)
+
+	let textColor = '#FFF'
+	let textShadowColor = '#000'
+
+	if(hsl[2] >= 0.5) {
+		textColor = '#000'
+		textShadowColor = '#FFF'
+	}
+
+	let textStyle = {
+		fontSize : '1.5rem',
+		fontFamily : '"nabfonts monospace", monospace',
+		color : textColor,
+		textShadow : '0.05rem 0rem ' + textShadowColor + ', -0.05rem 0rem ' + textShadowColor + ', 0rem 0.05rem ' + textShadowColor + ', 0rem -0.05rem ' + textShadowColor + ', 0.05rem 0.05rem ' + textShadowColor + ', 0.05rem -0.05rem ' + textShadowColor + ', -0.05rem 0.05rem ' + textShadowColor + ', -0.05rem -0.05rem ' + textShadowColor
+	}
+
+	return { elementType : 'span', style : textStyle, text : '#' + colorValue }
 }
 
 
@@ -2774,12 +3896,20 @@ superTextMarkupData = {
 							variables : { href : 'link' },
 							parameters : { elementType : 'a', target : '_blank' },
 		},
+		{ tag : 'hash',
+							description: 'Hash data change',
+							symbol : { character : '', font : 'webhostinghub glyphs', color : '39B' },
+							nest : true,
+							category : { name : 'embed', index : 2 },
+							variables : { data : 'data' },
+							parameters : { elementType : 'span', style : { cursor : 'pointer', textDecoration : 'underline', color : 'blue' } },
+		},
 		{ tag : 'img',
 							description: 'Image',
 							symbol : { character : '⊷', font : 'webhostinghub glyphs', color : '2C2' },
 							noText : true,
 							noClosingTag : true,
-							category : { name : 'embed', index : 2 },
+							category : { name : 'embed', index : 3 },
 							variables : { src : 'link' },
 							parameters : { elementType : 'img' },
 		},
@@ -2789,7 +3919,7 @@ superTextMarkupData = {
 							category : { name : 'grouping', index : 1 },
 							nest : true,
 							ignoreLineBreaks : true,
-							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'row', justifyContent : 'center', alignItems : 'center', gap : '0.5em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
+							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'row', justifyContent : 'center', alignItems : 'center', gap : '0.25em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
 		},
 		{ tag : 'vbox',
 							description: 'Box with vertically aligned items (No line breaks)',
@@ -2797,7 +3927,7 @@ superTextMarkupData = {
 							category : { name : 'grouping', index : 2 },
 							nest : true,
 							ignoreLineBreaks : true,
-							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'column', justifyContent : 'center', alignItems : 'center', gap : '0.5em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
+							parameters : { elementType : 'div', style : { textAlign : 'center', width : 'fit-content', padding : '0.35em', width : 'auto', display: 'inline-flex', flexDirection : 'column', justifyContent : 'center', alignItems : 'center', gap : '0.25em', borderColor : '#9994', borderStyle : 'solid', borderWidth : '0.05em' } },
 		},
 		{ tag : 'grid',
 							description: 'Box with a grid layout (No line breaks)',
@@ -2864,7 +3994,7 @@ superTextMarkupData = {
 							parameters : { elementType : 'li' },
 		},
 		{ tag : 'quote',
-							description: 'Block quote, include markup',
+							description: 'Quote block, include markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : '3B3' },
 							block : true,
 							nest : true,
@@ -2879,7 +4009,7 @@ superTextMarkupData = {
 							parameters : { elementType : 'span', style : { display : 'inline-block',  textAlign : 'justify', backgroundColor : '#292929', backgroundImage : 'linear-gradient(135deg, #7770 0%, #7770 49%, #7771 48.1%, #7771 51.9%, #7770 52%, #7770 100%)', backgroundRepeat : 'repeat', backgroundPosition: 'center', backgroundSize : '0.25em 0.25em', margin : '0.3em', padding : '0em 0.375em 0em 0.375em', lineHeight : '2.1em',  border : '0.1em inset #393939' } },
 		},
 		{ tag : 'code',
-							description: 'Block code snippet, no markup',
+							description: 'Code block, no markup',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'B44' },
 							noMarkup : true,
 							block : true,
@@ -2912,7 +4042,7 @@ superTextMarkupData = {
 		{ tag : 'youtube',
 							description: 'Embed a YouTube video',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F00' },
-							category : { name : 'embed', index : 3 },
+							category : { name : 'embed', index : 4 },
 							noClosingTag : true,
 							block : true,
 							noText : true,
@@ -2922,7 +4052,7 @@ superTextMarkupData = {
 		{ tag : 'soundcloud',
 							description: 'Embed a SoundCloud track',
 							symbol : { character : '', font : 'webhostinghub glyphs', color : 'F50' },
-							category : { name : 'embed', index : 4 },
+							category : { name : 'embed', index : 5 },
 							noClosingTag : true,
 							block : true,
 							noText : true,
@@ -2981,6 +4111,13 @@ The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]L[/color][b fg=f55 no
 [nomarkup](Keep in mind that most fonts only support 'normal' weight [400] and 'bold' weight [700].)[/nomarkup]
 
 The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]weight[/color][b fg=f55 nomarkup]][/b][/iquote] tag is for manually setting a numeric weight, from 100 to 900. You can also set this value to [color fg=0f0]normal[/color], [color fg=0f0]bold[/color], [color fg=0f0]bolder[/color], or [color fg=0f0]lighter[/color].
+
+[hr width=35]
+The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]URL[/color][b fg=f55 nomarkup]][/b][/iquote] tag is used for hotlinking to other web pages or websites. The URL to go to is given in a [color fg=f55]link[/color] parameter. If you only need to change the page hash, use the [b fg=f55 nomarkup][[/b][color fg=0bb]hash[/color][b fg=f55 nomarkup]][/b] tag (Below).
+The [iquote size=130][b fg=f55 nomarkup][[/b][color fg=0bb]hash[/color][b fg=f55 nomarkup]][/b][/iquote] tag is used for changing data in the URL hash. This is useful for linking between pages on Javascript-run websites. The hash data to be changed is given in a [color fg=f55]data[/color] parameter.
+[color fg=ff5]MAKE SURE that your input is valid JSON[/color], including double quotes on all variable names and values, or this will not work!
+
+[hr width=35]
 
 The [b fg=F40]hbox[/b], [b fg=F40]vbox[/b] and [b fg=F40]grid[/b] tags can be used to organize and group things in place. Each new line or new tag generates a new element, which is positioned in the grid or box:
 [iquote][iquote size=130][nomarkup][grid cols=3 fg=9999]
@@ -3083,7 +4220,7 @@ for(let i = 0; i < superTextMarkupData.markup.length; i++) {
 
 // Add the smiley face button (The splice position determines the button order where it appears)
 if(!superTextMarkupData.categories.hasOwnProperty('inserts')) superTextMarkupData.categories.inserts = []
-superTextMarkupData.categories.inserts.splice(0, 0, { tag : 'smiley', description : 'Add a smiley face', noClosingTag : true, symbol : { character : superTextMarkupData.smileyFaces[0].character, font : superTextMarkupData.smileyFaces[0].font, color : superTextMarkupData.smileyFaces[0].color } })
+superTextMarkupData.categories.inserts.splice(0, 0, { tag : 'smiley', description : 'Add a smiley face', noClosingTag : true, symbol : { character : superTextMarkupData.smileyFaces[0].character, textShadow : true, font : superTextMarkupData.smileyFaces[0].font, color : superTextMarkupData.smileyFaces[0].color } })
 if(!superTextMarkupData.categories.hasOwnProperty('meta')) superTextMarkupData.categories.meta = []
 superTextMarkupData.categories.meta.push({ tag : 'cleanup', description : 'Remove tags from selection', symbol : { character : '', font : superTextMarkupData.instructions.font, color : '444' } })
 superTextMarkupData.categories.meta.push({ tag : 'help', description : 'Help', symbol : { character : superTextMarkupData.instructions.character, font : superTextMarkupData.instructions.font, color : superTextMarkupData.instructions.color } })
@@ -3154,6 +4291,8 @@ function superTextMarkupGenerateElement(preprocessorInfo, baseFontSize, tagBlack
 let fontWeightDynamic = false
 
 	for(i = 0; i < parameters.length; i++) {
+		spoilerText = 'Show/Hide'	// This has to be here to force the spoiler text to reset every iteration, otherwise it carries over
+
 		if(parameters[i].parameters.hasOwnProperty('noText') && parameters[i].parameters.noText === true) {
 			output.text = ''
 		}
@@ -3276,6 +4415,26 @@ if(styleKey == 'fontWeight') {
 							output.src = 'https://w.soundcloud.com/player/?url=https://soundcloud.com/' + author + '/' + track
 							continue
 						}
+						if(parameters[i].parameters.tag == 'hash' && variable == 'data') {
+							let hashData = variables[parameters[i].parameters.variables[variable]]
+							try {
+								hashData = JSON.parse(hashData)
+								let titleText = ['#']
+								for(key in hashData) {
+									titleText.push(key + ' = ' + hashData[key] + ';')
+								}
+								output.title = titleText.join(' ')
+								output.onclick = ()=>{
+									setHashData(hashData)
+								}
+							} catch {
+								// Error parsing the JSON object! Get the user's attention by removing the link's visibility.
+								output.style.textDecoration = ''
+								output.style.cursor = 'auto'
+								output.style.color = 'inherit'
+							}
+							continue
+						}
 						output[variable] = variables[parameters[i].parameters.variables[variable]]
 						if(parameters[i].parameters.tag == 'hr' && variable == 'width') {
 							output[variable] = clamp(output[variable], 1, 100) + '%'
@@ -3388,7 +4547,9 @@ if(fontWeightDynamic == true) {
 								}
 
 								if(getFontData(newFont[h]) === false) {
-									newFont[h] = ''
+									newFont.splice(h, 1)
+									h--
+									continue
 								}
 							}
 							if(newFont[h] == '') {
@@ -3398,7 +4559,7 @@ if(fontWeightDynamic == true) {
 							}
 						}
 
-						output.style.fontFamily = "'" + newFont.join('\', \'') + "'"
+						if(newFont.length > 0) output.style.fontFamily = "'" + newFont.join('\', \'') + "'"
 						break
 
 					case 'size':
@@ -3992,9 +5153,20 @@ function superTextMarkupAddURL(inputData, data) {
 	delete inputData.text
 
 	if(text.substring(0, 4).toLowerCase() == 'www.') {
-		text = 'http://' + text
+		text = 'https://' + text
 		inputData.url = text
 	}
+
+	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData, text)
+}
+
+function superTextMarkupAddHash(inputData, data) {
+	let textAreaID = data[0]
+	let tagInfo = data[1]
+
+	let text = (' ' + inputData.link).slice(1)	// Force a deep copy of the string - DO NOT use a reference!
+	if(inputData.hasOwnProperty('text')) text = (' ' + inputData.text).slice(1)
+	delete inputData.text
 
 	superTextMarkupAddMarkupToTextField(textAreaID, tagInfo, inputData, text)
 }
@@ -4154,7 +5326,7 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 	let outputElement = { elementType : 'div', style : { width : '100%' }, children : [] }
 	let emGridSpacing = 0.1
 	let formatButtons = { elementType : 'div', style : { display : 'grid', gridGap : emGridSpacing + 'em ' + emGridSpacing + 'em', margin : '0 auto', padding : emGridSpacing + 'em', fontSize : '1.5em' }, children : [] }
-	let buttonShadow = '0.025em 0.025em #0003, -0.025em 0.025em #0003, 0.025em -0.025em #0003, -0.025em -0.025em #0003'
+	let buttonShadow = '0.05em 0.05em #0003, -0.05em 0.05em #0003, 0.05em -0.05em #0003, -0.05em -0.05em #0003'
 
 	clearElement(editorElement)
 
@@ -4362,48 +5534,50 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 														prompts : [
 															{
 																value : 'lighter',
-																label : 'Lighter',
+																label : '[weight weight=300]Lighter (Dynamic)[/weight]',
+																spacerBefore : true,
+															},
+															{
+																value : 'bolder',
+																label : '[weight weight=700]Bolder (Dynamic)[/weight]',
+																spacerAfter : true,
 															},
 															{
 																value : 100,
-																label : '[b font="nabfonts monospace"]100[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=100]Thin[/weight]',
+																label : '[b font="nabfonts monospace"]100[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=100]Thin[/weight]',
 															},
 															{
 																value : 200,
-																label : '[b font="nabfonts monospace"]200[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=200]Extra light[/weight]',
+																label : '[b font="nabfonts monospace"]200[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=200]Extra light[/weight]',
 															},
 															{
 																value : 300,
-																label : '[b font="nabfonts monospace"]300[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=300]Light[/weight]',
+																label : '[b font="nabfonts monospace"]300[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=300]Light[/weight]',
 															},
 															{
 																value : 400,
-																label : '[b font="nabfonts monospace"]400[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=400]Normal[/weight]',
+																label : '[b font="nabfonts monospace"]400[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=400]Normal[/weight]',
 																default : true,
 															},
 															{
 																value : 500,
-																label : '[b font="nabfonts monospace"]500[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=500]Medium[/weight]',
+																label : '[b font="nabfonts monospace"]500[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=500]Medium[/weight]',
 															},
 															{
 																value : 600,
-																label : '[b font="nabfonts monospace"]600[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=600]Semi bold[/weight]',
+																label : '[b font="nabfonts monospace"]600[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=600]Semi bold[/weight]',
 															},
 															{
 																value : 700,
-																label : '[b font="nabfonts monospace"]700[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=700]Bold[/weight]',
+																label : '[b font="nabfonts monospace"]700[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=700]Bold[/weight]',
 															},
 															{
 																value : 800,
-																label : '[b font="nabfonts monospace"]800[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=800]Extra bold[/weight]',
+																label : '[b font="nabfonts monospace"]800[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=800]Extra bold[/weight]',
 															},
 															{
 																value : 900,
-																label : '[b font="nabfonts monospace"]900[/b] - [weight font="\'raleway\', \'nabfonts monospace\'" weight=900]Black[/weight]',
-															},
-															{
-																value : 'bolder',
-																label : 'Bolder',
+																label : '[b font="nabfonts monospace"]900[/b] - [weight font="\'raleway\', \'nabfonts sans-serif\' \'sans-serif\'" weight=900]Black[/weight]',
 															},
 														],
 													},
@@ -4498,17 +5672,86 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 															{
 																default : 'https://',
 																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
+																validateFunction : (value)=>{
+																	try {
+																		let test = value.toLowerCase()
+																		if(test.trim().length < 9) return false
+																		if(test.substring(0, 7) != 'http://' && test.substring(0, 8) != 'https://') return false
+																	} catch {
+																		return false
+																	}
+																	return true
+																},
 															},
 														],
 													},
 												]
 											},
 											{
-												allowDisable : true,
+												allowDisable : false,
 												startDisabled : (selectedText == '' ? true : false),
 												inputs : [
 													{
 														label : 'Link Text',
+														required : true,
+														type : 'text',
+														name : 'text',
+														prompts : [
+															{
+																default : (selectedText == '' ? 'Link text here' : selectedText),
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
+															},
+														],
+													},
+												]
+											}
+										]
+									})
+								}
+								break
+
+							case 'hash':
+								onclickAction = ()=>{
+									let selectedText = superTextMarkupEditorGetSelectedText(textAreaID)
+									createModalForm({
+										elementToFocusOnAfterClose : textAreaID,
+										callback : superTextMarkupAddHash,
+										callbackDataArray : [ textAreaID, tagInfo ],
+										label : 'Change Page Hash',
+										categories : [
+											{
+												allowDisable : false,
+												inputs : [
+													{
+														label : 'Hash Data\n[size size=85]This is a JSON Object, use double quotes and braces[/size]',
+														type : 'text',
+														name : 'data',
+														required : true,
+														prompts : [
+															{
+																default : '{"variable":"value"}',
+																style : { fontFamily : 'nabfonts monospace, monospace', fontSize : 'inherit', width : 'min(90vw, 40em)' },
+																validateFunction : (value)=>{
+																	try {
+																		JSON.parse(value)
+																		return true
+																	} catch {
+																		return false
+																	}
+																	return false
+																},
+															},
+														],
+													},
+												]
+											},
+											{
+												allowDisable : false,
+												startDisabled : (selectedText == '' ? true : false),
+												inputs : [
+													{
+														label : 'Link Text',
+														required : true,
 														type : 'text',
 														name : 'text',
 														prompts : [
@@ -4731,13 +5974,13 @@ function superTextMarkupMakeEditor(editorElement, renderElement, maxChars = 0, t
 								break
 						}
 
-						let newCategoryEntry = { elementType : 'button', className : 'superTextMarkupButton', style : { fontSize : (superTextMarkupData.categories[category][j].symbol.hasOwnProperty('size') ? superTextMarkupData.categories[category][j].symbol.size / 100 + 'em' : 'inherit'), cursor : 'pointer', borderRadius : '20%', userSelect : 'none', aspectRatio : '1 / 1', textShadow : buttonShadow }, text : superTextMarkupData.categories[category][j].symbol.character, onclick : onclickAction }
+						let newCategoryEntry = { elementType : 'button', className : 'superTextMarkupButton', style : { fontSize : (superTextMarkupData.categories[category][j].symbol.hasOwnProperty('size') ? superTextMarkupData.categories[category][j].symbol.size / 100 + 'em' : 'inherit'), cursor : 'pointer', borderRadius : '20%', userSelect : 'none', aspectRatio : '1 / 1', textShadow : (superTextMarkupData.categories[category][j].symbol.hasOwnProperty('textShadow') && superTextMarkupData.categories[category][j].symbol.textShadow == true ? buttonShadow : 'none') }, text : superTextMarkupData.categories[category][j].symbol.character, onclick : onclickAction }
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('font')) newCategoryEntry.style.fontFamily = superTextMarkupData.categories[category][j].symbol.font
 						if(superTextMarkupData.categories[category][j].symbol.hasOwnProperty('color')) newCategoryEntry.style.color = '#' + readColor(superTextMarkupData.categories[category][j].symbol.color)
 						if(superTextMarkupData.categories[category][j].hasOwnProperty('block') && superTextMarkupData.categories[category][j].block === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #08B'
 						if(superTextMarkupData.categories[category][j].hasOwnProperty('ignoreLineBreaks') && superTextMarkupData.categories[category][j].ignoreLineBreaks === true) newCategoryEntry.style.boxShadow = 'inset 0px 0px 0.1em 0.1em #F40'
 
-						let tooltip = { elementType : 'div', id : editorID + tagInfo.tag.toLowerCase() + 'Tooltip', style : { zIndex : '999999999', display : 'inline-block', position : 'absolute', transform : 'translateY(calc(-50% + 4.5rem))', pointerEvents : 'none', userSelect : 'none', textAlign : 'center', border : 'outset 0.125em #555', opacity : 0, padding : '0.25em', margin : '0', backgroundColor: '#335', backgroundImage : 'linear-gradient(180deg, #fff0 0%, #fff2 100%)', borderRadius : '.4em', transition : 'opacity 0.25s', fontSize : '1rem', fontFamily : '"nabfonts sans-serif", "sans-serif"' }, text : superTextMarkupData.categories[category][j].description }
+						let tooltip = { elementType : 'div', id : editorID + tagInfo.tag.toLowerCase() + 'Tooltip', style : { zIndex : '214748364', display : 'inline-block', position : 'absolute', transform : 'translateY(calc(-50% + 4.5rem))', pointerEvents : 'none', userSelect : 'none', textAlign : 'center', border : 'outset 0.125em #555', opacity : 0, padding : '0.25em', margin : '0', backgroundColor: '#335', backgroundImage : 'linear-gradient(180deg, #fff0 0%, #fff2 100%)', borderRadius : '.4em', transition : 'opacity 0.25s', fontSize : '1rem', fontFamily : '"nabfonts sans-serif", "sans-serif"' }, text : superTextMarkupData.categories[category][j].description }
 						if(tagInfo.tag.toLowerCase() == 'size') {
 							// Add extra text for font size
 							tooltip.text = tooltip.text + ' (Percent, from ' + superTextMarkupData.minFontSize.toString() + ' to ' + superTextMarkupData.maxFontSize.toString() + ')'
