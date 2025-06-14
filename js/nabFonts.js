@@ -18911,7 +18911,7 @@ function getCustomFonts() {
 		}
 	],
 	"instructions":[
-		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
+		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical column of dots."
 	],
 	"license":"Freeware",
 	"tags":[
@@ -18938,7 +18938,7 @@ function getCustomFonts() {
 		}
 	],
 	"instructions":[
-		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical row of dots."
+		"To make a dotted space, use the grave character [color size=150 fg=f74]`[/color] several times in a row.[br]Each grave character will make a vertical column of dots."
 	],
 	"license":"Freeware",
 	"tags":[
