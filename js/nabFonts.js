@@ -6964,6 +6964,7 @@ function getCustomFonts() {
 		"Anime",
 		"Block Shaped",
 		"Broken Letters",
+		"Hard To Read",
 		"No Lowercase",
 		"Ornamental",
 		"Thick Stroke",
